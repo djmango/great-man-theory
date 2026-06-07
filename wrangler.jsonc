@@ -2,7 +2,7 @@
   // Static site on Cloudflare Workers Static Assets.
   // Deploy with: bun run deploy   (or: npx wrangler deploy)
   "name": "great-man-theory",
-  "compatibility_date": "2026-06-07",
+  "compatibility_date": "2026-06-02",
   "assets": {
     "directory": "./",
     "html_handling": "auto-trailing-slash",
