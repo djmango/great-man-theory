@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Great Man Theory</title>
+<meta name="description" content="History's great lives, every one starting at zero. Scroll down to grow older, across to walk the centuries, and see what each of them had done by your age.">
+<meta name="theme-color" content="#f5f2eb">
+<meta property="og:title" content="Great Man Theory">
+<meta property="og:description" content="An infographic of history's great lives, measured by age.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23f5f2eb'/><line x1='16' y1='3' x2='16' y2='29' stroke='%231a1a1a' stroke-width='1.5'/><circle cx='16' cy='16' r='5.5' fill='%23f5f2eb' stroke='%231a1a1a' stroke-width='2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* palette: matched to the Plant Care Guide */
+    --paper:#f5f2eb; --paper-dark:#ebe7dc;
+    --ink:#1a1a1a; --ink-light:#6b6b6b;
+    --botanical:#2d5016; --botanical-light:#4a7a2e; --terra:#8b4513; --water:#2563eb;
+    --line:rgba(26,26,26,.14); --line-soft:rgba(26,26,26,.08);
+
+    /* domains drawn only from the plant palette */
+    --d-power:var(--terra); --d-state:var(--water); --d-science:var(--botanical); --d-art:var(--botanical-light); --d-invent:var(--ink);
+
+    --axisW:54px; --colW:212px; --ppy:30px; --headH:198px; --pad:24px;
+    --sans:"Inter",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{ box-sizing:border-box; }
+  html{ overflow-x:hidden; }
+  body{
+    margin:0; color:var(--ink); background:var(--paper);
+    font-family:var(--sans); font-size:16px; line-height:1.55; font-weight:400;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
+  }
+
+  .mono,.kick{ font-family:var(--mono); }
+  .kick{ font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-light); }
+
+  /* top bar (matches plant header) */
+  .topbar{ position:relative; z-index:5; border-bottom:1px solid var(--line); background:var(--paper); }
+  .topbar .in{ max-width:1180px; margin:0 auto; padding:16px var(--pad); display:flex; align-items:flex-end; justify-content:space-between; gap:16px; }
+  .brand b{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-light); font-weight:500; }
+  .brand span{ display:block; margin-top:4px; font-family:var(--mono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-light); opacity:.7; }
+  .topbar nav{ font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-light); opacity:.7; }
+
+  /* hero (typographic, parallax) */
+  .hero{ position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:64px var(--pad) 26px; will-change:transform,opacity; }
+  .hero h1{ font-family:var(--sans); font-weight:300; font-size:clamp(2.7rem,9vw,5.4rem); line-height:.98; letter-spacing:-.03em; margin:14px 0 0; }
+  .hero h1 b{ font-weight:600; }
+  .hero .lede{ max-width:600px; margin:22px 0 0; font-size:1.02rem; color:var(--ink-light); font-weight:400; line-height:1.65; }
+  .hero .lede b{ font-weight:500; color:var(--ink); }
+
+  /* controls */
+  .controls{ position:relative; z-index:4; max-width:1180px; margin:0 auto; padding:0 var(--pad); }
+  .ctl{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 26px; padding:18px 0 16px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .youbox{ display:flex; align-items:center; gap:13px; }
+  .youbox .lab{ font-family:var(--mono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-light); }
+  .youbox .age{ font-weight:300; font-size:2rem; line-height:1; min-width:1.6ch; text-align:center; letter-spacing:-.02em; }
+  .youbox input[type=range]{ -webkit-appearance:none; appearance:none; width:200px; height:1px; background:var(--ink); outline:none; cursor:pointer; }
+  .youbox input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:15px; height:15px; border-radius:50%; background:var(--paper); border:1.5px solid var(--ink); cursor:pointer; }
+  .youbox input[type=range]::-moz-range-thumb{ width:15px; height:15px; border-radius:50%; background:var(--paper); border:1.5px solid var(--ink); cursor:pointer; }
+  .youbox small{ font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--ink-light); opacity:.7; text-transform:uppercase; }
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; }
+  .chip{ font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; padding:5px 10px; border:1px solid var(--clr); color:var(--clr); background:transparent; transition:all .15s; display:inline-flex; align-items:center; gap:6px; line-height:1; }
+  .chip .cdot{ width:6px; height:6px; border-radius:50%; background:var(--clr); }
+  .chip[aria-pressed="true"]{ background:var(--clr); color:var(--paper); }
+  .chip[aria-pressed="true"] .cdot{ background:var(--paper); }
+  .chip[aria-pressed="false"]{ opacity:.4; }
+  .hint{ font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-light); opacity:.7; padding:11px 0 0; }
+  .hint b{ color:var(--ink); opacity:1; font-weight:500; }
+
+  /* board (2D scroll: down = age, across = people) */
+  .scroll{ position:relative; z-index:1; overflow-x:auto; overflow-y:visible; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+  .board{ position:relative; }
+
+  .head{ position:sticky; top:0; z-index:30; display:flex; height:var(--headH); background:var(--paper); border-bottom:1px solid var(--ink); }
+  .corner{ position:sticky; left:0; z-index:2; flex:0 0 var(--axisW); width:var(--axisW); background:var(--paper); border-right:1px solid var(--line); display:flex; align-items:flex-end; justify-content:center; padding-bottom:10px; }
+  .corner span{ font-family:var(--mono); font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-light); opacity:.8; writing-mode:vertical-rl; transform:rotate(180deg); }
+
+  .phead{ flex:0 0 var(--colW); width:var(--colW); border-right:1px solid var(--line-soft); display:flex; flex-direction:column; cursor:pointer; transition:background .15s; }
+  .phead:hover{ background:var(--paper-dark); }
+  .pf{ position:relative; flex:1 1 auto; min-height:0; background:var(--paper-dark); overflow:hidden; border-bottom:1px solid var(--line-soft); }
+  .pf img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:bottom center; padding:6px 10px 0; transition:transform .5s ease; }
+  .phead:hover .pf img{ transform:scale(1.04); }
+  .pf .mono{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:300; font-size:2.4rem; color:var(--clr); letter-spacing:-.02em; }
+  .pf .tag{ position:absolute; left:0; top:0; padding:5px 8px; font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--clr); }
+  .pfoot{ padding:8px 12px 10px; display:flex; align-items:flex-end; gap:8px; }
+  .pfoot .txt{ min-width:0; }
+  .pfoot .nm{ font-weight:500; font-size:.96rem; line-height:1.1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pfoot .span{ font-family:var(--mono); font-size:8.5px; letter-spacing:.04em; color:var(--ink-light); margin-top:3px; white-space:nowrap; }
+  .pfoot .fin{ margin-left:auto; font-weight:300; font-size:1.5rem; line-height:1; letter-spacing:-.02em; color:var(--clr); }
+  .pfoot .fin i{ font-style:normal; font-family:var(--mono); font-size:8px; color:var(--ink-light); text-transform:uppercase; vertical-align:super; margin-left:1px; }
+  .board.dim .phead:not(.sel){ opacity:.3; }
+
+  .body{ position:relative; display:flex; }
+  .axis{ position:sticky; left:0; z-index:20; flex:0 0 var(--axisW); width:var(--axisW); background:var(--paper); border-right:1px solid var(--line); }
+  .tick{ position:absolute; right:0; width:100%; border-top:1px solid var(--line-soft); }
+  .tick.major{ border-top-color:var(--line); }
+  .tick span{ position:absolute; right:7px; top:-9px; font-family:var(--mono); font-size:9px; color:var(--ink-light); opacity:.7; background:var(--paper); padding-left:3px; }
+  .tick.major span{ opacity:1; }
+
+  .cols{ position:relative; display:flex; }
+  .col{ position:relative; flex:0 0 var(--colW); width:var(--colW); border-right:1px solid var(--line-soft); }
+  .board.dim .col:not(.sel){ opacity:.26; }
+  .grid{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .gline{ position:absolute; left:0; right:0; border-top:1px solid var(--line-soft); }
+  .gline.major{ border-top-color:var(--line); }
+
+  .spine{ position:absolute; left:var(--sx); top:0; width:2px; background:var(--clr); opacity:.85; transform:translateX(-1px); z-index:1; }
+  .spine .future{ position:absolute; left:0; width:2px; background:repeating-linear-gradient(var(--clr) 0 3px, transparent 3px 8px); opacity:.5; }
+  .lead{ position:absolute; left:var(--sx); width:13px; border-left:1px solid var(--clr); border-bottom:1px solid var(--clr); opacity:.3; z-index:1; pointer-events:none; }
+
+  .ev{ position:absolute; left:var(--sx); z-index:2; opacity:0; transform:translateY(9px); transition:opacity .5s ease, transform .5s ease; }
+  .ev.in{ opacity:1; transform:none; }
+  .node{ position:absolute; left:0; top:0; transform:translate(-50%,-50%); width:13px; height:13px; border-radius:50%; background:var(--paper); border:1.6px solid var(--clr); cursor:pointer; z-index:3; transition:transform .14s, background .14s; }
+  .node:hover{ transform:translate(-50%,-50%) scale(1.5); }
+  .node.major{ width:17px; height:17px; background:var(--clr); box-shadow:0 0 0 4px var(--paper); }
+  .node.major::after{ content:""; position:absolute; inset:0; margin:auto; width:5px; height:5px; border-radius:50%; background:var(--paper); }
+  .node.death{ width:15px; height:15px; background:var(--ink); border-color:var(--ink); }
+  .node.death::after{ content:""; position:absolute; inset:0; margin:auto; width:5px; height:1.6px; background:var(--paper); }
+
+  .card{ position:absolute; left:15px; top:0; transform:translateY(-50%); width:calc(var(--colW) - var(--sx) - 22px); pointer-events:none; }
+  .card .a{ font-weight:500; font-size:.92rem; line-height:1; color:var(--clr); }
+  .card .a i{ font-style:normal; font-family:var(--mono); font-size:8px; color:var(--ink-light); letter-spacing:.06em; margin-left:3px; }
+  .card .t{ font-size:.79rem; line-height:1.2; color:var(--ink-light); margin-top:3px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .ev.major .card .t{ -webkit-line-clamp:3; color:var(--ink); }
+
+  /* YOU line */
+  .youline{ position:absolute; left:0; right:0; z-index:14; border-top:1.5px dashed var(--ink); pointer-events:none; }
+  .youtag{ position:sticky; left:0; display:inline-flex; align-items:center; gap:7px; transform:translateY(-50%); background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; padding:4px 9px; white-space:nowrap; }
+  .youtag b{ font-family:var(--sans); font-weight:500; font-size:.92rem; letter-spacing:0; text-transform:none; }
+
+  /* live age cursor */
+  .agecursor{ position:fixed; right:18px; bottom:18px; z-index:60; background:var(--ink); color:var(--paper); padding:9px 13px; display:none; align-items:baseline; gap:7px; box-shadow:4px 4px 0 rgba(26,26,26,.16); }
+  .agecursor .n{ font-weight:300; font-size:1.5rem; line-height:1; letter-spacing:-.02em; }
+  .agecursor .l{ font-family:var(--mono); font-size:8px; letter-spacing:.16em; text-transform:uppercase; opacity:.8; }
+
+  /* tooltip */
+  #tip{ position:fixed; z-index:90; display:none; max-width:min(300px,86vw); background:var(--paper); border:1px solid var(--ink); box-shadow:6px 6px 0 rgba(26,26,26,.12); padding:13px 15px; }
+  #tip .tn{ font-weight:600; font-size:1.04rem; line-height:1.05; }
+  #tip .ts{ font-family:var(--mono); font-size:8.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-light); margin:5px 0 10px; }
+  #tip .tr{ display:flex; align-items:baseline; gap:11px; }
+  #tip .tr .ta{ font-weight:300; font-size:1.7rem; line-height:1; color:var(--tc); min-width:1.6ch; letter-spacing:-.02em; }
+  #tip .tr .ta i{ font-style:normal; font-family:var(--mono); font-size:7.5px; color:var(--ink-light); display:block; letter-spacing:.1em; text-transform:uppercase; margin-top:3px; }
+  #tip .tr .tt{ font-size:.9rem; line-height:1.35; }
+  #tip .tr .tt .yr{ font-family:var(--mono); font-size:.7rem; color:var(--ink-light); }
+
+  footer{ position:relative; z-index:1; max-width:1180px; margin:48px auto 0; padding:30px var(--pad) 64px; border-top:1px solid var(--line); }
+  footer p{ font-family:var(--mono); font-size:10px; letter-spacing:.05em; line-height:1.9; color:var(--ink-light); max-width:680px; }
+  footer a{ color:var(--ink); }
+
+  .scroll::-webkit-scrollbar{ height:9px; }
+  .scroll::-webkit-scrollbar-track{ background:var(--paper-dark); }
+  .scroll::-webkit-scrollbar-thumb{ background:var(--ink-light); }
+
+  @media (max-width:680px){
+    :root{ --axisW:40px; --colW:166px; --ppy:27px; --headH:176px; --pad:16px; }
+    body{ font-size:15px; }
+    .hero{ padding:38px var(--pad) 20px; }
+    .youbox input[type=range]{ width:140px; }
+    .pfoot .nm{ font-size:.86rem; }
+    .card .t{ font-size:.74rem; }
+  }
+  @media (prefers-reduced-motion:reduce){ .ev{ transition:none; } .hero{ transform:none!important; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="in">
+    <div class="brand"><b>Great Man Theory</b><span>An infographic of lives, by age</span></div>
+    <nav>No. 01 / 2026</nav>
+  </div>
+</div>
+
+<header class="hero" id="hero">
+  <p class="kick">Every life begins at zero</p>
+  <h1>Great <b>Man</b><br>Theory</h1>
+  <p class="lede">Not <i>when</i> they lived, but how old they were at each turn. Scroll <b>down</b> to grow older. Scroll <b>across</b> to walk through the centuries. Drag your own age to see what each of them had already done by the year you are now.</p>
+</header>
+
+<div class="controls">
+  <div class="ctl">
+    <div class="youbox">
+      <span class="lab">You are</span>
+      <span class="age" id="youAge">26</span>
+      <input type="range" id="youSlider" min="0" max="96" value="26" aria-label="Your age">
+      <small>drag</small>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <p class="hint">Sorted left to right by birth year · tap a node for the event · tap a face to isolate a life</p>
+</div>
+
+<div class="scroll" id="scroll">
+  <div class="board" id="board">
+    <div class="head" id="head">
+      <div class="corner"><span>Age ↓</span></div>
+    </div>
+    <div class="body" id="body">
+      <div class="axis" id="axis"></div>
+      <div class="cols" id="cols"><div class="grid" id="grid"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="agecursor" id="agecursor"><span class="n" id="acN">0</span><span class="l">years old<br>at this line</span></div>
+<div id="tip"></div>
+
+<footer>
+  <p>Ages are whole years from approximate birth dates (“c.” where uncertain); the famous rarely kept tidy records. Living figures are open-ended and current as of 2026. A study in the most flattering, and most disputed, idea in history: that the age is shaped by its great men. Built in the manner of the Plant Care Guide. <a href="https://skg.gg" target="_blank" rel="noopener">skg.gg</a></p>
+</footer>
+
+<script>
+const CUR=2026, AMAX=96;
+let PPY=30, SX=30;
+
+const DOMAINS={
+  power:  {label:"Conquest & Power",     v:"--d-power",   hex:"#8b4513"},
+  state:  {label:"Statecraft & Liberty", v:"--d-state",   hex:"#2563eb"},
+  science:{label:"Science & Discovery",  v:"--d-science", hex:"#2d5016"},
+  art:    {label:"Art & Music",          v:"--d-art",     hex:"#4a7a2e"},
+  invent: {label:"Invention & Industry", v:"--d-invent",  hex:"#1a1a1a"},
+};
+
+const P=[
+ {n:"Alexander the Great", s:"Alexander", slug:"alexander", d:"power", b:-356, x:-323, place:"Pella, Macedon", ev:[
+   {a:0,y:"356 BC",t:"Born to King Philip II in Pella"},
+   {a:13,y:"343 BC",t:"Aristotle becomes his private tutor"},
+   {a:16,y:"340 BC",t:"Made regent; founds his first city"},
+   {a:18,y:"338 BC",t:"Shatters the Sacred Band at Chaeronea"},
+   {a:20,y:"336 BC",t:"Crowned king after his father is murdered",big:1},
+   {a:22,y:"334 BC",t:"Invades Persia; first win at Granicus"},
+   {a:23,y:"333 BC",t:"Cuts the Gordian Knot; routs Darius at Issus"},
+   {a:25,y:"331 BC",t:"Founds Alexandria; hailed pharaoh of Egypt"},
+   {a:25,y:"331 BC",t:"Destroys the Persian army at Gaugamela",big:1},
+   {a:30,y:"326 BC",t:"Reaches India; victory at the Hydaspes"},
+   {a:32,y:"323 BC",t:"Dies of fever in Babylon, undefeated",death:1}]},
+
+ {n:"Cleopatra VII", s:"Cleopatra", slug:"cleopatra", d:"state", b:-69, x:-30, place:"Alexandria, Egypt", ev:[
+   {a:0,y:"69 BC",t:"Born in Alexandria, of the Ptolemy line"},
+   {a:18,y:"51 BC",t:"Becomes co-ruler of Egypt with her brother"},
+   {a:21,y:"48 BC",t:"Exiled, then allies with Caesar; restored",big:1},
+   {a:22,y:"47 BC",t:"Bears Caesar a son, Caesarion"},
+   {a:25,y:"44 BC",t:"In Rome when Caesar is assassinated"},
+   {a:28,y:"41 BC",t:"Allies with the charismatic Mark Antony"},
+   {a:35,y:"34 BC",t:"Rome turns against her and Antony"},
+   {a:39,y:"31 BC",t:"Her fleet is lost at Actium",big:1},
+   {a:39,y:"30 BC",t:"Dies by her own hand; Egypt falls to Rome",death:1}]},
+
+ {n:"Genghis Khan", s:"Genghis Khan", slug:"genghis-khan", d:"power", b:1162, x:1227, place:"Mongolian steppe", ev:[
+   {a:0,y:"1162",t:"Born Temüjin on the open steppe"},
+   {a:9,y:"1171",t:"His father is poisoned; the clan casts them out"},
+   {a:15,y:"c.1177",t:"Captured and enslaved by a rival clan; escapes"},
+   {a:27,y:"c.1189",t:"Rescues his wife Börte; begins to unite tribes"},
+   {a:44,y:"1206",t:"Proclaimed Genghis Khan over all Mongols",big:1},
+   {a:49,y:"1211",t:"Invades Jin China"},
+   {a:53,y:"1215",t:"Sacks Zhongdu, the future Beijing"},
+   {a:57,y:"1219",t:"Annihilates the vast Khwarazmian Empire",big:1},
+   {a:64,y:"1226",t:"Returns to crush the Western Xia"},
+   {a:65,y:"1227",t:"Dies; his empire spans most of Asia",death:1}]},
+
+ {n:"Leonardo da Vinci", s:"Leonardo", slug:"leonardo", d:"art", b:1452, x:1519, place:"Vinci, Tuscany", ev:[
+   {a:0,y:"1452",t:"Born out of wedlock near Vinci"},
+   {a:20,y:"1472",t:"Admitted to Florence's guild of painters"},
+   {a:30,y:"1482",t:"Enters the service of Milan as engineer and artist"},
+   {a:43,y:"1495",t:"Begins The Last Supper",big:1},
+   {a:50,y:"1502",t:"Military engineer and mapmaker for Borgia"},
+   {a:51,y:"1503",t:"Begins the Mona Lisa",big:1},
+   {a:58,y:"1510",t:"Dissects cadavers; fills anatomy notebooks"},
+   {a:61,y:"1513",t:"Sketches flying machines and water studies"},
+   {a:64,y:"1516",t:"Invited to France by King Francis I"},
+   {a:67,y:"1519",t:"Dies at Clos Lucé, his notebooks unmatched",death:1}]},
+
+ {n:"Galileo Galilei", s:"Galileo", slug:"galileo", d:"science", b:1564, x:1642, place:"Pisa, Italy", ev:[
+   {a:0,y:"1564",t:"Born in Pisa"},
+   {a:25,y:"1589",t:"Wins the chair of mathematics at Pisa"},
+   {a:45,y:"1609",t:"Builds his own telescope",big:1},
+   {a:46,y:"1610",t:"Discovers four moons orbiting Jupiter",big:1},
+   {a:48,y:"1612",t:"Observes sunspots and the phases of Venus"},
+   {a:52,y:"1616",t:"First warned by the Inquisition"},
+   {a:68,y:"1632",t:"Publishes his Dialogue on the two systems"},
+   {a:69,y:"1633",t:"Condemned; recants; placed under house arrest",big:1},
+   {a:74,y:"1638",t:"Smuggles out Two New Sciences"},
+   {a:77,y:"1642",t:"Dies blind, under house arrest",death:1}]},
+
+ {n:"Isaac Newton", s:"Isaac Newton", slug:"newton", d:"science", b:1643, x:1727, place:"Woolsthorpe, England", ev:[
+   {a:0,y:"1643",t:"Born prematurely in Woolsthorpe"},
+   {a:22,y:"1665",t:"Plague year at home: calculus and gravity begin",big:1},
+   {a:26,y:"1669",t:"Made Lucasian Professor at Cambridge"},
+   {a:29,y:"1672",t:"Builds a reflecting telescope; joins the Royal Society"},
+   {a:30,y:"1672",t:"Splits white light into the spectrum"},
+   {a:44,y:"1687",t:"Publishes the Principia",big:1},
+   {a:53,y:"1696",t:"Made Warden of the Royal Mint"},
+   {a:60,y:"1703",t:"Elected President of the Royal Society"},
+   {a:62,y:"1705",t:"Knighted by Queen Anne"},
+   {a:84,y:"1727",t:"Dies; buried in Westminster Abbey",death:1}]},
+
+ {n:"Napoleon Bonaparte", s:"Napoleon", slug:"napoleon", d:"power", b:1769, x:1821, place:"Ajaccio, Corsica", ev:[
+   {a:0,y:"1769",t:"Born in Ajaccio, Corsica"},
+   {a:16,y:"1785",t:"Commissioned an artillery officer"},
+   {a:24,y:"1793",t:"Retakes Toulon; made a general at twenty-four"},
+   {a:26,y:"1795",t:"Crushes a royalist revolt in Paris"},
+   {a:27,y:"1796",t:"Triumphs in Italy; marries Joséphine"},
+   {a:29,y:"1798",t:"Invades Egypt"},
+   {a:30,y:"1799",t:"Seizes power as First Consul",big:1},
+   {a:35,y:"1804",t:"Crowns himself Emperor of the French",big:1},
+   {a:36,y:"1805",t:"His masterpiece victory at Austerlitz"},
+   {a:43,y:"1812",t:"His invasion of Russia ends in ruin",big:1},
+   {a:45,y:"1814",t:"Abdicates; exiled to Elba"},
+   {a:46,y:"1815",t:"Returns for a hundred days; falls at Waterloo"},
+   {a:51,y:"1821",t:"Dies in exile on St. Helena",death:1}]},
+
+ {n:"Ludwig van Beethoven", s:"Beethoven", slug:"beethoven", d:"art", b:1770, x:1827, place:"Bonn, Germany", ev:[
+   {a:0,y:"1770",t:"Born in Bonn"},
+   {a:12,y:"1782",t:"Publishes his first compositions"},
+   {a:21,y:"1792",t:"Moves to Vienna; studies under Haydn"},
+   {a:25,y:"1795",t:"Debuts as a virtuoso pianist"},
+   {a:28,y:"1798",t:"Begins to lose his hearing",big:1},
+   {a:30,y:"1800",t:"Premieres his First Symphony"},
+   {a:32,y:"1802",t:"In despair, vows to live for his art"},
+   {a:34,y:"1804",t:"The revolutionary Eroica Symphony",big:1},
+   {a:38,y:"1808",t:"Fifth and Sixth Symphonies premiere"},
+   {a:46,y:"1816",t:"Now almost completely deaf"},
+   {a:54,y:"1824",t:"Premieres the Ninth Symphony, stone deaf",big:1},
+   {a:56,y:"1827",t:"Dies in Vienna",death:1}]},
+
+ {n:"Abraham Lincoln", s:"Lincoln", slug:"lincoln", d:"state", b:1809, x:1865, place:"Kentucky, USA", ev:[
+   {a:0,y:"1809",t:"Born in a one-room Kentucky log cabin"},
+   {a:22,y:"1831",t:"Strikes out on his own in New Salem, Illinois"},
+   {a:25,y:"1834",t:"Elected to the state legislature"},
+   {a:27,y:"1836",t:"Becomes a self-taught lawyer"},
+   {a:33,y:"1842",t:"Marries Mary Todd"},
+   {a:49,y:"1858",t:"Debates Stephen Douglas over slavery"},
+   {a:51,y:"1860",t:"Elected 16th President of the United States",big:1},
+   {a:52,y:"1861",t:"The Civil War begins",big:1},
+   {a:54,y:"1863",t:"Emancipation Proclamation; the Gettysburg Address",big:1},
+   {a:56,y:"1865",t:"Wins the war, then is assassinated days later",death:1}]},
+
+ {n:"Charles Darwin", s:"Darwin", slug:"darwin", d:"science", b:1809, x:1882, place:"Shrewsbury, England", ev:[
+   {a:0,y:"1809",t:"Born in Shrewsbury"},
+   {a:22,y:"1831",t:"Sets sail as naturalist aboard HMS Beagle",big:1},
+   {a:26,y:"1835",t:"Studies the finches of the Galápagos",big:1},
+   {a:27,y:"1836",t:"Returns to England after five years at sea"},
+   {a:30,y:"1839",t:"Marries Emma; publishes the Beagle journal"},
+   {a:33,y:"1842",t:"Settles at Down House to think for decades"},
+   {a:42,y:"1851",t:"His beloved daughter Annie dies"},
+   {a:50,y:"1859",t:"Publishes On the Origin of Species",big:1},
+   {a:62,y:"1871",t:"Publishes The Descent of Man"},
+   {a:73,y:"1882",t:"Dies; buried in Westminster Abbey",death:1}]},
+
+ {n:"Marie Curie", s:"Marie Curie", slug:"curie", d:"science", b:1867, x:1934, place:"Warsaw, Poland", ev:[
+   {a:0,y:"1867",t:"Born Maria Skłodowska in Warsaw"},
+   {a:24,y:"1891",t:"Moves to Paris to study at the Sorbonne"},
+   {a:26,y:"1893",t:"Finishes first in her physics degree"},
+   {a:28,y:"1895",t:"Marries fellow scientist Pierre Curie"},
+   {a:31,y:"1898",t:"Discovers polonium and radium",big:1},
+   {a:36,y:"1903",t:"First woman to win a Nobel Prize, in Physics",big:1},
+   {a:39,y:"1906",t:"Pierre is killed; she takes over his chair"},
+   {a:44,y:"1911",t:"Wins a second Nobel, in Chemistry",big:1},
+   {a:47,y:"1914",t:"Runs mobile X-ray units in the Great War"},
+   {a:66,y:"1934",t:"Dies of long exposure to her own radiation",death:1}]},
+
+ {n:"Nikola Tesla", s:"Tesla", slug:"tesla", d:"invent", b:1856, x:1943, place:"Smiljan, Croatia", ev:[
+   {a:0,y:"1856",t:"Born at midnight during a lightning storm"},
+   {a:26,y:"1882",t:"Imagines the AC motor while walking in a park",big:1},
+   {a:28,y:"1884",t:"Emigrates to the United States"},
+   {a:30,y:"1886",t:"Founds his own electric company"},
+   {a:32,y:"1888",t:"Patents the alternating-current motor",big:1},
+   {a:37,y:"1893",t:"Lights the World's Fair with AC"},
+   {a:39,y:"1895",t:"His system harnesses Niagara Falls",big:1},
+   {a:43,y:"1899",t:"Conjures man-made lightning at Colorado Springs"},
+   {a:45,y:"1901",t:"Begins the doomed Wardenclyffe Tower"},
+   {a:49,y:"1905",t:"Wardenclyffe collapses; backers walk away"},
+   {a:86,y:"1943",t:"Dies alone and broke in a New York hotel",death:1}]},
+
+ {n:"Albert Einstein", s:"Einstein", slug:"einstein", d:"science", b:1879, x:1955, place:"Ulm, Germany", ev:[
+   {a:0,y:"1879",t:"Born in Ulm, Germany"},
+   {a:21,y:"1900",t:"Graduates, but cannot find a teaching job"},
+   {a:23,y:"1902",t:"Takes a clerk's post at the patent office"},
+   {a:26,y:"1905",t:"Miracle year: relativity and E = mc²",big:1},
+   {a:36,y:"1915",t:"Completes the General Theory of Relativity",big:1},
+   {a:40,y:"1919",t:"An eclipse proves him right; world fame",big:1},
+   {a:42,y:"1921",t:"Wins the Nobel Prize in Physics"},
+   {a:54,y:"1933",t:"Flees Nazi Germany for America"},
+   {a:60,y:"1939",t:"Warns Roosevelt that an atom bomb is possible"},
+   {a:76,y:"1955",t:"Dies in Princeton",death:1}]},
+
+ {n:"Mahatma Gandhi", s:"Gandhi", slug:"gandhi", d:"state", b:1869, x:1948, place:"Porbandar, India", ev:[
+   {a:0,y:"1869",t:"Born in Porbandar, India"},
+   {a:19,y:"1888",t:"Sails to London to study law"},
+   {a:24,y:"1893",t:"Thrown off a train in South Africa for his race",big:1},
+   {a:37,y:"1906",t:"Launches satyagraha, his nonviolent resistance",big:1},
+   {a:45,y:"1915",t:"Returns to India to lead"},
+   {a:50,y:"1919",t:"Leads his first nationwide protest"},
+   {a:61,y:"1930",t:"Leads the 240-mile Salt March",big:1},
+   {a:73,y:"1942",t:"Launches the Quit India movement"},
+   {a:78,y:"1947",t:"India wins independence, and is partitioned",big:1},
+   {a:78,y:"1948",t:"Assassinated in New Delhi",death:1}]},
+];
+
+const head=document.getElementById('head'), axis=document.getElementById('axis'),
+      cols=document.getElementById('cols'), grid=document.getElementById('grid'),
+      board=document.getElementById('board'), bodyEl=document.getElementById('body'),
+      tip=document.getElementById('tip');
+const present=[...new Set(P.map(p=>p.d))];
+const active=new Set(present);
+
+function finalAge(p){ return (p.x==null?CUR:p.x)-p.b; }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function yr(v){ return v<0?Math.abs(v)+" BC":""+v; }
+function spanLabel(p){ return p.x==null?yr(p.b)+" – now":yr(p.b)+" – "+yr(p.x); }
+
+const data=P.slice().sort((a,b)=>a.b-b.b);
+let io=null;
+
+function build(){
+  const BODYH=AMAX*PPY;
+  head.querySelectorAll('.phead').forEach(e=>e.remove());
+  cols.querySelectorAll('.col').forEach(e=>e.remove());
+  axis.innerHTML=''; grid.innerHTML='';
+  bodyEl.style.height=BODYH+'px'; axis.style.height=BODYH+'px'; cols.style.height=BODYH+'px';
+  if(io) io.disconnect();
+  io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:"0px 0px -6% 0px"});
+
+  for(let a=0;a<=AMAX;a+=5){
+    const major=a%10===0;
+    const t=document.createElement('div'); t.className='tick'+(major?' major':''); t.style.top=(a*PPY)+'px';
+    if(major){ const s=document.createElement('span'); s.textContent=a; t.appendChild(s); }
+    axis.appendChild(t);
+    const g=document.createElement('div'); g.className='gline'+(major?' major':''); g.style.top=(a*PPY)+'px'; grid.appendChild(g);
+  }
+
+  data.forEach((p,idx)=>{
+    const dm=DOMAINS[p.d], fa=finalAge(p), living=p.x==null;
+    const initials=p.s.replace(/[^A-Za-z ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('');
+
+    const ph=document.createElement('div'); ph.className='phead'; ph.style.setProperty('--clr',`var(${dm.v})`); ph.dataset.i=idx;
+    ph.innerHTML=`
+      <div class="pf">
+        <span class="mono">${initials}</span>
+        <img src="images/portraits/${p.slug}.webp" alt="${esc(p.s)}" loading="lazy"
+             onload="this.style.opacity=1" onerror="this.remove()">
+        <span class="tag">${esc(dm.label.split(' ')[0])}</span>
+      </div>
+      <div class="pfoot">
+        <div class="txt"><div class="nm">${esc(p.s)}</div><div class="span">${spanLabel(p)}</div></div>
+        <div class="fin">${fa}${living?'<i>now</i>':''}</div>
+      </div>`;
+    head.appendChild(ph);
+    ph.addEventListener('click',()=>toggleSelect(idx));
+
+    const col=document.createElement('div'); col.className='col'; col.style.setProperty('--clr',`var(${dm.v})`); col.style.setProperty('--sx',SX+'px'); col.dataset.i=idx;
+    const sp=document.createElement('div'); sp.className='spine'; sp.style.height=(fa*PPY)+'px'; col.appendChild(sp);
+    if(living){ const fu=document.createElement('div'); fu.className='future'; fu.style.top=(fa*PPY)+'px'; fu.style.height=((AMAX-fa)*PPY)+'px'; sp.appendChild(fu); }
+
+    p.ev.forEach(e=>{
+      const ev=document.createElement('div'); ev.className='ev'+(e.big?' major':''); ev.style.top=(e.a*PPY)+'px';
+      ev.innerHTML=`<div class="node ${e.big?'major':''} ${e.death?'death':''}"></div>
+        <div class="card"><div class="a">${e.a===0?'born':e.a}${e.a===0?'':'<i>yrs</i>'}</div><div class="t">${esc(e.t)}</div></div>`;
+      const node=ev.querySelector('.node');
+      node.addEventListener('click',x=>{ x.stopPropagation(); openTip(p,e,x.clientX,x.clientY); });
+      node.addEventListener('mouseenter',()=>{ const r=node.getBoundingClientRect(); openTip(p,e,r.left+r.width/2,r.top); });
+      node.addEventListener('mouseleave',hideTip);
+      col.appendChild(ev); io.observe(ev);
+    });
+    cols.appendChild(col);
+  });
+
+  declutter();
+  const yl=document.createElement('div'); yl.className='youline'; yl.id='youline';
+  yl.innerHTML=`<span class="youtag"><b id="youtagN">26</b> · you, today</span>`;
+  cols.appendChild(yl);
+  positionYou(+document.getElementById('youSlider').value);
+}
+
+function declutter(){
+  const GAP=7;
+  cols.querySelectorAll('.col').forEach(col=>{
+    col.querySelectorAll('.lead').forEach(e=>e.remove());
+    const evs=[...col.querySelectorAll('.ev')].sort((a,b)=>parseFloat(a.style.top)-parseFloat(b.style.top));
+    let prevBottom=-1e9;
+    evs.forEach(ev=>{
+      const card=ev.querySelector('.card'), h=card.offsetHeight||34, nodeTop=parseFloat(ev.style.top), natTop=nodeTop-h/2;
+      let delta=0; if(natTop<prevBottom+GAP) delta=(prevBottom+GAP)-natTop;
+      card.style.top=delta+'px'; const visTop=natTop+delta, visCenter=visTop+h/2; prevBottom=visTop+h;
+      if(delta>4){ const lead=document.createElement('div'); lead.className='lead'; lead.style.top=nodeTop+'px'; lead.style.height=(visCenter-nodeTop)+'px'; col.appendChild(lead); }
+    });
+  });
+}
+
+let sel=null;
+function toggleSelect(idx){
+  if(sel===idx){ sel=null; board.classList.remove('dim');
+    head.querySelectorAll('.phead').forEach(e=>e.classList.remove('sel'));
+    cols.querySelectorAll('.col').forEach(e=>e.classList.remove('sel')); return; }
+  sel=idx; board.classList.add('dim');
+  head.querySelectorAll('.phead').forEach(e=>e.classList.toggle('sel',+e.dataset.i===idx));
+  cols.querySelectorAll('.col').forEach(e=>e.classList.toggle('sel',+e.dataset.i===idx));
+}
+
+function positionYou(age){ const yl=document.getElementById('youline'); if(!yl) return;
+  yl.style.top=(age*PPY)+'px'; document.getElementById('youAge').textContent=age; document.getElementById('youtagN').textContent=age; }
+
+function applyFilter(){ data.forEach((p,idx)=>{ const on=active.has(p.d);
+  head.querySelector(`.phead[data-i="${idx}"]`).style.display=on?'':'none';
+  cols.querySelector(`.col[data-i="${idx}"]`).style.display=on?'':'none'; }); }
+function buildChips(){ const c=document.getElementById('chips');
+  present.forEach(k=>{ const d=DOMAINS[k]; const b=document.createElement('button'); b.className='chip'; b.style.setProperty('--clr',`var(${d.v})`);
+    b.setAttribute('aria-pressed','true'); b.dataset.k=k; b.innerHTML=`<span class="cdot"></span>${d.label}`;
+    b.addEventListener('click',()=>{ if(active.has(k)){active.delete(k);b.setAttribute('aria-pressed','false');} else{active.add(k);b.setAttribute('aria-pressed','true');} applyFilter(); });
+    c.appendChild(b); }); }
+
+function openTip(p,e,x,y){ const dm=DOMAINS[p.d]; tip.style.setProperty('--tc',dm.hex);
+  tip.innerHTML=`<div class="tn">${esc(p.s)}</div><div class="ts">${esc(dm.label)} · ${esc(p.place)}</div>
+    <div class="tr"><div class="ta">${e.a===0?'0':e.a}<i>${e.a===0?'born':'years old'}</i></div>
+    <div class="tt">${esc(e.t)} <span class="yr">${esc(e.y)}</span></div></div>`;
+  tip.style.display='block';
+  const r=tip.getBoundingClientRect(),vw=innerWidth,vh=innerHeight;
+  let left=x-r.width/2; left=Math.max(8,Math.min(left,vw-r.width-8));
+  let top=y-r.height-14; if(top<8) top=y+20; if(top+r.height>vh-8) top=Math.max(8,vh-r.height-8);
+  tip.style.left=left+'px'; tip.style.top=top+'px'; }
+function hideTip(){ tip.style.display='none'; }
+
+/* scroll-driven: hero parallax + live age cursor */
+const hero=document.getElementById('hero'), agecursor=document.getElementById('agecursor'), acN=document.getElementById('acN');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let ticking=false;
+function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(()=>{
+  const y=scrollY;
+  if(!reduce){ hero.style.transform=`translateY(${y*0.22}px)`; hero.style.opacity=Math.max(0,1-y/520); }
+  const r=bodyEl.getBoundingClientRect(); const refY=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))||PPY;
+  const age=Math.round((refY - r.top)/PPY);
+  if(r.top<refY && r.bottom>refY && age>=0 && age<=AMAX){ acN.textContent=age; agecursor.style.display='flex'; }
+  else agecursor.style.display='none';
+  ticking=false;
+}); }
+
+function readVars(){ PPY=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ppy'))||30; SX=innerWidth<=680?26:30; }
+function rebuild(){ const a=+document.getElementById('youSlider').value; build(); positionYou(a); applyFilter();
+  if(sel!=null){ const s=sel; sel=null; toggleSelect(s); } }
+
+document.getElementById('youSlider').addEventListener('input',e=>positionYou(+e.target.value));
+window.addEventListener('resize',()=>{ const o=PPY; readVars(); if(PPY!==o) rebuild(); });
+document.addEventListener('click',e=>{ if(!e.target.closest('.node,#tip')) hideTip(); });
+document.getElementById('scroll').addEventListener('scroll',hideTip);
+window.addEventListener('scroll',()=>{ hideTip(); onScroll(); },{passive:true});
+
+readVars(); buildChips(); build(); applyFilter(); onScroll();
+</script>
+</body>
+</html>

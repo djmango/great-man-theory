@@ -1,0 +1,13 @@
+{
+  "name": "great-man-theory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An infographic of great lives, measured by age.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
