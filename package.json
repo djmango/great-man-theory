@@ -4,10 +4,13 @@
   "private": true,
   "description": "An infographic of great lives, measured by age.",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "build": "bun build src/app.ts --outfile app.js --target browser",
+    "typecheck": "tsc --noEmit",
+    "dev": "bun run build && wrangler dev",
+    "deploy": "bun run build && wrangler deploy"
   },
   "devDependencies": {
+    "typescript": "^5.0.0",
     "wrangler": "^4"
   }
 }
