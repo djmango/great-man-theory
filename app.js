@@ -935,6 +935,7 @@ tip.addEventListener("mouseleave", hideTip);
 var scrollEl = byId("scroll");
 var agecursor = byId("agecursor");
 var acN = byId("acN");
+var footerEl = document.querySelector("footer");
 var ticking = false;
 function onBoardScroll() {
   hideTip();
@@ -944,7 +945,10 @@ function onBoardScroll() {
   requestAnimationFrame(() => {
     const headH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--headH")) || 198;
     const age = Math.round((scrollEl.scrollTop + headH - TOP) / PPY);
-    if (age >= 0 && age <= AMAX) {
+    const max = scrollEl.scrollHeight - scrollEl.clientHeight;
+    const atBottom = max > 40 && max - scrollEl.scrollTop < 64;
+    footerEl?.classList.toggle("show", atBottom);
+    if (!atBottom && age >= 0 && age <= AMAX) {
       acN.textContent = String(age);
       agecursor.style.display = "flex";
     } else

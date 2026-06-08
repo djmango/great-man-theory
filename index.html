@@ -29,18 +29,15 @@
     --mono:"JetBrains Mono",ui-monospace,monospace;
   }
   *{ box-sizing:border-box; }
-  html{ height:100%; overflow:hidden; }
+  html{ overflow-x:hidden; }
   body{
     margin:0; color:var(--ink); background:var(--paper);
     font-family:var(--sans); font-size:16px; line-height:1.55; font-weight:400;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    display:flex; flex-direction:column; height:100%; height:100dvh; overflow:hidden;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden;
   }
 
   .mono,.kick{ font-family:var(--mono); }
   .kick{ font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-light); }
-
-  .topbar,.hero,.controls,footer{ flex-shrink:0; }
 
   /* top bar (matches plant header) */
   .topbar{ position:relative; z-index:5; border-bottom:1px solid var(--line); background:var(--paper); }
@@ -75,9 +72,10 @@
   .hint{ font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-light); opacity:.7; padding:11px 0 0; }
   .hint b{ color:var(--ink); opacity:1; font-weight:500; }
 
-  /* board (2D canvas pan: down = age, across = people) */
+  /* board (self-contained 2D canvas pan: down = age, across = people) */
   .scroll{
-    position:relative; z-index:1; flex:1 1 auto; min-height:0;
+    position:relative; z-index:1; height:82vh; height:82dvh; max-width:1400px; margin:0 auto;
+    border:1px solid var(--line);
     overflow:auto; overscroll-behavior:contain;
     -webkit-overflow-scrolling:touch; touch-action:pan-x pan-y;
     scrollbar-width:thin; scrollbar-color:var(--ink-light) var(--paper-dark);
@@ -160,8 +158,9 @@
   #tip .tsrc:hover{ color:var(--ink); border-bottom-color:var(--ink); }
   #tip .tsrc span{ font-size:11px; }
 
-  footer{ position:relative; z-index:1; max-width:1180px; margin:48px auto 0; padding:30px var(--pad) 64px; border-top:1px solid var(--line); }
-  footer p{ font-family:var(--mono); font-size:10px; letter-spacing:.05em; line-height:1.9; color:var(--ink-light); max-width:680px; }
+  footer{ position:fixed; left:0; right:0; bottom:0; z-index:40; margin:0; padding:14px var(--pad); background:var(--paper); border-top:1px solid var(--line); opacity:0; transform:translateY(100%); pointer-events:none; transition:opacity .45s ease, transform .45s ease; }
+  footer.show{ opacity:1; transform:none; pointer-events:auto; }
+  footer p{ font-family:var(--mono); font-size:10px; letter-spacing:.05em; line-height:1.9; color:var(--ink-light); max-width:980px; margin:0 auto; }
   footer a{ color:var(--ink); }
 
   .scroll::-webkit-scrollbar{ width:9px; height:9px; }
@@ -172,7 +171,7 @@
     .hero{ padding:32px var(--pad) 14px; }
     .hero h1{ font-size:clamp(2.1rem,7vw,3.4rem); }
     .hero .lede{ margin-top:14px; font-size:.95rem; }
-    footer{ padding:18px var(--pad) 28px; margin-top:0; }
+    footer{ padding:10px var(--pad); }
   }
 
   @media (max-width:680px){
@@ -199,7 +198,7 @@
 <header class="hero" id="hero">
   <p class="kick">Every life begins at zero</p>
   <h1>Great Man<br>Theory</h1>
-  <p class="lede">Scroll <b>down</b> to grow older. Scroll <b>across</b> to walk through the centuries. Drag your own age to see how far behind you are. There's a possibly untrue story of Julius Caesar, after conquering Spain, being found weeping in his command post, considering that Alexander had already conquered most of the world known to the Macedonians.</p>
+  <p class="lede">Not <i>when</i> they lived, but how old they were at each turn. Scroll <b>down</b> to grow older. Scroll <b>across</b> to walk through the centuries. Drag your own age to see what each of them had already done by the year you are now.</p>
 </header>
 
 <div class="controls">
@@ -231,7 +230,7 @@
 <div id="tip"></div>
 
 <footer>
-  <p>Ages are whole years from approximate birth dates (“c.” where uncertain). Living figures are open-ended and current as of June, 2026. The age is shaped by its great achievers. <a href="https://skg.gg" target="_blank" rel="noopener">skg.gg</a></p>
+  <p>There's a (possibly untrue) story of Julius Caesar, after conquering Spain, found in his command post weeping, considering that Alexander had already conquered most of the world known to the Macedonians. Ages are whole years from approximate birth dates (“c.” where uncertain); living figures are current as of June, 2026. <a href="https://skg.gg" target="_blank" rel="noopener">skg.gg</a></p>
 </footer>
 
 <script src="app.js" defer></script>

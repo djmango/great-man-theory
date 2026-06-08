@@ -838,11 +838,15 @@ tip.addEventListener('mouseleave',hideTip);
 
 /* board scroll: live age cursor tracks vertical pan in the canvas */
 const scrollEl=byId<HTMLDivElement>('scroll'), agecursor=byId<HTMLDivElement>('agecursor'), acN=byId<HTMLSpanElement>('acN');
+const footerEl=document.querySelector<HTMLElement>('footer');
 let ticking=false;
 function onBoardScroll(){ hideTip(); if(ticking) return; ticking=true; requestAnimationFrame(()=>{
   const headH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))||198;
   const age=Math.round((scrollEl.scrollTop+headH-TOP)/PPY);
-  if(age>=0 && age<=AMAX){ acN.textContent=String(age); agecursor.style.display='flex'; }
+  const max=scrollEl.scrollHeight-scrollEl.clientHeight;
+  const atBottom=max>40 && (max-scrollEl.scrollTop)<64;
+  footerEl?.classList.toggle('show', atBottom);
+  if(!atBottom && age>=0 && age<=AMAX){ acN.textContent=String(age); agecursor.style.display='flex'; }
   else agecursor.style.display='none';
   ticking=false;
 }); }
