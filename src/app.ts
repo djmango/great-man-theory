@@ -292,6 +292,21 @@ const P: Person[]=[
    {a:64,y:"1800",t:"Retires wealthy as his patents expire"},
    {a:83,y:"1819",t:"Dies near Birmingham; the watt is later named for him",death:1}]},
 
+ {n:"Alexander Hamilton", s:"Alexander Hamilton", slug:"hamilton", d:"state", b:1755, x:1804, place:"Nevis & New York, USA", wiki:"https://en.wikipedia.org/wiki/Alexander_Hamilton", ev:[
+   {a:0,y:"c.1755",t:"Born out of wedlock in the Caribbean"},
+   {a:10,y:"1765",t:"His father leaves the family; hardship shapes his ambition"},
+   {a:12,y:"1767",t:"His mother dies, leaving him an orphan"},
+   {a:17,y:"1772",t:"Writes a hurricane account that helps send him to America",big:1},
+   {a:18,y:"1773",t:"Enrolls at King's College in New York"},
+   {a:20,y:"1775",t:"Writes revolutionary pamphlets and joins a militia company"},
+   {a:22,y:"1777",t:"Becomes George Washington's aide-de-camp",big:1},
+   {a:26,y:"1781",t:"Leads a charge at Yorktown as the war is won",big:1},
+   {a:32,y:"1787",t:"Argues for a stronger union at the Constitutional Convention"},
+   {a:33,y:"1788",t:"Helps write The Federalist Papers",big:1},
+   {a:34,y:"1789",t:"Becomes the first US secretary of the treasury",big:1},
+   {a:36,y:"1791",t:"Creates the First Bank of the United States"},
+   {a:49,y:"1804",t:"Killed in a duel with Aaron Burr",death:1}]},
+
  {n:"Michael Faraday", s:"Michael Faraday", slug:"faraday", d:"science", b:1791, x:1867, place:"London, England", wiki:"https://en.wikipedia.org/wiki/Michael_Faraday", ev:[
    {a:0,y:"1791",t:"Born poor in south London"},
    {a:13,y:"1804",t:"Works as a newspaper delivery boy to help the family"},
@@ -442,6 +457,20 @@ const P: Person[]=[
    {a:38,y:"1912",t:"His wireless helps save Titanic survivors"},
    {a:49,y:"1923",t:"Pioneers shortwave and beam radio"},
    {a:63,y:"1937",t:"Dies in Rome; stations fall silent",death:1}]},
+
+ {n:"Warner Brothers", s:"Warner Brothers", slug:"warner-brothers", d:"art", b:1881, x:1978, place:"Youngstown & Hollywood, USA", wiki:"https://en.wikipedia.org/wiki/Warner_Bros.", ev:[
+   {a:0,y:"1881",t:"Harry Warner is born in Poland; Albert, Sam, and Jack follow later"},
+   {a:11,y:"1892",t:"Jack, the youngest brother, is born in Ontario"},
+   {a:22,y:"1903",t:"The brothers buy a projector and begin showing films"},
+   {a:23,y:"1904",t:"Open an early nickelodeon in Pennsylvania"},
+   {a:42,y:"1923",t:"Found Warner Bros. Pictures in Hollywood",big:1},
+   {a:45,y:"1926",t:"Invest in Vitaphone sound-on-disc technology"},
+   {a:46,y:"1927",t:"The Jazz Singer makes talking pictures impossible to ignore",big:1},
+   {a:46,y:"1927",t:"Sam Warner dies just before the sound breakthrough"},
+   {a:59,y:"1940",t:"The studio helps define animated shorts with Bugs Bunny"},
+   {a:67,y:"1948",t:"The Paramount decision breaks the old studio system"},
+   {a:85,y:"1966",t:"Jack Warner sells his controlling stake in the studio"},
+   {a:97,y:"1978",t:"Jack Warner dies, the last of the founding brothers",death:1}]},
 
  {n:"Wright Brothers", s:"Wright Brothers", slug:"wright", d:"invent", b:1867, x:1912, place:"Dayton, Ohio", wiki:"https://en.wikipedia.org/wiki/Wright_brothers", ev:[
    {a:0,y:"1867",t:"Wilbur is born in Indiana; Orville follows in 1871"},
@@ -730,12 +759,10 @@ function build(){
 
   data.forEach((p,idx)=>{
     const dm=DOMAINS[p.d], fa=finalAge(p), living=p.x==null;
-    const initials=p.s.replace(/[^A-Za-z ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('');
 
     const ph=document.createElement('div'); ph.className='phead'; ph.style.setProperty('--clr',`var(${dm.v})`); ph.dataset.i=String(idx);
     ph.innerHTML=`
       <div class="pf">
-        <span class="mono">${initials}</span>
         <img src="images/portraits/${p.slug}.webp" alt="${esc(p.s)}" loading="lazy"
              onload="this.style.opacity=1" onerror="this.remove()">
         <span class="tag">${esc(dm.label.split(' ')[0])}</span>
@@ -803,8 +830,9 @@ function toggleSelect(idx: number){
   cols.querySelectorAll<HTMLElement>('.col').forEach(e=>e.classList.toggle('sel',Number(e.dataset.i)===idx));
 }
 
-function positionYou(age: number){ const yl=byId<HTMLDivElement>('youline'), yt=byId<HTMLDivElement>('youtag');
-  const y=TOP+age*PPY; yl.style.top=y+'px'; yt.style.top=y+'px'; byId<HTMLSpanElement>('youAge').textContent=String(age); byId<HTMLElement>('youtagN').textContent=String(age); }
+function clampAge(value: number){ return Math.max(0,Math.min(AMAX,Math.round(value))); }
+function positionYou(age: number){ const next=clampAge(Number.isFinite(age)?age:0), yl=byId<HTMLDivElement>('youline'), yt=byId<HTMLDivElement>('youtag');
+  const y=TOP+next*PPY; yl.style.top=y+'px'; yt.style.top=y+'px'; byId<HTMLInputElement>('youAge').value=String(next); byId<HTMLInputElement>('youSlider').value=String(next); byId<HTMLElement>('youtagN').textContent=String(next); }
 
 function applyFilter(){ data.forEach((p,idx)=>{ const on=active.has(p.d);
   const ph=head.querySelector<HTMLElement>(`.phead[data-i="${idx}"]`);
@@ -836,18 +864,14 @@ function hideTip(){ cancelHide(); tip.style.display='none'; }
 tip.addEventListener('mouseenter',cancelHide);
 tip.addEventListener('mouseleave',hideTip);
 
-/* board scroll: live age cursor tracks vertical pan in the canvas */
-const scrollEl=byId<HTMLDivElement>('scroll'), agecursor=byId<HTMLDivElement>('agecursor'), acN=byId<HTMLSpanElement>('acN');
+/* board scroll: reveal the footer at the bottom of the canvas */
+const scrollEl=byId<HTMLDivElement>('scroll');
 const footerEl=document.querySelector<HTMLElement>('footer');
 let ticking=false;
 function onBoardScroll(){ hideTip(); if(ticking) return; ticking=true; requestAnimationFrame(()=>{
-  const headH=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))||198;
-  const age=Math.round((scrollEl.scrollTop+headH-TOP)/PPY);
   const max=scrollEl.scrollHeight-scrollEl.clientHeight;
   const atBottom=max>40 && (max-scrollEl.scrollTop)<64;
   footerEl?.classList.toggle('show', atBottom);
-  if(!atBottom && age>=0 && age<=AMAX){ acN.textContent=String(age); agecursor.style.display='flex'; }
-  else agecursor.style.display='none';
   ticking=false;
 }); }
 
@@ -856,6 +880,12 @@ function rebuild(){ const a=+byId<HTMLInputElement>('youSlider').value; build();
   if(sel!=null){ const s=sel; sel=null; toggleSelect(s); } }
 
 byId<HTMLInputElement>('youSlider').addEventListener('input',e=>positionYou(+(e.currentTarget as HTMLInputElement).value));
+byId<HTMLInputElement>('youAge').addEventListener('input',e=>{
+  const raw=(e.currentTarget as HTMLInputElement).value;
+  if(raw==='') return;
+  positionYou(+raw);
+});
+byId<HTMLInputElement>('youAge').addEventListener('blur',e=>positionYou(+(e.currentTarget as HTMLInputElement).value));
 window.addEventListener('resize',()=>{ const o=PPY; readVars(); if(PPY!==o) rebuild(); });
 document.addEventListener('click',e=>{ const target=e.target instanceof Element?e.target:null; if(!target?.closest('.node,#tip')) hideTip(); });
 scrollEl.addEventListener('scroll',onBoardScroll,{passive:true});

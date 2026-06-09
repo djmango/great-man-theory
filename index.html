@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Great Man Theory</title>
 <meta name="description" content="History's great lives, every one starting at zero. Scroll down to grow older, across to walk the centuries, and see what each of them had done by your age.">
-<meta name="theme-color" content="#f5f2eb">
+<meta name="theme-color" content="#f5f2eb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Great Man Theory">
 <meta property="og:description" content="An infographic of history's great lives, measured by age.">
 <meta property="og:type" content="website">
@@ -15,11 +16,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
+    color-scheme:light dark;
     /* palette: matched to the Plant Care Guide */
     --paper:#f5f2eb; --paper-dark:#ebe7dc;
     --ink:#1a1a1a; --ink-light:#6b6b6b;
     --botanical:#2d5016; --botanical-light:#4a7a2e; --terra:#8b4513; --water:#2563eb;
     --line:rgba(26,26,26,.14); --line-soft:rgba(26,26,26,.08);
+    --shadow:rgba(26,26,26,.12); --shadow-strong:rgba(26,26,26,.16); --youline:rgba(26,26,26,.7);
 
     /* domains drawn only from the plant palette */
     --d-power:var(--terra); --d-state:var(--water); --d-science:var(--botanical); --d-art:var(--botanical-light); --d-invent:var(--ink);
@@ -27,6 +30,15 @@
     --axisW:54px; --colW:212px; --ppy:30px; --headH:198px; --topInset:44px; --pad:24px;
     --sans:"Inter",system-ui,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#14130f; --paper-dark:#1f1c16;
+      --ink:#f2eadc; --ink-light:#b8afa1;
+      --botanical:#8bbf62; --botanical-light:#a4c978; --terra:#d18a4b; --water:#8bb6ff;
+      --line:rgba(242,234,220,.18); --line-soft:rgba(242,234,220,.09);
+      --shadow:rgba(0,0,0,.35); --shadow-strong:rgba(0,0,0,.45); --youline:rgba(242,234,220,.72);
+    }
   }
   *{ box-sizing:border-box; }
   html{ overflow-x:hidden; }
@@ -58,7 +70,10 @@
   .ctl{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 26px; padding:18px 0 16px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .youbox{ display:flex; align-items:center; gap:13px; }
   .youbox .lab{ font-family:var(--mono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-light); }
-  .youbox .age{ font-weight:300; font-size:2rem; line-height:1; min-width:1.6ch; text-align:center; letter-spacing:-.02em; }
+  .youbox .age{ width:2.4ch; padding:0 0 2px; border:0; border-bottom:1px solid var(--line); border-radius:0; background:transparent; color:var(--ink); font:inherit; font-weight:300; font-size:2rem; line-height:1; text-align:center; letter-spacing:-.02em; }
+  .youbox .age:focus{ outline:1px solid var(--ink); outline-offset:3px; }
+  .youbox .age::-webkit-outer-spin-button,.youbox .age::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+  .youbox .age[type=number]{ appearance:textfield; -moz-appearance:textfield; }
   .youbox input[type=range]{ -webkit-appearance:none; appearance:none; width:200px; height:1px; background:var(--ink); outline:none; cursor:pointer; }
   .youbox input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:15px; height:15px; border-radius:50%; background:var(--paper); border:1.5px solid var(--ink); cursor:pointer; }
   .youbox input[type=range]::-moz-range-thumb{ width:15px; height:15px; border-radius:50%; background:var(--paper); border:1.5px solid var(--ink); cursor:pointer; }
@@ -91,7 +106,6 @@
   .pf{ position:relative; flex:1 1 auto; min-height:0; background:var(--paper-dark); overflow:hidden; border-bottom:1px solid var(--line-soft); }
   .pf img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:bottom center; padding:6px 10px 0; transition:transform .5s ease; }
   .phead:hover .pf img{ transform:scale(1.04); }
-  .pf .mono{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:300; font-size:2.4rem; color:var(--clr); letter-spacing:-.02em; }
   .pf .tag{ position:absolute; left:0; top:0; padding:5px 8px; font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--clr); }
   .pfoot{ padding:8px 12px 10px; display:flex; align-items:flex-end; gap:8px; }
   .pfoot .txt{ min-width:0; }
@@ -135,18 +149,13 @@
   .ev.major .card .t{ -webkit-line-clamp:3; color:var(--ink); }
 
   /* YOU line */
-  .youline{ position:absolute; left:var(--axisW); right:0; z-index:1; border-top:1.5px dashed rgba(26,26,26,.7); pointer-events:none; }
+  .youline{ position:absolute; left:var(--axisW); right:0; z-index:1; border-top:1.5px dashed var(--youline); pointer-events:none; }
   .youtag{ position:absolute; left:0; z-index:25; display:inline-flex; width:var(--axisW); min-height:31px; flex-direction:column; align-items:center; justify-content:center; gap:1px; transform:translateY(-50%); background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:7px; line-height:1; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; pointer-events:none; }
   .youtag b{ font-family:var(--sans); font-weight:500; font-size:.92rem; letter-spacing:0; text-transform:none; }
   .youtag i{ font-style:normal; opacity:.72; }
 
-  /* live age cursor */
-  .agecursor{ position:fixed; right:18px; bottom:18px; z-index:60; background:var(--ink); color:var(--paper); padding:9px 13px; display:none; align-items:baseline; gap:7px; box-shadow:4px 4px 0 rgba(26,26,26,.16); }
-  .agecursor .n{ font-weight:300; font-size:1.5rem; line-height:1; letter-spacing:-.02em; }
-  .agecursor .l{ font-family:var(--mono); font-size:8px; letter-spacing:.16em; text-transform:uppercase; opacity:.8; }
-
   /* tooltip */
-  #tip{ position:fixed; z-index:90; display:none; max-width:min(300px,86vw); background:var(--paper); border:1px solid var(--ink); box-shadow:6px 6px 0 rgba(26,26,26,.12); padding:13px 15px; }
+  #tip{ position:fixed; z-index:90; display:none; max-width:min(300px,86vw); background:var(--paper); border:1px solid var(--ink); box-shadow:6px 6px 0 var(--shadow); padding:13px 15px; }
   #tip .tn{ font-weight:600; font-size:1.04rem; line-height:1.05; }
   #tip .ts{ font-family:var(--mono); font-size:8.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-light); margin:5px 0 10px; }
   #tip .tr{ display:flex; align-items:baseline; gap:11px; }
@@ -205,7 +214,7 @@
   <div class="ctl">
     <div class="youbox">
       <span class="lab">You are</span>
-      <span class="age" id="youAge">26</span>
+      <input class="age" id="youAge" type="number" min="0" max="100" value="26" inputmode="numeric" pattern="[0-9]*" aria-label="Your age">
       <input type="range" id="youSlider" min="0" max="100" value="26" aria-label="Your age">
       <small>drag</small>
     </div>
@@ -226,7 +235,6 @@
   </div>
 </div>
 
-<div class="agecursor" id="agecursor"><span class="n" id="acN">0</span><span class="l">years old<br>at this line</span></div>
 <div id="tip"></div>
 
 <footer>
