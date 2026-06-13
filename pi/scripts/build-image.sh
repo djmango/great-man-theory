@@ -56,8 +56,47 @@ require_command() {
   fi
 }
 
+sops_age_key_file=""
+
+ensure_sops_age_key() {
+  if [ -n "${SOPS_AGE_KEY_FILE:-}" ] && [ -f "$SOPS_AGE_KEY_FILE" ]; then
+    return
+  fi
+
+  local ssh_key="${SOPS_SSH_KEY_PATH:-$HOME/.ssh/id_ed25519}"
+  if [ ! -f "$ssh_key" ]; then
+    echo "SSH private key not found: $ssh_key" >&2
+    exit 1
+  fi
+
+  if ! command -v ssh-to-age >/dev/null 2>&1; then
+    if command -v nix >/dev/null 2>&1; then
+      echo "ssh-to-age is not on PATH. Use: nix develop, or bun run pi:secrets" >&2
+    else
+      echo "ssh-to-age is required to decrypt pi/secrets.yaml." >&2
+      echo "Edit secrets with: bun run pi:secrets" >&2
+    fi
+    exit 1
+  fi
+
+  sops_age_key_file="$(mktemp)"
+  ssh-to-age -private-key -i "$ssh_key" -o "$sops_age_key_file"
+  export SOPS_AGE_KEY_FILE="$sops_age_key_file"
+  export SOPS_CONFIG_PATH="$sops_config"
+}
+
+cleanup_sops_age_key() {
+  if [ -n "$sops_age_key_file" ]; then
+    rm -f "$sops_age_key_file"
+    sops_age_key_file=""
+  fi
+}
+
+trap cleanup_sops_age_key EXIT
+
 if [ "$init_sops" -eq 1 ]; then
   require_command sops
+  require_command ssh-to-age
 
   [ -f "$sops_config" ] || cp "$pi_dir/.sops.yaml.example" "$sops_config"
 
@@ -73,6 +112,7 @@ if [ "$init_sops" -eq 1 ]; then
   fi
 
   cp "$pi_dir/secrets.example.yaml" "$secrets_file"
+  ensure_sops_age_key
   sops -e -i "$secrets_file"
   rm -f "$secrets_file.bak"
 
@@ -91,6 +131,7 @@ fi
 load_secrets() {
   if [ -f "$secrets_file" ]; then
     require_command sops
+    ensure_sops_age_key
     set -a
     # shellcheck disable=SC1090
     . <(sops -d --output-type dotenv "$secrets_file")
@@ -181,6 +222,12 @@ prompt_var SSH_PUBKEY_PATH "SSH public key path" "$HOME/.ssh/id_ed25519.pub"
 
 if [ -z "${WIFI_SSID:-}" ]; then
   echo "WIFI_SSID is required." >&2
+  exit 1
+fi
+
+if [[ "${WIFI_SSID}" == REPLACE_ME* || "${WIFI_PASSWORD:-}" == REPLACE_ME* ]]; then
+  echo "Replace the Wi-Fi placeholders in pi/secrets.yaml before building." >&2
+  echo "Edit with: bun run pi:secrets" >&2
   exit 1
 fi
 

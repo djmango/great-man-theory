@@ -25,8 +25,10 @@ Before running `--init-sops`, set your age recipient in `pi/.sops.yaml`.
 Edit secrets with:
 
 ```bash
-sops pi/secrets.yaml
+bun run pi:secrets
 ```
+
+That wraps `sops pi/secrets.yaml` with the age key derived from `~/.ssh/id_ed25519` via `ssh-to-age`. Plain `sops pi/secrets.yaml` will not work on its own.
 
 `pi/secrets.yaml` and `pi/.sops.yaml` are gitignored.
 

@@ -1,3 +1,143 @@
+// src/story-copy-lint.ts
+var EM_DASH_RE = /\u2014|\u2013/;
+var FORBIDDEN_PATTERNS = [
+  { rule: "no em dashes or en dashes", re: EM_DASH_RE },
+  {
+    rule: 'no "not X. It/That/The …" contrast',
+    re: /\b(?:was|is|were|are)\s+not\b[^.!?]{0,140}[.!?]\s+(?:It|That|The|He|She|They|This)\s+(?:was|is|were|are)\b/i
+  },
+  {
+    rule: 'no "not just/only …" followed by a reframing sentence',
+    re: /\bnot\s+(?:just|only)\b[^.!?]{0,140}[.!?]\s+(?:It|That|The)\b/i
+  },
+  {
+    rule: 'no "never just/only …" setup',
+    re: /\b(?:was|is|were|are|never)\s+never\s+(?:just|only)\b|\bis never (?:just|only|simply)\b/i
+  },
+  {
+    rule: 'no "The point is not …" pivot',
+    re: /\b[Tt]he point is not\b/
+  },
+  {
+    rule: 'no "It is not … It is …" pivot',
+    re: /\b[Ii]t is not\b[^.!?]{0,100}[.!?]\s+It is\b/
+  },
+  {
+    rule: 'no short-sentence "That was not … It was …" pivot',
+    re: /\b[Tt]hat was not\b[^.!?]{0,80}[.!?]\s+It was\b/
+  }
+];
+function storyCopyIssues(copy) {
+  const text = `${copy.title}
+${copy.body}`;
+  const issues = [];
+  for (const { rule, re } of FORBIDDEN_PATTERNS) {
+    const match = text.match(re);
+    if (match)
+      issues.push({ rule, match: match[0] });
+  }
+  return issues;
+}
+function assertStoryCopy(copy, label = "story") {
+  const issues = storyCopyIssues(copy);
+  if (issues.length) {
+    const detail = issues.map((i) => `${i.rule}: "${i.match}"`).join("; ");
+    throw new Error(`${label} copy failed lint: ${detail}`);
+  }
+  return copy;
+}
+
+// src/stories/alexander.ts
+function story(copy) {
+  return assertStoryCopy(copy, "Alexander");
+}
+var alexanderStories = {
+  "0": story({
+    title: "Born into a house built for war",
+    body: "Alexander enters the Argead dynasty at Pella, where family, legitimacy, and military command are already inseparable. Macedon was a hard northern kingdom with a royal house used to assassination, hostage politics, feuds, and sudden reversals. Olympias came from Epirus with her own dynastic claims; Philip was turning Macedon into a military machine. From the beginning, Alexander's life sits at the intersection of bloodline and battlefield.",
+    image: "images/story/alexander-pella-birth.webp",
+    tags: ["Pella", "Argead dynasty", "Olympias"]
+  }),
+  "10": story({
+    title: "Taming Bucephalus",
+    body: "In front of Philip's court, Alexander tames a horse no one else can ride. The story goes that the horse panicked at its shadow; he turned it toward the sun, calmed it, and mounted while the adults watched. Macedonian kingship rewards visible nerve. Philip supposedly told him to seek a kingdom equal to himself, and in a court built around war that lands as challenge as much as praise.",
+    image: "images/story/alexander-bucephalus.webp",
+    tags: ["Plutarch tradition", "Bucephalus", "Macedonian court"]
+  }),
+  "12": story({
+    title: "Praise that sounds like a prophecy",
+    body: "Philip's famous line after Bucephalus turns a childhood stunt into a public statement about scale. A father's compliment in a royal court is always political. When Philip says Macedon is too small for Alexander, he gives the boy a myth to live inside. Alexander grows up hearing that ordinary inheritance will not be enough. The empire is not yet real, but the emotional architecture of empire is already there: a father who built the weapon, a son being told the weapon needs a larger world.",
+    image: "images/story/alexander-philip-prophecy.webp",
+    tags: ["Philip II", "court performance", "prophecy"]
+  }),
+  "13": story({
+    title: "Aristotle at Mieza",
+    body: "At Mieza, Alexander receives Homer, medicine, philosophy, geography, and the Greek habit of dividing the world into civilized and barbarian. Aristotle's school trained an heir to rule. Alexander learned rhetoric, natural history, and the Iliad, a book he later carried like a private scripture. The tutor teaches measure, classification, and hierarchy, while the student dreams in Achilles. The education sharpens him and gives him language for destiny.",
+    image: "images/story/alexander-aristotle.webp",
+    tags: ["Mieza", "Aristotle", "Achilles complex"]
+  }),
+  "16": story({
+    title: "Left behind, he acts like a king",
+    body: "Philip campaigns away from Macedon and leaves teenage Alexander as regent. This is the part of the story that makes the later explosion less mysterious. Alexander was already acting before adulthood arrived. As regent he faces the Maedi, crushes them, and plants Alexandropolis in their country. Speed, punishment, renaming, settlement: a miniature version of the whole career.",
+    image: "images/story/alexander-regent-alexandropolis.webp",
+    tags: ["Regency", "Maedi revolt", "Alexandropolis"]
+  }),
+  "18": story({
+    title: "Breaking the Sacred Band",
+    body: "At eighteen, Alexander commands cavalry on the left at Chaeronea and helps destroy the elite Theban unit that had symbolized Greek military excellence. Philip wins the battle, but Alexander gets the line that matters to a dynasty. The Sacred Band of Thebes was one of the most famous fighting units in Greece, and breaking it in front of the Greek world announces that Macedon is no longer a northern outsider. The son is now proof of the father's system: sarissa, cavalry timing, discipline, and a royal family that fights at the point of decision.",
+    image: "images/story/alexander-chaeronea.webp",
+    tags: ["Chaeronea", "Sacred Band", "Companion cavalry"]
+  }),
+  "19": story({
+    title: "The banquet where inheritance became a threat",
+    body: "At Philip's wedding to Cleopatra Eurydice, Attalus prays for a legitimate heir. Alexander hears it as a public declaration that he is disposable. He throws a cup. Philip rises to strike him, but the drunk king stumbles. Alexander's reported line is brutal: here is the man preparing to cross from Europe into Asia, and he cannot cross from couch to couch. Soon after, Alexander and Olympias are in exile. The Persian campaign is still Philip's project, but the succession has become a live blade.",
+    image: "images/story/alexander-wedding-banquet.webp",
+    tags: ["Philip II", "Olympias", "succession crisis"]
+  }),
+  "20": story({
+    title: "The machine changes hands",
+    body: "Philip is murdered at Aegae, and Alexander inherits both the throne and a war machine already aimed at Asia. The assassination could have shattered Macedon. Instead Alexander moves with terrifying speed. Rivals are killed or neutralized, the army acknowledges him, and the Greek cities learn that Philip's death has not freed them from Macedonian power. Crisis becomes acceleration. He proves legitimacy by controlling the next hour before anyone else can organize it.",
+    image: "images/story/alexander-crowned-after-murder.webp",
+    tags: ["Aegae", "assassination", "accession"]
+  }),
+  "22": story({
+    title: "The satraps choose the riverbank",
+    body: "At the Granicus, Persian satraps try to stop him at the water's edge, exactly the kind of position older commanders would tell him to avoid. Parmenion is often cast as the voice of caution in Alexander's story, and whether the speeches are exact or literary, the pattern matters. Alexander repeatedly chooses speed before the enemy can turn size into certainty. At Granicus, the river makes the charge ugly and dangerous. He goes anyway. The first victory opens Asia Minor, kills or scatters local Persian leadership, and convinces Greek cities that the invasion is real.",
+    image: "images/story/alexander-granicus.webp",
+    tags: ["Granicus", "Persian satraps", "Parmenion"]
+  }),
+  "23": story({
+    title: "Omens, knots, and the first king-to-king shock",
+    body: "The Gordian Knot makes Alexander look chosen; Issus makes Darius look vulnerable. The knot story is propaganda gold: a problem wrapped in priestly mystery, solved by decisive violence rather than patience. Whether he sliced it or pulled the pin, Alexander turns ambiguity into theater. Then at Issus, the theater becomes military reality. Darius himself flees, leaving family and prestige behind. Alexander has humiliated the Great King in person.",
+    image: "images/story/alexander-gordian-issus.webp",
+    tags: ["Gordian Knot", "Issus", "Darius III"]
+  }),
+  "25-alexandria": story({
+    title: "A city, an oracle, and a new scale of identity",
+    body: "In Egypt, Alexander stops being only a Macedonian conqueror. He accepts older languages of kingship and plants a city meant to outlast him. Alexandria is a strategic port, a Greek city, and a monument to personal rule all at once. Then comes the journey to Siwa, where tradition says the oracle greeted him in language that could be heard as divine sonship. Conquest starts changing him here. Macedonian king, Greek avenger, Egyptian pharaoh, son of Zeus-Ammon: the identities stack rather than replace each other.",
+    image: "images/story/alexander-alexandria.webp",
+    tags: ["Alexandria", "Siwa", "pharaoh"]
+  }),
+  "25-gaugamela": story({
+    title: "Gaugamela: he aims at the hinge",
+    body: "Darius brings scale. Alexander answers with geometry, drawing the Persian line out until a gap opens near the king. Gaugamela is the mature Alexander pattern: refuse the obvious center, ride obliquely, stretch the enemy, then strike at the command nerve. The Persian army is larger, flatter, and prepared for chariots. Alexander turns the field into a question of timing. When the gap opens, the Companions drive toward Darius. The king flees, and the empire begins to come apart psychologically, not city by city.",
+    image: "images/story/alexander-gaugamela.webp",
+    tags: ["Gaugamela", "Darius III", "decisive battle"]
+  }),
+  "30": story({
+    title: "The edge of the map fights back",
+    body: "At the Hydaspes, Porus and his elephants force Alexander into one of his hardest battles, and his own army begins to imagine an end. The Indian campaign is where the legend starts grinding against human limits. Alexander wins through deception, night movement, and audacity, but the battle is costly and strange to Macedonian eyes. War elephants break the familiar grammar of combat. Porus impresses him enough to be restored as ruler. Soon after, at the Hyphasis, the army refuses to march farther. Alexander can defeat kings, but not endless distance, monsoon, exhaustion, and homesick veterans.",
+    image: "images/story/alexander-hydaspes.webp",
+    tags: ["Hydaspes", "Porus", "army mutiny"]
+  }),
+  "32": story({
+    title: "Babylon: the empire has no heir equal to the appetite",
+    body: "He dies young, feverish, surrounded by soldiers and generals who know the map is now larger than the system holding it together. The final scene is almost anti-climactic because the conquest has outrun every institution around it. There is no adult successor with uncontested legitimacy. The army has followed a person, not a constitution. The generals can salute the dying king, but they cannot inherit his momentum. Within a generation, the empire becomes kingdoms. The legend survives more cleanly than the thing he built.",
+    image: "images/story/alexander-babylon-fever.webp",
+    tags: ["Babylon", "succession", "Diadochi"]
+  })
+};
+
 // src/app.ts
 function byId(id) {
   const el = document.getElementById(id);
@@ -19,20 +159,20 @@ var DOMAINS = {
 };
 var P = [
   { n: "Alexander the Great", s: "Alexander the Great", slug: "alexander", d: "power", b: -356, x: -323, place: "Pella, Macedon", ev: [
-    { a: 0, y: "356 BC", t: "Born to King Philip II in Pella", story: { title: "Born into a house built for war", dek: "Alexander enters the Argead dynasty at Pella, where family, legitimacy, and military command are already inseparable.", detail: "Macedon was not a quiet cradle. It was a hard northern kingdom with a royal house used to assassination, hostage politics, feuds, and sudden reversals. Alexander's mother Olympias came from Epirus and carried her own dynastic claims; Philip was turning Macedon from a battered monarchy into a military machine. From the beginning, Alexander's life sits at the intersection of bloodline and battlefield. The question is never simply who he is. It is who can survive long enough to claim what his name promises.", image: "images/story/alexander-pella-birth.webp", tags: ["Pella", "Argead dynasty", "Olympias"] } },
-    { a: 10, y: "346 BC", t: "Tames the wild horse Bucephalus that no one else could ride", story: { title: "The horse that taught the court who he was", dek: "Bucephalus was not just a boy-and-horse anecdote. It was a public test in front of Philip's court, where Alexander saw what older men missed.", detail: "The story goes that the horse panicked because it feared its own shadow. Alexander turned it toward the sun, calmed it, and rode it while the adults watched. The point is not whether every detail is polished by legend. It is that Macedonian kingship rewarded visible nerve. Philip supposedly told him to seek a kingdom equal to himself. For a child in a court built around war, that was not praise. It was a challenge.", image: "images/story/alexander-bucephalus.webp", tags: ["Plutarch tradition", "Bucephalus", "Macedonian court"] } },
-    { a: 12, y: "344 BC", t: "Philip boasts that Macedonia will find a greater king than himself", story: { title: "Praise that sounds like a prophecy", dek: "Philip's famous line after Bucephalus turns a childhood stunt into a public statement about scale.", detail: "A father's compliment in a royal court is never just private. When Philip says Macedon is too small for Alexander, he gives the boy a myth to live inside. That can be intoxicating, and dangerous. Alexander grows up hearing that ordinary inheritance will not be enough. The empire is not yet real, but the emotional architecture of empire is already there: a father who built the weapon, a son being told the weapon needs a larger world.", image: "images/story/alexander-philip-prophecy.webp", tags: ["Philip II", "court performance", "prophecy"] } },
-    { a: 13, y: "343 BC", t: "Aristotle becomes his private tutor", story: { title: "Aristotle gives him a map, not a conscience", dek: "At Mieza, Alexander receives Homer, medicine, philosophy, geography, and the Greek habit of dividing the world into civilized and barbarian.", detail: "Aristotle's school was not a modern liberal education. It trained an heir to rule. Alexander learned rhetoric, natural history, and the Iliad, a book he later carried like a private scripture. The tension is already there: the tutor teaches measure, classification, and hierarchy, while the student dreams in Achilles. The education sharpens him, but it does not restrain him. It gives him language for destiny.", image: "images/story/alexander-aristotle.webp", tags: ["Mieza", "Aristotle", "Achilles complex"] } },
-    { a: 16, y: "340 BC", t: "Made regent; founds his first city", story: { title: "Left behind, he acts like a king", dek: "Philip campaigns away from Macedon and leaves teenage Alexander as regent. The boy puts down revolt and founds a city in his own name.", detail: "This is the part of the story that makes the later explosion less mysterious. Alexander was not waiting for adulthood to begin. As regent he faces the Maedi, crushes them, and plants Alexandropolis in their country. It is a miniature version of the whole career: speed, punishment, renaming, settlement, and the assertion that a place has entered history because he touched it.", image: "images/story/alexander-regent-alexandropolis.webp", tags: ["Regency", "Maedi revolt", "Alexandropolis"] } },
-    { a: 18, y: "338 BC", t: "Shatters the Sacred Band at Chaeronea", story: { title: "Chaeronea: the prince breaks the Sacred Band", dek: "At eighteen, Alexander commands cavalry on the left and helps destroy the elite Theban unit that had symbolized Greek military excellence.", detail: "Philip wins the battle, but Alexander gets the line that matters to a dynasty. The Sacred Band of Thebes was not a rabble. It was one of the most famous fighting units in Greece. To break it in front of the Greek world announces that Macedon is no longer a northern outsider. The son is now proof of the father's system: sarissa, cavalry timing, discipline, and a royal family that fights at the point of decision.", image: "images/story/alexander-chaeronea.webp", tags: ["Chaeronea", "Sacred Band", "Companion cavalry"] } },
-    { a: 19, y: "337 BC", t: "At Philip's wedding, an insult turns succession into a crisis", big: 1, story: { title: "The banquet where inheritance became a threat", dek: "At Philip's wedding to Cleopatra Eurydice, Attalus prays for a legitimate heir. Alexander hears it as a public declaration that he is disposable.", detail: "This is one of those court scenes where a family argument becomes constitutional crisis. Alexander throws a cup. Philip rises to strike him, but the drunk king stumbles. Alexander's reported line is brutal: here is the man preparing to cross from Europe into Asia, and he cannot cross from couch to couch. Soon after, Alexander and Olympias are in exile. The Persian campaign is still Philip's project, but the succession has become a live blade.", image: "images/story/alexander-wedding-banquet.webp", tags: ["Philip II", "Olympias", "succession crisis"] } },
-    { a: 20, y: "336 BC", t: "Crowned king after his father is murdered", big: 1, story: { title: "The machine changes hands", dek: "Philip is murdered at Aegae, and Alexander inherits both the throne and a war machine already aimed at Asia.", detail: "The assassination could have shattered Macedon. Instead Alexander moves with terrifying speed. Rivals are killed or neutralized, the army acknowledges him, and the Greek cities learn that Philip's death has not freed them from Macedonian power. This is the first great Alexander pattern as king: crisis becomes acceleration. He does not pause to prove legitimacy through ceremony alone. He proves it by controlling the next hour before anyone else can organize it.", image: "images/story/alexander-crowned-after-murder.webp", tags: ["Aegae", "assassination", "accession"] } },
-    { a: 22, y: "334 BC", t: "Invades Persia; first win at Granicus", story: { title: "The satraps choose the riverbank", dek: "At the Granicus, Persian satraps try to stop him at the water's edge. It is exactly the kind of position older commanders would tell him not to attack.", detail: "Parmenion is often cast as the voice of caution in Alexander's story, and whether the speeches are exact or literary, the pattern matters. Alexander repeatedly chooses speed before the enemy can turn size into certainty. At Granicus, the river makes the charge ugly and dangerous. He goes anyway. The first victory opens Asia Minor, kills or scatters local Persian leadership, and convinces Greek cities that the invasion is real.", image: "images/story/alexander-granicus.webp", tags: ["Granicus", "Persian satraps", "Parmenion"] } },
-    { a: 23, y: "333 BC", t: "Cuts the Gordian Knot; routs Darius at Issus", story: { title: "Omens, knots, and the first king-to-king shock", dek: "The Gordian Knot makes Alexander look chosen; Issus makes Darius look vulnerable.", detail: "The knot story is propaganda gold: a problem wrapped in priestly mystery, solved not by patience but by decisive violence. Whether he sliced it or pulled the pin, the point is the same. Alexander turns ambiguity into theater. Then at Issus, the theater becomes military reality. Darius himself flees, leaving family and prestige behind. Alexander is no longer merely raiding the Persian edge. He has humiliated the Great King in person.", image: "images/story/alexander-gordian-issus.webp", tags: ["Gordian Knot", "Issus", "Darius III"] } },
-    { a: 25, y: "331 BC", t: "Founds Alexandria; hailed pharaoh of Egypt", story: { title: "A city, an oracle, and a new scale of identity", dek: "In Egypt, Alexander stops being only a Macedonian conqueror. He accepts older languages of kingship and plants a city meant to outlast him.", detail: "Alexandria is a strategic port, a Greek city, and a monument to personal rule all at once. Then comes the journey to Siwa, where tradition says the oracle greeted him in language that could be heard as divine sonship. This is where conquest starts changing him. He is learning that different peoples can be ruled through different sacred vocabularies. Macedonian king, Greek avenger, Egyptian pharaoh, son of Zeus-Ammon: the identities stack rather than replace each other.", image: "images/story/alexander-alexandria.webp", tags: ["Alexandria", "Siwa", "pharaoh"] } },
-    { a: 25, y: "331 BC", t: "Destroys the Persian army at Gaugamela", big: 1, story: { title: "Gaugamela: he aims at the hinge", dek: "Darius brings scale. Alexander answers with geometry, drawing the Persian line out until a gap opens near the king.", detail: "Gaugamela is the mature Alexander pattern: refuse the obvious center, ride obliquely, stretch the enemy, then strike at the command nerve. The Persian army is larger, flatter, and prepared for chariots. Alexander turns the field into a question of timing. When the gap opens, the Companions drive toward Darius. The king flees, and the empire begins to come apart not city by city, but psychologically.", image: "images/story/alexander-gaugamela.webp", tags: ["Gaugamela", "Darius III", "decisive battle"] } },
-    { a: 30, y: "326 BC", t: "Reaches India; victory at the Hydaspes", story: { title: "The edge of the map fights back", dek: "At the Hydaspes, Porus and his elephants force Alexander into one of his hardest battles, and his own army begins to imagine an end.", detail: "The Indian campaign is where the legend starts grinding against human limits. Alexander wins at the Hydaspes through deception, night movement, and audacity, but the battle is costly and strange to Macedonian eyes. War elephants break the familiar grammar of combat. Porus impresses him enough to be restored as ruler. Soon after, at the Hyphasis, the army refuses to march farther. Alexander can defeat kings, but not endless distance, monsoon, exhaustion, and homesick veterans.", image: "images/story/alexander-hydaspes.webp", tags: ["Hydaspes", "Porus", "army mutiny"] } },
-    { a: 32, y: "323 BC", t: "Dies of fever in Babylon, undefeated", death: 1, story: { title: "Babylon: the empire has no heir equal to the appetite", dek: "He dies young, feverish, surrounded by soldiers and generals who know the map is now larger than the system holding it together.", detail: "The final scene is almost anti-climactic because the conquest has outrun every institution around it. There is no adult successor with uncontested legitimacy. The army has followed a person, not a constitution. The generals can salute the dying king, but they cannot inherit his momentum. Within a generation, the empire becomes kingdoms. The legend survives more cleanly than the thing he built.", image: "images/story/alexander-babylon-fever.webp", tags: ["Babylon", "succession", "Diadochi"] } }
+    { a: 0, y: "356 BC", t: "Born to King Philip II in Pella", story: alexanderStories["0"] },
+    { a: 10, y: "346 BC", t: "Tames the wild horse Bucephalus that no one else could ride", story: alexanderStories["10"] },
+    { a: 12, y: "344 BC", t: "Philip boasts that Macedonia will find a greater king than himself", story: alexanderStories["12"] },
+    { a: 13, y: "343 BC", t: "Aristotle becomes his private tutor", story: alexanderStories["13"] },
+    { a: 16, y: "340 BC", t: "Made regent; founds his first city", story: alexanderStories["16"] },
+    { a: 18, y: "338 BC", t: "Shatters the Sacred Band at Chaeronea", story: alexanderStories["18"] },
+    { a: 19, y: "337 BC", t: "At Philip's wedding, an insult turns succession into a crisis", big: 1, story: alexanderStories["19"] },
+    { a: 20, y: "336 BC", t: "Crowned king after his father is murdered", big: 1, story: alexanderStories["20"] },
+    { a: 22, y: "334 BC", t: "Invades Persia; first win at Granicus", story: alexanderStories["22"] },
+    { a: 23, y: "333 BC", t: "Cuts the Gordian Knot; routs Darius at Issus", story: alexanderStories["23"] },
+    { a: 25, y: "331 BC", t: "Founds Alexandria; hailed pharaoh of Egypt", story: alexanderStories["25-alexandria"] },
+    { a: 25, y: "331 BC", t: "Destroys the Persian army at Gaugamela", big: 1, story: alexanderStories["25-gaugamela"] },
+    { a: 30, y: "326 BC", t: "Reaches India; victory at the Hydaspes", story: alexanderStories["30"] },
+    { a: 32, y: "323 BC", t: "Dies of fever in Babylon, undefeated", death: 1, story: alexanderStories["32"] }
   ] },
   { n: "Cleopatra VII", s: "Cleopatra VII", slug: "cleopatra", d: "state", b: -69, x: -30, place: "Alexandria, Egypt", ev: [
     { a: 0, y: "69 BC", t: "Born in Alexandria, of the Ptolemy line" },
@@ -814,6 +954,9 @@ function build() {
         openStoryModal(idx, evIdx);
       };
       if (e.story) {
+        const prefetch = () => {
+          prefetchStoryImage(e.story.image);
+        };
         node.addEventListener("click", (x) => {
           x.stopPropagation();
           openEnhanced();
@@ -823,10 +966,12 @@ function build() {
           openEnhanced();
         });
         node.addEventListener("mouseenter", () => {
+          prefetch();
           cancelHide();
           const r = node.getBoundingClientRect();
           openTip(p, e, r.left + r.width / 2, r.top);
         });
+        card?.addEventListener("mouseenter", prefetch);
         node.addEventListener("mouseleave", scheduleHide);
       } else {
         node.addEventListener("click", (x) => {
@@ -950,7 +1095,7 @@ function openTip(p, e, x, y) {
   tip.innerHTML = `<div class="tn">${esc(p.s)}</div><div class="ts">${esc(dm.label)} · ${esc(p.place)}</div>
     <div class="tr"><div class="ta">${e.a === 0 ? "0" : e.a}<i>${e.a === 0 ? "Born" : "years old"}</i></div>
     <div class="tt">${esc(e.t)} <span class="yr">${esc(e.y)}</span></div></div>
-    ${s ? `<div class="tstory"><div class="tdek">${esc(s.dek)}</div><div class="tdetail">Click to read the full story</div></div>` : ""}`;
+    ${s ? `<div class="tstory"><div class="tdek">${esc(s.body.split(/(?<=[.!?])\s+/)[0] ?? s.body)}</div><div class="tdetail">Click to read the full story</div></div>` : ""}`;
   tip.style.display = "block";
   const r = tip.getBoundingClientRect(), vw = innerWidth, vh = innerHeight;
   let left = x - r.width / 2;
@@ -1009,10 +1154,7 @@ var storyImageB = byId("storyImageB");
 var storyCopy = byId("storyCopy");
 var storyEyebrow = byId("storyEyebrow");
 var storyTitle = byId("storyTitle");
-var storyDek = byId("storyDek");
-var storyDetail = byId("storyDetail");
-var storyMeta = byId("storyMeta");
-var storyProgress = byId("storyProgress");
+var storyBody = byId("storyBody");
 var storyExit = byId("storyExit");
 var storyBackdrop = byId("storyBackdrop");
 var TOUR_MS = 7600;
@@ -1032,6 +1174,29 @@ var idleTimer;
 var tourActive = false;
 var storyMode = false;
 var storyViewMode = "screensaver";
+var storyImageCache = new Map;
+function prefetchStoryImage(url) {
+  if (!url)
+    return Promise.resolve();
+  const cached = storyImageCache.get(url);
+  if (cached)
+    return cached;
+  const load = new Promise((resolve) => {
+    const img = new Image;
+    img.onload = () => resolve();
+    img.onerror = () => resolve();
+    img.src = url;
+  });
+  storyImageCache.set(url, load);
+  return load;
+}
+function resetStoryImages() {
+  storyImageA.classList.remove("is-active", "is-leaving", "is-kenburns");
+  storyImageB.classList.remove("is-active", "is-leaving", "is-kenburns");
+  storyImageA.removeAttribute("src");
+  storyImageB.removeAttribute("src");
+  storyImageLayer = 0;
+}
 function clearTourTimer() {
   if (tourTimer) {
     clearTimeout(tourTimer);
@@ -1095,54 +1260,62 @@ function resetTourProgress() {
   });
 }
 function fillStoryCopy(slide) {
-  const { p, e, story } = slide;
+  const { p, e, story: story2 } = slide;
   storyEyebrow.textContent = `${p.s} · age ${e.a} · ${e.y}`;
-  storyTitle.textContent = story.title;
-  storyDek.textContent = story.dek;
-  storyDetail.textContent = story.detail;
-  storyMeta.innerHTML = story.tags.map((t) => `<span>${esc(t)}</span>`).join("");
+  storyTitle.textContent = story2.title;
+  storyBody.textContent = story2.body;
 }
-function swapStoryImage(url, alt, animate) {
+function startKenBurns(img) {
+  img.classList.remove("is-kenburns");
+  img.offsetWidth;
+  img.classList.add("is-kenburns");
+}
+async function swapStoryImage(url, alt, animate, token = storyRun) {
   const a = storyImageA, b = storyImageB, next = storyImageLayer === 0 ? b : a, prev = storyImageLayer === 0 ? a : b;
   next.alt = alt;
+  prefetchStoryImage(url);
   if (!animate || !prev.src) {
-    a.src = url;
-    a.alt = alt;
-    a.classList.add("is-active");
-    a.classList.remove("is-leaving");
-    b.classList.remove("is-active", "is-leaving");
+    a.classList.remove("is-active", "is-leaving", "is-kenburns");
+    b.classList.remove("is-active", "is-leaving", "is-kenburns");
     b.removeAttribute("src");
+    a.alt = alt;
+    let revealed = false;
+    const reveal = () => {
+      if (revealed || token !== storyRun)
+        return;
+      revealed = true;
+      a.classList.add("is-active");
+      startKenBurns(a);
+    };
+    a.onload = () => {
+      a.decode().catch(() => {}).finally(reveal);
+    };
+    a.src = url;
+    if (a.complete)
+      a.decode().catch(() => {}).finally(reveal);
     storyImageLayer = 0;
-    return Promise.resolve();
+    return;
   }
   return new Promise((resolve) => {
     const done = () => {
-      prev.classList.remove("is-active");
-      prev.classList.add("is-leaving");
-      next.classList.add("is-active");
-      next.classList.remove("is-leaving");
-      window.setTimeout(() => {
-        prev.classList.remove("is-leaving");
-        storyImageLayer = storyImageLayer === 0 ? 1 : 0;
-        resolve();
-      }, STORY_XFADE_MS);
+      next.decode().catch(() => {}).finally(() => {
+        prev.classList.remove("is-active", "is-kenburns");
+        prev.classList.add("is-leaving");
+        next.classList.remove("is-leaving", "is-kenburns");
+        next.classList.add("is-active");
+        startKenBurns(next);
+        window.setTimeout(() => {
+          prev.classList.remove("is-leaving");
+          storyImageLayer = storyImageLayer === 0 ? 1 : 0;
+          resolve();
+        }, STORY_XFADE_MS);
+      });
     };
     if (next.complete && next.src === url)
       done();
     else
       next.onload = () => done();
     next.src = url;
-  });
-}
-function resetStoryProgress() {
-  storyProgress.style.transition = "none";
-  storyProgress.style.width = "0";
-  storyProgress.offsetWidth;
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      storyProgress.style.transition = `width ${STORY_MS}ms linear`;
-      storyProgress.style.width = "100%";
-    });
   });
 }
 function showStorySlide(nextIndex = storyIndex) {
@@ -1156,8 +1329,6 @@ async function presentStorySlide(nextIndex) {
     return;
   const run = ++storyRun;
   storyIndex = (nextIndex + storySlides.length) % storySlides.length;
-  storyProgress.style.transition = "none";
-  storyProgress.style.width = "0";
   const slide = storySlides[storyIndex], { p, e, idx, evIdx } = slide, dm = DOMAINS[p.d];
   const animate = storySlideReady;
   storySlideReady = true;
@@ -1177,7 +1348,7 @@ async function presentStorySlide(nextIndex) {
   if (animate) {
     storyCopy.classList.add("is-changing");
     await Promise.all([
-      swapStoryImage(slide.story.image, slide.story.title, true),
+      swapStoryImage(slide.story.image, slide.story.title, true, run),
       new Promise((r) => window.setTimeout(r, STORY_TEXT_MS))
     ]);
     fillStoryCopy(slide);
@@ -1186,12 +1357,13 @@ async function presentStorySlide(nextIndex) {
     requestAnimationFrame(() => storyCopy.classList.remove("is-entering"));
   } else {
     fillStoryCopy(slide);
-    await swapStoryImage(slide.story.image, slide.story.title, false);
+    swapStoryImage(slide.story.image, slide.story.title, false, run);
   }
   if (run !== storyRun || !tourActive || !storyMode)
     return;
-  resetStoryProgress();
-  tourTimer = window.setTimeout(() => showStorySlide(storyIndex + 1), STORY_MS);
+  if (storyViewMode === "screensaver") {
+    tourTimer = window.setTimeout(() => showStorySlide(storyIndex + 1), STORY_MS);
+  }
 }
 function showTourStop(nextIndex = tourIndex) {
   if (!tourActive || !tourStops.length)
@@ -1267,12 +1439,14 @@ function openStoryModal(idx, evIdx) {
   storyRun = 0;
   tourActive = true;
   hideTip();
+  resetStoryImages();
   document.body.classList.add("story-modal", "story-mode");
   storyExit.textContent = "Close";
   showStorySlide(start);
 }
 function exitStoryView() {
-  if (!tourActive)
+  const open = document.body.classList.contains("story-modal") || document.body.classList.contains("screensaver");
+  if (!tourActive && !open)
     return;
   const wasScreensaver = storyViewMode === "screensaver";
   tourActive = false;
@@ -1287,15 +1461,11 @@ function exitStoryView() {
   screenBtn.textContent = "Screensaver";
   tourProgress.style.transition = "none";
   tourProgress.style.width = "0";
-  storyProgress.style.transition = "none";
-  storyProgress.style.width = "0";
   storyMode = false;
   storyViewMode = "screensaver";
   storySlideReady = false;
   storyCopy.classList.remove("is-changing", "is-entering");
-  storyImageA.classList.add("is-active");
-  storyImageA.classList.remove("is-leaving");
-  storyImageB.classList.remove("is-active", "is-leaving");
+  resetStoryImages();
   storyExit.textContent = "Close";
   if (wasScreensaver && document.fullscreenElement)
     document.exitFullscreen?.().catch(() => {});

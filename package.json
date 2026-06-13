@@ -6,10 +6,12 @@
   "scripts": {
     "build": "bun build src/app.ts --outfile app.js --target browser",
     "typecheck": "tsc --noEmit",
-    "dev": "bun run build && rm -rf .wrangler/state && wrangler dev --persist-to ../.gmt-wrangler-state",
+    "test": "bun test",
+    "dev": "bash scripts/dev.sh",
     "deploy": "bun run build && wrangler deploy",
     "pi:build": "pi/scripts/build-image.sh",
-    "pi:flash": "pi/scripts/flash-image.sh"
+    "pi:flash": "pi/scripts/flash-image.sh",
+    "pi:secrets": "pi/scripts/with-sops.sh sops pi/secrets.yaml"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
