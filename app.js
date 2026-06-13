@@ -893,6 +893,568 @@ var jobsStories = defineStories("Jobs", {
   }
 });
 
+// src/stories/gates.ts
+var gatesStories = defineStories("Gates", {
+  "0": {
+    title: "Born in Seattle to a lawyer and a school board leader",
+    body: "William Henry Gates III arrives in 1955, the same year as Steve Jobs, in a city of Boeing engineers and rainy ambition. His father is a prominent attorney; his mother serves on corporate boards and charity committees. The family expects achievement without much warmth. Young Bill will learn to compete at dinner tables and on school playgrounds before he learns to compete in markets.",
+    image: "images/story/gates-born.webp",
+    tags: ["Seattle", "1955", "childhood"]
+  },
+  "13": {
+    title: "Lakeside School buys a teletype and changes his life",
+    body: "A mothers' club fundraiser puts a computer terminal in his private school. Gates and Paul Allen burn hours on it, trading bugs for more machine time. When the school runs out of budget, they find bugs in the commercial software and offer to fix them for free access. A thirteen-year-old discovers that code is leverage and that the adults who own the hardware can be outsmarted by kids who understand it.",
+    image: "images/story/gates-lakeside.webp",
+    tags: ["Lakeside", "teletype", "1968"]
+  },
+  "15": {
+    title: "A scheduling program and a deliberate imbalance of girls",
+    body: "He writes software to assign students to classes at Lakeside. The program works, but Gates tweaks the code so he lands in sections with more girls. Teachers eventually notice the bias. The anecdote becomes legend because it captures the whole career early: brilliant engineering married to naked self-interest, defended later as a joke everyone remembers.",
+    image: "images/story/gates-scheduler.webp",
+    tags: ["Lakeside", "1970", "programming"]
+  },
+  "17": {
+    title: "Traf-O-Data reads traffic tapes for pocket money",
+    body: "With Allen he starts Traf-O-Data, a company that processes raw traffic-counter tapes for municipal planners. The hardware barely works at a demo; the business fails. Gates keeps the lesson anyway: software tied to a real customer problem beats hobby projects. Within eight years he will sell operating systems to the biggest computer company on earth.",
+    image: "images/story/gates-traf-o-data.webp",
+    tags: ["Traf-O-Data", "1972", "startup"]
+  },
+  "19": {
+    title: "Harvard dorm, Altair cover, and the Microsoft bet",
+    body: "Gates drops out of Harvard in 1975 after Paul Allen waves an Popular Electronics cover showing the Altair kit computer. They call the maker claiming to have a BASIC interpreter ready; they do not. They write it in a panic, deliver it, and form Micro-Soft. The name will lose its hyphen. The strategy will not: be first on every new platform and charge for the layer everyone else needs.",
+    image: "images/story/gates-microsoft.webp",
+    tags: ["Harvard", "Altair", "1975"]
+  },
+  "25": {
+    title: "The IBM deal that made DOS the default",
+    body: "IBM wants an operating system for its personal computer but will not buy his company outright. Gates licenses DOS, which Microsoft bought cheaply from Seattle Computer Products, and keeps the right to sell it to others. IBM's brand puts PCs on every desk; clones follow; Microsoft collects on all of them. He is twenty-five and has turned a one-time purchase into a toll booth on the industry.",
+    image: "images/story/gates-ibm.webp",
+    tags: ["IBM", "DOS", "1980"]
+  },
+  "30": {
+    title: "Windows 1.0 ships after years of vapor and mockery",
+    body: "Apple's Macintosh has shown the world icons and mice. Gates announces Windows repeatedly before it exists, enraging Steve Jobs and confusing customers. Version 1.0 finally ships in 1985 to yawns. The product is clumsy but the direction is correct. Microsoft can afford to iterate while rivals sell hardware. The GUI war becomes a war of attrition, and Gates has the longer bank account.",
+    image: "images/story/gates-windows.webp",
+    tags: ["Windows", "1985", "GUI"]
+  },
+  "31": {
+    title: "Microsoft goes public and mints a young billionaire",
+    body: "The 1986 IPO values the company at hundreds of millions on day one. Gates retains a huge stake. Within a year he is the youngest billionaire in America, still looking like a college kid in glasses. Employees with stock options buy boats and houses in Seattle suburbs. The culture is brutal hours, sharp emails, and the belief that the next release matters more than sleep.",
+    image: "images/story/gates-ipo.webp",
+    tags: ["IPO", "1986", "billionaire"]
+  },
+  "40": {
+    title: "Windows 95 and the sound of the startup chime",
+    body: "After years of delay, Windows 95 launches with a Rolling Stones song and lines around Blockbuster stores. The Start button teaches millions to click instead of type commands. The internet is arriving at the same moment; Gates pivots the company hard toward the web. A forty-year-old nerd in a sweater becomes the face of the PC age at its peak, before the antitrust lawyers close in.",
+    image: "images/story/gates-win95.webp",
+    tags: ["Windows 95", "1995", "internet"]
+  },
+  "43": {
+    title: "The United States sues the company he built",
+    body: "The Justice Department accuses Microsoft of crushing Netscape and tying Internet Explorer to Windows. Gates videotaped depositions show him evasive and technical, which plays badly on television. The trial dominates the late nineties tech press. Whatever the legal outcome, the public story shifts: the boy genius is now a monopolist who must be checked.",
+    image: "images/story/gates-antitrust.webp",
+    tags: ["antitrust", "1998", "DOJ"]
+  },
+  "45": {
+    title: "The foundation and the turn toward giving it away",
+    body: "With his wife Melinda he launches the Bill and Melinda Gates Foundation, initially focused on libraries and global health. Vaccines, malaria, and sanitation replace product cycles as his obsession. Colleagues notice he reads WHO reports the way he once read BYTE magazine. The richest man on earth begins planning to die much poorer on purpose.",
+    image: "images/story/gates-foundation.webp",
+    tags: ["foundation", "2000", "philanthropy"]
+  },
+  "53": {
+    title: "Leaves daily Microsoft to chase polio and toilets",
+    body: "In 2008 he steps back from day-to-day operations at Microsoft to work full time on philanthropy. Ballmer runs the company; Gates flies to Africa and India with notebooks full of epidemiology. Critics say it is reputation laundering; admirers say he applies the same competitive focus to saving lives. Either way the era of Gates as software tyrant ends and Gates as global health financier begins.",
+    image: "images/story/gates-retirement.webp",
+    tags: ["2008", "philanthropy", "Microsoft exit"]
+  },
+  "66": {
+    title: "Pledges to fall off the richest list while still alive",
+    body: "In 2021 he announces he will give away nearly all his fortune and drop off the Forbes ranking. Divorce from Melinda complicates the public story but not the scale of the pledge. He spends hours on calls about climate tech and pandemic preparedness. The Lakeside kid who wanted machine time ends as the world's most famous donor, still arguing about spreadsheets at seventy.",
+    image: "images/story/gates-pledge.webp",
+    tags: ["2021", "pledge", "wealth"]
+  }
+});
+
+// src/stories/bezos.ts
+var bezosStories = defineStories("Bezos", {
+  "0": {
+    title: "Born in Albuquerque to a teenage mother",
+    body: "Jeffrey Preston Jorgensen arrives in 1964 in a desert city that will later host his rocket pads. His mother Jacklyn is seventeen; his father leaves early. The family is scrappy, moving often, living on grit more than money. He will later say his grandfather on a Texas ranch taught him that problems are solvable if you stay calm and take them apart.",
+    image: "images/story/bezos-born.webp",
+    tags: ["Albuquerque", "1964", "childhood"]
+  },
+  "4": {
+    title: "Miguel Bezos adopts him and gives him a new name",
+    body: "His mother remarries a Cuban immigrant who fled Castro on a Operation Pedro Pan flight. Miguel Bezos adopts four-year-old Jeff and gives him his surname. The household becomes bilingual and disciplined. Jeff inherits a story about starting over in America with nothing but education and work. That narrative will later justify long hours and big bets.",
+    image: "images/story/bezos-name.webp",
+    tags: ["adoption", "1968", "family"]
+  },
+  "12": {
+    title: "A bedroom alarm to keep siblings out of his space",
+    body: "As a kid he rigs an electric alarm on his bedroom door to stop younger siblings from entering. He takes apart appliances to see how they work and puts some back together. Neighbors remember a intense, polite boy who already treats the house like a laboratory. The pattern is control of access, which becomes the business model of a lifetime.",
+    image: "images/story/bezos-bedroom.webp",
+    tags: ["childhood", "1976", "inventor"]
+  },
+  "18": {
+    title: "Valedictorian speech dreaming of space colonies",
+    body: "At Miami Palmetto High he graduates first in his class and tells classmates humanity should move industry off Earth and turn the planet into a park. Teachers think the speech is odd; he is serious. He goes to Princeton to study electrical engineering and computer science, not literature, because he wants tools to build systems, not essays about them.",
+    image: "images/story/bezos-valedictorian.webp",
+    tags: ["valedictorian", "1982", "space"]
+  },
+  "22": {
+    title: "Princeton and the pull toward Wall Street",
+    body: "He finishes Princeton summa cum laude in 1986 and joins a quant hedge fund called D.E. Shaw in New York. The firm uses computers to find edges in markets. Bezos rises fast because he combines math with operational hunger. He will later leave at thirty to start an internet bookstore, which colleagues think is insane. The safe path was already lucrative.",
+    image: "images/story/bezos-princeton.webp",
+    tags: ["Princeton", "1986", "D.E. Shaw"]
+  },
+  "30": {
+    title: "Quits finance and drives west to start Amazon",
+    body: "In 1994 he reads that web usage grows 2,300 percent a year and makes a list of products to sell online. Books win because there are millions of SKUs. He tells his boss he is leaving; his wife MacKenzie drives them to Seattle while he writes the business plan in the passenger seat. The company is named after the world's largest river. He expects it might fail.",
+    image: "images/story/bezos-amazon.webp",
+    tags: ["Amazon", "1994", "Seattle"]
+  },
+  "31": {
+    title: "The first book sold from a garage with a bell",
+    body: "Amazon.com goes live in July 1995. The first order is for Fluid Concepts and Creative Analogies. Employees ring a bell on every sale until sales volume makes it unbearable. Bezos packs boxes on the floor of a Bellevue garage. The site promises every book in print. Customers in rural towns discover a catalog bigger than any local shop.",
+    image: "images/story/bezos-first-book.webp",
+    tags: ["first sale", "1995", "books"]
+  },
+  "33": {
+    title: "Amazon IPOs while skeptics call it Amazon.bomb",
+    body: "The 1997 public offering raises capital to expand warehouses and lose money on purpose. Barron's later mocks the stock as Amazon.bomb. Bezos tells shareholders he cares about long-term market share, not quarterly profit. The letter becomes a cult document for founders who want permission to burn cash. Many will burn cash without building Amazon.",
+    image: "images/story/bezos-ipo.webp",
+    tags: ["IPO", "1997", "long term"]
+  },
+  "36": {
+    title: "Blue Origin founded in secret like a hedge against Earth",
+    body: "After watching Apollo documentaries as a child, he founds Blue Origin in 2000 with the motto Gradatim Ferociter, step by step ferociously. The goal is reusable rockets and eventually millions living in space. For years it is quieter than SpaceX. He sells Amazon stock to fund it. The bookstore king secretly wants to die on Mars, or at least launch there.",
+    image: "images/story/bezos-blue-origin.webp",
+    tags: ["Blue Origin", "2000", "rockets"]
+  },
+  "42": {
+    title: "AWS turns spare server capacity into the cloud",
+    body: "Amazon Web Services launches in 2006, renting the infrastructure built for retail to any developer with a credit card. The idea seems boring compared to shopping. It becomes the profit engine that funds everything else. Startups stop buying servers; the CIA buys cloud too. Bezos turns an internal efficiency hack into the operating system of the internet economy.",
+    image: "images/story/bezos-aws.webp",
+    tags: ["AWS", "2006", "cloud"]
+  },
+  "49": {
+    title: "Buys The Washington Post with personal cash",
+    body: "In 2013 he purchases the Post for $250 million personally, not through Amazon. Journalists worry the everything store owner will soften coverage. He installs new leadership and pushes digital subscriptions. The paper survives the collapse of print ads partly because a billionaire hobbyist treats news like a long-term Prime membership for democracy.",
+    image: "images/story/bezos-wapo.webp",
+    tags: ["Washington Post", "2013", "media"]
+  },
+  "53": {
+    title: "Whole Foods and the conquest of the grocery aisle",
+    body: "Amazon buys Whole Foods in 2017 for $13.7 billion, shocking brick-and-mortar rivals. Prime members get discounts; Alexa sits in kitchens. Critics see vertical integration of shopping from click to organic kale. Bezos sees another category to absorb. The company that started with books now wants everything in your house to arrive tomorrow.",
+    image: "images/story/bezos-whole-foods.webp",
+    tags: ["Whole Foods", "2017", "retail"]
+  },
+  "54": {
+    title: "Passes Gates as the world's richest person",
+    body: "Rising Amazon stock makes Bezos the wealthiest human on Forbes lists in 2018. Tabloids cover his biceps and his divorce. He remains awkward in interviews but ruthless in negotiations. The valedictorian who wanted space colonies now has money comparable to small nations. He will say the fortune is for Blue Origin. Investors say it is for everything.",
+    image: "images/story/bezos-richest.webp",
+    tags: ["2018", "wealth", "Forbes"]
+  },
+  "57": {
+    title: "Steps down as CEO and rides New Shepard to space",
+    body: "In 2021 he hands Amazon's CEO role to Andy Jassy and flies on Blue Origin's first crewed suborbital flight days later. Hat critics call it a vanity ride; he calls it proof of concept. He leaves daily retail operations to focus on rockets, climate fund grants, and owning a century-old newspaper. The garage bell has become a rocket roar.",
+    image: "images/story/bezos-space.webp",
+    tags: ["2021", "New Shepard", "CEO exit"]
+  }
+});
+
+// src/stories/huang.ts
+var huangStories = defineStories("Huang", {
+  "0": {
+    title: "Born in Tainan as Taiwan's chip age begins",
+    body: "Jen-Hsun Huang arrives in 1963 in a southern Taiwanese city while the island is turning into an electronics factory for the world. His family will soon send him abroad for opportunity they cannot find at home. He grows up between cultures before Silicon Valley has a name for that experience. The boy who will sell GPUs to every AI lab starts where fabs are dreams and rice fields are real.",
+    image: "images/story/huang-born.webp",
+    tags: ["Tainan", "1963", "Taiwan"]
+  },
+  "9": {
+    title: "Shipped to Kentucky with a dictionary and a suitcase",
+    body: "At nine he and his brother join an uncle in the United States and land at a Oneida Baptist boarding school in Kentucky. He knows little English and cleans toilets while classmates play sports. Years later he jokes that Nvidia's leather jacket persona was forged in a southern dorm where he learned to survive by working harder than everyone else in the room.",
+    image: "images/story/huang-kentucky.webp",
+    tags: ["Kentucky", "1973", "immigration"]
+  },
+  "15": {
+    title: "Dishwasher at Denny's before he designs chips",
+    body: "In high school he works the graveyard shift at Denny's, scrubbing plates and watching short-order cooks move fast under pressure. He meets his future wife Lori in a lab at Oregon State. The future CEO of a trillion-dollar company learns service industry humility before he learns semiconductor layout. He will later say no task is beneath you if you want to lead engineers.",
+    image: "images/story/huang-dennys.webp",
+    tags: ["Denny's", "1978", "Oregon State"]
+  },
+  "21": {
+    title: "Electrical engineering degree and the LSI Logic path",
+    body: "He graduates Oregon State in 1984 with a degree in electrical engineering and joins AMD designing microprocessors. Later he moves to LSI Logic, a hot Silicon Valley chip design house. Sun Microsystems founder Scott McNealy becomes a mentor. Huang learns that the right architecture at the right moment matters more than incremental speed. The lesson will define Nvidia decades later.",
+    image: "images/story/huang-oregon.webp",
+    tags: ["AMD", "1984", "LSI Logic"]
+  },
+  "30": {
+    title: "Three founders at a Denny's booth sketch Nvidia",
+    body: "In 1993 he co-founds Nvidia with Chris Malachowsky and Curtis Priem at a Denny's in San Jose, ironically the same chain where he washed dishes. They bet on accelerated 3D graphics for PCs. The name suggests envy, as in to envy someone's frame rate. Early products nearly kill the company. Huang survives by firing half the staff and betting everything on a new chip called RIVA 128.",
+    image: "images/story/huang-nvidia-diner.webp",
+    tags: ["Nvidia", "1993", "Denny's"]
+  },
+  "36": {
+    title: "Invents the GPU category and takes Nvidia public",
+    body: "The GeForce 256 ships in 1999 marketed as the world's first GPU, a processor built to render triangles fast. Gamers want it; PC makers need it. Nvidia IPOs and rides the gaming boom. Huang talks about parallel processing while investors think about Quake frame rates. The chip is a toy engine that secretly trains for a war about matrices and neural nets.",
+    image: "images/story/huang-gpu.webp",
+    tags: ["GPU", "1999", "GeForce"]
+  },
+  "43": {
+    title: "CUDA opens the GPU to scientists and madmen",
+    body: "In 2006 Nvidia launches CUDA, software that lets researchers run general compute on graphics chips. Wall Street yawns; academics experiment. Oil companies simulate reservoirs; physicists model particles. Huang keeps funding the platform through years when it does not pay off on earnings calls. He is betting that parallel math will matter more than faster pixels. He will be right on a delay of six years.",
+    image: "images/story/huang-cuda.webp",
+    tags: ["CUDA", "2006", "parallel compute"]
+  },
+  "49": {
+    title: "AlexNet on Nvidia hardware wakes the industry",
+    body: "In 2012 a Toronto team wins ImageNet using deep learning on Nvidia GPUs. Error rates plunge; the AI winter ends. Huang puts Nvidia sales teams on every university lab door. What was a gaming company becomes the shovel seller in a gold rush nobody fully sees yet. He tells engineers to optimize for tensor operations before most CEOs know what a tensor is.",
+    image: "images/story/huang-deep-learning.webp",
+    tags: ["AlexNet", "2012", "deep learning"]
+  },
+  "53": {
+    title: "Hand-delivers the first DGX supercomputer to OpenAI",
+    body: "In 2016 Huang personally delivers the first DGX-1 AI supercomputer to OpenAI's San Francisco office. Photos show him in his leather jacket beside Elon Musk and Sam Altman. The box is marketed as an AI appliance the size of a suitcase stack. The gesture is marketing and strategy: bind the hottest lab to your hardware before Google builds its own chips.",
+    image: "images/story/huang-openai-delivery.webp",
+    tags: ["DGX", "2016", "OpenAI"]
+  },
+  "59": {
+    title: "ChatGPT mania empties shelves of H100 chips",
+    body: "After ChatGPT explodes in 2022, every hyperscaler orders Nvidia data-center GPUs faster than TSMC can fab them. Lead times stretch; prices soar. Huang keynotes in a black jacket like a rock star explaining H100 bandwidth to stadium crowds. Competitors announce rivals years late. Nvidia becomes the choke point of the AI age the way Intel once was for PCs.",
+    image: "images/story/huang-ai-boom.webp",
+    tags: ["H100", "2022", "ChatGPT boom"]
+  },
+  "60": {
+    title: "Nvidia crosses toward a trillion-dollar valuation",
+    body: "In 2023 the stock more than triples on AI demand forecasts. Nvidia briefly joins Apple and Microsoft in the trillion-dollar club. A dishwasher kid from Denny's now runs the company every government and startup must court for chips. Huang warns about export controls and China risk while taking victory laps on stage. The GPU was a toy until the world needed a brain.",
+    image: "images/story/huang-trillion.webp",
+    tags: ["2023", "trillion", "AI chips"]
+  }
+});
+
+// src/stories/musk.ts
+var muskStories = defineStories("Musk", {
+  "0": {
+    title: "Born in Pretoria to a model and an engineer",
+    body: "Elon Reeve Musk arrives in 1971 in apartheid South Africa, son of Errol Musk, an electromechanical engineer, and Maye, a dietitian and model. The family is sharp and volatile. Young Elon reads encyclopedias for fun and drifts into daydreams teachers mistake for rudeness. He will later say the books he devoured as a child were escape routes from a childhood he does not romanticize.",
+    image: "images/story/musk-born.webp",
+    tags: ["Pretoria", "1971", "childhood"]
+  },
+  "10": {
+    title: "Teaches himself to code and sells Blastar for five hundred dollars",
+    body: "At ten he gets a Commodore VIC-20 and learns programming from manuals. By twelve he writes Blastar, a space shooter, and sells the source code to a PC magazine for five hundred dollars. The game is primitive but the transaction matters: he discovers software can be product. Space themes and commerce arrive in the same package before puberty ends.",
+    image: "images/story/musk-blastar.webp",
+    tags: ["Blastar", "1983", "programming"]
+  },
+  "12": {
+    title: "Hospitalized after a gang beating at school",
+    body: "Bullies at Bryanston High ambush him, throw him down stairs, and beat him until he is hospitalized. His father later moves him to Pretoria Boys. Musk will cite the violence as one reason he learned to endure pain and perform under threat. The same stubbornness that kept him on the floor will later keep rockets on the pad after explosions.",
+    image: "images/story/musk-bullied.webp",
+    tags: ["bullying", "1983", "South Africa"]
+  },
+  "17": {
+    title: "Leaves South Africa to avoid apartheid military service",
+    body: "At seventeen he emigrates to Canada using his mother's citizenship, working odd jobs on farms and lumber mills before reaching university. He avoids compulsory service in an army enforcing apartheid, which he opposed. The move is the first of many all-in bets on a future far from where he started. America is still one hop away.",
+    image: "images/story/musk-canada.webp",
+    tags: ["Canada", "1988", "emigration"]
+  },
+  "24": {
+    title: "Drops out of Stanford after two days for the internet gold rush",
+    body: "He enrolls at Stanford for a PhD in applied physics in 1995 and leaves after forty-eight hours to chase the dot-com wave. With his brother Kimbal he founds Zip2, putting Yellow Pages businesses online when many merchants still lack email. They sleep at the office and shower at the YMCA. Investors later call it grim; Musk calls it normal.",
+    image: "images/story/musk-zip2.webp",
+    tags: ["Zip2", "1995", "Stanford dropout"]
+  },
+  "28": {
+    title: "Sells Zip2, then builds what becomes PayPal",
+    body: "Compaq buys Zip2 for $307 million in 1999; Musk gets $22 million and immediately starts X.com, an online bank. It merges with Confinity and becomes PayPal. He fights internally over Windows versus Unix and branding. eBay buys PayPal for $1.5 billion in 2002. At thirty-one he is rich enough to fund rockets personally, which is exactly what he does.",
+    image: "images/story/musk-paypal.webp",
+    tags: ["PayPal", "1999", "eBay sale"]
+  },
+  "31": {
+    title: "Founds SpaceX because rockets cost too much",
+    body: "After failing to buy refurbished Russian rockets for a Mars payload stunt, he founds SpaceX in 2002 to cut launch costs by building in-house. Engineers think he is a rich tourist. He hires aggressively, demands impossible schedules, and learns orbital mechanics from textbooks on planes. The first three Falcon 1 flights fail. A fourth success in 2008 saves the company from bankruptcy.",
+    image: "images/story/musk-spacex.webp",
+    tags: ["SpaceX", "2002", "Falcon"]
+  },
+  "33": {
+    title: "Leads the Series A that saves Tesla from dying in the crib",
+    body: "Martin Eberhard and Marc Tarpenning founded Tesla; Musk leads the 2004 investment round and becomes chairman. He pushes a luxury Roadster first to fund a mass-market car later. Silicon Valley VCs laugh at hardware. He does not care. Tesla becomes his second full-time obsession alongside SpaceX, two companies that could kill each other for his attention.",
+    image: "images/story/musk-tesla.webp",
+    tags: ["Tesla", "2004", "Roadster"]
+  },
+  "37": {
+    title: "Christmas 2008 when both companies nearly die",
+    body: "SpaceX fails launches; Tesla burns cash during the financial crisis. Musk is down to personal loans and divorce stress. On December 23 SpaceX's Falcon 1 reaches orbit; days later Tesla closes a NASA cargo contract and a funding round. He calls it the worst year of his life. Surviving it convinces him he can walk through fire if the mission is big enough.",
+    image: "images/story/musk-2008.webp",
+    tags: ["2008", "near bankruptcy", "NASA"]
+  },
+  "41": {
+    title: "Dragon docks with the space station",
+    body: "In 2012 SpaceX's Dragon capsule berths with the International Space Station, the first commercial spacecraft to do so. NASA astronauts grab it with a robotic arm. A company founded by a PayPal millionaire now resupplies orbit. Musk tweets and cries on camera. The milestone proves private rocketry can do what only governments did before.",
+    image: "images/story/musk-dragon.webp",
+    tags: ["Dragon", "2012", "ISS"]
+  },
+  "44": {
+    title: "Lands an orbital booster upright on a barge",
+    body: "After years of explosions mocked online as Rapid Unscheduled Disassembly, Falcon 9's first stage lands on a drone ship in 2016. Reusability was the whole economic thesis. Competitors said impossible; Musk said math. The landed booster becomes a museum piece and a meme. Launch costs begin to fall toward the dream of making humanity multiplanetary affordable.",
+    image: "images/story/musk-landing.webp",
+    tags: ["reusable rocket", "2016", "Falcon 9"]
+  },
+  "47": {
+    title: "Model 3 production hell and the tent in Fremont",
+    body: "Tesla bets the company on a $35,000 electric sedan for masses. Manufacturing breaks; Musk sleeps on the factory floor and builds a line in a tent to hit quotas. Short sellers predict bankruptcy; fans camp in parking lots to buy cars. By 2018 Tesla is shipping Model 3s at volume that forces every legacy automaker to announce EV plans years late.",
+    image: "images/story/musk-model3.webp",
+    tags: ["Model 3", "2018", "production hell"]
+  },
+  "51": {
+    title: "Buys Twitter and renames the town square X",
+    body: "In 2022 he completes a $44 billion purchase of Twitter after months of legal warfare over whether to walk away. He fires executives by tweet, renames the platform X, and declares himself a free speech absolutist while advertisers flee. Fans see a culture war weapon; critics see chaos. Either way he owns the megaphone he used to build Tesla and SpaceX without ads.",
+    image: "images/story/musk-twitter.webp",
+    tags: ["Twitter", "2022", "X"]
+  },
+  "52": {
+    title: "Launches xAI as a counterweight in the model wars",
+    body: "In 2023 he forms xAI to build artificial intelligence outside what he calls woke safety culture at OpenAI, which he co-founded and left. He positions Grok as a truth-seeking chatbot with fewer guardrails. The move reunites his interests in chips, data, and narrative control. The man who warned AI could end civilization now races to ship his own model.",
+    image: "images/story/musk-xai.webp",
+    tags: ["xAI", "2023", "Grok"]
+  },
+  "55-spacex-ipo": {
+    title: "SpaceX goes public in the largest IPO in history",
+    body: "In 2026 SpaceX lists on Nasdaq as SPCX in a $75 billion offering that shocks Wall Street. Starlink subscribers and Starship contracts finally meet public-market hunger for the company Musk kept private for decades. Trading opens to retail frenzy and institutional fights for allocation. The boy who sold Blastar now runs a public rocket empire.",
+    image: "images/story/musk-spacex-ipo.webp",
+    tags: ["SpaceX IPO", "2026", "SPCX"]
+  },
+  "55-trillionaire": {
+    title: "First person worth a trillion dollars on paper",
+    body: "SPCX surges past a $2 trillion market cap and Musk's combined stakes make him history's first trillionaire on paper. Tabloids recycle Mars quotes from his valedictorian-era dreams. Critics see concentration of power; fans see proof that physics plus will can rewrite wealth charts. The Pretoria kid who read Isaac Asimov now owns numbers previously reserved for nations.",
+    image: "images/story/musk-trillionaire.webp",
+    tags: ["trillionaire", "2026", "wealth"]
+  }
+});
+
+// src/stories/page.ts
+var pageStories = defineStories("Page", {
+  "0": {
+    title: "Born in East Lansing among Michigan State computers",
+    body: "Lawrence Edward Page arrives in 1973 in a college town where his father is a computer science professor and his mother teaches programming. The house smells of punch cards and late grading. He grows up believing invention is a normal job, not a miracle. Quiet and curious, he will later say he wanted to build things that matter at scale, not win arguments in seminars.",
+    image: "images/story/page-born.webp",
+    tags: ["East Lansing", "1973", "childhood"]
+  },
+  "6": {
+    title: "Grows up playing in university labs",
+    body: "As a boy he tinkers in Michigan State labs while his parents work. He sees machines as toys with consequences. Friends remember a kid who asked how everything worked, then took it apart. The Midwestern upbringing keeps him less flashy than coastal peers but no less ambitious. He learns patience before he learns PageRank.",
+    image: "images/story/page-michigan.webp",
+    tags: ["Michigan State", "1979", "childhood"]
+  },
+  "12": {
+    title: "Reads about Nikola Tesla and chooses invention",
+    body: "At twelve he reads a biography of Nikola Tesla and fixates on the tragedy of genius without business impact. He decides he will not let inventions die in notebooks. The story becomes personal mythology he repeats in speeches. Tesla's arc warns him; Edison's distribution wins his sympathy. Search will later be his grid.",
+    image: "images/story/page-tesla-book.webp",
+    tags: ["Nikola Tesla", "1985", "inspiration"]
+  },
+  "22": {
+    title: "Meets Sergey Brin at Stanford orientation",
+    body: "Page enrolls at Stanford for a PhD in computer science in 1995 and meets Brin, an outgoing Moscow-born mathematician. They argue in grad student social circles, then collaborate. Brin challenges every idea; Page refines them. The odd couple dynamic produces more honesty than politeness. Their first project is not search but a citation web for academic papers.",
+    image: "images/story/page-brin.webp",
+    tags: ["Stanford", "1995", "Sergey Brin"]
+  },
+  "23": {
+    title: "PageRank treats links as votes of trust",
+    body: "Page's dissertation idea ranks web pages by treating inbound links as endorsements, like academic citations scaled to the whole internet. He codes BackRub on Stanford servers until the crawl threatens campus bandwidth. The math is elegant: important pages are linked by important pages. He does not yet know he has found the organizing principle of the web.",
+    image: "images/story/page-pagerank.webp",
+    tags: ["PageRank", "1996", "BackRub"]
+  },
+  "25": {
+    title: "Google incorporated in a Menlo Park garage",
+    body: "In 1998 they incorporate Google, a name borrowed from googol, the digit one followed by a hundred zeros. Sun co-founder Andy Bechtolsheim writes a $100,000 check before incorporation papers exist. They operate out of Susan Wojcicki's garage on Santa Margarita Avenue. The homepage stays sparse on purpose: one box, one button, speed above all.",
+    image: "images/story/page-garage.webp",
+    tags: ["Google", "1998", "garage"]
+  },
+  "28": {
+    title: "Brings in Eric Schmidt as adult supervision",
+    body: "Venture capitalists demand experienced management as Google grows chaotic and brilliant. Page and Brin hire Eric Schmidt, a Novell CEO, as chairman in 2001 and later CEO while they learn to scale. Page keeps product vision; Schmidt runs the business machine. The arrangement lets founders stay weird while revenue compounds from AdWords auctions nobody outside the building fully understood yet.",
+    image: "images/story/page-schmidt.webp",
+    tags: ["Eric Schmidt", "2001", "CEO"]
+  },
+  "31": {
+    title: "Google IPO and the don't-be-evil era",
+    body: "The 2004 IPO uses a Dutch auction to spread shares beyond Wall Street favorites. Founders write a letter about making the world better without doing evil, which ages into irony as scrutiny grows. Page becomes a billionaire overnight but still prefers whiteboards to galas. Search is now the front door of the internet; Google becomes a verb.",
+    image: "images/story/page-ipo.webp",
+    tags: ["IPO", "2004", "don't be evil"]
+  },
+  "32": {
+    title: "Buys Android before smartphones dominate",
+    body: "In 2005 Google acquires a small Palo Alto startup building a mobile operating system. Page sees that phones will become pocket computers and cannot let Microsoft or Nokia own the layer. Android launches free to manufacturers, fracturing the iPhone-only future Apple wanted. The bet looks generous until ads inside mobile apps repay the investment a thousand times over.",
+    image: "images/story/page-android.webp",
+    tags: ["Android", "2005", "mobile"]
+  },
+  "38": {
+    title: "Returns as CEO to unify a sprawling empire",
+    body: "Page retakes the CEO role in 2011 as Google sprawls into maps, video, email, and self-driving cars. He kills stagnant products ruthlessly and pushes moonshots into the same house as search ads. Larry Page the shy engineer must now manage politics Larry Page the founder avoided. He bets the company can invent the future without breaking the cash machine.",
+    image: "images/story/page-return.webp",
+    tags: ["CEO return", "2011", "moonshots"]
+  },
+  "42": {
+    title: "Alphabet restructuring separates bets from search",
+    body: "In 2015 he announces Alphabet, a holding company where Google is one subsidiary alongside Waymo, Verily, and Other Bets. Investors get transparency; founders get freedom to fail loudly. Page steps up as Alphabet CEO while Sundar Pichai runs Google. The move codifies what insiders already knew: search pays for everything else they want to try.",
+    image: "images/story/page-alphabet.webp",
+    tags: ["Alphabet", "2015", "restructuring"]
+  },
+  "46": {
+    title: "Steps back from daily leadership but keeps control",
+    body: "In 2019 Page and Brin leave executive roles while retaining voting control through special shares. Pichai runs Google and Alphabet day to day. Page retreats to kite surfing, flying cars, and quiet investing. He remains one of the most influential people on earth while rarely speaking in public. The garage kid achieved scale beyond Tesla's dreams and then vanished from the stage.",
+    image: "images/story/page-step-back.webp",
+    tags: ["2019", "retirement", "control"]
+  }
+});
+
+// src/stories/zuckerberg.ts
+var zuckerbergStories = defineStories("Zuckerberg", {
+  "0": {
+    title: "Born in White Plains to a dentist and a psychiatrist",
+    body: "Mark Elliot Zuckerberg arrives in 1984 in suburban New York, the second of four children. His father runs a dental practice downstairs; his mother is a psychiatrist. They hire tutors for math and Latin. Mark builds games and messaging tools before most kids have email. The household rewards building over sports, which shapes a founder who treats social life like an engineering problem.",
+    image: "images/story/zuckerberg-born.webp",
+    tags: ["White Plains", "1984", "childhood"]
+  },
+  "12": {
+    title: "ZuckNet wires the house before the world",
+    body: "At twelve he writes ZuckNet, a messaging program linking his father's dental office computers to the family home. Patients hear pings when appointments change. It is primitive social networking in a Victorian house. His father shows it off to patients. Mark learns that connecting people digitally feels like magic even when the network is only two rooms apart.",
+    image: "images/story/zuckerberg-zucknet.webp",
+    tags: ["ZuckNet", "1996", "messaging"]
+  },
+  "18": {
+    title: "Synapse and the AOL job he never took",
+    body: "In high school he builds Synapse, a music player that learns your taste. Microsoft and AOL offer jobs and acquisition talks. He goes to Harvard instead, reputation already preceding him as a hacker who might drop out later. Synapse foreshadows feeds that predict what you want before you ask. The pattern is capture attention with software, then let giants come knocking.",
+    image: "images/story/zuckerberg-synapse.webp",
+    tags: ["Synapse", "2002", "Harvard"]
+  },
+  "19": {
+    title: "Facemash, then thefacebook in Kirkland House",
+    body: "A hot-or-not site called Facemash gets him in trouble with administration. Months later he launches thefacebook from his dorm for Harvard students only, verifying users with .edu emails. Roommates help spread it to Yale and Stanford. The name drops the the eventually; the exclusivity drops faster. Within a year the network effect is a physics problem he cannot stop.",
+    image: "images/story/zuckerberg-harvard.webp",
+    tags: ["Facebook", "2004", "Harvard"]
+  },
+  "20": {
+    title: "Drops out and moves to Silicon Valley",
+    body: "He leaves Harvard for Palo Alto summer housing with servers in the living room. Investors like Peter Thiel write checks; Sean Parker plays cool advisor. Lawsuits from Cameron and Tyler Winklevoss claim he stole their idea. Zuckerberg says ideas are cheap and execution is everything. The legal fight will drag for years while Facebook becomes the campus he never graduated from.",
+    image: "images/story/zuckerberg-dropout.webp",
+    tags: ["dropout", "2005", "Palo Alto"]
+  },
+  "22": {
+    title: "Opens to everyone and launches News Feed",
+    body: "Facebook drops the college-only requirement in 2006 and adds News Feed, an algorithmic river of friends' updates. Users revolt with groups titled RIP News Feed; Zuckerberg apologizes and keeps the product. Engagement explodes. The feed teaches him that people say they want privacy but click on gossip. The business model of attention begins to take shape.",
+    image: "images/story/zuckerberg-newsfeed.webp",
+    tags: ["News Feed", "2006", "open signup"]
+  },
+  "23": {
+    title: "Turns down a billion dollars from Yahoo",
+    body: "Yahoo offers roughly $1 billion to buy Facebook in 2007. Zuckerberg, barely twenty-three, declines. Board members and executives disagree; he holds firm believing the social graph will be worth more. The decision enters startup lore as either genius or luck. Within five years the company is worth many times that offer and still growing.",
+    image: "images/story/zuckerberg-yahoo.webp",
+    tags: ["Yahoo offer", "2007", "billion"]
+  },
+  "28": {
+    title: "IPO and the Instagram purchase for a billion",
+    body: "Facebook goes public in 2012 in a messy first day of trading but still the biggest tech IPO of its era. Weeks earlier it buys Instagram for $1 billion when the photo app has thirteen employees. Critics call it panic; Zuckerberg calls it buying the future of mobile photos. The acquisition may be the best bargain in Silicon Valley history.",
+    image: "images/story/zuckerberg-ipo.webp",
+    tags: ["IPO", "2012", "Instagram"]
+  },
+  "30": {
+    title: "WhatsApp and Oculus in the same shopping spree",
+    body: "In 2014 Facebook pays $19 billion for WhatsApp and $2 billion for Oculus VR. Messaging and virtual reality land under one roof. Zuckerberg says he is building a family of apps and preparing for a platform shift beyond phones. Wall Street questions the prices; users keep tapping. He is assembling pieces of a metaverse before the word is fashionable.",
+    image: "images/story/zuckerberg-whatsapp.webp",
+    tags: ["WhatsApp", "Oculus", "2014"]
+  },
+  "34": {
+    title: "Congressional hearings after Cambridge Analytica",
+    body: "In 2018 revelations about Cambridge Analytica harvesting user data for political targeting force Zuckerberg to testify before Congress. He wears a suit instead of a hoodie and answers slowly. Senators ask how Facebook makes money if it is free. The line becomes a meme. Trust erodes globally; regulators circle. He promises fixes while engagement stays high.",
+    image: "images/story/zuckerberg-congress.webp",
+    tags: ["Cambridge Analytica", "2018", "Congress"]
+  },
+  "37": {
+    title: "Renames the company Meta and bets on VR",
+    body: "In 2021 Facebook Inc becomes Meta Platforms, signaling a pivot toward the metaverse. He demos legless avatars in Horizon Worlds while Reality Labs burns billions. Employees question the timing as TikTok eats attention. Zuckerberg believes the next platform after mobile is immersive. The bet is either visionary or an expensive distraction from aging blue app growth.",
+    image: "images/story/zuckerberg-meta.webp",
+    tags: ["Meta", "2021", "metaverse"]
+  },
+  "39": {
+    title: "Open-sources Llama and races toward AI",
+    body: "By 2023 Meta releases Llama family models to researchers and pivots hard into generative AI after being late to mobile payments and almost late to stories format. Zuckerberg posts training cluster photos and efficiency benchmarks. The company that connected friends now wants to power chatbots inside every app it owns. Social and intelligence merge on his roadmap.",
+    image: "images/story/zuckerberg-ai.webp",
+    tags: ["Llama", "2023", "AI pivot"]
+  }
+});
+
+// src/stories/altman.ts
+var altmanStories = defineStories("Altman", {
+  "0": {
+    title: "Born in Chicago, raised in St. Louis",
+    body: "Samuel Harris Altman arrives in 1985 in Chicago and grows up in St. Louis, Missouri, the eldest of four siblings in a middle-class Jewish family. His parents are dermatologists. He shows early talent with computers and debate. The Midwest upbringing keeps him polite in person while his ambitions scale to planetary stakes later.",
+    image: "images/story/altman-born.webp",
+    tags: ["Chicago", "St. Louis", "1985"]
+  },
+  "8": {
+    title: "First Macintosh and a childhood on the keyboard",
+    body: "At eight he gets an Apple Macintosh and learns to program on it. The machine becomes his favorite toy and escape. While other kids play sports he builds worlds in code. The Mac brand will circle back when he later partners with Apple on AI products worth billions. The through-line is a kid who trusted computers more than institutions.",
+    image: "images/story/altman-mac.webp",
+    tags: ["Macintosh", "1993", "childhood"]
+  },
+  "16": {
+    title: "Comes out as gay at a conservative Missouri school",
+    body: "In high school he comes out publicly at a school assembly in a state where that takes nerve in 2001. He becomes an advocate for LGBTQ students and learns to speak calmly under hostile attention. The experience trains him for boardrooms and Senate hearings where everyone watches how he holds his face. Courage becomes a management style.",
+    image: "images/story/altman-coming-out.webp",
+    tags: ["coming out", "2001", "high school"]
+  },
+  "19": {
+    title: "Drops out of Stanford to start Loopt",
+    body: "He enters Stanford in 2003, studies computer science, and leaves in 2005 to found Loopt, a location-sharing app for phones before smartphones were ubiquitous. Y Combinator funds the company in its first batch. Loopt never becomes Facebook-scale but sells for $43 million. Altman learns startup mechanics from the inside: pitch, ship, pivot, exit.",
+    image: "images/story/altman-loopt.webp",
+    tags: ["Loopt", "2005", "Stanford dropout"]
+  },
+  "26": {
+    title: "Joins Y Combinator as a partner",
+    body: "Paul Graham invites him back to Y Combinator as a partner in 2011. Altman reads thousands of applications and writes essays about startup ethics and nuclear energy. Founders see him as young but frighteningly direct. He pushes them toward ambition bigger than SaaS widgets. The job is kingmaker before he becomes emperor of AI.",
+    image: "images/story/altman-yc-partner.webp",
+    tags: ["Y Combinator", "2011", "partner"]
+  },
+  "28": {
+    title: "Named president of Y Combinator at twenty-eight",
+    body: "In 2014 he succeeds Graham as YC president while still under thirty. He expands batches, starts continuity funds, and preaches that hard tech matters again. Silicon Valley listens because YC minted Airbnb and Dropbox. Altman uses the bully pulpit to argue about basic income experiments and AI risk years before ChatGPT. He is building a network graph of founders who owe him favors.",
+    image: "images/story/altman-yc-president.webp",
+    tags: ["YC president", "2014", "startups"]
+  },
+  "30": {
+    title: "Co-founds OpenAI with Musk and others",
+    body: "In 2015 he co-founds OpenAI as a nonprofit research lab with Elon Musk, Ilya Sutskever, and others, fearing AGI could go wrong if only corporations build it. The mission is safe beneficial AI for humanity. Musk later departs; Altman stays. The lab publishes papers and trains models quietly while the world still thinks AI means Siri jokes.",
+    image: "images/story/altman-openai-founded.webp",
+    tags: ["OpenAI", "2015", "nonprofit"]
+  },
+  "34": {
+    title: "Leaves YC to run OpenAI full time",
+    body: "In 2019 he steps down as YC president to focus on OpenAI as CEO. The organization shifts toward a capped-profit structure to raise billions for compute. Purists accuse him of selling out the nonprofit dream; realists say GPUs cost more than ideals. Altman spends his days fundraising from Microsoft and touring data centers like cathedrals of the new religion.",
+    image: "images/story/altman-openai-ceo.webp",
+    tags: ["2019", "CEO", "Microsoft"]
+  },
+  "37": {
+    title: "ChatGPT launches and breaks the internet",
+    body: "On November 30, 2022 OpenAI releases ChatGPT to the public as a free research preview. Five days later a million people have tried it. Students write essays; programmers debug code; journalists panic. Altman tweets measured warnings while usage curves go vertical. A demo product becomes the fastest-growing consumer app in history and reorders every industry meeting agenda on earth.",
+    image: "images/story/altman-chatgpt.webp",
+    tags: ["ChatGPT", "2022", "launch"]
+  },
+  "38-fired": {
+    title: "Fired by the board on a videoconference Friday",
+    body: "On November 17, 2023 OpenAI's board fires Altman on a Google Meet call while he is at a developer conference. They cite lack of candor without public detail. Employees threaten mass resignation; Microsoft offers him a role; investors revolt. Five chaotic days follow with two interim CEOs and midnight negotiations. He returns as CEO with a new board. Silicon Valley has never seen a corporate coup reversed so fast.",
+    image: "images/story/altman-fired.webp",
+    tags: ["board coup", "2023", "reinstated"]
+  },
+  "38-face": {
+    title: "Becomes the calm face of an anxious AI age",
+    body: "After reinstatement Altman tours world capitals discussing regulation, superintelligence timelines, and OpenAI's partnership with Microsoft. He testifies, fundraises, and launches GPT-4 class models while critics ask if one company should hold the keys. He speaks in short sentences about exponential curves and long sentences about safety committees. Love him or fear him, he is the person journalists call when AI news breaks.",
+    image: "images/story/altman-ai-face.webp",
+    tags: ["2023", "AI policy", "public face"]
+  }
+});
+
 // src/app.ts
 function byId(id) {
   const el = document.getElementById(id);
@@ -1500,107 +2062,107 @@ var P = [
     { a: 56, y: "2011", t: "Dies of cancer; Apple the world's most valued firm", death: 1, story: jobsStories["56"] }
   ] },
   { n: "Bill Gates", s: "Bill Gates", slug: "gates", d: "invent", b: 1955, x: null, place: "Seattle, USA", ev: [
-    { a: 0, y: "1955", t: "Born in Seattle, Washington" },
-    { a: 13, y: "1968", t: "Starts programming on a school terminal" },
-    { a: 15, y: "1970", t: "Writes a program to schedule classes; tweaks it for more girls" },
-    { a: 17, y: "1972", t: "Co-founds Traf-O-Data to read traffic tapes" },
-    { a: 19, y: "1975", t: "Drops out of Harvard to found Microsoft", big: 1 },
-    { a: 25, y: "1980", t: "Licenses an operating system to IBM", big: 1 },
-    { a: 30, y: "1985", t: "Ships the first version of Windows", big: 1 },
-    { a: 31, y: "1986", t: "Takes Microsoft public; soon a billionaire" },
-    { a: 40, y: "1995", t: "Windows 95 and the internet arrive together", big: 1 },
-    { a: 43, y: "1998", t: "The US sues Microsoft over its monopoly" },
-    { a: 45, y: "2000", t: "Starts the Gates Foundation with his wife", big: 1 },
-    { a: 53, y: "2008", t: "Leaves daily work to give away his fortune", big: 1 },
-    { a: 66, y: "2021", t: "Pledges to drop off the world's richest list" }
+    { a: 0, y: "1955", t: "Born in Seattle, Washington", story: gatesStories["0"] },
+    { a: 13, y: "1968", t: "Starts programming on a school terminal", story: gatesStories["13"] },
+    { a: 15, y: "1970", t: "Writes a program to schedule classes; tweaks it for more girls", story: gatesStories["15"] },
+    { a: 17, y: "1972", t: "Co-founds Traf-O-Data to read traffic tapes", story: gatesStories["17"] },
+    { a: 19, y: "1975", t: "Drops out of Harvard to found Microsoft", big: 1, story: gatesStories["19"] },
+    { a: 25, y: "1980", t: "Licenses an operating system to IBM", big: 1, story: gatesStories["25"] },
+    { a: 30, y: "1985", t: "Ships the first version of Windows", big: 1, story: gatesStories["30"] },
+    { a: 31, y: "1986", t: "Takes Microsoft public; soon a billionaire", story: gatesStories["31"] },
+    { a: 40, y: "1995", t: "Windows 95 and the internet arrive together", big: 1, story: gatesStories["40"] },
+    { a: 43, y: "1998", t: "The US sues Microsoft over its monopoly", story: gatesStories["43"] },
+    { a: 45, y: "2000", t: "Starts the Gates Foundation with his wife", big: 1, story: gatesStories["45"] },
+    { a: 53, y: "2008", t: "Leaves daily work to give away his fortune", big: 1, story: gatesStories["53"] },
+    { a: 66, y: "2021", t: "Pledges to drop off the world's richest list", story: gatesStories["66"] }
   ] },
   { n: "Jeff Bezos", s: "Jeff Bezos", slug: "bezos", d: "invent", b: 1964, x: null, place: "Albuquerque, USA", ev: [
-    { a: 0, y: "1964", t: "Born in Albuquerque, New Mexico" },
-    { a: 4, y: "1968", t: "His mother remarries; he takes the name Bezos" },
-    { a: 12, y: "1976", t: "Installs an alarm on his bedroom to keep siblings out" },
-    { a: 18, y: "1982", t: "Valedictorian; dreams of space colonies in his speech" },
-    { a: 22, y: "1986", t: "Graduates from Princeton in computer science" },
-    { a: 30, y: "1994", t: "Quits Wall Street and founds Amazon", big: 1 },
-    { a: 31, y: "1995", t: "Amazon sells its first book online" },
-    { a: 33, y: "1997", t: "Takes Amazon public" },
-    { a: 36, y: "2000", t: "Founds the rocket company Blue Origin", big: 1 },
-    { a: 42, y: "2006", t: "Launches Amazon Web Services, the cloud", big: 1 },
-    { a: 49, y: "2013", t: "Buys The Washington Post" },
-    { a: 53, y: "2017", t: "Amazon buys Whole Foods and keeps climbing" },
-    { a: 54, y: "2018", t: "Becomes the world's richest person", big: 1 },
-    { a: 57, y: "2021", t: "Steps down as CEO and flies to space", big: 1 }
+    { a: 0, y: "1964", t: "Born in Albuquerque, New Mexico", story: bezosStories["0"] },
+    { a: 4, y: "1968", t: "His mother remarries; he takes the name Bezos", story: bezosStories["4"] },
+    { a: 12, y: "1976", t: "Installs an alarm on his bedroom to keep siblings out", story: bezosStories["12"] },
+    { a: 18, y: "1982", t: "Valedictorian; dreams of space colonies in his speech", story: bezosStories["18"] },
+    { a: 22, y: "1986", t: "Graduates from Princeton in computer science", story: bezosStories["22"] },
+    { a: 30, y: "1994", t: "Quits Wall Street and founds Amazon", big: 1, story: bezosStories["30"] },
+    { a: 31, y: "1995", t: "Amazon sells its first book online", story: bezosStories["31"] },
+    { a: 33, y: "1997", t: "Takes Amazon public", story: bezosStories["33"] },
+    { a: 36, y: "2000", t: "Founds the rocket company Blue Origin", big: 1, story: bezosStories["36"] },
+    { a: 42, y: "2006", t: "Launches Amazon Web Services, the cloud", big: 1, story: bezosStories["42"] },
+    { a: 49, y: "2013", t: "Buys The Washington Post", story: bezosStories["49"] },
+    { a: 53, y: "2017", t: "Amazon buys Whole Foods and keeps climbing", story: bezosStories["53"] },
+    { a: 54, y: "2018", t: "Becomes the world's richest person", big: 1, story: bezosStories["54"] },
+    { a: 57, y: "2021", t: "Steps down as CEO and flies to space", big: 1, story: bezosStories["57"] }
   ] },
   { n: "Jensen Huang", s: "Jensen Huang", slug: "huang", d: "invent", b: 1963, x: null, place: "Tainan, Taiwan", ev: [
-    { a: 0, y: "1963", t: "Born in Tainan, Taiwan" },
-    { a: 9, y: "1973", t: "Sent to the United States; arrives at a Kentucky boarding school" },
-    { a: 15, y: "1978", t: "Works as a dishwasher at Denny's while in high school" },
-    { a: 21, y: "1984", t: "Graduates in electrical engineering" },
-    { a: 30, y: "1993", t: "Co-founds Nvidia at a roadside diner", big: 1 },
-    { a: 36, y: "1999", t: "Coins the GPU and takes Nvidia public", big: 1 },
-    { a: 43, y: "2006", t: "Launches CUDA to compute on graphics chips", big: 1 },
-    { a: 49, y: "2012", t: "Nvidia chips power the deep-learning breakthrough", big: 1 },
-    { a: 53, y: "2016", t: "Hand-delivers the first AI supercomputer to OpenAI" },
-    { a: 59, y: "2022", t: "The AI boom makes Nvidia chips essential" },
-    { a: 60, y: "2023", t: "Nvidia rockets toward a trillion-dollar value", big: 1 }
+    { a: 0, y: "1963", t: "Born in Tainan, Taiwan", story: huangStories["0"] },
+    { a: 9, y: "1973", t: "Sent to the United States; arrives at a Kentucky boarding school", story: huangStories["9"] },
+    { a: 15, y: "1978", t: "Works as a dishwasher at Denny's while in high school", story: huangStories["15"] },
+    { a: 21, y: "1984", t: "Graduates in electrical engineering", story: huangStories["21"] },
+    { a: 30, y: "1993", t: "Co-founds Nvidia at a roadside diner", big: 1, story: huangStories["30"] },
+    { a: 36, y: "1999", t: "Coins the GPU and takes Nvidia public", big: 1, story: huangStories["36"] },
+    { a: 43, y: "2006", t: "Launches CUDA to compute on graphics chips", big: 1, story: huangStories["43"] },
+    { a: 49, y: "2012", t: "Nvidia chips power the deep-learning breakthrough", big: 1, story: huangStories["49"] },
+    { a: 53, y: "2016", t: "Hand-delivers the first AI supercomputer to OpenAI", story: huangStories["53"] },
+    { a: 59, y: "2022", t: "The AI boom makes Nvidia chips essential", story: huangStories["59"] },
+    { a: 60, y: "2023", t: "Nvidia rockets toward a trillion-dollar value", big: 1, story: huangStories["60"] }
   ] },
   { n: "Elon Musk", s: "Elon Musk", slug: "musk", d: "invent", b: 1971, x: null, place: "Pretoria, South Africa", ev: [
-    { a: 0, y: "1971", t: "Born in Pretoria, South Africa" },
-    { a: 10, y: "1981", t: "Teaches himself to program; sells a space game called Blastar" },
-    { a: 12, y: "1983", t: "Bullied at school; hospitalized after a beating" },
-    { a: 17, y: "1988", t: "Leaves South Africa to avoid military service" },
-    { a: 24, y: "1995", t: "Drops out of Stanford to start a web company" },
-    { a: 28, y: "1999", t: "Sells Zip2, then co-founds what becomes PayPal", big: 1 },
-    { a: 31, y: "2002", t: "Founds SpaceX to make rockets reusable", big: 1 },
-    { a: 33, y: "2004", t: "Leads and funds the young Tesla Motors", big: 1 },
-    { a: 37, y: "2008", t: "Both firms nearly fail, then are saved", big: 1 },
-    { a: 41, y: "2012", t: "SpaceX docks with the space station" },
-    { a: 44, y: "2015", t: "Lands an orbital rocket booster upright", big: 1 },
-    { a: 47, y: "2018", t: "Tesla scales the Model 3 to the mass market" },
-    { a: 51, y: "2022", t: "Buys Twitter for 44 billion dollars", big: 1 },
-    { a: 52, y: "2023", t: "Launches xAI amid the AI boom" },
-    { a: 55, y: "2026", t: "SpaceX goes public on Nasdaq as SPCX in a record $75 billion IPO", big: 1 },
-    { a: 55, y: "2026", t: "Becomes the world's first trillionaire as SPCX tops $2 trillion" }
+    { a: 0, y: "1971", t: "Born in Pretoria, South Africa", story: muskStories["0"] },
+    { a: 10, y: "1981", t: "Teaches himself to program; sells a space game called Blastar", story: muskStories["10"] },
+    { a: 12, y: "1983", t: "Bullied at school; hospitalized after a beating", story: muskStories["12"] },
+    { a: 17, y: "1988", t: "Leaves South Africa to avoid military service", story: muskStories["17"] },
+    { a: 24, y: "1995", t: "Drops out of Stanford to start a web company", story: muskStories["24"] },
+    { a: 28, y: "1999", t: "Sells Zip2, then co-founds what becomes PayPal", big: 1, story: muskStories["28"] },
+    { a: 31, y: "2002", t: "Founds SpaceX to make rockets reusable", big: 1, story: muskStories["31"] },
+    { a: 33, y: "2004", t: "Leads and funds the young Tesla Motors", big: 1, story: muskStories["33"] },
+    { a: 37, y: "2008", t: "Both firms nearly fail, then are saved", big: 1, story: muskStories["37"] },
+    { a: 41, y: "2012", t: "SpaceX docks with the space station", story: muskStories["41"] },
+    { a: 44, y: "2015", t: "Lands an orbital rocket booster upright", big: 1, story: muskStories["44"] },
+    { a: 47, y: "2018", t: "Tesla scales the Model 3 to the mass market", story: muskStories["47"] },
+    { a: 51, y: "2022", t: "Buys Twitter for 44 billion dollars", big: 1, story: muskStories["51"] },
+    { a: 52, y: "2023", t: "Launches xAI amid the AI boom", story: muskStories["52"] },
+    { a: 55, y: "2026", t: "SpaceX goes public on Nasdaq as SPCX in a record $75 billion IPO", big: 1, story: muskStories["55-spacex-ipo"] },
+    { a: 55, y: "2026", t: "Becomes the world's first trillionaire as SPCX tops $2 trillion", story: muskStories["55-trillionaire"] }
   ] },
   { n: "Larry Page", s: "Larry Page", slug: "page", d: "invent", b: 1973, x: null, place: "Michigan, USA", ev: [
-    { a: 0, y: "1973", t: "Born in East Lansing, Michigan" },
-    { a: 6, y: "1979", t: "Grows up around Michigan State computer science" },
-    { a: 12, y: "1985", t: "Reads about Nikola Tesla and decides to invent things" },
-    { a: 22, y: "1995", t: "Meets Sergey Brin at Stanford" },
-    { a: 23, y: "1996", t: "Builds a search engine that ranks pages by links", big: 1 },
-    { a: 25, y: "1998", t: "Co-founds Google in a garage", big: 1 },
-    { a: 28, y: "2001", t: "Hands the CEO role to Eric Schmidt for a time" },
-    { a: 31, y: "2004", t: "Google goes public", big: 1 },
-    { a: 32, y: "2005", t: "Google buys a small startup called Android" },
-    { a: 38, y: "2011", t: "Returns as CEO of Google" },
-    { a: 42, y: "2015", t: "Restructures Google under a new parent, Alphabet", big: 1 },
-    { a: 46, y: "2019", t: "Steps back from daily leadership" }
+    { a: 0, y: "1973", t: "Born in East Lansing, Michigan", story: pageStories["0"] },
+    { a: 6, y: "1979", t: "Grows up around Michigan State computer science", story: pageStories["6"] },
+    { a: 12, y: "1985", t: "Reads about Nikola Tesla and decides to invent things", story: pageStories["12"] },
+    { a: 22, y: "1995", t: "Meets Sergey Brin at Stanford", story: pageStories["22"] },
+    { a: 23, y: "1996", t: "Builds a search engine that ranks pages by links", big: 1, story: pageStories["23"] },
+    { a: 25, y: "1998", t: "Co-founds Google in a garage", big: 1, story: pageStories["25"] },
+    { a: 28, y: "2001", t: "Hands the CEO role to Eric Schmidt for a time", story: pageStories["28"] },
+    { a: 31, y: "2004", t: "Google goes public", big: 1, story: pageStories["31"] },
+    { a: 32, y: "2005", t: "Google buys a small startup called Android", story: pageStories["32"] },
+    { a: 38, y: "2011", t: "Returns as CEO of Google", story: pageStories["38"] },
+    { a: 42, y: "2015", t: "Restructures Google under a new parent, Alphabet", big: 1, story: pageStories["42"] },
+    { a: 46, y: "2019", t: "Steps back from daily leadership", story: pageStories["46"] }
   ] },
   { n: "Mark Zuckerberg", s: "Mark Zuckerberg", slug: "zuckerberg", d: "invent", b: 1984, x: null, place: "New York, USA", ev: [
-    { a: 0, y: "1984", t: "Born in White Plains, New York" },
-    { a: 12, y: "1996", t: "Builds ZuckNet, a messaging system for the family home" },
-    { a: 18, y: "2002", t: "Creates Synapse, a music recommendation program" },
-    { a: 19, y: "2004", t: "Launches Facebook from a Harvard dorm", big: 1 },
-    { a: 20, y: "2005", t: "Drops out and moves the company to Silicon Valley" },
-    { a: 22, y: "2006", t: "Opens Facebook to all; adds the News Feed" },
-    { a: 23, y: "2007", t: "Turns down a billion-dollar buyout" },
-    { a: 28, y: "2012", t: "Takes Facebook public; buys Instagram", big: 1 },
-    { a: 30, y: "2014", t: "Buys WhatsApp and the VR maker Oculus" },
-    { a: 34, y: "2018", t: "Testifies to Congress over data and privacy", big: 1 },
-    { a: 37, y: "2021", t: "Renames the company Meta and bets on the metaverse", big: 1 },
-    { a: 39, y: "2023", t: "Pivots hard toward artificial intelligence" }
+    { a: 0, y: "1984", t: "Born in White Plains, New York", story: zuckerbergStories["0"] },
+    { a: 12, y: "1996", t: "Builds ZuckNet, a messaging system for the family home", story: zuckerbergStories["12"] },
+    { a: 18, y: "2002", t: "Creates Synapse, a music recommendation program", story: zuckerbergStories["18"] },
+    { a: 19, y: "2004", t: "Launches Facebook from a Harvard dorm", big: 1, story: zuckerbergStories["19"] },
+    { a: 20, y: "2005", t: "Drops out and moves the company to Silicon Valley", story: zuckerbergStories["20"] },
+    { a: 22, y: "2006", t: "Opens Facebook to all; adds the News Feed", story: zuckerbergStories["22"] },
+    { a: 23, y: "2007", t: "Turns down a billion-dollar buyout", story: zuckerbergStories["23"] },
+    { a: 28, y: "2012", t: "Takes Facebook public; buys Instagram", big: 1, story: zuckerbergStories["28"] },
+    { a: 30, y: "2014", t: "Buys WhatsApp and the VR maker Oculus", story: zuckerbergStories["30"] },
+    { a: 34, y: "2018", t: "Testifies to Congress over data and privacy", big: 1, story: zuckerbergStories["34"] },
+    { a: 37, y: "2021", t: "Renames the company Meta and bets on the metaverse", big: 1, story: zuckerbergStories["37"] },
+    { a: 39, y: "2023", t: "Pivots hard toward artificial intelligence", story: zuckerbergStories["39"] }
   ] },
   { n: "Sam Altman", s: "Sam Altman", slug: "altman", d: "invent", b: 1985, x: null, place: "Chicago, USA", ev: [
-    { a: 0, y: "1985", t: "Born in Chicago, raised in St. Louis" },
-    { a: 8, y: "1993", t: "Gets his first computer, an Apple Macintosh" },
-    { a: 16, y: "2001", t: "Comes out as gay to his high school community" },
-    { a: 19, y: "2005", t: "Drops out of Stanford to start Loopt", big: 1 },
-    { a: 26, y: "2011", t: "Becomes a partner at Y Combinator" },
-    { a: 28, y: "2014", t: "Named president of Y Combinator", big: 1 },
-    { a: 30, y: "2015", t: "Co-founds OpenAI as a research lab", big: 1 },
-    { a: 34, y: "2019", t: "Leaves YC to lead OpenAI full time" },
-    { a: 37, y: "2022", t: "ChatGPT launches and stuns the world", big: 1 },
-    { a: 38, y: "2023", t: "Fired and reinstated as CEO in five days", big: 1 },
-    { a: 38, y: "2023", t: "Becomes the public face of the AI age" }
+    { a: 0, y: "1985", t: "Born in Chicago, raised in St. Louis", story: altmanStories["0"] },
+    { a: 8, y: "1993", t: "Gets his first computer, an Apple Macintosh", story: altmanStories["8"] },
+    { a: 16, y: "2001", t: "Comes out as gay to his high school community", story: altmanStories["16"] },
+    { a: 19, y: "2005", t: "Drops out of Stanford to start Loopt", big: 1, story: altmanStories["19"] },
+    { a: 26, y: "2011", t: "Becomes a partner at Y Combinator", story: altmanStories["26"] },
+    { a: 28, y: "2014", t: "Named president of Y Combinator", big: 1, story: altmanStories["28"] },
+    { a: 30, y: "2015", t: "Co-founds OpenAI as a research lab", big: 1, story: altmanStories["30"] },
+    { a: 34, y: "2019", t: "Leaves YC to lead OpenAI full time", story: altmanStories["34"] },
+    { a: 37, y: "2022", t: "ChatGPT launches and stuns the world", big: 1, story: altmanStories["37"] },
+    { a: 38, y: "2023", t: "Fired and reinstated as CEO in five days", big: 1, story: altmanStories["38-fired"] },
+    { a: 38, y: "2023", t: "Becomes the public face of the AI age", story: altmanStories["38-face"] }
   ] }
 ];
 var head = byId("head");

@@ -9,6 +9,13 @@ import { galileoStories } from "./galileo";
 import { beethovenStories } from "./beethoven";
 import { turingStories } from "./turing";
 import { jobsStories } from "./jobs";
+import { gatesStories } from "./gates";
+import { bezosStories } from "./bezos";
+import { huangStories } from "./huang";
+import { muskStories } from "./musk";
+import { pageStories } from "./page";
+import { zuckerbergStories } from "./zuckerberg";
+import { altmanStories } from "./altman";
 
 export type GalleryItem = {
   figure: string;
@@ -30,6 +37,13 @@ const MODULES: Array<[string, Record<string, { title: string; body: string; imag
   ["Beethoven", beethovenStories],
   ["Turing", turingStories],
   ["Jobs", jobsStories],
+  ["Gates", gatesStories],
+  ["Bezos", bezosStories],
+  ["Huang", huangStories],
+  ["Musk", muskStories],
+  ["Page", pageStories],
+  ["Zuckerberg", zuckerbergStories],
+  ["Altman", altmanStories],
 ];
 
 export function storyGalleryItems(): GalleryItem[] {

@@ -289,6 +289,198 @@ export const SCENE_BEATS: Record<string, string> = {
     "Jobs holding up the first iPhone on a dark keynote stage, 2007",
   "jobs-death":
     "a thin man in a black turtleneck seated by a window in Palo Alto, autumn light, 2011",
+
+  // Gates
+  "gates-born":
+    "a newborn in a 1950s Seattle home, lawyer father and civic-minded mother nearby, rainy window",
+  "gates-lakeside":
+    "teenage boys hunched over a teletype terminal in a private school computer room, 1968",
+  "gates-scheduler":
+    "a teenage programmer showing class scheduling printouts to puzzled teachers at Lakeside School",
+  "gates-traf-o-data":
+    "two young men demoing a traffic tape reader machine to bored municipal officials, early 1970s",
+  "gates-microsoft":
+    "two college-age programmers celebrating beside an Altair kit computer cover in a Harvard dorm",
+  "gates-ibm":
+    "young Bill Gates signing an IBM DOS licensing contract in a sterile corporate conference room, 1980",
+  "gates-windows":
+    "early Windows 1.0 on a PC screen with mouse, skeptical reviewers in a tech office, 1985",
+  "gates-ipo":
+    "Microsoft IPO celebration on a trading floor, young Gates in glasses holding stock certificate, 1986",
+  "gates-win95":
+    "crowds lined outside a store for Windows 95 launch, Start button on posters, 1995",
+  "gates-antitrust":
+    "Bill Gates testifying on video in a courtroom antitrust trial, lawyers and monitors, 1998",
+  "gates-foundation":
+    "Bill and Melinda Gates reviewing global health charts in a foundation office, vaccines on wall",
+  "gates-retirement":
+    "Gates leaving Microsoft campus with philanthropy folders, employees waving, 2008",
+  "gates-pledge":
+    "elderly Gates at a podium announcing a massive giving pledge, 2021 press conference",
+
+  // Bezos
+  "bezos-born":
+    "a newborn in 1960s Albuquerque with a young mother in a modest desert apartment",
+  "bezos-name":
+    "a Cuban immigrant father embracing a young adopted son in a 1960s American kitchen",
+  "bezos-bedroom":
+    "a boy installing an alarm on his bedroom door while siblings watch, suburban house",
+  "bezos-valedictorian":
+    "high school valedictorian at a podium describing space colonies to classmates, 1982",
+  "bezos-princeton":
+    "a young engineer graduating Princeton in cap and gown, computer science department banner",
+  "bezos-amazon":
+    "a couple driving west in a car with business plans and maps spread on the dashboard, 1994",
+  "bezos-first-book":
+    "employees ringing a bell in a garage as the first Amazon book order prints, 1995",
+  "bezos-ipo":
+    "Amazon IPO on a trading floor with early dot-com era excitement, 1997",
+  "bezos-blue-origin":
+    "Jeff Bezos studying rocket sketches in a secret warehouse lab, early 2000s",
+  "bezos-aws":
+    "engineers presenting cloud server racks to developers in a Seattle conference room, 2006",
+  "bezos-wapo":
+    "Bezos meeting Washington Post journalists in a newsroom after purchase, 2013",
+  "bezos-whole-foods":
+    "Amazon and Whole Foods logos merging above a grocery store entrance, 2017",
+  "bezos-richest":
+    "Forbes richest list cover moment, Bezos beside rising stock chart, 2018",
+  "bezos-space":
+    "Bezos in a Blue Origin capsule after suborbital flight, desert landing site, 2021",
+
+  // Huang
+  "huang-born":
+    "a newborn in 1960s Tainan Taiwan, family in a modest home, island light",
+  "huang-kentucky":
+    "a nine-year-old Taiwanese boy with a dictionary at a Kentucky boarding school dormitory",
+  "huang-dennys":
+    "a teenager washing dishes in a Denny's kitchen at night, fluorescent light",
+  "huang-oregon":
+    "young Jensen Huang at an electrical engineering lab bench at Oregon State, 1980s",
+  "huang-nvidia-diner":
+    "three founders sketching chip ideas on napkins in a San Jose Denny's booth, 1993",
+  "huang-gpu":
+    "Jensen Huang unveiling the first GeForce GPU on stage to gamers, 1999",
+  "huang-cuda":
+    "scientists running parallel code on early CUDA GPUs in a research lab, 2006",
+  "huang-deep-learning":
+    "researchers celebrating AlexNet results on monitors powered by Nvidia cards, 2012",
+  "huang-openai-delivery":
+    "Jensen Huang in leather jacket delivering a DGX supercomputer to OpenAI office, 2016",
+  "huang-ai-boom":
+    "Huang keynote before giant H100 chip visuals and a packed arena crowd, 2022",
+  "huang-trillion":
+    "Nvidia stock celebration on a trading floor, Huang on screens, trillion-dollar milestone, 2023",
+
+  // Musk
+  "musk-born":
+    "a newborn in 1970s Pretoria South Africa, engineer father and model mother in hospital room",
+  "musk-blastar":
+    "twelve-year-old boy coding a space game on a Commodore computer in a bedroom, 1983",
+  "musk-bullied":
+    "a teenage boy recovering in a hospital bed after a school beating, South Africa",
+  "musk-canada":
+    "seventeen-year-old immigrant working on a Canadian farm with a suitcase, 1988",
+  "musk-zip2":
+    "two brothers sleeping under desks in a cramped dot-com startup office, mid 1990s",
+  "musk-paypal":
+    "young Musk in a Silicon Valley office during the PayPal merger era, laptops and coffee",
+  "musk-spacex":
+    "Musk in a hangar beside an early Falcon rocket prototype, engineers at work, 2002",
+  "musk-tesla":
+    "Musk inspecting an early Tesla Roadster in a workshop, investors watching, 2004",
+  "musk-2008":
+    "exhausted Musk in a factory on Christmas Eve as a rocket launch succeeds on a screen, 2008",
+  "musk-dragon":
+    "SpaceX Dragon capsule approaching the International Space Station, Earth below, 2012",
+  "musk-landing":
+    "a Falcon 9 booster landing upright on a drone ship at sea, fire and smoke, 2016",
+  "musk-model3":
+    "Musk sleeping on the Tesla factory floor beside Model 3 production line, 2018",
+  "musk-twitter":
+    "Musk carrying a sink into Twitter headquarters, photographers flashing, 2022",
+  "musk-xai":
+    "Musk unveiling xAI before a Grok logo on a dark stage, 2023",
+  "musk-spacex-ipo":
+    "SpaceX SPCX ringing the Nasdaq opening bell, Starship poster behind, 2026",
+  "musk-trillionaire":
+    "Musk before a stock ticker showing two trillion as crowds cheer on trading floor, 2026",
+
+  // Page
+  "page-born":
+    "a newborn in East Lansing Michigan, computer science professor father nearby, 1973",
+  "page-michigan":
+    "a boy playing with punch cards in a university computer lab, Michigan State, 1970s",
+  "page-tesla-book":
+    "twelve-year-old Larry Page reading a Nikola Tesla biography in a Michigan bedroom",
+  "page-brin":
+    "Larry Page and Sergey Brin meeting at Stanford grad student orientation, 1995",
+  "page-pagerank":
+    "Page sketching PageRank link diagrams on a whiteboard in a Stanford dorm, 1996",
+  "page-garage":
+    "Google founders in Susan Wojcicki's Menlo Park garage with early servers, 1998",
+  "page-schmidt":
+    "Page, Brin, and Eric Schmidt together at Google headquarters press event, 2001",
+  "page-ipo":
+    "Google IPO Dutch auction celebration, founders in casual clothes, 2004",
+  "page-android":
+    "Page signing Android acquisition papers beside a prototype phone, 2005",
+  "page-return":
+    "Larry Page returning as CEO addressing Google employees in a town hall, 2011",
+  "page-alphabet":
+    "Page announcing Alphabet restructuring on stage with corporate logos, 2015",
+  "page-step-back":
+    "Page kite surfing alone, distant shore, after stepping back from daily leadership, 2019",
+
+  // Zuckerberg
+  "zuckerberg-born":
+    "a newborn in White Plains suburban home, dentist father downstairs, 1984",
+  "zuckerberg-zucknet":
+    "twelve-year-old Mark wiring a home messaging system between dental office and house",
+  "zuckerberg-synapse":
+    "teenager demoing Synapse music software on a laptop to impressed adults, 2002",
+  "zuckerberg-harvard":
+    "college students launching thefacebook on laptops in a Harvard dorm room, 2004",
+  "zuckerberg-dropout":
+    "young Zuckerberg moving servers into a Palo Alto rental house, 2005",
+  "zuckerberg-newsfeed":
+    "Facebook News Feed protest groups on screens while engineers watch metrics climb, 2006",
+  "zuckerberg-yahoo":
+    "Zuckerberg declining a Yahoo acquisition offer in a tense boardroom, 2007",
+  "zuckerberg-ipo":
+    "Facebook IPO and Instagram acquisition celebration in Silicon Valley office, 2012",
+  "zuckerberg-whatsapp":
+    "Zuckerberg announcing WhatsApp and Oculus acquisitions on stage, 2014",
+  "zuckerberg-congress":
+    "Mark Zuckerberg in a suit testifying before US Congress, cameras and senators, 2018",
+  "zuckerberg-meta":
+    "Zuckerberg presenting Meta rebranding with VR headset demo, 2021",
+  "zuckerberg-ai":
+    "Zuckerberg beside Llama AI model training cluster photos on a keynote screen, 2023",
+
+  // Altman
+  "altman-born":
+    "a newborn in 1980s Chicago, Midwest family home, soft winter light",
+  "altman-mac":
+    "eight-year-old Sam Altman typing on an Apple Macintosh in a St Louis bedroom, 1990s",
+  "altman-coming-out":
+    "teenage Altman speaking at a high school assembly about coming out, 2001",
+  "altman-loopt":
+    "college dropout pitching Loopt location app on early mobile phones, Y Combinator era",
+  "altman-yc-partner":
+    "Sam Altman reading startup applications at Y Combinator office, whiteboards, 2011",
+  "altman-yc-president":
+    "Altman addressing a Y Combinator batch on demo day stage, founders listening, 2014",
+  "altman-openai-founded":
+    "OpenAI founders meeting in a sparse research office, whiteboards with AGI sketches, 2015",
+  "altman-openai-ceo":
+    "Altman touring a data center aisle of GPU racks as OpenAI CEO, 2019",
+  "altman-chatgpt":
+    "ChatGPT launch night, usage graph spiking on a monitor, team celebrating, November 2022",
+  "altman-fired":
+    "Altman stunned on a video call as board members fire him, San Francisco hotel room, 2023",
+  "altman-ai-face":
+    "Altman testifying about AI safety before lawmakers with calm expression, 2023",
 };
 
 export function buildScenePrompt(slug: string, title: string): string {

@@ -10,6 +10,13 @@ import { galileoStories } from "./stories/galileo";
 import { beethovenStories } from "./stories/beethoven";
 import { turingStories } from "./stories/turing";
 import { jobsStories } from "./stories/jobs";
+import { gatesStories } from "./stories/gates";
+import { bezosStories } from "./stories/bezos";
+import { huangStories } from "./stories/huang";
+import { muskStories } from "./stories/musk";
+import { pageStories } from "./stories/page";
+import { zuckerbergStories } from "./stories/zuckerberg";
+import { altmanStories } from "./stories/altman";
 import { storyCopyIssues } from "./story-copy-lint";
 
 const allStoryModules: Array<[string, Record<string, { title: string; body: string }>]> = [
@@ -24,6 +31,13 @@ const allStoryModules: Array<[string, Record<string, { title: string; body: stri
   ["Beethoven", beethovenStories],
   ["Turing", turingStories],
   ["Jobs", jobsStories],
+  ["Gates", gatesStories],
+  ["Bezos", bezosStories],
+  ["Huang", huangStories],
+  ["Musk", muskStories],
+  ["Page", pageStories],
+  ["Zuckerberg", zuckerbergStories],
+  ["Altman", altmanStories],
 ];
 
 describe("story copy lint", () => {

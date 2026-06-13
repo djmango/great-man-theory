@@ -13,6 +13,13 @@ import { galileoStories } from "../src/stories/galileo";
 import { beethovenStories } from "../src/stories/beethoven";
 import { turingStories } from "../src/stories/turing";
 import { jobsStories } from "../src/stories/jobs";
+import { gatesStories } from "../src/stories/gates";
+import { bezosStories } from "../src/stories/bezos";
+import { huangStories } from "../src/stories/huang";
+import { muskStories } from "../src/stories/musk";
+import { pageStories } from "../src/stories/page";
+import { zuckerbergStories } from "../src/stories/zuckerberg";
+import { altmanStories } from "../src/stories/altman";
 import { buildScenePrompt } from "./story-scene-visuals";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
@@ -29,6 +36,13 @@ const modules = [
   ["beethoven", beethovenStories],
   ["turing", turingStories],
   ["jobs", jobsStories],
+  ["gates", gatesStories],
+  ["bezos", bezosStories],
+  ["huang", huangStories],
+  ["musk", muskStories],
+  ["page", pageStories],
+  ["zuckerberg", zuckerbergStories],
+  ["altman", altmanStories],
 ] as const;
 
 type Scene = {
