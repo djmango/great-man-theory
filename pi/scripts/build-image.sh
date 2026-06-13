@@ -10,15 +10,13 @@ Build the Great Man Theory Raspberry Pi kiosk image with rpi-image-gen.
 Options:
   --native       Run an existing local rpi-image-gen checkout instead of Docker.
   --no-prompt    Require values from env/secrets files and skip interactive prompts.
-  --init-sops    Create editable SOPS placeholder files, then exit.
+  --init-sops    Create encrypted pi/secrets.yaml from the example template.
   -h, --help     Show this help.
 
 Inputs, in precedence order:
   1. Environment variables
-  2. pi/secrets.enc.env decrypted with sops
-  3. pi/secrets.env
-  4. pi/build/secrets.env
-  5. Interactive prompts
+  2. pi/secrets.yaml decrypted with sops
+  3. Interactive prompts
 EOF
 }
 
@@ -46,26 +44,10 @@ build_dir="$pi_dir/build"
 source_dir="$build_dir/source"
 work_dir="$build_dir/work"
 deploy_dir="$pi_dir/deploy"
-plain_secrets="$pi_dir/secrets.env"
-sops_secrets="$pi_dir/secrets.enc.env"
-local_secrets="$build_dir/secrets.env"
+secrets_file="$pi_dir/secrets.yaml"
+sops_config="$pi_dir/.sops.yaml"
 
 mkdir -p "$build_dir" "$deploy_dir" "$work_dir"
-
-if [ "$init_sops" -eq 1 ]; then
-  [ -f "$plain_secrets" ] || cp "$pi_dir/secrets.example.env" "$plain_secrets"
-  [ -f "$pi_dir/.sops.yaml" ] || cp "$pi_dir/.sops.yaml.example" "$pi_dir/.sops.yaml"
-  cat <<EOF
-Created SOPS placeholders:
-  $plain_secrets
-  $pi_dir/.sops.yaml
-
-Edit $pi_dir/.sops.yaml with an age recipient, fill $plain_secrets, then run:
-  sops -e "$plain_secrets" > "$sops_secrets"
-  rm "$plain_secrets"
-EOF
-  exit 0
-fi
 
 require_command() {
   if ! command -v "$1" >/dev/null 2>&1; then
@@ -74,22 +56,44 @@ require_command() {
   fi
 }
 
-load_env_file() {
-  if [ -f "$sops_secrets" ]; then
+if [ "$init_sops" -eq 1 ]; then
+  require_command sops
+
+  [ -f "$sops_config" ] || cp "$pi_dir/.sops.yaml.example" "$sops_config"
+
+  if grep -q 'age1replace_with_your_recipient' "$sops_config"; then
+    echo "Set your age recipient in $sops_config before continuing." >&2
+    exit 1
+  fi
+
+  if [ -f "$secrets_file" ]; then
+    echo "pi/secrets.yaml already exists."
+    echo "Edit it with: sops pi/secrets.yaml"
+    exit 0
+  fi
+
+  cp "$pi_dir/secrets.example.yaml" "$secrets_file"
+  sops -e -i "$secrets_file"
+  rm -f "$secrets_file.bak"
+
+  cat <<EOF
+Created encrypted pi/secrets.yaml.
+
+Edit secrets with:
+  sops pi/secrets.yaml
+
+Then build with:
+  bun run pi:build
+EOF
+  exit 0
+fi
+
+load_secrets() {
+  if [ -f "$secrets_file" ]; then
     require_command sops
     set -a
     # shellcheck disable=SC1090
-    . <(sops -d "$sops_secrets")
-    set +a
-  elif [ -f "$plain_secrets" ]; then
-    set -a
-    # shellcheck disable=SC1090
-    . "$plain_secrets"
-    set +a
-  elif [ -f "$local_secrets" ]; then
-    set -a
-    # shellcheck disable=SC1090
-    . "$local_secrets"
+    . <(sops -d --output-type dotenv "$secrets_file")
     set +a
   fi
 }
@@ -157,7 +161,13 @@ write_env_kv() {
   printf '%s=%q\n' "$key" "$value" >> "$file"
 }
 
-load_env_file
+load_secrets
+
+if [ "$no_prompt" -eq 1 ] && [ ! -f "$secrets_file" ]; then
+  echo "pi/secrets.yaml is required when --no-prompt is used." >&2
+  echo "Create one with: bun run pi:build -- --init-sops" >&2
+  exit 1
+fi
 
 prompt_var GMT_SITE_URL "Public site URL" "https://great-man-theory.djmango.workers.dev"
 prompt_var WIFI_COUNTRY "Wi-Fi country code" "US"
@@ -182,21 +192,6 @@ SSH_PUBKEY="$(< "$SSH_PUBKEY_PATH")"
 export SSH_PUBKEY
 
 require_command rsync
-
-if [ ! -f "$sops_secrets" ] && [ ! -f "$plain_secrets" ] && [ ! -f "$local_secrets" ]; then
-  : > "$local_secrets"
-  chmod 0600 "$local_secrets"
-  write_env_kv "$local_secrets" GMT_SITE_URL "$GMT_SITE_URL"
-  write_env_kv "$local_secrets" WIFI_COUNTRY "$WIFI_COUNTRY"
-  write_env_kv "$local_secrets" WIFI_SSID "$WIFI_SSID"
-  write_env_kv "$local_secrets" WIFI_PASSWORD "$WIFI_PASSWORD"
-  write_env_kv "$local_secrets" TAILSCALE_AUTH_KEY "$TAILSCALE_AUTH_KEY"
-  write_env_kv "$local_secrets" RPI_DEVICE_CLASS "$RPI_DEVICE_CLASS"
-  write_env_kv "$local_secrets" RPI_USER "$RPI_USER"
-  write_env_kv "$local_secrets" RPI_IMAGE_NAME "$RPI_IMAGE_NAME"
-  write_env_kv "$local_secrets" SSH_PUBKEY_PATH "$SSH_PUBKEY_PATH"
-  echo "Wrote local secrets to $local_secrets"
-fi
 
 rm -rf "$source_dir"
 mkdir -p "$source_dir"

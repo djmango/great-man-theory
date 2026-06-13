@@ -5,7 +5,6 @@ node_modules
 .DS_Store
 pi/build/
 pi/deploy/
-pi/secrets.env
-pi/secrets.enc.env
+pi/secrets.yaml
 pi/.sops.yaml
 images/story/upscaled/*.png

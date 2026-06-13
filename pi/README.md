@@ -10,13 +10,33 @@ The build uses the official `raspberrypi/rpi-image-gen` project in Docker by def
 - runs a first-boot service that sets a hostname like `skg-rpi-gmt-a1b2c3`, regenerates SSH host keys, configures Wi-Fi, and disables itself
 - runs a Tailscale service that installs Tailscale if needed, authenticates with the provided auth key, removes that key from the provision file, and disables itself
 
+## Secrets
+
+Build-time secrets live in SOPS-encrypted `pi/secrets.yaml`. There is no plaintext secrets file in the repo workflow.
+
+```bash
+bun run pi:build -- --init-sops
+```
+
+That copies `pi/.sops.yaml.example` to `pi/.sops.yaml` if needed, then creates encrypted `pi/secrets.yaml` from `pi/secrets.example.yaml`.
+
+Before running `--init-sops`, set your age recipient in `pi/.sops.yaml`.
+
+Edit secrets with:
+
+```bash
+sops pi/secrets.yaml
+```
+
+`pi/secrets.yaml` and `pi/.sops.yaml` are gitignored.
+
 ## Build
 
 ```bash
 bun run pi:build
 ```
 
-The first run prompts for:
+If `pi/secrets.yaml` exists, the build script decrypts it with SOPS. Otherwise it prompts interactively for:
 
 - public site URL
 - Wi-Fi SSID, password, and country
@@ -25,22 +45,7 @@ The first run prompts for:
 - kiosk username
 - SSH public key path
 
-If neither `pi/secrets.enc.env` nor `pi/secrets.env` exists, the answers are written to ignored local state at `pi/build/secrets.env`.
-
-To use SOPS:
-
-```bash
-bun run pi:build -- --init-sops
-```
-
-Edit `pi/.sops.yaml` with an age recipient, fill `pi/secrets.env`, then encrypt it:
-
-```bash
-sops -e pi/secrets.env > pi/secrets.enc.env
-rm pi/secrets.env
-```
-
-After that, `bun run pi:build` will decrypt `pi/secrets.enc.env` automatically.
+Prompt answers are not written back to disk.
 
 ## Flash
 

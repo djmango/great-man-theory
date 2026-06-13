@@ -12,7 +12,6 @@ type LifeEvent = {
   t: string;
   big?: 1;
   death?: 1;
-  src?: string;
   story?: EnhancedEvent;
 };
 
@@ -24,7 +23,6 @@ type Person = {
   b: number;
   x: number | null;
   place: string;
-  wiki: string;
   ev: LifeEvent[];
 };
 
@@ -65,7 +63,7 @@ const DOMAINS: Record<DomainKey, DomainConfig>={
 };
 
 const P: Person[]=[
- {n:"Alexander the Great", s:"Alexander the Great", slug:"alexander", d:"power", b:-356, x:-323, place:"Pella, Macedon", wiki:"https://en.wikipedia.org/wiki/Alexander_the_Great", ev:[
+ {n:"Alexander the Great", s:"Alexander the Great", slug:"alexander", d:"power", b:-356, x:-323, place:"Pella, Macedon", ev:[
    {a:0,y:"356 BC",t:"Born to King Philip II in Pella",story:{title:"Born into a house built for war",dek:"Alexander enters the Argead dynasty at Pella, where family, legitimacy, and military command are already inseparable.",detail:"Macedon was not a quiet cradle. It was a hard northern kingdom with a royal house used to assassination, hostage politics, feuds, and sudden reversals. Alexander's mother Olympias came from Epirus and carried her own dynastic claims; Philip was turning Macedon from a battered monarchy into a military machine. From the beginning, Alexander's life sits at the intersection of bloodline and battlefield. The question is never simply who he is. It is who can survive long enough to claim what his name promises.",image:"images/story/alexander-pella-birth.webp",tags:["Pella","Argead dynasty","Olympias"]}},
    {a:10,y:"346 BC",t:"Tames the wild horse Bucephalus that no one else could ride",story:{title:"The horse that taught the court who he was",dek:"Bucephalus was not just a boy-and-horse anecdote. It was a public test in front of Philip's court, where Alexander saw what older men missed.",detail:"The story goes that the horse panicked because it feared its own shadow. Alexander turned it toward the sun, calmed it, and rode it while the adults watched. The point is not whether every detail is polished by legend. It is that Macedonian kingship rewarded visible nerve. Philip supposedly told him to seek a kingdom equal to himself. For a child in a court built around war, that was not praise. It was a challenge.",image:"images/story/alexander-bucephalus.webp",tags:["Plutarch tradition","Bucephalus","Macedonian court"]}},
    {a:12,y:"344 BC",t:"Philip boasts that Macedonia will find a greater king than himself",story:{title:"Praise that sounds like a prophecy",dek:"Philip's famous line after Bucephalus turns a childhood stunt into a public statement about scale.",detail:"A father's compliment in a royal court is never just private. When Philip says Macedon is too small for Alexander, he gives the boy a myth to live inside. That can be intoxicating, and dangerous. Alexander grows up hearing that ordinary inheritance will not be enough. The empire is not yet real, but the emotional architecture of empire is already there: a father who built the weapon, a son being told the weapon needs a larger world.",image:"images/story/alexander-philip-prophecy.webp",tags:["Philip II","court performance","prophecy"]}},
@@ -81,7 +79,7 @@ const P: Person[]=[
    {a:30,y:"326 BC",t:"Reaches India; victory at the Hydaspes",story:{title:"The edge of the map fights back",dek:"At the Hydaspes, Porus and his elephants force Alexander into one of his hardest battles, and his own army begins to imagine an end.",detail:"The Indian campaign is where the legend starts grinding against human limits. Alexander wins at the Hydaspes through deception, night movement, and audacity, but the battle is costly and strange to Macedonian eyes. War elephants break the familiar grammar of combat. Porus impresses him enough to be restored as ruler. Soon after, at the Hyphasis, the army refuses to march farther. Alexander can defeat kings, but not endless distance, monsoon, exhaustion, and homesick veterans.",image:"images/story/alexander-hydaspes.webp",tags:["Hydaspes","Porus","army mutiny"]}},
    {a:32,y:"323 BC",t:"Dies of fever in Babylon, undefeated",death:1,story:{title:"Babylon: the empire has no heir equal to the appetite",dek:"He dies young, feverish, surrounded by soldiers and generals who know the map is now larger than the system holding it together.",detail:"The final scene is almost anti-climactic because the conquest has outrun every institution around it. There is no adult successor with uncontested legitimacy. The army has followed a person, not a constitution. The generals can salute the dying king, but they cannot inherit his momentum. Within a generation, the empire becomes kingdoms. The legend survives more cleanly than the thing he built.",image:"images/story/alexander-babylon-fever.webp",tags:["Babylon","succession","Diadochi"]}}]},
 
- {n:"Cleopatra VII", s:"Cleopatra VII", slug:"cleopatra", d:"state", b:-69, x:-30, place:"Alexandria, Egypt", wiki:"https://en.wikipedia.org/wiki/Cleopatra", ev:[
+ {n:"Cleopatra VII", s:"Cleopatra VII", slug:"cleopatra", d:"state", b:-69, x:-30, place:"Alexandria, Egypt", ev:[
    {a:0,y:"69 BC",t:"Born in Alexandria, of the Ptolemy line"},
    {a:14,y:"55 BC",t:"Studies Greek, Egyptian, and several other languages as a princess"},
    {a:18,y:"51 BC",t:"Becomes co-ruler of Egypt with her brother"},
@@ -93,7 +91,7 @@ const P: Person[]=[
    {a:39,y:"31 BC",t:"Her fleet is lost at Actium",big:1},
    {a:39,y:"30 BC",t:"Dies by her own hand; Egypt falls to Rome",death:1}]},
 
- {n:"Genghis Khan", s:"Genghis Khan", slug:"genghis-khan", d:"power", b:1162, x:1227, place:"Mongolian steppe", wiki:"https://en.wikipedia.org/wiki/Genghis_Khan", ev:[
+ {n:"Genghis Khan", s:"Genghis Khan", slug:"genghis-khan", d:"power", b:1162, x:1227, place:"Mongolian steppe", ev:[
    {a:0,y:"1162",t:"Born Temüjin on the open steppe"},
    {a:9,y:"1171",t:"His father is poisoned; the clan casts them out"},
    {a:10,y:"c.1172",t:"Kills his half-brother Begter in a fight over stolen food"},
@@ -106,7 +104,7 @@ const P: Person[]=[
    {a:64,y:"1226",t:"Returns to crush the Western Xia"},
    {a:65,y:"1227",t:"Dies; his empire spans most of Asia",death:1}]},
 
- {n:"Leonardo da Vinci", s:"Leonardo da Vinci", slug:"leonardo", d:"art", b:1452, x:1519, place:"Vinci, Tuscany", wiki:"https://en.wikipedia.org/wiki/Leonardo_da_Vinci", ev:[
+ {n:"Leonardo da Vinci", s:"Leonardo da Vinci", slug:"leonardo", d:"art", b:1452, x:1519, place:"Vinci, Tuscany", ev:[
    {a:0,y:"1452",t:"Born out of wedlock near Vinci"},
    {a:14,y:"1466",t:"Apprenticed to Verrocchio in Florence"},
    {a:17,y:"1469",t:"Helps paint an angel in Verrocchio's Baptism of Christ"},
@@ -120,7 +118,7 @@ const P: Person[]=[
    {a:64,y:"1516",t:"Invited to France by King Francis I"},
    {a:67,y:"1519",t:"Dies at Clos Lucé, his notebooks unmatched",death:1}]},
 
- {n:"Galileo Galilei", s:"Galileo Galilei", slug:"galileo", d:"science", b:1564, x:1642, place:"Pisa, Italy", wiki:"https://en.wikipedia.org/wiki/Galileo_Galilei", ev:[
+ {n:"Galileo Galilei", s:"Galileo Galilei", slug:"galileo", d:"science", b:1564, x:1642, place:"Pisa, Italy", ev:[
    {a:0,y:"1564",t:"Born in Pisa"},
    {a:19,y:"1583",t:"Notices a swinging lamp in the cathedral; timing it with his pulse"},
    {a:22,y:"1586",t:"Writes a treatise on the hydrostatic balance"},
@@ -134,7 +132,7 @@ const P: Person[]=[
    {a:74,y:"1638",t:"Smuggles out Two New Sciences"},
    {a:77,y:"1642",t:"Dies blind, under house arrest",death:1}]},
 
- {n:"Isaac Newton", s:"Isaac Newton", slug:"newton", d:"science", b:1643, x:1727, place:"Woolsthorpe, England", wiki:"https://en.wikipedia.org/wiki/Isaac_Newton", ev:[
+ {n:"Isaac Newton", s:"Isaac Newton", slug:"newton", d:"science", b:1643, x:1727, place:"Woolsthorpe, England", ev:[
    {a:0,y:"1643",t:"Born prematurely in Woolsthorpe"},
    {a:12,y:"1655",t:"Sent to Grantham school; builds water clocks and windmills"},
    {a:17,y:"1660",t:"Returns to the farm; his mother is persuaded to send him back to school"},
@@ -149,7 +147,7 @@ const P: Person[]=[
    {a:62,y:"1705",t:"Knighted by Queen Anne"},
    {a:84,y:"1727",t:"Dies; buried in Westminster Abbey",death:1}]},
 
- {n:"Napoleon Bonaparte", s:"Napoleon Bonaparte", slug:"napoleon", d:"power", b:1769, x:1821, place:"Ajaccio, Corsica", wiki:"https://en.wikipedia.org/wiki/Napoleon", ev:[
+ {n:"Napoleon Bonaparte", s:"Napoleon Bonaparte", slug:"napoleon", d:"power", b:1769, x:1821, place:"Ajaccio, Corsica", ev:[
    {a:0,y:"1769",t:"Born in Ajaccio, Corsica"},
    {a:9,y:"1779",t:"Sent to military school in mainland France; mocked for his accent"},
    {a:15,y:"1784",t:"Graduates from the École Militaire in Paris"},
@@ -166,7 +164,7 @@ const P: Person[]=[
    {a:46,y:"1815",t:"Returns for a hundred days; falls at Waterloo"},
    {a:51,y:"1821",t:"Dies in exile on St. Helena",death:1}]},
 
- {n:"Ludwig van Beethoven", s:"Ludwig van Beethoven", slug:"beethoven", d:"art", b:1770, x:1827, place:"Bonn, Germany", wiki:"https://en.wikipedia.org/wiki/Ludwig_van_Beethoven", ev:[
+ {n:"Ludwig van Beethoven", s:"Ludwig van Beethoven", slug:"beethoven", d:"art", b:1770, x:1827, place:"Bonn, Germany", ev:[
    {a:0,y:"1770",t:"Born in Bonn"},
    {a:4,y:"1774",t:"His father drills him at the keyboard like a prodigy"},
    {a:11,y:"1781",t:"Leaves school to support the family as an assistant organist"},
@@ -182,7 +180,7 @@ const P: Person[]=[
    {a:54,y:"1824",t:"Premieres the Ninth Symphony, stone deaf",big:1},
    {a:56,y:"1827",t:"Dies in Vienna",death:1}]},
 
- {n:"Abraham Lincoln", s:"Abraham Lincoln", slug:"lincoln", d:"state", b:1809, x:1865, place:"Kentucky, USA", wiki:"https://en.wikipedia.org/wiki/Abraham_Lincoln", ev:[
+ {n:"Abraham Lincoln", s:"Abraham Lincoln", slug:"lincoln", d:"state", b:1809, x:1865, place:"Kentucky, USA", ev:[
    {a:0,y:"1809",t:"Born in a one-room Kentucky log cabin"},
    {a:7,y:"1816",t:"Family moves to Indiana after a land-title dispute"},
    {a:9,y:"1818",t:"His mother Nancy dies of milk sickness"},
@@ -197,7 +195,7 @@ const P: Person[]=[
    {a:54,y:"1863",t:"Emancipation Proclamation; the Gettysburg Address",big:1},
    {a:56,y:"1865",t:"Wins the war, then is assassinated days later",death:1}]},
 
- {n:"Charles Darwin", s:"Charles Darwin", slug:"darwin", d:"science", b:1809, x:1882, place:"Shrewsbury, England", wiki:"https://en.wikipedia.org/wiki/Charles_Darwin", ev:[
+ {n:"Charles Darwin", s:"Charles Darwin", slug:"darwin", d:"science", b:1809, x:1882, place:"Shrewsbury, England", ev:[
    {a:0,y:"1809",t:"Born in Shrewsbury"},
    {a:8,y:"1817",t:"His mother dies; he is raised by his sisters"},
    {a:16,y:"1825",t:"Sent to Edinburgh to study medicine; hates surgery"},
@@ -212,7 +210,7 @@ const P: Person[]=[
    {a:62,y:"1871",t:"Publishes The Descent of Man"},
    {a:73,y:"1882",t:"Dies; buried in Westminster Abbey",death:1}]},
 
- {n:"Marie Curie", s:"Marie Curie", slug:"curie", d:"science", b:1867, x:1934, place:"Warsaw, Poland", wiki:"https://en.wikipedia.org/wiki/Marie_Curie", ev:[
+ {n:"Marie Curie", s:"Marie Curie", slug:"curie", d:"science", b:1867, x:1934, place:"Warsaw, Poland", ev:[
    {a:0,y:"1867",t:"Born Maria Skłodowska in Warsaw"},
    {a:10,y:"1877",t:"Her mother dies of tuberculosis"},
    {a:15,y:"1882",t:"Graduates high school with a gold medal"},
@@ -227,7 +225,7 @@ const P: Person[]=[
    {a:47,y:"1914",t:"Runs mobile X-ray units in the Great War"},
    {a:66,y:"1934",t:"Dies of long exposure to her own radiation",death:1}]},
 
- {n:"Nikola Tesla", s:"Nikola Tesla", slug:"tesla", d:"invent", b:1856, x:1943, place:"Smiljan, Croatia", wiki:"https://en.wikipedia.org/wiki/Nikola_Tesla", ev:[
+ {n:"Nikola Tesla", s:"Nikola Tesla", slug:"tesla", d:"invent", b:1856, x:1943, place:"Smiljan, Croatia", ev:[
    {a:0,y:"1856",t:"Born at midnight during a lightning storm"},
    {a:7,y:"1863",t:"His brother Dane dies; Tesla later blames himself"},
    {a:17,y:"1873",t:"Contracts cholera; his father promises to send him to engineering school"},
@@ -243,7 +241,7 @@ const P: Person[]=[
    {a:49,y:"1905",t:"Wardenclyffe collapses; backers walk away"},
    {a:86,y:"1943",t:"Dies alone and broke in a New York hotel",death:1}]},
 
- {n:"Albert Einstein", s:"Albert Einstein", slug:"einstein", d:"science", b:1879, x:1955, place:"Ulm, Germany", wiki:"https://en.wikipedia.org/wiki/Albert_Einstein", ev:[
+ {n:"Albert Einstein", s:"Albert Einstein", slug:"einstein", d:"science", b:1879, x:1955, place:"Ulm, Germany", ev:[
    {a:0,y:"1879",t:"Born in Ulm, Germany"},
    {a:5,y:"1884",t:"Fascinated by a compass; wonders what steers the needle"},
    {a:15,y:"1894",t:"Family moves to Italy; he stays in Munich to finish school"},
@@ -259,7 +257,7 @@ const P: Person[]=[
    {a:60,y:"1939",t:"Warns Roosevelt that an atom bomb is possible"},
    {a:76,y:"1955",t:"Dies in Princeton",death:1}]},
 
- {n:"Mahatma Gandhi", s:"Mahatma Gandhi", slug:"gandhi", d:"state", b:1869, x:1948, place:"Porbandar, India", wiki:"https://en.wikipedia.org/wiki/Mahatma_Gandhi", ev:[
+ {n:"Mahatma Gandhi", s:"Mahatma Gandhi", slug:"gandhi", d:"state", b:1869, x:1948, place:"Porbandar, India", ev:[
    {a:0,y:"1869",t:"Born in Porbandar, India"},
    {a:13,y:"1882",t:"Marries Kasturba in an arranged childhood wedding"},
    {a:18,y:"1887",t:"Sails to London to study law"},
@@ -273,7 +271,7 @@ const P: Person[]=[
    {a:78,y:"1947",t:"India wins independence, and is partitioned",big:1},
    {a:78,y:"1948",t:"Assassinated in New Delhi",death:1}]},
 
- {n:"Archimedes", s:"Archimedes", slug:"archimedes", d:"science", b:-287, x:-212, place:"Syracuse, Sicily", wiki:"https://en.wikipedia.org/wiki/Archimedes", ev:[
+ {n:"Archimedes", s:"Archimedes", slug:"archimedes", d:"science", b:-287, x:-212, place:"Syracuse, Sicily", ev:[
    {a:0,y:"c.287 BC",t:"Born in Syracuse, Sicily"},
    {a:18,y:"c.269 BC",t:"Studies at Alexandria under followers of Euclid"},
    {a:25,y:"c.262 BC",t:"Devises the screw pump to raise water"},
@@ -284,7 +282,7 @@ const P: Person[]=[
    {a:73,y:"214 BC",t:"His war machines hold off the Roman siege",big:1},
    {a:75,y:"c.212 BC",t:"Slain by a soldier as Syracuse falls",death:1}]},
 
- {n:"Julius Caesar", s:"Julius Caesar", slug:"caesar", d:"power", b:-100, x:-44, place:"Rome, Italy", wiki:"https://en.wikipedia.org/wiki/Julius_Caesar", ev:[
+ {n:"Julius Caesar", s:"Julius Caesar", slug:"caesar", d:"power", b:-100, x:-44, place:"Rome, Italy", ev:[
    {a:0,y:"100 BC",t:"Born into the Julian clan in Rome"},
    {a:15,y:"85 BC",t:"His father dies; he becomes head of the family young"},
    {a:16,y:"84 BC",t:"Marries Cornelia; refuses Sulla's order to divorce her"},
@@ -299,7 +297,7 @@ const P: Person[]=[
    {a:54,y:"46 BC",t:"Defeats Pompey at Pharsalus"},
    {a:55,y:"44 BC",t:"Assassinated on the Ides of March in the Senate",death:1}]},
 
- {n:"James Watt", s:"James Watt", slug:"watt", d:"invent", b:1736, x:1819, place:"Greenock, Scotland", wiki:"https://en.wikipedia.org/wiki/James_Watt", ev:[
+ {n:"James Watt", s:"James Watt", slug:"watt", d:"invent", b:1736, x:1819, place:"Greenock, Scotland", ev:[
    {a:0,y:"1736",t:"Born in Greenock, Scotland"},
    {a:6,y:"1742",t:"Often ill at home; his aunt teaches him to read"},
    {a:18,y:"1754",t:"Trains as a mathematical-instrument maker in London"},
@@ -313,7 +311,7 @@ const P: Person[]=[
    {a:64,y:"1800",t:"Retires wealthy as his patents expire"},
    {a:83,y:"1819",t:"Dies near Birmingham; the watt is later named for him",death:1}]},
 
- {n:"Alexander Hamilton", s:"Alexander Hamilton", slug:"hamilton", d:"state", b:1755, x:1804, place:"Nevis & New York, USA", wiki:"https://en.wikipedia.org/wiki/Alexander_Hamilton", ev:[
+ {n:"Alexander Hamilton", s:"Alexander Hamilton", slug:"hamilton", d:"state", b:1755, x:1804, place:"Nevis & New York, USA", ev:[
    {a:0,y:"c.1755",t:"Born out of wedlock in the Caribbean"},
    {a:10,y:"1765",t:"His father leaves the family; hardship shapes his ambition"},
    {a:12,y:"1767",t:"His mother dies, leaving him an orphan"},
@@ -328,7 +326,7 @@ const P: Person[]=[
    {a:36,y:"1791",t:"Creates the First Bank of the United States"},
    {a:49,y:"1804",t:"Killed in a duel with Aaron Burr",death:1}]},
 
- {n:"Michael Faraday", s:"Michael Faraday", slug:"faraday", d:"science", b:1791, x:1867, place:"London, England", wiki:"https://en.wikipedia.org/wiki/Michael_Faraday", ev:[
+ {n:"Michael Faraday", s:"Michael Faraday", slug:"faraday", d:"science", b:1791, x:1867, place:"London, England", ev:[
    {a:0,y:"1791",t:"Born poor in south London"},
    {a:13,y:"1804",t:"Works as a newspaper delivery boy to help the family"},
    {a:14,y:"1805",t:"Apprenticed to a bookbinder; reads every science book he binds"},
@@ -342,7 +340,7 @@ const P: Person[]=[
    {a:55,y:"1846",t:"Proposes invisible fields and lines of force"},
    {a:76,y:"1867",t:"Dies at Hampton Court",death:1}]},
 
- {n:"Ada Lovelace", s:"Ada Lovelace", slug:"lovelace", d:"science", b:1815, x:1852, place:"London, England", wiki:"https://en.wikipedia.org/wiki/Ada_Lovelace", ev:[
+ {n:"Ada Lovelace", s:"Ada Lovelace", slug:"lovelace", d:"science", b:1815, x:1852, place:"London, England", ev:[
    {a:0,y:"1815",t:"Born in London, daughter of Lord Byron"},
    {a:1,y:"1816",t:"Byron leaves England; she never meets her father"},
    {a:12,y:"1827",t:"Designs wings and studies bird flight in a detailed plan"},
@@ -353,7 +351,7 @@ const P: Person[]=[
    {a:29,y:"1844",t:"Imagines machines that compose music and art"},
    {a:36,y:"1852",t:"Dies of cancer at thirty-six",death:1}]},
 
- {n:"Louis Pasteur", s:"Louis Pasteur", slug:"pasteur", d:"science", b:1822, x:1895, place:"Dole, France", wiki:"https://en.wikipedia.org/wiki/Louis_Pasteur", ev:[
+ {n:"Louis Pasteur", s:"Louis Pasteur", slug:"pasteur", d:"science", b:1822, x:1895, place:"Dole, France", ev:[
    {a:0,y:"1822",t:"Born in Dole, eastern France"},
    {a:15,y:"1837",t:"Draws pastel portraits to help pay for school"},
    {a:18,y:"1840",t:"Earns his baccalauréat at Besançon"},
@@ -368,7 +366,7 @@ const P: Person[]=[
    {a:66,y:"1888",t:"Opens the Pasteur Institute in Paris"},
    {a:72,y:"1895",t:"Dies near Paris",death:1}]},
 
- {n:"Andrew Carnegie", s:"Andrew Carnegie", slug:"carnegie", d:"invent", b:1835, x:1919, place:"Dunfermline, Scotland", wiki:"https://en.wikipedia.org/wiki/Andrew_Carnegie", ev:[
+ {n:"Andrew Carnegie", s:"Andrew Carnegie", slug:"carnegie", d:"invent", b:1835, x:1919, place:"Dunfermline, Scotland", ev:[
    {a:0,y:"1835",t:"Born poor in Dunfermline, Scotland"},
    {a:12,y:"1847",t:"His father loses his weaving job to steam-powered looms"},
    {a:13,y:"1848",t:"Emigrates to Pennsylvania; works in a cotton mill"},
@@ -381,7 +379,7 @@ const P: Person[]=[
    {a:67,y:"1902",t:"Pours his fortune into libraries and peace"},
    {a:84,y:"1919",t:"Dies having given away most of his wealth",death:1}]},
 
- {n:"John D. Rockefeller", s:"John D. Rockefeller", slug:"rockefeller", d:"invent", b:1839, x:1937, place:"Richford, New York", wiki:"https://en.wikipedia.org/wiki/John_D._Rockefeller", ev:[
+ {n:"John D. Rockefeller", s:"John D. Rockefeller", slug:"rockefeller", d:"invent", b:1839, x:1937, place:"Richford, New York", ev:[
    {a:0,y:"1839",t:"Born in rural New York"},
    {a:7,y:"1846",t:"His father, a traveling salesman, is often absent"},
    {a:16,y:"1855",t:"Lands his first clerk job in Cleveland"},
@@ -394,7 +392,7 @@ const P: Person[]=[
    {a:74,y:"1913",t:"Creates the Rockefeller Foundation"},
    {a:98,y:"1937",t:"Dies at ninety-seven, a famed philanthropist",death:1}]},
 
- {n:"Karl Benz", s:"Karl Benz", slug:"benz", d:"invent", b:1844, x:1929, place:"Karlsruhe, Germany", wiki:"https://en.wikipedia.org/wiki/Karl_Benz", ev:[
+ {n:"Karl Benz", s:"Karl Benz", slug:"benz", d:"invent", b:1844, x:1929, place:"Karlsruhe, Germany", ev:[
    {a:0,y:"1844",t:"Born near Karlsruhe, Germany"},
    {a:2,y:"1846",t:"His father dies; his mother struggles to raise him alone"},
    {a:15,y:"1859",t:"Graduates from the Karlsruhe Polytechnic"},
@@ -408,7 +406,7 @@ const P: Person[]=[
    {a:82,y:"1926",t:"His firm merges to form Mercedes-Benz",big:1},
    {a:84,y:"1929",t:"Dies in Ladenburg, Germany",death:1}]},
 
- {n:"Thomas Edison", s:"Thomas Edison", slug:"edison", d:"invent", b:1847, x:1931, place:"Milan, Ohio", wiki:"https://en.wikipedia.org/wiki/Thomas_Edison", ev:[
+ {n:"Thomas Edison", s:"Thomas Edison", slug:"edison", d:"invent", b:1847, x:1931, place:"Milan, Ohio", ev:[
    {a:0,y:"1847",t:"Born in Milan, Ohio"},
    {a:7,y:"1854",t:"Family moves to Port Huron, Michigan"},
    {a:12,y:"1859",t:"Sells papers and candy on the railroad"},
@@ -422,7 +420,7 @@ const P: Person[]=[
    {a:54,y:"1901",t:"Loses the war of the currents to AC"},
    {a:84,y:"1931",t:"Dies holding over a thousand patents",death:1}]},
 
- {n:"Alexander Graham Bell", s:"Alexander Graham Bell", slug:"bell", d:"invent", b:1847, x:1922, place:"Edinburgh, Scotland", wiki:"https://en.wikipedia.org/wiki/Alexander_Graham_Bell", ev:[
+ {n:"Alexander Graham Bell", s:"Alexander Graham Bell", slug:"bell", d:"invent", b:1847, x:1922, place:"Edinburgh, Scotland", ev:[
    {a:0,y:"1847",t:"Born in Edinburgh, Scotland"},
    {a:12,y:"1859",t:"Takes the name Graham at his coming-of-age ceremony"},
    {a:16,y:"1863",t:"Begins teaching elocution alongside his father"},
@@ -437,7 +435,7 @@ const P: Person[]=[
    {a:60,y:"1907",t:"Builds giant kites and early flying machines"},
    {a:75,y:"1922",t:"Dies in Nova Scotia; phones fall silent in tribute",death:1}]},
 
- {n:"Henry Ford", s:"Henry Ford", slug:"ford", d:"invent", b:1863, x:1947, place:"Michigan, USA", wiki:"https://en.wikipedia.org/wiki/Henry_Ford", ev:[
+ {n:"Henry Ford", s:"Henry Ford", slug:"ford", d:"invent", b:1863, x:1947, place:"Michigan, USA", ev:[
    {a:0,y:"1863",t:"Born on a Michigan farm"},
    {a:12,y:"1875",t:"Given a pocket watch; learns to repair it"},
    {a:15,y:"1878",t:"Refuses farm work; obsessed with machines instead"},
@@ -452,7 +450,7 @@ const P: Person[]=[
    {a:64,y:"1927",t:"Opens the giant River Rouge plant"},
    {a:84,y:"1947",t:"Dies in Dearborn, Michigan",death:1}]},
 
- {n:"Ferdinand Porsche", s:"Ferdinand Porsche", slug:"porsche", d:"invent", b:1875, x:1951, place:"Bohemia, Austria-Hungary", wiki:"https://en.wikipedia.org/wiki/Ferdinand_Porsche", ev:[
+ {n:"Ferdinand Porsche", s:"Ferdinand Porsche", slug:"porsche", d:"invent", b:1875, x:1951, place:"Bohemia, Austria-Hungary", ev:[
    {a:0,y:"1875",t:"Born in Bohemia, then Austria-Hungary"},
    {a:15,y:"1890",t:"Wires his family's home for electric lighting"},
    {a:18,y:"1893",t:"Gets a job at Béla Egger, an electrical firm in Vienna"},
@@ -466,7 +464,7 @@ const P: Person[]=[
    {a:73,y:"1948",t:"The first Porsche 356 sports car appears",big:1},
    {a:76,y:"1951",t:"Dies in Stuttgart",death:1}]},
 
- {n:"Guglielmo Marconi", s:"Guglielmo Marconi", slug:"marconi", d:"invent", b:1874, x:1937, place:"Bologna, Italy", wiki:"https://en.wikipedia.org/wiki/Guglielmo_Marconi", ev:[
+ {n:"Guglielmo Marconi", s:"Guglielmo Marconi", slug:"marconi", d:"invent", b:1874, x:1937, place:"Bologna, Italy", ev:[
    {a:0,y:"1874",t:"Born in Bologna, Italy"},
    {a:18,y:"1892",t:"Fails the naval academy entrance exam"},
    {a:20,y:"1894",t:"Reads of radio waves and starts experimenting in the attic",big:1},
@@ -479,7 +477,7 @@ const P: Person[]=[
    {a:49,y:"1923",t:"Pioneers shortwave and beam radio"},
    {a:63,y:"1937",t:"Dies in Rome; stations fall silent",death:1}]},
 
- {n:"Warner Brothers", s:"Warner Brothers", slug:"warner-brothers", d:"art", b:1881, x:1978, place:"Youngstown & Hollywood, USA", wiki:"https://en.wikipedia.org/wiki/Warner_Bros.", ev:[
+ {n:"Warner Brothers", s:"Warner Brothers", slug:"warner-brothers", d:"art", b:1881, x:1978, place:"Youngstown & Hollywood, USA", ev:[
    {a:0,y:"1881",t:"Harry Warner is born in Poland; Albert, Sam, and Jack follow later"},
    {a:11,y:"1892",t:"Jack, the youngest brother, is born in Ontario"},
    {a:22,y:"1903",t:"The brothers buy a projector and begin showing films"},
@@ -493,7 +491,7 @@ const P: Person[]=[
    {a:85,y:"1966",t:"Jack Warner sells his controlling stake in the studio"},
    {a:97,y:"1978",t:"Jack Warner dies, the last of the founding brothers",death:1}]},
 
- {n:"Wright Brothers", s:"Wright Brothers", slug:"wright", d:"invent", b:1867, x:1912, place:"Dayton, Ohio", wiki:"https://en.wikipedia.org/wiki/Wright_brothers", ev:[
+ {n:"Wright Brothers", s:"Wright Brothers", slug:"wright", d:"invent", b:1867, x:1912, place:"Dayton, Ohio", ev:[
    {a:0,y:"1867",t:"Wilbur is born in Indiana; Orville follows in 1871"},
    {a:4,y:"1871",t:"Orville is born; the brothers share a workshop and curiosity"},
    {a:18,y:"1885",t:"Wilbur, once bound for Yale, is sidelined by illness"},
@@ -507,7 +505,7 @@ const P: Person[]=[
    {a:41,y:"1908",t:"Stun Europe and win army contracts",big:1},
    {a:45,y:"1912",t:"Wilbur dies of typhoid; Orville lives to 1948",death:1}]},
 
- {n:"Niels Bohr", s:"Niels Bohr", slug:"bohr", d:"science", b:1885, x:1962, place:"Copenhagen, Denmark", wiki:"https://en.wikipedia.org/wiki/Niels_Bohr", ev:[
+ {n:"Niels Bohr", s:"Niels Bohr", slug:"bohr", d:"science", b:1885, x:1962, place:"Copenhagen, Denmark", ev:[
    {a:0,y:"1885",t:"Born in Copenhagen"},
    {a:16,y:"1901",t:"Enters the University of Copenhagen"},
    {a:20,y:"1905",t:"Wins a gold medal for a physics essay on surface tension"},
@@ -522,7 +520,7 @@ const P: Person[]=[
    {a:65,y:"1950",t:"Pleads for an open world and arms control"},
    {a:77,y:"1962",t:"Dies in Copenhagen",death:1}]},
 
- {n:"Enzo Ferrari", s:"Enzo Ferrari", slug:"ferrari", d:"invent", b:1898, x:1988, place:"Modena, Italy", wiki:"https://en.wikipedia.org/wiki/Enzo_Ferrari", ev:[
+ {n:"Enzo Ferrari", s:"Enzo Ferrari", slug:"ferrari", d:"invent", b:1898, x:1988, place:"Modena, Italy", ev:[
    {a:0,y:"1898",t:"Born in Modena, Italy"},
    {a:10,y:"1908",t:"Sees a motor race at the Bologna circuit; dreams of speed"},
    {a:18,y:"1916",t:"His father and brother die in the flu epidemic"},
@@ -536,7 +534,7 @@ const P: Person[]=[
    {a:71,y:"1969",t:"Sells half the company to Fiat to survive"},
    {a:90,y:"1988",t:"Dies in Modena, a racing legend",death:1}]},
 
- {n:"Walt Disney", s:"Walt Disney", slug:"disney", d:"invent", b:1901, x:1966, place:"Chicago, USA", wiki:"https://en.wikipedia.org/wiki/Walt_Disney", ev:[
+ {n:"Walt Disney", s:"Walt Disney", slug:"disney", d:"invent", b:1901, x:1966, place:"Chicago, USA", ev:[
    {a:0,y:"1901",t:"Born in Chicago"},
    {a:9,y:"1910",t:"Family moves to a Missouri farm; he draws and sells sketches"},
    {a:16,y:"1917",t:"Drops out of high school to join the Red Cross in France"},
@@ -550,7 +548,7 @@ const P: Person[]=[
    {a:64,y:"1965",t:"Begins planning his Florida theme park"},
    {a:65,y:"1966",t:"Dies of cancer in Burbank",death:1}]},
 
- {n:"John von Neumann", s:"John von Neumann", slug:"von-neumann", d:"science", b:1903, x:1957, place:"Budapest, Hungary", wiki:"https://en.wikipedia.org/wiki/John_von_Neumann", ev:[
+ {n:"John von Neumann", s:"John von Neumann", slug:"von-neumann", d:"science", b:1903, x:1957, place:"Budapest, Hungary", ev:[
    {a:0,y:"1903",t:"Born in Budapest, a child prodigy"},
    {a:6,y:"1909",t:"Divides two eight-digit numbers in his head for guests"},
    {a:15,y:"1918",t:"Enters the University of Budapest to study mathematics"},
@@ -564,7 +562,7 @@ const P: Person[]=[
    {a:51,y:"1954",t:"Advises the government on missiles and computing"},
    {a:53,y:"1957",t:"Dies of cancer in Washington",death:1}]},
 
- {n:"J. Robert Oppenheimer", s:"J. Robert Oppenheimer", slug:"oppenheimer", d:"science", b:1904, x:1967, place:"New York, USA", wiki:"https://en.wikipedia.org/wiki/J._Robert_Oppenheimer", ev:[
+ {n:"J. Robert Oppenheimer", s:"J. Robert Oppenheimer", slug:"oppenheimer", d:"science", b:1904, x:1967, place:"New York, USA", ev:[
    {a:0,y:"1904",t:"Born in New York to a wealthy family"},
    {a:11,y:"1915",t:"Collects minerals and writes to the New York Mineralogical Club"},
    {a:14,y:"1918",t:"Sends a letter that gets him invited to give a club lecture"},
@@ -580,7 +578,7 @@ const P: Person[]=[
    {a:59,y:"1963",t:"Honored with the Enrico Fermi Award"},
    {a:62,y:"1967",t:"Dies of throat cancer",death:1}]},
 
- {n:"Alan Turing", s:"Alan Turing", slug:"turing", d:"science", b:1912, x:1954, place:"London, England", wiki:"https://en.wikipedia.org/wiki/Alan_Turing", ev:[
+ {n:"Alan Turing", s:"Alan Turing", slug:"turing", d:"science", b:1912, x:1954, place:"London, England", ev:[
    {a:0,y:"1912",t:"Born in London"},
    {a:6,y:"1918",t:"Sent to boarding school; letters home are full of puzzles"},
    {a:13,y:"1925",t:"Enters Sherborne; cycles 60 miles when a strike cancels trains"},
@@ -597,7 +595,7 @@ const P: Person[]=[
    {a:40,y:"1952",t:"Prosecuted for homosexuality; chemically punished"},
    {a:41,y:"1954",t:"Dies of cyanide poisoning",death:1}]},
 
- {n:"Richard Feynman", s:"Richard Feynman", slug:"feynman", d:"science", b:1918, x:1988, place:"New York, USA", wiki:"https://en.wikipedia.org/wiki/Richard_Feynman", ev:[
+ {n:"Richard Feynman", s:"Richard Feynman", slug:"feynman", d:"science", b:1918, x:1988, place:"New York, USA", ev:[
    {a:0,y:"1918",t:"Born in Queens, New York"},
    {a:4,y:"1922",t:"His father teaches him to question, not just name, things"},
    {a:12,y:"1930",t:"Sets up a home lab and repairs radios in the neighborhood"},
@@ -612,7 +610,7 @@ const P: Person[]=[
    {a:68,y:"1986",t:"Exposes the Challenger O-ring flaw on live TV",big:1},
    {a:69,y:"1988",t:"Dies in Los Angeles",death:1}]},
 
- {n:"Rosalind Franklin", s:"Rosalind Franklin", slug:"franklin", d:"science", b:1920, x:1958, place:"London, England", wiki:"https://en.wikipedia.org/wiki/Rosalind_Franklin", ev:[
+ {n:"Rosalind Franklin", s:"Rosalind Franklin", slug:"franklin", d:"science", b:1920, x:1958, place:"London, England", ev:[
    {a:0,y:"1920",t:"Born in London"},
    {a:11,y:"1931",t:"Sent to St Paul's Girls' School; excels in science"},
    {a:18,y:"1938",t:"Wins a scholarship to Newnham College, Cambridge"},
@@ -626,7 +624,7 @@ const P: Person[]=[
    {a:36,y:"1956",t:"Maps the tobacco mosaic virus"},
    {a:37,y:"1958",t:"Dies of ovarian cancer at thirty-seven",death:1}]},
 
- {n:"Steve Jobs", s:"Steve Jobs", slug:"jobs", d:"invent", b:1955, x:2011, place:"San Francisco, USA", wiki:"https://en.wikipedia.org/wiki/Steve_Jobs", ev:[
+ {n:"Steve Jobs", s:"Steve Jobs", slug:"jobs", d:"invent", b:1955, x:2011, place:"San Francisco, USA", ev:[
    {a:0,y:"1955",t:"Born in San Francisco, given up for adoption"},
    {a:13,y:"1968",t:"Calls Bill Hewlett; lands a summer job at HP"},
    {a:17,y:"1972",t:"Drops out of Reed College but sits in on a calligraphy class"},
@@ -643,7 +641,7 @@ const P: Person[]=[
    {a:55,y:"2010",t:"Introduces the iPad"},
    {a:56,y:"2011",t:"Dies of cancer; Apple the world's most valued firm",death:1}]},
 
- {n:"Bill Gates", s:"Bill Gates", slug:"gates", d:"invent", b:1955, x:null, place:"Seattle, USA", wiki:"https://en.wikipedia.org/wiki/Bill_Gates", ev:[
+ {n:"Bill Gates", s:"Bill Gates", slug:"gates", d:"invent", b:1955, x:null, place:"Seattle, USA", ev:[
    {a:0,y:"1955",t:"Born in Seattle, Washington"},
    {a:13,y:"1968",t:"Starts programming on a school terminal"},
    {a:15,y:"1970",t:"Writes a program to schedule classes; tweaks it for more girls"},
@@ -658,7 +656,7 @@ const P: Person[]=[
    {a:53,y:"2008",t:"Leaves daily work to give away his fortune",big:1},
    {a:66,y:"2021",t:"Pledges to drop off the world's richest list"}]},
 
- {n:"Jeff Bezos", s:"Jeff Bezos", slug:"bezos", d:"invent", b:1964, x:null, place:"Albuquerque, USA", wiki:"https://en.wikipedia.org/wiki/Jeff_Bezos", ev:[
+ {n:"Jeff Bezos", s:"Jeff Bezos", slug:"bezos", d:"invent", b:1964, x:null, place:"Albuquerque, USA", ev:[
    {a:0,y:"1964",t:"Born in Albuquerque, New Mexico"},
    {a:4,y:"1968",t:"His mother remarries; he takes the name Bezos"},
    {a:12,y:"1976",t:"Installs an alarm on his bedroom to keep siblings out"},
@@ -674,7 +672,7 @@ const P: Person[]=[
    {a:54,y:"2018",t:"Becomes the world's richest person",big:1},
    {a:57,y:"2021",t:"Steps down as CEO and flies to space",big:1}]},
 
- {n:"Jensen Huang", s:"Jensen Huang", slug:"huang", d:"invent", b:1963, x:null, place:"Tainan, Taiwan", wiki:"https://en.wikipedia.org/wiki/Jensen_Huang", ev:[
+ {n:"Jensen Huang", s:"Jensen Huang", slug:"huang", d:"invent", b:1963, x:null, place:"Tainan, Taiwan", ev:[
    {a:0,y:"1963",t:"Born in Tainan, Taiwan"},
    {a:9,y:"1973",t:"Sent to the United States; arrives at a Kentucky boarding school"},
    {a:15,y:"1978",t:"Works as a dishwasher at Denny's while in high school"},
@@ -687,7 +685,7 @@ const P: Person[]=[
    {a:59,y:"2022",t:"The AI boom makes Nvidia chips essential"},
    {a:60,y:"2023",t:"Nvidia rockets toward a trillion-dollar value",big:1}]},
 
- {n:"Elon Musk", s:"Elon Musk", slug:"musk", d:"invent", b:1971, x:null, place:"Pretoria, South Africa", wiki:"https://en.wikipedia.org/wiki/Elon_Musk", ev:[
+ {n:"Elon Musk", s:"Elon Musk", slug:"musk", d:"invent", b:1971, x:null, place:"Pretoria, South Africa", ev:[
    {a:0,y:"1971",t:"Born in Pretoria, South Africa"},
    {a:10,y:"1981",t:"Teaches himself to program; sells a space game called Blastar"},
    {a:12,y:"1983",t:"Bullied at school; hospitalized after a beating"},
@@ -703,7 +701,7 @@ const P: Person[]=[
    {a:51,y:"2022",t:"Buys Twitter for 44 billion dollars",big:1},
    {a:52,y:"2023",t:"Launches xAI amid the AI boom"}]},
 
- {n:"Larry Page", s:"Larry Page", slug:"page", d:"invent", b:1973, x:null, place:"Michigan, USA", wiki:"https://en.wikipedia.org/wiki/Larry_Page", ev:[
+ {n:"Larry Page", s:"Larry Page", slug:"page", d:"invent", b:1973, x:null, place:"Michigan, USA", ev:[
    {a:0,y:"1973",t:"Born in East Lansing, Michigan"},
    {a:6,y:"1979",t:"Grows up around Michigan State computer science"},
    {a:12,y:"1985",t:"Reads about Nikola Tesla and decides to invent things"},
@@ -717,7 +715,7 @@ const P: Person[]=[
    {a:42,y:"2015",t:"Restructures Google under a new parent, Alphabet",big:1},
    {a:46,y:"2019",t:"Steps back from daily leadership"}]},
 
- {n:"Mark Zuckerberg", s:"Mark Zuckerberg", slug:"zuckerberg", d:"invent", b:1984, x:null, place:"New York, USA", wiki:"https://en.wikipedia.org/wiki/Mark_Zuckerberg", ev:[
+ {n:"Mark Zuckerberg", s:"Mark Zuckerberg", slug:"zuckerberg", d:"invent", b:1984, x:null, place:"New York, USA", ev:[
    {a:0,y:"1984",t:"Born in White Plains, New York"},
    {a:12,y:"1996",t:"Builds ZuckNet, a messaging system for the family home"},
    {a:18,y:"2002",t:"Creates Synapse, a music recommendation program"},
@@ -731,7 +729,7 @@ const P: Person[]=[
    {a:37,y:"2021",t:"Renames the company Meta and bets on the metaverse",big:1},
    {a:39,y:"2023",t:"Pivots hard toward artificial intelligence"}]},
 
- {n:"Sam Altman", s:"Sam Altman", slug:"altman", d:"invent", b:1985, x:null, place:"Chicago, USA", wiki:"https://en.wikipedia.org/wiki/Sam_Altman", ev:[
+ {n:"Sam Altman", s:"Sam Altman", slug:"altman", d:"invent", b:1985, x:null, place:"Chicago, USA", ev:[
    {a:0,y:"1985",t:"Born in Chicago, raised in St. Louis"},
    {a:8,y:"1993",t:"Gets his first computer, an Apple Macintosh"},
    {a:16,y:"2001",t:"Comes out as gay to his high school community"},
@@ -808,10 +806,19 @@ function build(){
       ev.innerHTML=`<div class="node ${e.big?'major':''} ${e.death?'death':''}"></div>
         <div class="card"><div class="a">${e.a===0?'Born':e.a}${e.a===0?'':'<i>yrs</i>'}</div><div class="t">${esc(e.t)}</div></div>`;
       const node=ev.querySelector<HTMLElement>('.node');
+      const card=ev.querySelector<HTMLElement>('.card');
       if(!node) return;
-      node.addEventListener('click',(x: MouseEvent)=>{ x.stopPropagation(); openTip(p,e,x.clientX,x.clientY); });
-      node.addEventListener('mouseenter',()=>{ cancelHide(); const r=node.getBoundingClientRect(); openTip(p,e,r.left+r.width/2,r.top); });
-      node.addEventListener('mouseleave',scheduleHide);
+      const openEnhanced=()=>{ hideTip(); openStoryModal(idx,evIdx); };
+      if(e.story){
+        node.addEventListener('click',(x: MouseEvent)=>{ x.stopPropagation(); openEnhanced(); });
+        card?.addEventListener('click',(x: MouseEvent)=>{ x.stopPropagation(); openEnhanced(); });
+        node.addEventListener('mouseenter',()=>{ cancelHide(); const r=node.getBoundingClientRect(); openTip(p,e,r.left+r.width/2,r.top); });
+        node.addEventListener('mouseleave',scheduleHide);
+      }else{
+        node.addEventListener('click',(x: MouseEvent)=>{ x.stopPropagation(); openTip(p,e,x.clientX,x.clientY); });
+        node.addEventListener('mouseenter',()=>{ cancelHide(); const r=node.getBoundingClientRect(); openTip(p,e,r.left+r.width/2,r.top); });
+        node.addEventListener('mouseleave',scheduleHide);
+      }
       col.appendChild(ev); io?.observe(ev);
     });
     cols.appendChild(col);
@@ -868,15 +875,11 @@ function buildChips(){ const c=byId<HTMLDivElement>('chips');
     b.addEventListener('click',()=>{ if(active.has(k)){active.delete(k);b.setAttribute('aria-pressed','false');} else{active.add(k);b.setAttribute('aria-pressed','true');} applyFilter(); });
     c.appendChild(b); }); }
 
-function srcHost(u: string){ try{ return new URL(u).hostname.replace(/^www\./,''); }catch{ return 'source'; } }
 function openTip(p: Person,e: LifeEvent,x: number,y: number){ const dm=DOMAINS[p.d], s=e.story; tip.style.setProperty('--tc',dm.hex);
-  const src=e.src||p.wiki;
-  const detail=s && s.detail.length>300 ? s.detail.slice(0,297)+'…' : s?.detail;
   tip.innerHTML=`<div class="tn">${esc(p.s)}</div><div class="ts">${esc(dm.label)} · ${esc(p.place)}</div>
     <div class="tr"><div class="ta">${e.a===0?'0':e.a}<i>${e.a===0?'Born':'years old'}</i></div>
     <div class="tt">${esc(e.t)} <span class="yr">${esc(e.y)}</span></div></div>
-    ${s?`<div class="tstory"><div class="tdek">${esc(s.dek)}</div>${detail?`<div class="tdetail">${esc(detail)}</div>`:''}</div>`:''}
-    ${src?`<a class="tsrc" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${esc(srcHost(src))}<span>&#8599;</span></a>`:''}`;
+    ${s?`<div class="tstory"><div class="tdek">${esc(s.dek)}</div><div class="tdetail">Click to read the full story</div></div>`:''}`;
   tip.style.display='block';
   const r=tip.getBoundingClientRect(),vw=innerWidth,vh=innerHeight;
   let left=x-r.width/2; left=Math.max(8,Math.min(left,vw-r.width-8));
@@ -918,22 +921,25 @@ const screenBtn=byId<HTMLButtonElement>('screenBtn'),
       storyDetail=byId<HTMLParagraphElement>('storyDetail'),
       storyMeta=byId<HTMLDivElement>('storyMeta'),
       storyProgress=byId<HTMLSpanElement>('storyProgress'),
-      storyCount=byId<HTMLSpanElement>('storyCount'),
-      storyExit=byId<HTMLButtonElement>('storyExit');
+      storyExit=byId<HTMLButtonElement>('storyExit'),
+      storyBackdrop=byId<HTMLButtonElement>('storyBackdrop');
 const TOUR_MS=7600;
 const STORY_MS=22000;
 const STORY_XFADE_MS=1350;
 const STORY_TEXT_MS=620;
+const IDLE_MS=5000;
 let tourStops: TourStop[]=[];
 let tourIndex=0;
 let storySlides: StorySlide[]=[];
 let storyIndex=0;
 let storyImageLayer=0;
 let storySlideReady=true;
+let storyRun=0;
 let tourTimer: number | undefined;
 let idleTimer: number | undefined;
 let tourActive=false;
 let storyMode=false;
+let storyViewMode: 'screensaver'|'modal'='screensaver';
 
 function clearTourTimer(){ if(tourTimer){ clearTimeout(tourTimer); tourTimer=undefined; } }
 function clearTourHighlight(){
@@ -955,6 +961,13 @@ function shuffle<T>(items: T[]){
   const next=items.slice();
   for(let i=next.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [next[i],next[j]]=[next[j],next[i]]; }
   return next;
+}
+function buildStorySlidesOrdered(){
+  const slides: StorySlide[]=[];
+  data.forEach((p,idx)=>p.ev.forEach((e,evIdx)=>{
+    if(e.story && active.has(p.d)) slides.push({p,e,idx,evIdx,story:e.story});
+  }));
+  return slides;
 }
 function buildStorySlides(){
   const slides: StorySlide[]=[];
@@ -982,7 +995,6 @@ function fillStoryCopy(slide: StorySlide){
   storyDek.textContent=story.dek;
   storyDetail.textContent=story.detail;
   storyMeta.innerHTML=story.tags.map(t=>`<span>${esc(t)}</span>`).join('');
-  storyCount.textContent=`${storyIndex+1} / ${storySlides.length}`;
 }
 function swapStoryImage(url: string,alt: string,animate: boolean){
   const a=storyImageA,b=storyImageB,next=storyImageLayer===0?b:a,prev=storyImageLayer===0?a:b;
@@ -1013,9 +1025,12 @@ function swapStoryImage(url: string,alt: string,animate: boolean){
 function resetStoryProgress(){
   storyProgress.style.transition='none';
   storyProgress.style.width='0';
+  void storyProgress.offsetWidth;
   requestAnimationFrame(()=>{
-    storyProgress.style.transition=`width ${STORY_MS}ms linear`;
-    storyProgress.style.width='100%';
+    requestAnimationFrame(()=>{
+      storyProgress.style.transition=`width ${STORY_MS}ms linear`;
+      storyProgress.style.width='100%';
+    });
   });
 }
 function showStorySlide(nextIndex=storyIndex){
@@ -1025,20 +1040,25 @@ function showStorySlide(nextIndex=storyIndex){
 }
 async function presentStorySlide(nextIndex: number){
   if(!tourActive||!storyMode||!storySlides.length) return;
+  const run=++storyRun;
   storyIndex=(nextIndex+storySlides.length)%storySlides.length;
+  storyProgress.style.transition='none';
+  storyProgress.style.width='0';
   const slide=storySlides[storyIndex], {p,e,idx,evIdx}=slide, dm=DOMAINS[p.d];
   const animate=storySlideReady;
   storySlideReady=true;
   clearTourHighlight();
-  const ph=head.querySelector<HTMLElement>(`.phead[data-i="${idx}"]`);
-  const ev=cols.querySelector<HTMLElement>(`.ev[data-i="${idx}"][data-e="${evIdx}"]`);
-  ph?.classList.add('tour-active');
-  ev?.classList.add('tour-active','in');
-  const eventY=parseFloat(ev?.style.top||String(TOP+e.a*PPY));
-  const eventPageY=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))+eventY;
-  const left=ph ? ph.offsetLeft+ph.offsetWidth/2-scrollEl.clientWidth/2 : 0;
-  const top=eventPageY-scrollEl.clientHeight*.48;
-  scrollEl.scrollTo({left:Math.max(0,left),top:Math.max(0,top),behavior:'smooth'});
+  if(storyViewMode==='screensaver'){
+    const ph=head.querySelector<HTMLElement>(`.phead[data-i="${idx}"]`);
+    const ev=cols.querySelector<HTMLElement>(`.ev[data-i="${idx}"][data-e="${evIdx}"]`);
+    ph?.classList.add('tour-active');
+    ev?.classList.add('tour-active','in');
+    const eventY=parseFloat(ev?.style.top||String(TOP+e.a*PPY));
+    const eventPageY=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))+eventY;
+    const left=ph ? ph.offsetLeft+ph.offsetWidth/2-scrollEl.clientWidth/2 : 0;
+    const top=eventPageY-scrollEl.clientHeight*.48;
+    scrollEl.scrollTo({left:Math.max(0,left),top:Math.max(0,top),behavior:'smooth'});
+  }
   storyDeck.style.setProperty('--tc',`var(${dm.v})`);
   if(animate){
     storyCopy.classList.add('is-changing');
@@ -1054,6 +1074,7 @@ async function presentStorySlide(nextIndex: number){
     fillStoryCopy(slide);
     await swapStoryImage(slide.story.image,slide.story.title,false);
   }
+  if(run!==storyRun||!tourActive||!storyMode) return;
   resetStoryProgress();
   tourTimer=window.setTimeout(()=>showStorySlide(storyIndex+1),STORY_MS);
 }
@@ -1081,23 +1102,26 @@ function showTourStop(nextIndex=tourIndex){
   tourTimer=window.setTimeout(()=>showTourStop(tourIndex+1),TOUR_MS);
 }
 function armIdleCursor(){
-  if(!tourActive) return;
+  if(!tourActive||storyViewMode!=='screensaver') return;
   document.body.classList.remove('idle');
   if(idleTimer) clearTimeout(idleTimer);
-  idleTimer=window.setTimeout(()=>document.body.classList.add('idle'),2600);
+  idleTimer=window.setTimeout(()=>document.body.classList.add('idle'),IDLE_MS);
 }
 async function enterScreensaver(){
+  storyViewMode='screensaver';
   storySlides=buildStorySlides();
   storyMode=storySlides.length>0;
   tourStops=storyMode?[]:buildTourStops();
   if(!storyMode&&!tourStops.length) return;
   storySlideReady=false;
   storyImageLayer=0;
+  storyRun=0;
   tourActive=true;
   hideTip();
   footerEl?.classList.remove('show');
   document.body.classList.add('screensaver');
   document.body.classList.toggle('story-mode',storyMode);
+  storyExit.textContent='Exit screensaver';
   screenBtn.setAttribute('aria-pressed','true');
   screenBtn.textContent='Exit';
   armIdleCursor();
@@ -1105,13 +1129,31 @@ async function enterScreensaver(){
   if(storyMode) showStorySlide(0);
   else showTourStop(0);
 }
-function exitScreensaver(){
+function openStoryModal(idx: number,evIdx: number){
+  if(tourActive) exitStoryView();
+  const slides=buildStorySlidesOrdered();
+  const start=slides.findIndex(s=>s.idx===idx && s.evIdx===evIdx);
+  if(start<0) return;
+  storyViewMode='modal';
+  storySlides=slides;
+  storyMode=true;
+  storySlideReady=false;
+  storyImageLayer=0;
+  storyRun=0;
+  tourActive=true;
+  hideTip();
+  document.body.classList.add('story-modal','story-mode');
+  storyExit.textContent='Close';
+  showStorySlide(start);
+}
+function exitStoryView(){
   if(!tourActive) return;
+  const wasScreensaver=storyViewMode==='screensaver';
   tourActive=false;
   clearTourTimer();
   if(idleTimer){ clearTimeout(idleTimer); idleTimer=undefined; }
   clearTourHighlight();
-  document.body.classList.remove('screensaver','story-mode','idle');
+  document.body.classList.remove('screensaver','story-mode','story-modal','idle');
   screenBtn.setAttribute('aria-pressed','false');
   screenBtn.textContent='Screensaver';
   tourProgress.style.transition='none';
@@ -1119,13 +1161,16 @@ function exitScreensaver(){
   storyProgress.style.transition='none';
   storyProgress.style.width='0';
   storyMode=false;
+  storyViewMode='screensaver';
   storySlideReady=false;
   storyCopy.classList.remove('is-changing','is-entering');
   storyImageA.classList.add('is-active');
   storyImageA.classList.remove('is-leaving');
   storyImageB.classList.remove('is-active','is-leaving');
-  if(document.fullscreenElement) document.exitFullscreen?.().catch(()=>{});
+  storyExit.textContent='Close';
+  if(wasScreensaver && document.fullscreenElement) document.exitFullscreen?.().catch(()=>{});
 }
+function exitScreensaver(){ exitStoryView(); }
 
 function readVars(){ const cs=getComputedStyle(document.documentElement); PPY=parseFloat(cs.getPropertyValue('--ppy'))||30; TOP=parseFloat(cs.getPropertyValue('--topInset'))||44; SX=innerWidth<=680?26:30; }
 function rebuild(){ const a=+byId<HTMLInputElement>('youSlider').value; build(); positionYou(a); applyFilter();
@@ -1139,13 +1184,14 @@ byId<HTMLInputElement>('youAge').addEventListener('input',e=>{
 });
 byId<HTMLInputElement>('youAge').addEventListener('blur',e=>positionYou(+(e.currentTarget as HTMLInputElement).value));
 window.addEventListener('resize',()=>{ const o=PPY; readVars(); if(PPY!==o) rebuild(); });
-document.addEventListener('click',e=>{ const target=e.target instanceof Element?e.target:null; if(!target?.closest('.node,#tip')) hideTip(); });
+document.addEventListener('click',e=>{ const target=e.target instanceof Element?e.target:null; if(!target?.closest('.node,.card,#tip,.storydeck,.storybackdrop')) hideTip(); });
 scrollEl.addEventListener('scroll',onBoardScroll,{passive:true});
-screenBtn.addEventListener('click',()=>tourActive?exitScreensaver():enterScreensaver());
-tourExit.addEventListener('click',exitScreensaver);
-storyExit.addEventListener('click',exitScreensaver);
-document.addEventListener('fullscreenchange',()=>{ if(tourActive&&!document.fullscreenElement) exitScreensaver(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&tourActive) exitScreensaver(); });
+screenBtn.addEventListener('click',()=>tourActive?exitStoryView():enterScreensaver());
+tourExit.addEventListener('click',exitStoryView);
+storyExit.addEventListener('click',exitStoryView);
+storyBackdrop.addEventListener('click',exitStoryView);
+document.addEventListener('fullscreenchange',()=>{ if(tourActive&&storyViewMode==='screensaver'&&!document.fullscreenElement) exitStoryView(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&tourActive) exitStoryView(); });
 ['mousemove','mousedown','touchstart','keydown'].forEach(name=>document.addEventListener(name,armIdleCursor,{passive:true}));
 
 readVars(); buildChips(); build(); applyFilter(); onBoardScroll();
