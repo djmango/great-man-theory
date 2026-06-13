@@ -2592,6 +2592,46 @@ function fillStoryCopy(slide) {
   storyTitle.textContent = story2.title;
   storyBody.textContent = story2.body;
 }
+function resolveStoryImageUrl(url) {
+  return new URL(url, location.href).href;
+}
+function imageUrlMatches(img, url) {
+  if (!img.src)
+    return false;
+  return resolveStoryImageUrl(img.src) === resolveStoryImageUrl(url);
+}
+function decodeWithTimeout(img, ms) {
+  return Promise.race([
+    img.decode().catch(() => {}),
+    new Promise((resolve) => window.setTimeout(resolve, ms))
+  ]);
+}
+function waitForStoryImage(img, url, token) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = () => {
+      if (settled)
+        return;
+      settled = true;
+      window.clearTimeout(timer);
+      if (token !== storyRun) {
+        resolve();
+        return;
+      }
+      decodeWithTimeout(img, 2500).finally(() => resolve());
+    };
+    const timer = window.setTimeout(finish, 12000);
+    img.onload = finish;
+    img.onerror = finish;
+    if (imageUrlMatches(img, url) && img.complete && img.naturalWidth > 0)
+      finish();
+    else {
+      img.src = url;
+      if (img.complete && img.naturalWidth > 0)
+        finish();
+    }
+  });
+}
 function startKenBurns(img) {
   img.classList.remove("is-kenburns");
   img.offsetWidth;
@@ -2606,44 +2646,27 @@ async function swapStoryImage(url, alt, animate, token = storyRun) {
     b.classList.remove("is-active", "is-leaving", "is-kenburns");
     b.removeAttribute("src");
     a.alt = alt;
-    let revealed = false;
-    const reveal = () => {
-      if (revealed || token !== storyRun)
-        return;
-      revealed = true;
-      a.classList.add("is-active");
-      startKenBurns(a);
-    };
-    a.onload = () => {
-      a.decode().catch(() => {}).finally(reveal);
-    };
-    a.src = url;
-    if (a.complete)
-      a.decode().catch(() => {}).finally(reveal);
+    await waitForStoryImage(a, url, token);
+    if (token !== storyRun)
+      return;
+    a.classList.add("is-active");
+    startKenBurns(a);
     storyImageLayer = 0;
     return;
   }
-  return new Promise((resolve) => {
-    const done = () => {
-      next.decode().catch(() => {}).finally(() => {
-        prev.classList.remove("is-active", "is-kenburns");
-        prev.classList.add("is-leaving");
-        next.classList.remove("is-leaving", "is-kenburns");
-        next.classList.add("is-active");
-        startKenBurns(next);
-        window.setTimeout(() => {
-          prev.classList.remove("is-leaving");
-          storyImageLayer = storyImageLayer === 0 ? 1 : 0;
-          resolve();
-        }, STORY_XFADE_MS);
-      });
-    };
-    if (next.complete && next.src === url)
-      done();
-    else
-      next.onload = () => done();
-    next.src = url;
-  });
+  await waitForStoryImage(next, url, token);
+  if (token !== storyRun)
+    return;
+  prev.classList.remove("is-active", "is-kenburns");
+  prev.classList.add("is-leaving");
+  next.classList.remove("is-leaving", "is-kenburns");
+  next.classList.add("is-active");
+  startKenBurns(next);
+  await new Promise((resolve) => window.setTimeout(resolve, STORY_XFADE_MS));
+  if (token !== storyRun)
+    return;
+  prev.classList.remove("is-leaving");
+  storyImageLayer = storyImageLayer === 0 ? 1 : 0;
 }
 function showStorySlide(nextIndex = storyIndex) {
   if (!tourActive || !storyMode || !storySlides.length)
@@ -2674,14 +2697,23 @@ async function presentStorySlide(nextIndex) {
   storyDeck.style.setProperty("--tc", `var(${dm.v})`);
   if (animate) {
     storyCopy.classList.add("is-changing");
-    await Promise.all([
-      swapStoryImage(slide.story.image, slide.story.title, true, run),
-      new Promise((r) => window.setTimeout(r, STORY_TEXT_MS))
-    ]);
-    fillStoryCopy(slide);
-    storyCopy.classList.remove("is-changing");
-    storyCopy.classList.add("is-entering");
-    requestAnimationFrame(() => storyCopy.classList.remove("is-entering"));
+    try {
+      await Promise.all([
+        swapStoryImage(slide.story.image, slide.story.title, true, run),
+        new Promise((r) => window.setTimeout(r, STORY_TEXT_MS))
+      ]);
+      if (run !== storyRun)
+        return;
+      fillStoryCopy(slide);
+      storyCopy.classList.remove("is-changing");
+      storyCopy.classList.add("is-entering");
+      requestAnimationFrame(() => storyCopy.classList.remove("is-entering"));
+    } catch {
+      if (run !== storyRun)
+        return;
+      fillStoryCopy(slide);
+      storyCopy.classList.remove("is-changing");
+    }
   } else {
     fillStoryCopy(slide);
     swapStoryImage(slide.story.image, slide.story.title, false, run);
