@@ -1,7 +1,87 @@
-/** One frozen moment per scene — no montages, no life-summary collages. */
+/**
+ * One frozen moment per scene — no montages, no life-summary collages.
+ *
+ * TODO: Prefer real sources over generated art where they exist — photographs for
+ * modern figures, historical paintings/engravings for earlier eras. See images/story/TODO.md.
+ */
 
 export const SCENE_STYLE =
-  "Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones. One unified 19th-century history painting tableau by Gérôme or David: a single dramatic moment, one viewpoint, one shared light. NOT a montage, NOT collage, NOT multiple panels, NOT inset maps, NOT movie poster, NOT split screen. Dramatic but not photorealistic, no text, no letters, no border.";
+  "Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones. One unified 19th-century history painting tableau by Gérôme or David: a single dramatic moment, one viewpoint, one shared light. NOT a montage, NOT collage, NOT multiple panels, NOT inset maps, NOT movie poster, NOT split screen. Dramatic but not photorealistic, no text, no letters, no border. The named historical figure must be clearly recognizable as the central subject of the scene.";
+
+/** Slug prefix → full name for image prompts (always name the person, never only describe them). */
+export const FIGURE_NAMES: Record<string, string> = {
+  alexander: "Alexander the Great",
+  caesar: "Julius Caesar",
+  cleopatra: "Cleopatra VII",
+  napoleon: "Napoleon Bonaparte",
+  lincoln: "Abraham Lincoln",
+  oppenheimer: "J. Robert Oppenheimer",
+  leonardo: "Leonardo da Vinci",
+  galileo: "Galileo Galilei",
+  beethoven: "Ludwig van Beethoven",
+  turing: "Alan Turing",
+  jobs: "Steve Jobs",
+  gates: "Bill Gates",
+  bezos: "Jeff Bezos",
+  huang: "Jensen Huang",
+  musk: "Elon Musk",
+  page: "Larry Page",
+  zuckerberg: "Mark Zuckerberg",
+  altman: "Sam Altman",
+};
+
+export function figureKeyFromSlug(slug: string): string {
+  return slug.split("-")[0];
+}
+
+export function figureNameFromSlug(slug: string, figureKey?: string): string {
+  const key = figureKey ?? figureKeyFromSlug(slug);
+  return FIGURE_NAMES[key] ?? key;
+}
+
+/** True if the beat already names this figure (last name, first name, or slug token). */
+export function beatMentionsFigure(beat: string, name: string, slug: string): boolean {
+  const lower = beat.toLowerCase();
+  for (const part of name.toLowerCase().split(/[\s.]+/)) {
+    if (part.length >= 3 && lower.includes(part)) return true;
+  }
+  const key = figureKeyFromSlug(slug);
+  if (key.length >= 4 && lower.includes(key)) return true;
+  return false;
+}
+
+/** Inject the figure's name into beats that only describe anonymous people. */
+export function ensureFigureNamedInBeat(slug: string, beat: string, name: string): string {
+  if (beatMentionsFigure(beat, name, slug)) return beat;
+
+  if (slug.endsWith("-born") || /\bnewborn\b/i.test(beat)) {
+    const rest = beat
+      .replace(/^a?\s*newborn\s+/i, "")
+      .replace(/\badoptive parents holding a newborn,?\s*/i, "")
+      .replace(/^an?\s+/i, "")
+      .trim();
+    return rest ? `infant ${name}, ${rest}` : `infant ${name} with family in the scene`;
+  }
+
+  if (/\bteenage boys\b/i.test(beat)) {
+    return beat.replace(/\bteenage boys\b/i, `teenage ${name} with classmates`);
+  }
+
+  const youngMatch = beat.match(/\b(a|the)\s+(teenage|young|twelve-year-old|nine-year-old|eight-year-old|elderly|thin|kindly)\s+(boy|girl|man|woman|CEO|traveler|engineer|dropout|programmer|valedictorian)?/i);
+  if (youngMatch) {
+    return beat.replace(youngMatch[0], `${youngMatch[2] ?? "young"} ${name}`);
+  }
+
+  if (/\btwo (young men|college-age programmers|brothers|long-haired young men)\b/i.test(beat)) {
+    return `${name} among them, ${beat.charAt(0).toLowerCase()}${beat.slice(1)}`;
+  }
+
+  if (/\ba (boy|girl|couple|teenager)\b/i.test(beat)) {
+    return beat.replace(/\ba (boy|girl|couple|teenager)\b/i, `${name}, a $1`);
+  }
+
+  return `${name} as the clearly recognizable central figure: ${beat}`;
+}
 
 export const SCENE_BEATS: Record<string, string> = {
   // Alexander (reference quality — keep if regenerating)
@@ -483,10 +563,12 @@ export const SCENE_BEATS: Record<string, string> = {
     "Altman testifying about AI safety before lawmakers with calm expression, 2023",
 };
 
-export function buildScenePrompt(slug: string, title: string): string {
+export function buildScenePrompt(slug: string, title: string, figureKey?: string): string {
   const beat = SCENE_BEATS[slug];
   if (!beat) {
     throw new Error(`Missing scene beat for slug: ${slug}`);
   }
-  return `A cinematic historical illustration of ${beat}. ${SCENE_STYLE}`;
+  const name = figureNameFromSlug(slug, figureKey);
+  const scene = ensureFigureNamedInBeat(slug, beat, name);
+  return `A cinematic historical illustration featuring ${name}. Scene: ${scene}. ${SCENE_STYLE} ${name} must be the clearly identifiable central figure in the scene.`;
 }
