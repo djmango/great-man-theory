@@ -9,12 +9,14 @@ rm -rf .wrangler/state
 
 bun build src/app.ts --outfile app.js --target browser --watch &
 BUILD_PID=$!
+bun build src/gallery.ts --outfile gallery/gallery.js --target browser --watch &
+GALLERY_BUILD_PID=$!
 
 wrangler dev --persist-to ../.gmt-wrangler-state &
 WRANGLER_PID=$!
 
 cleanup() {
-  kill "$BUILD_PID" "$WRANGLER_PID" 2>/dev/null || true
+  kill "$BUILD_PID" "$GALLERY_BUILD_PID" "$WRANGLER_PID" 2>/dev/null || true
   wait 2>/dev/null || true
 }
 trap cleanup EXIT INT TERM

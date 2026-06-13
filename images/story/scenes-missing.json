@@ -1,0 +1,929 @@
+[
+  {
+    "slug": "beethoven-born",
+    "figure": "beethoven",
+    "title": "Born in Bonn between two musical worlds",
+    "prompt": "A cinematic historical illustration: Born in Bonn between two musical worlds. Ludwig van Beethoven is born in Bonn in 1770 while Mozart is still a teenager and Haydn is shaping Vienna. His grandfather was Kapellmeister; his father is a failed singer with drink. The boy inherits talent and a household where music is both ladder and weapon. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-born.webp",
+    "source": "beethoven-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-deafness",
+    "figure": "beethoven",
+    "title": "The deafness begins in secret",
+    "prompt": "A cinematic historical illustration: The deafness begins in secret. He notices ringing and muffled speech in his late twenties. Doctors fail him. He hides it from audiences while crashing pianos to feel vibration through the floor. A man whose life is sound starts living inside his skull. The cruelest joke in music history begins quietly. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-deafness.webp",
+    "source": "beethoven-deafness-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-death",
+    "figure": "beethoven",
+    "title": "Thunderstorm over Vienna",
+    "prompt": "A cinematic historical illustration: Thunderstorm over Vienna. He dies in 1827 during a thunderstorm, fists clenched, manuscripts scattered. Thousands attend the funeral. His development from Classical clarity to Romantic storm rewired what music could express. Late quartets still baffle and move players two centuries later. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-death.webp",
+    "source": "beethoven-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-eroica",
+    "figure": "beethoven",
+    "title": "Eroica: Napoleon breaks the dedication",
+    "prompt": "A cinematic historical illustration: Eroica: Napoleon breaks the dedication. He writes a symphony of heroic scale and dedicates it to Napoleon, the consul who seemed to embody Enlightenment. When Napoleon crowns himself emperor, Beethoven tears the dedication in rage. The music remains revolutionary even when politics disappoints. Form expands to fit anger and hope. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-eroica.webp",
+    "source": "beethoven-eroica-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-father",
+    "figure": "beethoven",
+    "title": "His father drills him like a prodigy act",
+    "prompt": "A cinematic historical illustration: His father drills him like a prodigy act. Johann van Beethoven advertises his son as a young Mozart, pounding keyboard drills and beating him when practice falters. Neighbors in Bonn hear the child weeping through walls. The abuse forges technique and resentment. Ludwig will spend adulthood proving music is choice, not coercion. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-father.webp",
+    "source": "beethoven-father-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-fifth",
+    "figure": "beethoven",
+    "title": "Fifth and Sixth: fate and pasture",
+    "prompt": "A cinematic historical illustration: Fifth and Sixth: fate and pasture. In one concert he premieres the Fifth Symphony with its four-note knock of fate and the Pastoral Sixth with brooks and storms painted in sound. Critics complain length and difficulty. Audiences later treat both as birth certificates of modern music. He conducts while deafness advances. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-fifth.webp",
+    "source": "beethoven-fifth-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-heiligenstadt",
+    "figure": "beethoven",
+    "title": "Heiligenstadt testament to his brothers",
+    "prompt": "A cinematic historical illustration: Heiligenstadt testament to his brothers. In a letter near Vienna he confesses despair over deafness and thoughts of suicide, then vows to live for art. The Heiligenstadt Testament reads like a will and a rebirth on the same page. He chooses composition over silence. What follows is louder than hearing ever was. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-heiligenstadt.webp",
+    "source": "beethoven-heiligenstadt-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-late-quartets",
+    "figure": "beethoven",
+    "title": "Late quartets while the world goes quiet",
+    "prompt": "A cinematic historical illustration: Late quartets while the world goes quiet. In his forties he is functionally deaf, quarreling with relatives over a nephew, and writing string quartets that listeners call incomprehensible and then sacred. Opus 131 and 132 treat suffering as material. Players still argue over them in rehearsal rooms. Deafness did not shorten ambition; it deepened it. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-late-quartets.webp",
+    "source": "beethoven-late-quartets-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-ninth",
+    "figure": "beethoven",
+    "title": "Ninth: Ode to Joy while stone deaf",
+    "prompt": "A cinematic historical illustration: Ninth: Ode to Joy while stone deaf. At the Ninth's premiere he stands between conductor and orchestra, turning pages he cannot fully hear. When the chorus ends, he keeps conducting until a singer turns him to face applause he cannot hear but can see. Schiller's ode to human brotherhood becomes Europe's unofficial anthem. Deafness did not win. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-ninth.webp",
+    "source": "beethoven-ninth-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "beethoven-vienna",
+    "figure": "beethoven",
+    "title": "Vienna and the shadow of Haydn",
+    "prompt": "A cinematic historical illustration: Vienna and the shadow of Haydn. He moves to Vienna to study with Haydn and others, quickly outgrowing teachers. Aristocrats hire him as pianist and composer. He insults patrons and keeps getting hired because rooms change when he plays. The capital of classical music becomes his arena. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "beethoven-vienna.webp",
+    "source": "beethoven-vienna-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-aedile-games",
+    "figure": "caesar",
+    "title": "Aedile games that drown Rome in wonder",
+    "prompt": "A cinematic historical illustration: Aedile games that drown Rome in wonder. As aedile he stages games so lavish rivals accuse him of buying the crowd. He rebuilds monuments, parades exotic animals, and fills the Forum with gladiators and pageantry. Crassus and Pompey watch a man who turns public office into personal theater. Romans learn that Caesar does not do anything small, including debt. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-aedile-games.webp",
+    "source": "caesar-aedile-games-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-alesia",
+    "figure": "caesar",
+    "title": "Alesia: engineering as domination",
+    "prompt": "A cinematic historical illustration: Alesia: engineering as domination. At Alesia, Vercingetorix retreats to a hill fort hoping to outlast Caesar. Caesar builds a double wall: one facing the hill, one facing relief armies coming to rescue Gaul. Starvation and Roman shovel work decide the war. Vercingetorix rides out in armor and surrenders. Gaul becomes a Roman province. Caesar becomes a man who can no longer be kept out of Rome. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-alesia.webp",
+    "source": "caesar-alesia-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-alexander-statue",
+    "figure": "caesar",
+    "title": "Weeping before a statue of Alexander",
+    "prompt": "A cinematic historical illustration: Weeping before a statue of Alexander. Serving as a junior magistrate in Spain, Caesar passes a town with a statue of Alexander the Great. He weeps in front of his staff. At his age Alexander had conquered the world. Caesar, he says, has done almost nothing. The story may be polished by later admirers, but it captures the hunger that will drive the rest of his life. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-alexander-statue.webp",
+    "source": "caesar-alexander-statue-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-alexandria",
+    "figure": "caesar",
+    "title": "Alexandria burns while Caesar holds the palace",
+    "prompt": "A cinematic historical illustration: Alexandria burns while Caesar holds the palace. Pursuing Pompey to Egypt, Caesar lands in a civil war between Cleopatra and her brother. He takes the palace, fights street by street, and burns ships in the harbor; smoke may have damaged the great library. Pompey's head arrives as a gift and offends him. Cleopatra reaches him by audacity. Egypt gives him a son, grain, and the title pharaoh. Rome notices he is collecting kingdoms, not only victories. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-alexandria.webp",
+    "source": "caesar-alexandria-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-born",
+    "figure": "caesar",
+    "title": "A patrician name in a republic of knives",
+    "prompt": "A cinematic historical illustration: A patrician name in a republic of knives. Caesar is born into the Julian clan, ancient in name but lately short on money and luck. Rome in 100 BC is a city of factions, street violence, and generals who treat the Senate like furniture. His aunt is married to Marius, the champion of the common soldiers. His uncle is the conservative lion Sulla. The boy inherits a famous name at the worst possible moment to need one. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-born.webp",
+    "source": "caesar-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-gaul",
+    "figure": "caesar",
+    "title": "Gaul will make him or break Rome",
+    "prompt": "A cinematic historical illustration: Gaul will make him or break Rome. Caesar takes proconsular command of Cisalpine and Transalpine Gaul for five years. On paper he is defending the frontier. In practice he will spend the next decade turning tribal wars into personal legend. Helvetii, Ariovistus, the Belgae: each campaign extends Roman reach and his own debt of glory. His Commentaries are propaganda so elegant Romans quote them like history. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-gaul.webp",
+    "source": "caesar-gaul-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-ides",
+    "figure": "caesar",
+    "title": "The Ides of March in the curia",
+    "prompt": "A cinematic historical illustration: The Ides of March in the curia. Dictator for life, Caesar plans reforms, a calendar, colonies, debt relief. He also plans a Parthian campaign. On 15 March 44 BC he enters the Theatre of Pompey for a Senate meeting. Twenty-three knives find him. Brutus, whom he may have treated as a son, strikes among the rest. The Republic dies with him, though men will keep using the word for years. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-ides.webp",
+    "source": "caesar-ides-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-pharsalus",
+    "figure": "caesar",
+    "title": "Pharsalus: Pompey flees the field",
+    "prompt": "A cinematic historical illustration: Pharsalus: Pompey flees the field. In Greece, Pompey massed cavalry and senators who still called themselves the Republic. Caesar's veterans at Pharsalus held the line, then counterattacked where the cavalry buckled. Pompey rode away. Caesar pursued him to Egypt, where courtiers presented Pompey's severed head as a gift. Caesar wept, they say, at the insult to a Roman magnate. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-pharsalus.webp",
+    "source": "caesar-pharsalus-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-pirates",
+    "figure": "caesar",
+    "title": "Captured by pirates, promises crucifixion",
+    "prompt": "A cinematic historical illustration: Captured by pirates, promises crucifixion. Sailing to study rhetoric in Rhodes, Caesar is seized by Cilician pirates who demand twenty talents. He laughs and insists they ask for fifty; he is worth more. For weeks he joins their games, writes poetry they mock, and tells them he will crucify them once ransomed. After payment he raises a fleet, returns, captures them, and carries out the threat after a brief mercy of throat-cutting. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-pirates.webp",
+    "source": "caesar-pirates-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-pontifex",
+    "figure": "caesar",
+    "title": "Pontifex maximus on borrowed money",
+    "prompt": "A cinematic historical illustration: Pontifex maximus on borrowed money. Caesar runs for Rome's chief priest against a senior senator and wins by spending himself into terrifying debt. He tells his mother the night before that if he loses he will not come home. Bribery, spectacle, and nerve beat pedigree. The office gives him a house, prestige, and a platform. Debt becomes a habit: he will keep buying futures with money he does not yet have. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-pontifex.webp",
+    "source": "caesar-pontifex-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-rubicon",
+    "figure": "caesar",
+    "title": "The Rubicon is a line in a politician's mind",
+    "prompt": "A cinematic historical illustration: The Rubicon is a line in a politician's mind. The Senate orders Caesar to disband his army. Pompey waits in Italy with the Republic's prestige. On 10 January 49 BC Caesar leads the Thirteenth Legion across a shallow river boundary. Alea iacta est, the die is cast, he says in Greek according to Suetonius. There is no taking the step back. Civil war becomes the only grammar left. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-rubicon.webp",
+    "source": "caesar-rubicon-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-sulla",
+    "figure": "caesar",
+    "title": "Refuses to divorce his wife for a dictator",
+    "prompt": "A cinematic historical illustration: Refuses to divorce his wife for a dictator. When Sulla seizes Rome, he orders the young Caesar to leave Cornelia, daughter of the defeated Marius. Caesar refuses. Sulla strips his priesthood, his inheritance, and his safety. Plutarch says Sulla warned aides that in Caesar they leave behind many Mariuses. For months he is a fugitive, bribing and hiding until friends and the Vestals win a pardon. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-sulla.webp",
+    "source": "caesar-sulla-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "caesar-triumvirate",
+    "figure": "caesar",
+    "title": "The First Triumvirate in a back room",
+    "prompt": "A cinematic historical illustration: The First Triumvirate in a back room. Caesar, Pompey the Great, and Crassus the rich divide the Roman world in a private pact. Pompey wants land for his veterans. Crassus wants a profitable command. Caesar wants the consulship and then Gaul. The Senate is not consulted. Rome learns again that law follows whoever can pair legions with money. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "caesar-triumvirate.webp",
+    "source": "caesar-triumvirate-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-actium",
+    "figure": "cleopatra",
+    "title": "Actium: the fleet that chose flight",
+    "prompt": "A cinematic historical illustration: Actium: the fleet that chose flight. Off the coast of Greece, Octavian's admiral Agrippa outmaneuvers Antony and Cleopatra's combined fleet. Mid-battle Cleopatra's squadron breaks through and sails for Egypt. Antony follows her. The fighting men see commanders leave the line. Morale collapses. Actium is less a annihilation than a psychological surrender. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-actium.webp",
+    "source": "cleopatra-actium-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-alexandria-siege",
+    "figure": "cleopatra",
+    "title": "Alexandria in flames around the palace",
+    "prompt": "A cinematic historical illustration: Alexandria in flames around the palace. After the carpet gambit, civil war returns to Alexandria. Caesar and Cleopatra hold the palace while her brother's forces and the city burn around them. Ships in the harbor catch fire; scholars still argue what happened to library scrolls in the smoke. She stays beside Caesar through a siege that feels more Greek tragedy than diplomacy. When they win, she is queen again and Rome has a foothold on the Nile. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-alexandria-siege.webp",
+    "source": "cleopatra-alexandria-siege-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-born",
+    "figure": "cleopatra",
+    "title": "A Greek queen in an Egyptian crown",
+    "prompt": "A cinematic historical illustration: A Greek queen in an Egyptian crown. Cleopatra VII is born into the Ptolemaic dynasty, Macedonian Greek rulers who play Egyptian pharaoh on the Nile. Alexandria is her city: libraries, ports, multilingual merchants, and court factions that murder siblings for the throne. She grows up knowing that in her family, family is a temporary alliance. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-born.webp",
+    "source": "cleopatra-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-caesar-death",
+    "figure": "cleopatra",
+    "title": "In Rome when the knives come out",
+    "prompt": "A cinematic historical illustration: In Rome when the knives come out. Cleopatra is in the city when Caesar falls on the Ides of March. She had been negotiating for recognition of Caesarion. With Caesar dead, her alliance is a liability. She slips away before Roman mobs can treat an Egyptian queen as another foreign problem. Survival means returning to Alexandria and rebuilding power from the Nile up. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-caesar-death.webp",
+    "source": "cleopatra-caesar-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-caesarion",
+    "figure": "cleopatra",
+    "title": "Caesarion and the title of King of Kings",
+    "prompt": "A cinematic historical illustration: Caesarion and the title of King of Kings. She bears Caesar a son, Caesarion. Propaganda on both sides of the Mediterranean now has a living link between Roman power and pharaonic line. After Caesar's assassination she flees Rome's danger and returns to Egypt to rebuild. Every child of a god-king is a claim on the future. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-caesarion.webp",
+    "source": "cleopatra-caesarion-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-carpet",
+    "figure": "cleopatra",
+    "title": "Smuggled to Caesar in a carpet",
+    "prompt": "A cinematic historical illustration: Smuggled to Caesar in a carpet. Caesar arrives chasing Pompey and finds a sibling war instead. Cleopatra cannot reach him through her brother's guards. She has herself rolled in a bedroll or carpet and carried into the palace. The audacity works. Within days she is Caesar's ally, lover, and path back to the throne. Romance here is also logistics. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-carpet.webp",
+    "source": "cleopatra-carpet-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-death",
+    "figure": "cleopatra",
+    "title": "The last pharaoh of Egypt",
+    "prompt": "A cinematic historical illustration: The last pharaoh of Egypt. Octavian closes in on Alexandria. Antony falls on his sword but dies slowly in Cleopatra's arms. She negotiates with Octavian, then chooses poison, tradition says by asp. Egypt becomes a Roman province. Rome will tell her story for centuries, often as cautionary myth about luxury and foreign women. The real woman was a strategist who nearly held the Mediterranean. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-death.webp",
+    "source": "cleopatra-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-donations",
+    "figure": "cleopatra",
+    "title": "Donations of Alexandria enrage Rome",
+    "prompt": "A cinematic historical illustration: Donations of Alexandria enrage Rome. Antony distributes eastern kingdoms to Cleopatra and their children in a public ceremony. To Octavian in Italy, this looks like treason dressed as pageantry. Propaganda paints Cleopatra as a foreign sorceress stealing Roman empire. The final war between Antony and Octavian becomes a war against her name. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-donations.webp",
+    "source": "cleopatra-donations-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-exile",
+    "figure": "cleopatra",
+    "title": "Co-ruler with a brother who wants her dead",
+    "prompt": "A cinematic historical illustration: Co-ruler with a brother who wants her dead. She inherits the throne with Ptolemy XIII, her younger brother, under Roman pressure. Court eunuchs and generals pick sides. Cleopatra tries to outmaneuver them and is driven into exile. Egypt becomes a civil war in miniature while Rome's own civil war decides which faction on the Nile will survive. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-exile.webp",
+    "source": "cleopatra-exile-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-languages",
+    "figure": "cleopatra",
+    "title": "Speaks like a diplomat, not a decoration",
+    "prompt": "A cinematic historical illustration: Speaks like a diplomat, not a decoration. Plutarch lists her languages: Egyptian, Greek, Ethiopian, Troglodyte, Hebrew, Arabic, Syriac, Median, Parthian, and others. In a court where rulers often needed translators, Cleopatra can negotiate in the tongues of her subjects and rivals. Politics in Alexandria rewards whoever can speak directly to the person holding the knife. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-languages.webp",
+    "source": "cleopatra-languages-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "cleopatra-tarsus",
+    "figure": "cleopatra",
+    "title": "Antony and the alliance of the East",
+    "prompt": "A cinematic historical illustration: Antony and the alliance of the East. In Tarsus, Cleopatra meets Mark Antony on the river in a gilded barge with purple sails and musicians. Antony controls the eastern Roman world and needs Egypt's grain and gold. She needs Roman legions to protect her throne. Their partnership becomes a household, a war plan, and a scandal in Rome. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "cleopatra-tarsus.webp",
+    "source": "cleopatra-tarsus-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-born",
+    "figure": "galileo",
+    "title": "Born in Pisa the year Shakespeare will never see",
+    "prompt": "A cinematic historical illustration: Born in Pisa the year Shakespeare will never see. Galileo Galilei is born in Pisa in 1564, the same year Michelangelo dies and Shakespeare is born. His father wants him in medicine; the son prefers mathematics and motion. Tuscany gives him a merchant's practicality and a habit of measuring what priests prefer to declare. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-born.webp",
+    "source": "galileo-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-death",
+    "figure": "galileo",
+    "title": "Blind, under arrest, still arguing",
+    "prompt": "A cinematic historical illustration: Blind, under arrest, still arguing. He dies in 1642 under house arrest, still corresponding with students across Europe. The Church eventually apologizes centuries later. His real verdict was already written in the sky anyone could see with glass and nerve. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-death.webp",
+    "source": "galileo-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-dialogue",
+    "figure": "galileo",
+    "title": "Dialogue and the trial",
+    "prompt": "A cinematic historical illustration: Dialogue and the trial. His Dialogue Concerning the Two Chief World Systems argues for Earth in motion. Pope Urban VIII feels mocked. Galileo is called to Rome to face the Inquisition. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-dialogue.webp",
+    "source": "galileo-dialogue-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-hydrostatic",
+    "figure": "galileo",
+    "title": "The hydrostatic balance that embarrasses professors",
+    "prompt": "A cinematic historical illustration: The hydrostatic balance that embarrasses professors. As a young mathematician he writes on the hydrostatic balance and shows how to weigh alloys to expose fraud in crown metal. The work wins patronage from the Medici and annoys Aristotelians who trust theory over scales. Galileo's career begins by proving experts wrong with a bucket and a beam. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-hydrostatic.webp",
+    "source": "galileo-hydrostatic-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-inclined-plane",
+    "figure": "galileo",
+    "title": "Falls out with professors over motion",
+    "prompt": "A cinematic historical illustration: Falls out with professors over motion. At Pisa he challenges Aristotelian teaching that heavier objects fall faster. Rumors say he drops weights from the Leaning Tower; evidence is thin, but his experiments with inclined planes are real and decisive. Universities prefer ancient authority. Galileo prefers what rolls down a ramp and leaves marks. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-inclined-plane.webp",
+    "source": "galileo-inclined-plane-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-inquisition-warning",
+    "figure": "galileo",
+    "title": "First warning from the Inquisition",
+    "prompt": "A cinematic historical illustration: First warning from the Inquisition. Church authorities tell him to treat Copernicanism as math, not truth. He stays quiet for years, then friends become pope and he thinks the sky clears. He will test that hope with a book that puts church arguments in the mouth of a fool named Simplicio. Rome remembers. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-inquisition-warning.webp",
+    "source": "galileo-inquisition-warning-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-jupiter-moons",
+    "figure": "galileo",
+    "title": "Medici stars around Jupiter",
+    "prompt": "A cinematic historical illustration: Medici stars around Jupiter. He discovers four moons orbiting Jupiter and names them the Medici stars to flatter his patron. The finding kills the old idea that everything circles Earth. If moons circle Jupiter, Earth can circle the Sun without being special in the wrong way. Theology will hate the implication. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-jupiter-moons.webp",
+    "source": "galileo-jupiter-moons-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-pendulum",
+    "figure": "galileo",
+    "title": "The lamp in Pisa cathedral",
+    "prompt": "A cinematic historical illustration: The lamp in Pisa cathedral. Watching a chandelier swing in the cathedral, he compares its rhythm to his pulse and notices the period stays steady even as the arc shrinks. The story may be partly legend, but it captures how he sees physics in ordinary motion. Pendulums later guide clocks. The cathedral becomes a laboratory without permission. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-pendulum.webp",
+    "source": "galileo-pendulum-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-telescope",
+    "figure": "galileo",
+    "title": "Builds the telescope that changes the sky",
+    "prompt": "A cinematic historical illustration: Builds the telescope that changes the sky. Hearing about Dutch spyglasses, he grinds lenses until magnification reaches twenty times. Pointing it at the Moon reveals mountains. Jupiter shows moons. The Milky Way becomes stars. The heavens stop being perfect spheres and turn into places you can map. Venice gives him a raise; Copernicus gets evidence. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-telescope.webp",
+    "source": "galileo-telescope-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-trial",
+    "figure": "galileo",
+    "title": "Condemned and made to kneel",
+    "prompt": "A cinematic historical illustration: Condemned and made to kneel. He is shown instruments of torture and abjures Copernicanism on his knees. Legend says he mutters and yet it moves. House arrest follows for the rest of his life. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-trial.webp",
+    "source": "galileo-trial-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-two-sciences",
+    "figure": "galileo",
+    "title": "Smuggles out Two New Sciences",
+    "prompt": "A cinematic historical illustration: Smuggles out Two New Sciences. Under arrest in Arcetri he finishes work on strength of materials and accelerated motion, dictating when blind. The book is published in Leiden beyond Rome's reach. Modern physics walks out in prose while the man who wrote it stays in a villa overlooking Florence. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-two-sciences.webp",
+    "source": "galileo-two-sciences-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "galileo-venus-phases",
+    "figure": "galileo",
+    "title": "Sunspots and the phases of Venus",
+    "prompt": "A cinematic historical illustration: Sunspots and the phases of Venus. His observations show blemishes on the Sun and phases of Venus that fit Copernicus, not Ptolemy. He publishes in Italian so merchants and artisans can read him, not only Latin scholars. He writes with sarcasm sharp enough to make enemies who outrank him. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "galileo-venus-phases.webp",
+    "source": "galileo-venus-phases-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-anatomy",
+    "figure": "leonardo",
+    "title": "Dissections by candlelight",
+    "prompt": "A cinematic historical illustration: Dissections by candlelight. In hospitals and morgues he cuts open corpses to see how tendons pull fingers and how the heart moves blood. His drawings surpass contemporary medicine. The church and custom limit what he can publish. Knowledge piles in notebooks while Europe still argues ancient Galen. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-anatomy.webp",
+    "source": "leonardo-anatomy-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-baptism-angel",
+    "figure": "leonardo",
+    "title": "The angel that outshines the master",
+    "prompt": "A cinematic historical illustration: The angel that outshines the master. In Verrocchio's Baptism of Christ, Leonardo paints the left angel and distant landscape. Vasari later claims Verrocchio never painted a figure again after seeing the pupil's work. The tale may be embroidery, but the panel survives: soft light, living flesh, a face that looks inward. Workshop training ends where individual vision begins. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-baptism-angel.webp",
+    "source": "leonardo-baptism-angel-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-borgia",
+    "figure": "leonardo",
+    "title": "Engineer for Cesare Borgia",
+    "prompt": "A cinematic historical illustration: Engineer for Cesare Borgia. Leonardo serves Cesare Borgia as military architect, mapping fortresses and planning siege works across the Romagna. He meets Machiavelli on the road. For a year art and war share the same notebook margins. When Borgia falls, Leonardo moves on, leaving maps that armies will still use. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-borgia.webp",
+    "source": "leonardo-borgia-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-born",
+    "figure": "leonardo",
+    "title": "Illegitimate in Vinci, legitimate in talent",
+    "prompt": "A cinematic historical illustration: Illegitimate in Vinci, legitimate in talent. Leonardo is born out of wedlock in Vinci, which bars him from guilds and university in Florence. That exclusion pushes him toward workshops where hands matter more than pedigree. He keeps notebooks no one fully reads in his lifetime. Paper becomes his true university. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-born.webp",
+    "source": "leonardo-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-death",
+    "figure": "leonardo",
+    "title": "Dies in France with notebooks unfinished",
+    "prompt": "A cinematic historical illustration: Dies in France with notebooks unfinished. King Francis I gives him a manor at Amboise. Leonardo dies in 1519 with stacks of unpublished pages: mirrors, maps, weapons, hydraulics, faces. He apologizes to God and man for leaving so much undone. Later collectors scatter the notebooks. Every sheet suggests a life wider than any single profession could hold. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-death.webp",
+    "source": "leonardo-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-flight",
+    "figure": "leonardo",
+    "title": "Flying machines on paper",
+    "prompt": "A cinematic historical illustration: Flying machines on paper. He studies birds, bats, and airflow, sketching ornithopters and screw-driven helicopters centuries before materials exist to build them. Failure does not discourage him; it refines the drawing. His genius is often the question beautifully posed rather than the device that flies. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-flight.webp",
+    "source": "leonardo-flight-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-francis",
+    "figure": "leonardo",
+    "title": "King Francis calls him master",
+    "prompt": "A cinematic historical illustration: King Francis calls him master. In 1516 Francis I of France invites Leonardo to Amboise and gives him Clos Lucé manor. The king calls him master, though the hands that painted are stiffening. Leonardo brings the Mona Lisa and unfinished projects across the Alps. France buys the legend; Italy keeps the workshops he left behind. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-francis.webp",
+    "source": "leonardo-francis-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-last-supper",
+    "figure": "leonardo",
+    "title": "The Last Supper on a dry wall",
+    "prompt": "A cinematic historical illustration: The Last Supper on a dry wall. He paints Christ and the apostles reacting to betrayal on a refectory wall in Milan, experimenting with oil on dry plaster. The technique fails and the image begins flaking within his lifetime. Even as a ruin it teaches painters how to stage emotion like theatre. Judas reaches for bread while disciples explode in gesture. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-last-supper.webp",
+    "source": "leonardo-last-supper-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-milan",
+    "figure": "leonardo",
+    "title": "Milan: engineer to the Duke",
+    "prompt": "A cinematic historical illustration: Milan: engineer to the Duke. He writes Ludovico Sforza a letter offering war machines, architecture, and art, burying painter near the bottom. Milan gives him decades of patronage, court spectacle, and problems worth drawing. The Last Supper and horse monuments live here. So do hundreds of pages on water, flight, and the human heart. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-milan.webp",
+    "source": "leonardo-milan-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-mona-lisa",
+    "figure": "leonardo",
+    "title": "Mona Lisa and the sfumato smile",
+    "prompt": "A cinematic historical illustration: Mona Lisa and the sfumato smile. He works on a portrait of Lisa del Giocondo across years, layering thin glazes until edges dissolve like smoke. Sfumato makes her smile refuse a single reading. He keeps the painting with him until death. Crowds today queue for a small panel because one face learned how to hide its own certainty. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-mona-lisa.webp",
+    "source": "leonardo-mona-lisa-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "leonardo-verrocchio",
+    "figure": "leonardo",
+    "title": "Apprentice in Verrocchio's bottega",
+    "prompt": "A cinematic historical illustration: Apprentice in Verrocchio's bottega. In Florence he joins Andrea del Verrocchio's workshop, painting, casting bronze, and learning anatomy from dissection when he can. Legend says he paints an angel so vivid Verrocchio never touches figures again. Whether true or not, the story captures a pupil who outgrows the master faster than etiquette allows. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "leonardo-verrocchio.webp",
+    "source": "leonardo-verrocchio-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-appomattox",
+    "figure": "lincoln",
+    "title": "Appomattox and five days of peace",
+    "prompt": "A cinematic historical illustration: Appomattox and five days of peace. Lee surrenders at Appomattox Court House in April 1865. Lincoln asks the band to play Dixie. He speaks publicly of malice toward none and charity for all. For five days the country breathes like a patient after surgery. Then Booth walks into Ford's Theatre with a derringer. Victory and martyrdom arrive in the same week. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-appomattox.webp",
+    "source": "lincoln-appomattox-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-assassination",
+    "figure": "lincoln",
+    "title": "Victory, then Ford's Theatre",
+    "prompt": "A cinematic historical illustration: Victory, then Ford's Theatre. Lee surrenders at Appomattox. Five days later Lincoln attends Our American Cousin at Ford's Theatre. John Wilkes Booth, actor and Confederate sympathizer, shoots him in the head. He dies across the street at dawn. The war ends with a martyr and a country that must reconstruct itself without the man who held the center. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-assassination.webp",
+    "source": "lincoln-assassination-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-born",
+    "figure": "lincoln",
+    "title": "Born in a one-room cabin on the frontier",
+    "prompt": "A cinematic historical illustration: Born in a one-room cabin on the frontier. Abraham Lincoln enters the world in a log cabin in Hardin County, Kentucky. His father is a farmer and carpenter moving from claim to claim. Books are scarce; work is not. The frontier teaches him early that law, land titles, and violence often arrive in the same wagon. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-born.webp",
+    "source": "lincoln-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-debates",
+    "figure": "lincoln",
+    "title": "Debates with Douglas under open sky",
+    "prompt": "A cinematic historical illustration: Debates with Douglas under open sky. Running for Senate against Stephen Douglas, he joins seven debates across Illinois that draw thousands into fields and fairgrounds. He argues slavery must not spread, though he stops short of abolition where crowds fear it. Douglas wins the seat. Lincoln wins the argument that will matter when the nation scales up. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-debates.webp",
+    "source": "lincoln-debates-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-elected",
+    "figure": "lincoln",
+    "title": "Elected with less than forty percent of the vote",
+    "prompt": "A cinematic historical illustration: Elected with less than forty percent of the vote. In a four-way presidential race, Lincoln wins the Electoral College without a southern state. Secession begins before he takes office. He arrives in Washington secretly after a plot to kill him in Baltimore. The Republic he inherits is already pulling apart at the seams. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-elected.webp",
+    "source": "lincoln-elected-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-flatboat",
+    "figure": "lincoln",
+    "title": "Flatboat to New Orleans",
+    "prompt": "A cinematic historical illustration: Flatboat to New Orleans. He helps take a load of produce down the Mississippi to New Orleans. Frontier lore later claims he saw a slave auction there and vowed hatred of slavery. The trip matters either way: he sees the river economy that binds North and South, and he learns he can leave the farm for a wider world. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-flatboat.webp",
+    "source": "lincoln-flatboat-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-gettysburg",
+    "figure": "lincoln",
+    "title": "Gettysburg and the Emancipation Proclamation",
+    "prompt": "A cinematic historical illustration: Gettysburg and the Emancipation Proclamation. After Antietam he issues the Emancipation Proclamation, freeing slaves in rebel territory as a war measure. At Gettysburg he dedicates a cemetery in two minutes. The address reframes the war as a test whether any nation built on liberty can endure. Garry Wills later calls those words the new Constitution Americans hear in memory. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-gettysburg.webp",
+    "source": "lincoln-gettysburg-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-grant",
+    "figure": "lincoln",
+    "title": "Grant and the long search for a general",
+    "prompt": "A cinematic historical illustration: Grant and the long search for a general. For years Lincoln fires and hires generals who will not pursue the enemy. McClellan, Burnside, Hooker: caution and slaughter by turns. He backs Ulysses S. Grant after Vicksburg splits the Confederacy in half. Grant fights. Lincoln's line to critics is simple: I cannot spare this man; he fights. The war finally gets a commander who matches its brutality. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-grant.webp",
+    "source": "lincoln-grant-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-lawyer",
+    "figure": "lincoln",
+    "title": "Self-taught lawyer on the Eighth Circuit",
+    "prompt": "A cinematic historical illustration: Self-taught lawyer on the Eighth Circuit. Licensed to practice law, he rides the muddy circuit of central Illinois with judges and rivals who become friends. He wins farmers and merchants with plain speech and odd humor. Law pays better than farming and teaches him argument without shouting. The courtroom is rehearsal for the country. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-lawyer.webp",
+    "source": "lincoln-lawyer-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-mother",
+    "figure": "lincoln",
+    "title": "His mother dies of milk sickness",
+    "prompt": "A cinematic historical illustration: His mother dies of milk sickness. Nancy Hanks Lincoln dies after drinking milk from cows that ate white snakeroot. Abraham is nine. His father leaves him and his sister with Nancy's cousin while he goes to find a new wife in Kentucky. Sarah Bush Johnston arrives with books, kindness, and stability. Grief and replacement shape the boy who will later call strangers a jury of peers. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-mother.webp",
+    "source": "lincoln-mother-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-new-salem",
+    "figure": "lincoln",
+    "title": "New Salem and the wrestling match",
+    "prompt": "A cinematic historical illustration: New Salem and the wrestling match. In New Salem, Illinois, he works as clerk, postmaster, and surveyor. Townspeople remember him winning a wrestling match against a local bully, studying law by firelight, and telling stories that made rooms quiet. He loses his first race for the legislature, then wins the second. Politics begins as neighborliness with ballots. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-new-salem.webp",
+    "source": "lincoln-new-salem-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "lincoln-sumter",
+    "figure": "lincoln",
+    "title": "Fort Sumter and the war he hoped to avoid",
+    "prompt": "A cinematic historical illustration: Fort Sumter and the war he hoped to avoid. Confederates fire on Fort Sumter in Charleston harbor. Lincoln calls for volunteers. Four more states leave the Union. He thought secession would collapse from internal disagreement. Instead he must become a war president while learning strategy from books and generals who move too slowly. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "lincoln-sumter.webp",
+    "source": "lincoln-sumter-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-austerlitz",
+    "figure": "napoleon",
+    "title": "Austerlitz: the sun of Austerlitz",
+    "prompt": "A cinematic historical illustration: Austerlitz: the sun of Austerlitz. Against Russia and Austria, he feigns weakness on the Pratzen heights, invites attack, then cuts the allied center. The Third Coalition breaks. He sleeps in a captured palace and writes to Joséphine that night. Austerlitz becomes the battle other generals study and never quite reproduce. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-austerlitz.webp",
+    "source": "napoleon-austerlitz-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-born",
+    "figure": "napoleon",
+    "title": "Corsican outsider in French uniform",
+    "prompt": "A cinematic historical illustration: Corsican outsider in French uniform. Napoleone Buonaparte is born in Ajaccio, one year after Corsica joins France. His family is minor nobility with more pride than money. He grows up speaking Corsican first, French with an accent that Paris will mock, and hunger for a world larger than an island. Military school is his ladder out. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-born.webp",
+    "source": "napoleon-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-brienne",
+    "figure": "napoleon",
+    "title": "Mocked at Brienne for his accent",
+    "prompt": "A cinematic historical illustration: Mocked at Brienne for his accent. At Brienne military academy, classmates from mainland France tease the short Corsican for speech and manners. He retreats into mathematics, history, and solitary ambition. Teachers note his gift for artillery. The boy learns early that humiliation can be stored like gunpowder. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-brienne.webp",
+    "source": "napoleon-brienne-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-brumaire",
+    "figure": "napoleon",
+    "title": "18 Brumaire: coup in a parliamentary fog",
+    "prompt": "A cinematic historical illustration: 18 Brumaire: coup in a parliamentary fog. He slips back to France where the Directory is bankrupt in prestige and cash. With allies he stages the coup of 18 Brumaire, using soldiers and procedural chaos to dissolve one government and replace it with the Consulate. He is First Consul at thirty. The Republic survives in name. Power concentrates in one pair of hands. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-brumaire.webp",
+    "source": "napoleon-brumaire-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-coronation",
+    "figure": "napoleon",
+    "title": "Crowns himself before the Pope",
+    "prompt": "A cinematic historical illustration: Crowns himself before the Pope. At Notre-Dame he takes the imperial crown from Pius VII and places it on his own head, then crowns Joséphine. The gesture tells Europe that his legitimacy comes from victory, not altar. France gets a new nobility, a Code, and an emperor who still reads artillery manuals for pleasure. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-coronation.webp",
+    "source": "napoleon-coronation-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-egypt",
+    "figure": "napoleon",
+    "title": "Egypt: science, loot, and a fleet on fire",
+    "prompt": "A cinematic historical illustration: Egypt: science, loot, and a fleet on fire. He invades Egypt to threaten British India and win immortal fame. Scholars catalog temples while soldiers march in desert heat. At the Nile he wins a battle that makes European newspapers call him a new Alexander. Then Nelson destroys his fleet at Aboukir. Napoleon is stranded in Africa with an army and a story that must continue in Paris. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-egypt.webp",
+    "source": "napoleon-egypt-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-elba",
+    "figure": "napoleon",
+    "title": "Elba: emperor of an island",
+    "prompt": "A cinematic historical illustration: Elba: emperor of an island. After Leipzig and the collapse of his alliance system, allied armies enter Paris. He abdicates and keeps the title emperor only over Elba, a Mediterranean rock with a few thousand people. He reorganizes mines, watches the Bourbons stumble, and plans. Exile looks like retirement to fools who forget how fast he moves. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-elba.webp",
+    "source": "napoleon-elba-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-italy",
+    "figure": "napoleon",
+    "title": "The Italian campaign: speed as doctrine",
+    "prompt": "A cinematic historical illustration: The Italian campaign: speed as doctrine. In Italy he inherits an army that is hungry, unpaid, and skeptical. He promises them glory and plunder, then moves faster than Austrian commanders expect. Rivoli, Mantua, Lodi: each battle sells the myth of Bonaparte before it sells the Republic. Soldiers begin to cheer the man, not only the revolution. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-italy.webp",
+    "source": "napoleon-italy-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-moscow",
+    "figure": "napoleon",
+    "title": "Moscow burns and the Grande Armée freezes",
+    "prompt": "A cinematic historical illustration: Moscow burns and the Grande Armée freezes. He invades Russia with nearly half a million men. Borodino is a bloody draw. Moscow is empty and on fire. Winter, distance, and Cossacks devour the retreat. The army that straggles back is a ghost of the force that crossed the Niemen. Empire peaks and begins to crack in the same season. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-moscow.webp",
+    "source": "napoleon-moscow-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-st-helena",
+    "figure": "napoleon",
+    "title": "St. Helena: the emperor in a small room",
+    "prompt": "A cinematic historical illustration: St. Helena: the emperor in a small room. On St. Helena he paces, argues with governors, and dictates memoirs that reshape how Europe remembers him. He dies in 1821, likely of stomach cancer, though poison theories persist. His body returns to Paris in triumph decades later. The age he dominated will be named for him whether admirers or enemies like it. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-st-helena.webp",
+    "source": "napoleon-st-helena-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-toulon",
+    "figure": "napoleon",
+    "title": "Toulon: the young general with the plan",
+    "prompt": "A cinematic historical illustration: Toulon: the young general with the plan. Royalist Toulon invites British ships into port. The Revolution needs a victory. Captain Bonaparte proposes artillery positions that drive the fleet off. He is wounded in the thigh and promoted to brigadier general at twenty-four. For the first time, French power and his personal fate align on a map. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-toulon.webp",
+    "source": "napoleon-toulon-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-vendemiaire",
+    "figure": "napoleon",
+    "title": "A whiff of grapeshot on the streets of Paris",
+    "prompt": "A cinematic historical illustration: A whiff of grapeshot on the streets of Paris. Royalist mobs march on the National Convention in October 1795. The government gives Bonaparte command of the defense. He loads cannon with grapeshot and fires into the crowd at close range. Hundreds fall in minutes. The Directory survives because a Corsican artilleryman chose violence over negotiation. Paris learns his name as a man who will shoot. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-vendemiaire.webp",
+    "source": "napoleon-vendemiaire-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "napoleon-waterloo",
+    "figure": "napoleon",
+    "title": "Waterloo: the hundred days end",
+    "prompt": "A cinematic historical illustration: Waterloo: the hundred days end. Escaped from Elba, he rallies France for a hundred days. At Waterloo, Wellington holds a ridge until Blücher's Prussians arrive. The Old Guard advances uphill in columns and breaks. Napoleon abdicates again and trusts the British with his exile. They send him to a volcanic rock in the South Atlantic. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "napoleon-waterloo.webp",
+    "source": "napoleon-waterloo-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-berkeley",
+    "figure": "oppenheimer",
+    "title": "Berkeley and the school he builds",
+    "prompt": "A cinematic historical illustration: Berkeley and the school he builds. At Berkeley he turns a backwater into a world center of theoretical physics. Students say his lectures feel like revelation and terror. He reads Sanskrit, learns Dutch to read a paper, and juggles affairs, politics, and quantum theory with the same restless intensity. California becomes his kingdom of equations. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-berkeley.webp",
+    "source": "oppenheimer-berkeley-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-black-holes",
+    "figure": "oppenheimer",
+    "title": "Black holes before the name exists",
+    "prompt": "A cinematic historical illustration: Black holes before the name exists. In 1939 he and Hartland Snyder publish a paper showing that a massive enough star could collapse past any limit, trapping light. The physics is ahead of its time. Decades later the word black hole arrives and the idea becomes central. Oppenheimer moves on to war before the cosmos gives him credit. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-black-holes.webp",
+    "source": "oppenheimer-black-holes-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-born",
+    "figure": "oppenheimer",
+    "title": "Born rich in New York, hungry for depth",
+    "prompt": "A cinematic historical illustration: Born rich in New York, hungry for depth. Julius Oppenheimer makes a fortune in textiles; his son Robert grows up in an apartment with Van Gogh and Picasso on the walls and tutors for Greek, French, and chemistry. Wealth removes material worry and leaves intellectual restlessness. He collects minerals, reads poetry, and learns early that brilliance without direction can curdle into loneliness. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-born.webp",
+    "source": "oppenheimer-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-death",
+    "figure": "oppenheimer",
+    "title": "Throat cancer and the look when the sky turned white",
+    "prompt": "A cinematic historical illustration: Throat cancer and the look when the sky turned white. He dies of throat cancer in 1967, a chain smoker to the end. The arc of his life runs from wunderkind to destroyer to cautionary prophet. Physicists still quote him less for equations than for the look on his face when the desert flash turned sand to glass. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-death.webp",
+    "source": "oppenheimer-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-einstein-letter",
+    "figure": "oppenheimer",
+    "title": "Einstein's letter and the weapon he did not want to build alone",
+    "prompt": "A cinematic historical illustration: Einstein's letter and the weapon he did not want to build alone. In 1939 Leó Szilárd and others persuade Einstein to warn Roosevelt that Nazi Germany might build a bomb first. The letter reaches the president; committees form; money flows. Oppenheimer is not the author, but the chain leads to Los Alamos and to him. Physics becomes a race where second place may mean annihilation. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-einstein-letter.webp",
+    "source": "oppenheimer-einstein-letter-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-fermi-award",
+    "figure": "oppenheimer",
+    "title": "The Fermi Award and a partial apology",
+    "prompt": "A cinematic historical illustration: The Fermi Award and a partial apology. Nine years after the security hearing humiliated him, Kennedy awards the Enrico Fermi Prize. Johnson hands him the medal in 1963 while clearance stays revoked. Colleagues stand; cameras flash. The government honors the man it barred from secrets. Rehabilitation arrives late, like forgiveness written in bureaucratic ink. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-fermi-award.webp",
+    "source": "oppenheimer-fermi-award-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-hearing",
+    "figure": "oppenheimer",
+    "title": "The security hearing that strips his clearance",
+    "prompt": "A cinematic historical illustration: The security hearing that strips his clearance. In 1954 a secret board revokes his security clearance over old Communist contacts and his opposition to the hydrogen bomb. Edward Teller testifies against him. Colleagues divide. The verdict humiliates a national hero in quasi-judicial silence. He keeps teaching, keeps speaking, and lives with the label traitor in rooms that once cheered him. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-hearing.webp",
+    "source": "oppenheimer-hearing-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-ias",
+    "figure": "oppenheimer",
+    "title": "Institute director in Princeton's quiet",
+    "prompt": "A cinematic historical illustration: Institute director in Princeton's quiet. After the war he directs the Institute for Advanced Study, recruiting Einstein and others. He advises on atomic policy, then clashes with officials who want more bombs and tighter secrecy. The man who built the weapon becomes a public voice for international control. Washington grows suspicious of his past associations. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-ias.webp",
+    "source": "oppenheimer-ias-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-los-alamos",
+    "figure": "oppenheimer",
+    "title": "Los Alamos: a town built to destroy cities",
+    "prompt": "A cinematic historical illustration: Los Alamos: a town built to destroy cities. General Groves picks him to lead the secret laboratory in the New Mexico desert. Scientists who hated each other in peacetime now share one goal: build a bomb before Nazi Germany. Oppenheimer learns project management by force of personality, guilt, and eighteen-hour days. The mesa becomes a monastery whose god is fission. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-los-alamos.webp",
+    "source": "oppenheimer-los-alamos-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-mineral-club",
+    "figure": "oppenheimer",
+    "title": "The mineral club lecture at fourteen",
+    "prompt": "A cinematic historical illustration: The mineral club lecture at fourteen. He writes the New York Mineralogical Club about his collection. They invite the author to lecture, expecting an adult. A tall, thin boy walks in and delivers a competent talk on crystal structure. The anecdote follows him forever as proof of precocity, and as the first sign he will live inside institutions that reward the mind more than the body. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-mineral-club.webp",
+    "source": "oppenheimer-mineral-club-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "oppenheimer-trinity",
+    "figure": "oppenheimer",
+    "title": "Trinity: now I am become Death",
+    "prompt": "A cinematic historical illustration: Trinity: now I am become Death. Before dawn on 16 July 1945 the Gadget detonates at Trinity Site. The desert flash turns sand to glass. He remembers the Bhagavad Gita: Now I am become Death, the destroyer of worlds. Weeks later Hiroshima and Nagasaki burn. Victory tastes like ash. He will spend the rest of his life arguing with what he helped create. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "oppenheimer-trinity.webp",
+    "source": "oppenheimer-trinity-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-atlantic",
+    "figure": "turing",
+    "title": "Atlantic convoys start getting through",
+    "prompt": "A cinematic historical illustration: Atlantic convoys start getting through. By 1942 his methods and machines help locate U-boats before they cluster on convoys. Merchant ships reach Britain with food and materiel. The work stays secret for decades. Turing returns to civilian science without parade or pension worthy of what he did. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-atlantic.webp",
+    "source": "turing-atlantic-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-bicycle-school",
+    "figure": "turing",
+    "title": "Cycles sixty miles when the trains stop",
+    "prompt": "A cinematic historical illustration: Cycles sixty miles when the trains stop. When a general strike cancels trains to his first day at Sherborne School, Alan Turing rides a bicycle sixty miles with a tin of scientific equipment. Headmaster reports him for looking like a tramp. The episode previews a life that treats physical inconvenience as irrelevant compared to the problem waiting at the desk. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-bicycle-school.webp",
+    "source": "turing-bicycle-school-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-bletchley",
+    "figure": "turing",
+    "title": "Bletchley Park and the Enigma war",
+    "prompt": "A cinematic historical illustration: Bletchley Park and the Enigma war. When war begins he joins the codebreaking center at Bletchley Park. Nazi Enigma machines scramble messages daily. Breaking them saves convoys and lives. Turing works in Hut 8 on naval codes, thinking in diagrams and silence while Britain tells the world nothing. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-bletchley.webp",
+    "source": "turing-bletchley-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-bombe",
+    "figure": "turing",
+    "title": "The Bombe that searches possibilities",
+    "prompt": "A cinematic historical illustration: The Bombe that searches possibilities. He designs the Bombe, an electromechanical device that eliminates Enigma settings faster than human clerks. Each improvement shortens the Atlantic war. Historians argue over exact casualty numbers saved; the direction is clear. Industrial cryptography is born in a Victorian mansion of crossword puzzle minds. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-bombe.webp",
+    "source": "turing-bombe-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-born",
+    "figure": "turing",
+    "title": "Born in London before the century of machines",
+    "prompt": "A cinematic historical illustration: Born in London before the century of machines. Alan Mathison Turing is born in 1912 in London, the second son of a civil servant in India and a woman who reads science for pleasure. Nannies raise him while parents work abroad. He grows up precise, lonely, and already treating the world as a puzzle with hidden rules. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-born.webp",
+    "source": "turing-born-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-death",
+    "figure": "turing",
+    "title": "Cyanide apple at forty-one",
+    "prompt": "A cinematic historical illustration: Cyanide apple at forty-one. He dies in 1954 from cyanide poisoning, an apple by the bed. Inquest rules suicide; some colleagues suspect accident. He was working on morphogenesis until the end. Apologies and pardons arrive after he cannot read them. Every computer is a footnote to a man Britain betrayed. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-death.webp",
+    "source": "turing-death-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-morcom",
+    "figure": "turing",
+    "title": "Christopher Morcom and the ghost in the equations",
+    "prompt": "A cinematic historical illustration: Christopher Morcom and the ghost in the equations. At Sherborne he bonds with Christopher Morcom, a brilliant schoolmate who shares his love of mathematics and chemistry. Morcom dies of tuberculosis at eighteen. Turing keeps writing to Morcom's mother and later says he carried on their work as if the dead boy were still beside him. Grief becomes fuel for thought. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-morcom.webp",
+    "source": "turing-morcom-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-prosecution",
+    "figure": "turing",
+    "title": "Prosecuted for homosexuality",
+    "prompt": "A cinematic historical illustration: Prosecuted for homosexuality. After a burglary investigation he reports a relationship with a man. Britain convicts him of gross indecency. He chooses chemical castration over prison. Security clearance vanishes. The state he helped save dismantles his career because of who he loves. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-prosecution.webp",
+    "source": "turing-prosecution-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-test",
+    "figure": "turing",
+    "title": "Can machines think?",
+    "prompt": "A cinematic historical illustration: Can machines think?. In 1950 he proposes the imitation game: if a machine converses well enough to fool a judge, treat it as intelligent for practical purposes. The Turing test names an era's anxiety about minds and metal. He also writes on morphogenesis, chess programs, and whether souls need biology. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-test.webp",
+    "source": "turing-test-scene.png",
+    "missing": true
+  },
+  {
+    "slug": "turing-universal-machine",
+    "figure": "turing",
+    "title": "The universal machine on paper",
+    "prompt": "A cinematic historical illustration: The universal machine on paper. In 1936 he publishes On Computable Numbers and imagines a machine that reads symbols on a tape and performs any logical procedure. The Turing machine is theory, not hardware, yet it defines what computers are. At twenty-four he proves some problems cannot be solved by any algorithm. Limits become as important as powers. Style: hand-drawn colored-pencil and watercolor with fine ink linework, visible paper texture, muted earthy tones, Japanese editorial infographic sensibility. Dramatic but not photorealistic, no text, no letters, no border, no watermark.",
+    "webp": "turing-universal-machine.webp",
+    "source": "turing-universal-machine-scene.png",
+    "missing": true
+  }
+]

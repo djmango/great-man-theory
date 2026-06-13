@@ -1,15 +1,41 @@
 import { describe, expect, test } from "bun:test";
 import { alexanderStories } from "./stories/alexander";
+import { caesarStories } from "./stories/caesar";
+import { cleopatraStories } from "./stories/cleopatra";
+import { napoleonStories } from "./stories/napoleon";
+import { lincolnStories } from "./stories/lincoln";
+import { oppenheimerStories } from "./stories/oppenheimer";
+import { leonardoStories } from "./stories/leonardo";
+import { galileoStories } from "./stories/galileo";
+import { beethovenStories } from "./stories/beethoven";
+import { turingStories } from "./stories/turing";
+import { jobsStories } from "./stories/jobs";
 import { storyCopyIssues } from "./story-copy-lint";
 
+const allStoryModules: Array<[string, Record<string, { title: string; body: string }>]> = [
+  ["Alexander", alexanderStories],
+  ["Caesar", caesarStories],
+  ["Cleopatra", cleopatraStories],
+  ["Napoleon", napoleonStories],
+  ["Lincoln", lincolnStories],
+  ["Oppenheimer", oppenheimerStories],
+  ["Leonardo", leonardoStories],
+  ["Galileo", galileoStories],
+  ["Beethoven", beethovenStories],
+  ["Turing", turingStories],
+  ["Jobs", jobsStories],
+];
+
 describe("story copy lint", () => {
-  test("Alexander stories pass language rules", () => {
-    for (const [key, story] of Object.entries(alexanderStories)) {
-      const issues = storyCopyIssues(story);
-      expect(issues).toEqual([]);
-      if (issues.length) throw new Error(`${key}: ${issues.map(i => i.rule).join(", ")}`);
-    }
-  });
+  for (const [figure, stories] of allStoryModules) {
+    test(`${figure} stories pass language rules`, () => {
+      for (const [key, story] of Object.entries(stories)) {
+        const issues = storyCopyIssues(story);
+        expect(issues).toEqual([]);
+        if (issues.length) throw new Error(`${key}: ${issues.map(i => i.rule).join(", ")}`);
+      }
+    });
+  }
 });
 
 describe("story copy lint rules", () => {

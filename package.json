@@ -4,14 +4,13 @@
   "private": true,
   "description": "An infographic of great lives, measured by age.",
   "scripts": {
-    "build": "bun build src/app.ts --outfile app.js --target browser",
+    "build": "bun build src/app.ts --outfile app.js --target browser && bun build src/gallery.ts --outfile gallery/gallery.js --target browser",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "dev": "bash scripts/dev.sh",
     "deploy": "bun run build && wrangler deploy",
     "pi:build": "pi/scripts/build-image.sh",
-    "pi:flash": "pi/scripts/flash-image.sh",
-    "pi:secrets": "pi/scripts/with-sops.sh sops pi/secrets.yaml"
+    "pi:flash": "pi/scripts/flash-image.sh"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
