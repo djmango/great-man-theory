@@ -700,7 +700,9 @@ const P: Person[]=[
    {a:44,y:"2015",t:"Lands an orbital rocket booster upright",big:1},
    {a:47,y:"2018",t:"Tesla scales the Model 3 to the mass market"},
    {a:51,y:"2022",t:"Buys Twitter for 44 billion dollars",big:1},
-   {a:52,y:"2023",t:"Launches xAI amid the AI boom"}]},
+   {a:52,y:"2023",t:"Launches xAI amid the AI boom"},
+   {a:55,y:"2026",t:"SpaceX goes public on Nasdaq as SPCX in a record $75 billion IPO",big:1},
+   {a:55,y:"2026",t:"Becomes the world's first trillionaire as SPCX tops $2 trillion"}]},
 
  {n:"Larry Page", s:"Larry Page", slug:"page", d:"invent", b:1973, x:null, place:"Michigan, USA", ev:[
    {a:0,y:"1973",t:"Born in East Lansing, Michigan"},
