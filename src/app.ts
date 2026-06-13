@@ -13,6 +13,7 @@ type LifeEvent = {
   big?: 1;
   death?: 1;
   src?: string;
+  story?: EnhancedEvent;
 };
 
 type Person = {
@@ -25,6 +26,25 @@ type Person = {
   place: string;
   wiki: string;
   ev: LifeEvent[];
+};
+
+type TourStop = {
+  p: Person;
+  e: LifeEvent;
+  idx: number;
+  evIdx: number;
+};
+
+type EnhancedEvent = {
+  title: string;
+  dek: string;
+  detail: string;
+  image: string;
+  tags: string[];
+};
+
+type StorySlide = TourStop & {
+  story: EnhancedEvent;
 };
 
 function byId<T extends HTMLElement>(id: string): T {
@@ -46,19 +66,20 @@ const DOMAINS: Record<DomainKey, DomainConfig>={
 
 const P: Person[]=[
  {n:"Alexander the Great", s:"Alexander the Great", slug:"alexander", d:"power", b:-356, x:-323, place:"Pella, Macedon", wiki:"https://en.wikipedia.org/wiki/Alexander_the_Great", ev:[
-   {a:0,y:"356 BC",t:"Born to King Philip II in Pella"},
-   {a:10,y:"346 BC",t:"Tames the wild horse Bucephalus that no one else could ride"},
-   {a:12,y:"344 BC",t:"Philip boasts that Macedonia will find a greater king than himself"},
-   {a:13,y:"343 BC",t:"Aristotle becomes his private tutor"},
-   {a:16,y:"340 BC",t:"Made regent; founds his first city"},
-   {a:18,y:"338 BC",t:"Shatters the Sacred Band at Chaeronea"},
-   {a:20,y:"336 BC",t:"Crowned king after his father is murdered",big:1},
-   {a:22,y:"334 BC",t:"Invades Persia; first win at Granicus"},
-   {a:23,y:"333 BC",t:"Cuts the Gordian Knot; routs Darius at Issus"},
-   {a:25,y:"331 BC",t:"Founds Alexandria; hailed pharaoh of Egypt"},
-   {a:25,y:"331 BC",t:"Destroys the Persian army at Gaugamela",big:1},
-   {a:30,y:"326 BC",t:"Reaches India; victory at the Hydaspes"},
-   {a:32,y:"323 BC",t:"Dies of fever in Babylon, undefeated",death:1}]},
+   {a:0,y:"356 BC",t:"Born to King Philip II in Pella",story:{title:"Born into a house built for war",dek:"Alexander enters the Argead dynasty at Pella, where family, legitimacy, and military command are already inseparable.",detail:"Macedon was not a quiet cradle. It was a hard northern kingdom with a royal house used to assassination, hostage politics, feuds, and sudden reversals. Alexander's mother Olympias came from Epirus and carried her own dynastic claims; Philip was turning Macedon from a battered monarchy into a military machine. From the beginning, Alexander's life sits at the intersection of bloodline and battlefield. The question is never simply who he is. It is who can survive long enough to claim what his name promises.",image:"images/story/alexander-pella-birth.webp",tags:["Pella","Argead dynasty","Olympias"]}},
+   {a:10,y:"346 BC",t:"Tames the wild horse Bucephalus that no one else could ride",story:{title:"The horse that taught the court who he was",dek:"Bucephalus was not just a boy-and-horse anecdote. It was a public test in front of Philip's court, where Alexander saw what older men missed.",detail:"The story goes that the horse panicked because it feared its own shadow. Alexander turned it toward the sun, calmed it, and rode it while the adults watched. The point is not whether every detail is polished by legend. It is that Macedonian kingship rewarded visible nerve. Philip supposedly told him to seek a kingdom equal to himself. For a child in a court built around war, that was not praise. It was a challenge.",image:"images/story/alexander-bucephalus.webp",tags:["Plutarch tradition","Bucephalus","Macedonian court"]}},
+   {a:12,y:"344 BC",t:"Philip boasts that Macedonia will find a greater king than himself",story:{title:"Praise that sounds like a prophecy",dek:"Philip's famous line after Bucephalus turns a childhood stunt into a public statement about scale.",detail:"A father's compliment in a royal court is never just private. When Philip says Macedon is too small for Alexander, he gives the boy a myth to live inside. That can be intoxicating, and dangerous. Alexander grows up hearing that ordinary inheritance will not be enough. The empire is not yet real, but the emotional architecture of empire is already there: a father who built the weapon, a son being told the weapon needs a larger world.",image:"images/story/alexander-philip-prophecy.webp",tags:["Philip II","court performance","prophecy"]}},
+   {a:13,y:"343 BC",t:"Aristotle becomes his private tutor",story:{title:"Aristotle gives him a map, not a conscience",dek:"At Mieza, Alexander receives Homer, medicine, philosophy, geography, and the Greek habit of dividing the world into civilized and barbarian.",detail:"Aristotle's school was not a modern liberal education. It trained an heir to rule. Alexander learned rhetoric, natural history, and the Iliad, a book he later carried like a private scripture. The tension is already there: the tutor teaches measure, classification, and hierarchy, while the student dreams in Achilles. The education sharpens him, but it does not restrain him. It gives him language for destiny.",image:"images/story/alexander-aristotle.webp",tags:["Mieza","Aristotle","Achilles complex"]}},
+   {a:16,y:"340 BC",t:"Made regent; founds his first city",story:{title:"Left behind, he acts like a king",dek:"Philip campaigns away from Macedon and leaves teenage Alexander as regent. The boy puts down revolt and founds a city in his own name.",detail:"This is the part of the story that makes the later explosion less mysterious. Alexander was not waiting for adulthood to begin. As regent he faces the Maedi, crushes them, and plants Alexandropolis in their country. It is a miniature version of the whole career: speed, punishment, renaming, settlement, and the assertion that a place has entered history because he touched it.",image:"images/story/alexander-regent-alexandropolis.webp",tags:["Regency","Maedi revolt","Alexandropolis"]}},
+   {a:18,y:"338 BC",t:"Shatters the Sacred Band at Chaeronea",story:{title:"Chaeronea: the prince breaks the Sacred Band",dek:"At eighteen, Alexander commands cavalry on the left and helps destroy the elite Theban unit that had symbolized Greek military excellence.",detail:"Philip wins the battle, but Alexander gets the line that matters to a dynasty. The Sacred Band of Thebes was not a rabble. It was one of the most famous fighting units in Greece. To break it in front of the Greek world announces that Macedon is no longer a northern outsider. The son is now proof of the father's system: sarissa, cavalry timing, discipline, and a royal family that fights at the point of decision.",image:"images/story/alexander-chaeronea.webp",tags:["Chaeronea","Sacred Band","Companion cavalry"]}},
+   {a:19,y:"337 BC",t:"At Philip's wedding, an insult turns succession into a crisis",big:1,story:{title:"The banquet where inheritance became a threat",dek:"At Philip's wedding to Cleopatra Eurydice, Attalus prays for a legitimate heir. Alexander hears it as a public declaration that he is disposable.",detail:"This is one of those court scenes where a family argument becomes constitutional crisis. Alexander throws a cup. Philip rises to strike him, but the drunk king stumbles. Alexander's reported line is brutal: here is the man preparing to cross from Europe into Asia, and he cannot cross from couch to couch. Soon after, Alexander and Olympias are in exile. The Persian campaign is still Philip's project, but the succession has become a live blade.",image:"images/story/alexander-wedding-banquet.webp",tags:["Philip II","Olympias","succession crisis"]}},
+   {a:20,y:"336 BC",t:"Crowned king after his father is murdered",big:1,story:{title:"The machine changes hands",dek:"Philip is murdered at Aegae, and Alexander inherits both the throne and a war machine already aimed at Asia.",detail:"The assassination could have shattered Macedon. Instead Alexander moves with terrifying speed. Rivals are killed or neutralized, the army acknowledges him, and the Greek cities learn that Philip's death has not freed them from Macedonian power. This is the first great Alexander pattern as king: crisis becomes acceleration. He does not pause to prove legitimacy through ceremony alone. He proves it by controlling the next hour before anyone else can organize it.",image:"images/story/alexander-crowned-after-murder.webp",tags:["Aegae","assassination","accession"]}},
+   {a:22,y:"334 BC",t:"Invades Persia; first win at Granicus",story:{title:"The satraps choose the riverbank",dek:"At the Granicus, Persian satraps try to stop him at the water's edge. It is exactly the kind of position older commanders would tell him not to attack.",detail:"Parmenion is often cast as the voice of caution in Alexander's story, and whether the speeches are exact or literary, the pattern matters. Alexander repeatedly chooses speed before the enemy can turn size into certainty. At Granicus, the river makes the charge ugly and dangerous. He goes anyway. The first victory opens Asia Minor, kills or scatters local Persian leadership, and convinces Greek cities that the invasion is real.",image:"images/story/alexander-granicus.webp",tags:["Granicus","Persian satraps","Parmenion"]}},
+   {a:23,y:"333 BC",t:"Cuts the Gordian Knot; routs Darius at Issus",story:{title:"Omens, knots, and the first king-to-king shock",dek:"The Gordian Knot makes Alexander look chosen; Issus makes Darius look vulnerable.",detail:"The knot story is propaganda gold: a problem wrapped in priestly mystery, solved not by patience but by decisive violence. Whether he sliced it or pulled the pin, the point is the same. Alexander turns ambiguity into theater. Then at Issus, the theater becomes military reality. Darius himself flees, leaving family and prestige behind. Alexander is no longer merely raiding the Persian edge. He has humiliated the Great King in person.",image:"images/story/alexander-gordian-issus.webp",tags:["Gordian Knot","Issus","Darius III"]}},
+   {a:25,y:"331 BC",t:"Founds Alexandria; hailed pharaoh of Egypt",story:{title:"A city, an oracle, and a new scale of identity",dek:"In Egypt, Alexander stops being only a Macedonian conqueror. He accepts older languages of kingship and plants a city meant to outlast him.",detail:"Alexandria is a strategic port, a Greek city, and a monument to personal rule all at once. Then comes the journey to Siwa, where tradition says the oracle greeted him in language that could be heard as divine sonship. This is where conquest starts changing him. He is learning that different peoples can be ruled through different sacred vocabularies. Macedonian king, Greek avenger, Egyptian pharaoh, son of Zeus-Ammon: the identities stack rather than replace each other.",image:"images/story/alexander-alexandria.webp",tags:["Alexandria","Siwa","pharaoh"]}},
+   {a:25,y:"331 BC",t:"Destroys the Persian army at Gaugamela",big:1,story:{title:"Gaugamela: he aims at the hinge",dek:"Darius brings scale. Alexander answers with geometry, drawing the Persian line out until a gap opens near the king.",detail:"Gaugamela is the mature Alexander pattern: refuse the obvious center, ride obliquely, stretch the enemy, then strike at the command nerve. The Persian army is larger, flatter, and prepared for chariots. Alexander turns the field into a question of timing. When the gap opens, the Companions drive toward Darius. The king flees, and the empire begins to come apart not city by city, but psychologically.",image:"images/story/alexander-gaugamela.webp",tags:["Gaugamela","Darius III","decisive battle"]}},
+   {a:30,y:"326 BC",t:"Reaches India; victory at the Hydaspes",story:{title:"The edge of the map fights back",dek:"At the Hydaspes, Porus and his elephants force Alexander into one of his hardest battles, and his own army begins to imagine an end.",detail:"The Indian campaign is where the legend starts grinding against human limits. Alexander wins at the Hydaspes through deception, night movement, and audacity, but the battle is costly and strange to Macedonian eyes. War elephants break the familiar grammar of combat. Porus impresses him enough to be restored as ruler. Soon after, at the Hyphasis, the army refuses to march farther. Alexander can defeat kings, but not endless distance, monsoon, exhaustion, and homesick veterans.",image:"images/story/alexander-hydaspes.webp",tags:["Hydaspes","Porus","army mutiny"]}},
+   {a:32,y:"323 BC",t:"Dies of fever in Babylon, undefeated",death:1,story:{title:"Babylon: the empire has no heir equal to the appetite",dek:"He dies young, feverish, surrounded by soldiers and generals who know the map is now larger than the system holding it together.",detail:"The final scene is almost anti-climactic because the conquest has outrun every institution around it. There is no adult successor with uncontested legitimacy. The army has followed a person, not a constitution. The generals can salute the dying king, but they cannot inherit his momentum. Within a generation, the empire becomes kingdoms. The legend survives more cleanly than the thing he built.",image:"images/story/alexander-babylon-fever.webp",tags:["Babylon","succession","Diadochi"]}}]},
 
  {n:"Cleopatra VII", s:"Cleopatra VII", slug:"cleopatra", d:"state", b:-69, x:-30, place:"Alexandria, Egypt", wiki:"https://en.wikipedia.org/wiki/Cleopatra", ev:[
    {a:0,y:"69 BC",t:"Born in Alexandria, of the Ptolemy line"},
@@ -779,9 +800,11 @@ function build(){
     const sp=document.createElement('div'); sp.className='spine'; sp.style.top=TOP+'px'; sp.style.height=(endAge*PPY)+'px'; col.appendChild(sp);
     if(living){ const fu=document.createElement('div'); fu.className='future'; fu.style.top=(fa*PPY)+'px'; fu.style.height=((AMAX-fa)*PPY)+'px'; sp.appendChild(fu); }
 
-    p.ev.forEach(e=>{
-      const ev=document.createElement('div'); ev.className='ev'+(e.big?' major':''); ev.style.top=(TOP+e.a*PPY)+'px';
+    p.ev.forEach((e,evIdx)=>{
+      const ev=document.createElement('div'); ev.className='ev'+(e.big?' major':'')+(e.story?' enhanced':''); ev.style.top=(TOP+e.a*PPY)+'px';
       if(e.death) ev.dataset.death='1';
+      ev.dataset.i=String(idx);
+      ev.dataset.e=String(evIdx);
       ev.innerHTML=`<div class="node ${e.big?'major':''} ${e.death?'death':''}"></div>
         <div class="card"><div class="a">${e.a===0?'Born':e.a}${e.a===0?'':'<i>yrs</i>'}</div><div class="t">${esc(e.t)}</div></div>`;
       const node=ev.querySelector<HTMLElement>('.node');
@@ -846,11 +869,13 @@ function buildChips(){ const c=byId<HTMLDivElement>('chips');
     c.appendChild(b); }); }
 
 function srcHost(u: string){ try{ return new URL(u).hostname.replace(/^www\./,''); }catch{ return 'source'; } }
-function openTip(p: Person,e: LifeEvent,x: number,y: number){ const dm=DOMAINS[p.d]; tip.style.setProperty('--tc',dm.hex);
+function openTip(p: Person,e: LifeEvent,x: number,y: number){ const dm=DOMAINS[p.d], s=e.story; tip.style.setProperty('--tc',dm.hex);
   const src=e.src||p.wiki;
+  const detail=s && s.detail.length>300 ? s.detail.slice(0,297)+'…' : s?.detail;
   tip.innerHTML=`<div class="tn">${esc(p.s)}</div><div class="ts">${esc(dm.label)} · ${esc(p.place)}</div>
     <div class="tr"><div class="ta">${e.a===0?'0':e.a}<i>${e.a===0?'Born':'years old'}</i></div>
     <div class="tt">${esc(e.t)} <span class="yr">${esc(e.y)}</span></div></div>
+    ${s?`<div class="tstory"><div class="tdek">${esc(s.dek)}</div>${detail?`<div class="tdetail">${esc(detail)}</div>`:''}</div>`:''}
     ${src?`<a class="tsrc" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${esc(srcHost(src))}<span>&#8599;</span></a>`:''}`;
   tip.style.display='block';
   const r=tip.getBoundingClientRect(),vw=innerWidth,vh=innerHeight;
@@ -875,6 +900,233 @@ function onBoardScroll(){ hideTip(); if(ticking) return; ticking=true; requestAn
   ticking=false;
 }); }
 
+const screenBtn=byId<HTMLButtonElement>('screenBtn'),
+      tourCard=byId<HTMLDivElement>('tourcard'),
+      tourMeta=byId<HTMLSpanElement>('tourMeta'),
+      tourCount=byId<HTMLSpanElement>('tourCount'),
+      tourWho=byId<HTMLDivElement>('tourWho'),
+      tourEvent=byId<HTMLDivElement>('tourEvent'),
+      tourProgress=byId<HTMLSpanElement>('tourProgress'),
+      tourExit=byId<HTMLButtonElement>('tourExit'),
+      storyDeck=byId<HTMLElement>('storydeck'),
+      storyImageA=byId<HTMLImageElement>('storyImageA'),
+      storyImageB=byId<HTMLImageElement>('storyImageB'),
+      storyCopy=byId<HTMLElement>('storyCopy'),
+      storyEyebrow=byId<HTMLDivElement>('storyEyebrow'),
+      storyTitle=byId<HTMLHeadingElement>('storyTitle'),
+      storyDek=byId<HTMLParagraphElement>('storyDek'),
+      storyDetail=byId<HTMLParagraphElement>('storyDetail'),
+      storyMeta=byId<HTMLDivElement>('storyMeta'),
+      storyProgress=byId<HTMLSpanElement>('storyProgress'),
+      storyCount=byId<HTMLSpanElement>('storyCount'),
+      storyExit=byId<HTMLButtonElement>('storyExit');
+const TOUR_MS=7600;
+const STORY_MS=22000;
+const STORY_XFADE_MS=1350;
+const STORY_TEXT_MS=620;
+let tourStops: TourStop[]=[];
+let tourIndex=0;
+let storySlides: StorySlide[]=[];
+let storyIndex=0;
+let storyImageLayer=0;
+let storySlideReady=true;
+let tourTimer: number | undefined;
+let idleTimer: number | undefined;
+let tourActive=false;
+let storyMode=false;
+
+function clearTourTimer(){ if(tourTimer){ clearTimeout(tourTimer); tourTimer=undefined; } }
+function clearTourHighlight(){
+  head.querySelectorAll<HTMLElement>('.tour-active').forEach(e=>e.classList.remove('tour-active'));
+  cols.querySelectorAll<HTMLElement>('.tour-active').forEach(e=>e.classList.remove('tour-active'));
+}
+function buildTourStops(){
+  const stops: TourStop[]=[];
+  data.forEach((p,idx)=>p.ev.forEach((e,evIdx)=>{
+    if((e.big||e.death) && active.has(p.d)) stops.push({p,e,idx,evIdx});
+  }));
+  if(stops.length) return stops;
+  data.forEach((p,idx)=>p.ev.forEach((e,evIdx)=>{
+    if(e.big||e.death) stops.push({p,e,idx,evIdx});
+  }));
+  return stops;
+}
+function shuffle<T>(items: T[]){
+  const next=items.slice();
+  for(let i=next.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [next[i],next[j]]=[next[j],next[i]]; }
+  return next;
+}
+function buildStorySlides(){
+  const slides: StorySlide[]=[];
+  data.forEach((p,idx)=>p.ev.forEach((e,evIdx)=>{
+    if(e.story && active.has(p.d)) slides.push({p,e,idx,evIdx,story:e.story});
+  }));
+  if(slides.length) return shuffle(slides);
+  data.forEach((p,idx)=>p.ev.forEach((e,evIdx)=>{
+    if(e.story) slides.push({p,e,idx,evIdx,story:e.story});
+  }));
+  return shuffle(slides);
+}
+function resetTourProgress(){
+  tourProgress.style.transition='none';
+  tourProgress.style.width='0';
+  requestAnimationFrame(()=>{
+    tourProgress.style.transition=`width ${TOUR_MS}ms linear`;
+    tourProgress.style.width='100%';
+  });
+}
+function fillStoryCopy(slide: StorySlide){
+  const {p,e,story}=slide;
+  storyEyebrow.textContent=`${p.s} · age ${e.a} · ${e.y}`;
+  storyTitle.textContent=story.title;
+  storyDek.textContent=story.dek;
+  storyDetail.textContent=story.detail;
+  storyMeta.innerHTML=story.tags.map(t=>`<span>${esc(t)}</span>`).join('');
+  storyCount.textContent=`${storyIndex+1} / ${storySlides.length}`;
+}
+function swapStoryImage(url: string,alt: string,animate: boolean){
+  const a=storyImageA,b=storyImageB,next=storyImageLayer===0?b:a,prev=storyImageLayer===0?a:b;
+  next.alt=alt;
+  if(!animate||!prev.src){
+    a.src=url; a.alt=alt; a.classList.add('is-active'); a.classList.remove('is-leaving');
+    b.classList.remove('is-active','is-leaving'); b.removeAttribute('src');
+    storyImageLayer=0;
+    return Promise.resolve();
+  }
+  return new Promise<void>(resolve=>{
+    const done=()=>{
+      prev.classList.remove('is-active');
+      prev.classList.add('is-leaving');
+      next.classList.add('is-active');
+      next.classList.remove('is-leaving');
+      window.setTimeout(()=>{
+        prev.classList.remove('is-leaving');
+        storyImageLayer=storyImageLayer===0?1:0;
+        resolve();
+      },STORY_XFADE_MS);
+    };
+    if(next.complete && next.src===url) done();
+    else next.onload=()=>done();
+    next.src=url;
+  });
+}
+function resetStoryProgress(){
+  storyProgress.style.transition='none';
+  storyProgress.style.width='0';
+  requestAnimationFrame(()=>{
+    storyProgress.style.transition=`width ${STORY_MS}ms linear`;
+    storyProgress.style.width='100%';
+  });
+}
+function showStorySlide(nextIndex=storyIndex){
+  if(!tourActive||!storyMode||!storySlides.length) return;
+  clearTourTimer();
+  void presentStorySlide(nextIndex);
+}
+async function presentStorySlide(nextIndex: number){
+  if(!tourActive||!storyMode||!storySlides.length) return;
+  storyIndex=(nextIndex+storySlides.length)%storySlides.length;
+  const slide=storySlides[storyIndex], {p,e,idx,evIdx}=slide, dm=DOMAINS[p.d];
+  const animate=storySlideReady;
+  storySlideReady=true;
+  clearTourHighlight();
+  const ph=head.querySelector<HTMLElement>(`.phead[data-i="${idx}"]`);
+  const ev=cols.querySelector<HTMLElement>(`.ev[data-i="${idx}"][data-e="${evIdx}"]`);
+  ph?.classList.add('tour-active');
+  ev?.classList.add('tour-active','in');
+  const eventY=parseFloat(ev?.style.top||String(TOP+e.a*PPY));
+  const eventPageY=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))+eventY;
+  const left=ph ? ph.offsetLeft+ph.offsetWidth/2-scrollEl.clientWidth/2 : 0;
+  const top=eventPageY-scrollEl.clientHeight*.48;
+  scrollEl.scrollTo({left:Math.max(0,left),top:Math.max(0,top),behavior:'smooth'});
+  storyDeck.style.setProperty('--tc',`var(${dm.v})`);
+  if(animate){
+    storyCopy.classList.add('is-changing');
+    await Promise.all([
+      swapStoryImage(slide.story.image,slide.story.title,true),
+      new Promise<void>(r=>window.setTimeout(r,STORY_TEXT_MS)),
+    ]);
+    fillStoryCopy(slide);
+    storyCopy.classList.remove('is-changing');
+    storyCopy.classList.add('is-entering');
+    requestAnimationFrame(()=>storyCopy.classList.remove('is-entering'));
+  }else{
+    fillStoryCopy(slide);
+    await swapStoryImage(slide.story.image,slide.story.title,false);
+  }
+  resetStoryProgress();
+  tourTimer=window.setTimeout(()=>showStorySlide(storyIndex+1),STORY_MS);
+}
+function showTourStop(nextIndex=tourIndex){
+  if(!tourActive||!tourStops.length) return;
+  tourIndex=(nextIndex+tourStops.length)%tourStops.length;
+  const stop=tourStops[tourIndex], dm=DOMAINS[stop.p.d];
+  clearTourHighlight();
+  const ph=head.querySelector<HTMLElement>(`.phead[data-i="${stop.idx}"]`);
+  const ev=cols.querySelector<HTMLElement>(`.ev[data-i="${stop.idx}"][data-e="${stop.evIdx}"]`);
+  ph?.classList.add('tour-active');
+  ev?.classList.add('tour-active','in');
+  tourCard.style.setProperty('--tc',`var(${dm.v})`);
+  tourMeta.textContent=`${dm.label} · age ${stop.e.a} · ${stop.e.y}`;
+  tourCount.textContent=`${tourIndex+1} / ${tourStops.length}`;
+  tourWho.textContent=stop.p.s;
+  tourEvent.innerHTML=`<b>${stop.e.a===0?'Born':stop.e.a}</b> ${esc(stop.e.t)}`;
+  const eventY=parseFloat(ev?.style.top||String(TOP+stop.e.a*PPY));
+  const eventPageY=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--headH'))+eventY;
+  const left=ph ? ph.offsetLeft+ph.offsetWidth/2-scrollEl.clientWidth/2 : 0;
+  const top=eventPageY-scrollEl.clientHeight*.48;
+  scrollEl.scrollTo({left:Math.max(0,left),top:Math.max(0,top),behavior:'smooth'});
+  resetTourProgress();
+  clearTourTimer();
+  tourTimer=window.setTimeout(()=>showTourStop(tourIndex+1),TOUR_MS);
+}
+function armIdleCursor(){
+  if(!tourActive) return;
+  document.body.classList.remove('idle');
+  if(idleTimer) clearTimeout(idleTimer);
+  idleTimer=window.setTimeout(()=>document.body.classList.add('idle'),2600);
+}
+async function enterScreensaver(){
+  storySlides=buildStorySlides();
+  storyMode=storySlides.length>0;
+  tourStops=storyMode?[]:buildTourStops();
+  if(!storyMode&&!tourStops.length) return;
+  storySlideReady=false;
+  storyImageLayer=0;
+  tourActive=true;
+  hideTip();
+  footerEl?.classList.remove('show');
+  document.body.classList.add('screensaver');
+  document.body.classList.toggle('story-mode',storyMode);
+  screenBtn.setAttribute('aria-pressed','true');
+  screenBtn.textContent='Exit';
+  armIdleCursor();
+  try{ await document.documentElement.requestFullscreen?.(); }catch{}
+  if(storyMode) showStorySlide(0);
+  else showTourStop(0);
+}
+function exitScreensaver(){
+  if(!tourActive) return;
+  tourActive=false;
+  clearTourTimer();
+  if(idleTimer){ clearTimeout(idleTimer); idleTimer=undefined; }
+  clearTourHighlight();
+  document.body.classList.remove('screensaver','story-mode','idle');
+  screenBtn.setAttribute('aria-pressed','false');
+  screenBtn.textContent='Screensaver';
+  tourProgress.style.transition='none';
+  tourProgress.style.width='0';
+  storyProgress.style.transition='none';
+  storyProgress.style.width='0';
+  storyMode=false;
+  storySlideReady=false;
+  storyCopy.classList.remove('is-changing','is-entering');
+  storyImageA.classList.add('is-active');
+  storyImageA.classList.remove('is-leaving');
+  storyImageB.classList.remove('is-active','is-leaving');
+  if(document.fullscreenElement) document.exitFullscreen?.().catch(()=>{});
+}
+
 function readVars(){ const cs=getComputedStyle(document.documentElement); PPY=parseFloat(cs.getPropertyValue('--ppy'))||30; TOP=parseFloat(cs.getPropertyValue('--topInset'))||44; SX=innerWidth<=680?26:30; }
 function rebuild(){ const a=+byId<HTMLInputElement>('youSlider').value; build(); positionYou(a); applyFilter();
   if(sel!=null){ const s=sel; sel=null; toggleSelect(s); } }
@@ -889,5 +1141,11 @@ byId<HTMLInputElement>('youAge').addEventListener('blur',e=>positionYou(+(e.curr
 window.addEventListener('resize',()=>{ const o=PPY; readVars(); if(PPY!==o) rebuild(); });
 document.addEventListener('click',e=>{ const target=e.target instanceof Element?e.target:null; if(!target?.closest('.node,#tip')) hideTip(); });
 scrollEl.addEventListener('scroll',onBoardScroll,{passive:true});
+screenBtn.addEventListener('click',()=>tourActive?exitScreensaver():enterScreensaver());
+tourExit.addEventListener('click',exitScreensaver);
+storyExit.addEventListener('click',exitScreensaver);
+document.addEventListener('fullscreenchange',()=>{ if(tourActive&&!document.fullscreenElement) exitScreensaver(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&tourActive) exitScreensaver(); });
+['mousemove','mousedown','touchstart','keydown'].forEach(name=>document.addEventListener(name,armIdleCursor,{passive:true}));
 
 readVars(); buildChips(); build(); applyFilter(); onBoardScroll();

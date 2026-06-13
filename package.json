@@ -7,7 +7,9 @@
     "build": "bun build src/app.ts --outfile app.js --target browser",
     "typecheck": "tsc --noEmit",
     "dev": "bun run build && wrangler dev",
-    "deploy": "bun run build && wrangler deploy"
+    "deploy": "bun run build && wrangler deploy",
+    "pi:build": "pi/scripts/build-image.sh",
+    "pi:flash": "pi/scripts/flash-image.sh"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

@@ -1,0 +1,14 @@
+[Unit]
+Description=Great Man Theory Tailscale provisioning
+Wants=network-online.target
+After=gmt-firstboot.service network-online.target
+ConditionPathExists=!/var/lib/gmt/tailscale.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/gmt-tailscale-setup
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target

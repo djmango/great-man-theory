@@ -1,0 +1,22 @@
+include:
+  file: trixie-minbase-ab.yaml
+
+image:
+  system_part_size: 2200M
+  name: great-man-theory-kiosk
+
+device:
+  user1: skg
+  user1pass:
+  hostname: skg-rpi-pending
+  ssh_user1: y
+
+ssh:
+  pubkey_only: y
+
+layer:
+  app: gmt-kiosk
+  ssh: openssh-server
+
+kiosk:
+  url: https://great-man-theory.djmango.workers.dev

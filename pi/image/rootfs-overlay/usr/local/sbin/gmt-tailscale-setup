@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+env_file=/etc/gmt-provision.env
+state_dir=/var/lib/gmt
+done_file="$state_dir/tailscale.done"
+
+mkdir -p "$state_dir"
+
+if [ -f "$done_file" ]; then
+  systemctl disable gmt-tailscale.service >/dev/null 2>&1 || true
+  exit 0
+fi
+
+if [ -r "$env_file" ]; then
+  # shellcheck disable=SC1090
+  . "$env_file"
+fi
+
+remove_env_keys() {
+  local tmp pattern
+  tmp="$(mktemp)"
+  pattern="^($(printf '%s|' "$@" | sed 's/|$//'))="
+  if [ -f "$env_file" ]; then
+    grep -Ev "$pattern" "$env_file" > "$tmp" || true
+    install -m 0600 "$tmp" "$env_file"
+  fi
+  rm -f "$tmp"
+}
+
+if [ -z "${TAILSCALE_AUTH_KEY:-}" ]; then
+  echo "TAILSCALE_AUTH_KEY is empty; skipping Tailscale setup."
+  systemctl disable gmt-tailscale.service >/dev/null 2>&1 || true
+  exit 0
+fi
+
+if ! command -v tailscale >/dev/null 2>&1; then
+  curl -fsSL https://tailscale.com/install.sh | sh
+fi
+
+systemctl enable tailscaled.service >/dev/null 2>&1 || true
+systemctl start tailscaled.service
+
+tailscale up \
+  --auth-key="$TAILSCALE_AUTH_KEY" \
+  --hostname="$(hostname)" \
+  --ssh \
+  --accept-dns=true
+
+touch "$done_file"
+remove_env_keys TAILSCALE_AUTH_KEY
+systemctl disable gmt-tailscale.service >/dev/null 2>&1 || true

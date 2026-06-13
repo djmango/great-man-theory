@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story image upscale compare</title>
+<style>
+  :root { --paper:#f4f1ea; --ink:#1a1a18; --line:#d8d2c6; --mono: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: var(--paper); color: var(--ink); }
+  main { max-width: 1280px; margin: 0 auto; padding: 28px 20px 48px; }
+  h1 { font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: -.03em; margin: 0 0 8px; }
+  .lede { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #6b665c; line-height: 1.7; max-width: 760px; }
+  .panel { margin-top: 28px; border: 1px solid var(--ink); background: #fff; box-shadow: 8px 8px 0 rgba(26,26,24,.08); }
+  .panel img { display: block; width: 100%; height: auto; }
+  .panel figcaption { padding: 12px 14px; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; border-top: 1px solid var(--line); }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
+  .card { border: 1px solid var(--line); background: #fff; }
+  .card img { display: block; width: 100%; aspect-ratio: 3/2; object-fit: cover; background: #ece7dc; }
+  .card h2 { margin: 0; padding: 12px 14px 0; font-size: 1rem; font-weight: 500; }
+  .card p { margin: 8px 0 0; padding: 0 14px 14px; font-size: .88rem; line-height: 1.45; color: #5f5a52; }
+  .card code { font-family: var(--mono); font-size: .78rem; }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Bucephalus scene — upscale compare</h1>
+  <p class="lede">Source PNGs are 1536×1024. Current site WebPs are 1600×1067 (~393 KB). Upscayl 4× via your installed app, then resized to 3200px wide for delivery (~2 MB WebP).</p>
+
+  <figure class="panel">
+    <img src="bucephalus-detail-compare.jpg" alt="Detail crop comparing original, current webp, high-fidelity upscale, and digital-art upscale">
+    <figcaption>Center detail crop — original · current webp · high-fidelity-4x · digital-art-4x</figcaption>
+  </figure>
+
+  <div class="grid">
+    <article class="card">
+      <img src="bucephalus-source.png" alt="Original source">
+      <h2>Original source</h2>
+      <p>1536×1024 PNG from generation. Kept in <code>images/story/source/</code>.</p>
+    </article>
+    <article class="card">
+      <img src="../alexander-bucephalus.webp" alt="Current webp">
+      <h2>Current WebP</h2>
+      <p>1600×1067, ~393 KB. What the screensaver uses today.</p>
+    </article>
+    <article class="card">
+      <img src="bucephalus-hf-3200.webp" alt="High fidelity upscale">
+      <h2>High-Fidelity 4× → 3200w</h2>
+      <p>Upscayl <code>high-fidelity-4x</code> model. Best for painted/illustrated scenes. ~2.0 MB WebP.</p>
+    </article>
+    <article class="card">
+      <img src="bucephalus-da-3200.webp" alt="Digital art upscale">
+      <h2>Digital-Art 4× → 3200w</h2>
+      <p>Upscayl <code>digital-art-4x</code> model. Sharper edges, can look plasticky on soft washes. ~1.5 MB WebP.</p>
+    </article>
+  </div>
+</main>
+</body>
+</html>

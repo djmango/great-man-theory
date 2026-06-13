@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -u
+
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+mkdir -p "$XDG_RUNTIME_DIR"
+chmod 700 "$XDG_RUNTIME_DIR"
+
+for env_file in /etc/gmt-kiosk.env /etc/gmt-provision.env; do
+  if [ -r "$env_file" ]; then
+    # shellcheck disable=SC1090
+    . "$env_file"
+  fi
+done
+
+url="${GMT_SITE_URL:-https://great-man-theory.djmango.workers.dev}"
+
+while true; do
+  dbus-run-session -- /usr/bin/cage -- /usr/bin/chromium \
+    --kiosk \
+    --app="$url" \
+    --noerrdialogs \
+    --disable-infobars \
+    --no-first-run \
+    --disable-session-crashed-bubble \
+    --ozone-platform=wayland \
+    --enable-features=UseOzonePlatform,OverlayScrollbar \
+    "$url"
+
+  sleep 2
+done

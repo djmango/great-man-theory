@@ -1,0 +1,69 @@
+# METABEGIN
+# X-Env-Layer-Name: gmt-kiosk
+# X-Env-Layer-Category: app
+# X-Env-Layer-Desc: Great Man Theory Chromium kiosk with first-boot provisioning.
+# X-Env-Layer-Requires: rpi-user-credentials,systemd-net-min
+#
+# X-Env-VarPrefix: kiosk
+#
+# X-Env-Var-url: https://great-man-theory.djmango.workers.dev
+# X-Env-Var-url-Desc: URL loaded by Chromium in kiosk mode.
+# X-Env-Var-url-Required: n
+# X-Env-Var-url-Valid: regex:^https://[a-zA-Z0-9.-]+[a-zA-Z0-9]/?.*$
+# X-Env-Var-url-Set: y
+# METAEND
+---
+mmdebstrap:
+  packages:
+    - ca-certificates
+    - cage
+    - chromium
+    - curl
+    - dbus-user-session
+    - fonts-noto
+    - gnupg
+    - iw
+    - network-manager
+    - openssh-server
+    - rfkill
+    - sudo
+    - wireless-regdb
+    - wpasupplicant
+  customize-hooks:
+    - |
+      set -eu
+
+      user="$IGconf_device_user1"
+
+      install -d -m 0755 "$1/etc/systemd/system/getty@tty1.service.d"
+      cat > "$1/etc/systemd/system/getty@tty1.service.d/autologin.conf" <<EOF
+      [Service]
+      ExecStart=
+      ExecStart=-/sbin/agetty --autologin $user --noclear %I \$TERM
+      Type=idle
+      EOF
+
+      install -d -m 0755 "$1/home/$user"
+      cat > "$1/home/$user/.bash_profile" <<'EOF'
+      if [ -z "${SSH_CONNECTION:-}" ] && [ "$(tty)" = "/dev/tty1" ]; then
+        exec /usr/local/bin/gmt-kiosk-loop
+      fi
+      EOF
+
+      cat > "$1/etc/gmt-kiosk.env" <<EOF
+      GMT_SITE_URL=$IGconf_kiosk_url
+      EOF
+
+      chmod 0644 "$1/etc/gmt-kiosk.env"
+      chmod 0755 "$1/usr/local/bin/gmt-kiosk-loop" "$1/usr/local/sbin/gmt-firstboot" "$1/usr/local/sbin/gmt-tailscale-setup"
+      [ ! -f "$1/etc/gmt-provision.env" ] || chmod 0600 "$1/etc/gmt-provision.env"
+
+      chroot "$1" usermod -aG audio,video,input,render,tty "$user" || true
+      chroot "$1" chown "$user:$user" "/home/$user/.bash_profile"
+      [ ! -d "$1/home/$user/.ssh" ] || chroot "$1" chown -R "$user:$user" "/home/$user/.ssh"
+    - $BDEBSTRAP_HOOKS/enable-units "$1" NetworkManager
+    - $BDEBSTRAP_HOOKS/enable-units "$1" NetworkManager-wait-online
+    - $BDEBSTRAP_HOOKS/enable-units "$1" ssh
+    - $BDEBSTRAP_HOOKS/enable-units "$1" getty@tty1
+    - $BDEBSTRAP_HOOKS/enable-units "$1" gmt-firstboot
+    - $BDEBSTRAP_HOOKS/enable-units "$1" gmt-tailscale

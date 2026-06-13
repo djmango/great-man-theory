@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+env_file=/etc/gmt-provision.env
+state_dir=/var/lib/gmt
+done_file="$state_dir/firstboot.done"
+
+mkdir -p "$state_dir"
+
+if [ -f "$done_file" ]; then
+  systemctl disable gmt-firstboot.service >/dev/null 2>&1 || true
+  exit 0
+fi
+
+if [ -r "$env_file" ]; then
+  # shellcheck disable=SC1090
+  . "$env_file"
+fi
+
+remove_env_keys() {
+  local tmp pattern
+  tmp="$(mktemp)"
+  pattern="^($(printf '%s|' "$@" | sed 's/|$//'))="
+  if [ -f "$env_file" ]; then
+    grep -Ev "$pattern" "$env_file" > "$tmp" || true
+    install -m 0600 "$tmp" "$env_file"
+  fi
+  rm -f "$tmp"
+}
+
+suffix="$(od -An -N4 -tx1 /dev/urandom | tr -d ' \n' | cut -c1-6)"
+hostname="skg-rpi-gmt-$suffix"
+hostnamectl set-hostname "$hostname"
+printf '%s\n' "$hostname" > /etc/hostname
+
+rm -f /etc/ssh/ssh_host_*
+ssh-keygen -A
+
+systemctl enable NetworkManager.service >/dev/null 2>&1 || true
+systemctl start NetworkManager.service
+
+if [ -n "${WIFI_COUNTRY:-}" ]; then
+  iw reg set "$WIFI_COUNTRY" >/dev/null 2>&1 || true
+fi
+
+if [ -n "${WIFI_SSID:-}" ] && [ -n "${WIFI_PASSWORD:-}" ]; then
+  rfkill unblock wifi >/dev/null 2>&1 || true
+  nmcli radio wifi on >/dev/null 2>&1 || true
+
+  conn_name="great-man-theory-wifi"
+  if nmcli -t -f DEVICE,TYPE device | grep -q '^wlan0:wifi$'; then
+    nmcli connection delete "$conn_name" >/dev/null 2>&1 || true
+    nmcli connection add type wifi con-name "$conn_name" ifname wlan0 ssid "$WIFI_SSID" || true
+    nmcli connection modify "$conn_name" wifi-sec.key-mgmt wpa-psk wifi-sec.psk "$WIFI_PASSWORD" connection.autoconnect yes || true
+    nmcli connection up "$conn_name" || true
+  else
+    echo "wlan0 was not present; skipping Wi-Fi connection creation."
+  fi
+fi
+
+touch "$done_file"
+remove_env_keys WIFI_SSID WIFI_PASSWORD WIFI_COUNTRY
+systemctl disable gmt-firstboot.service >/dev/null 2>&1 || true

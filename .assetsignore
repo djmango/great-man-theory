@@ -1,11 +1,6 @@
-node_modules
-.git
-.gitignore
-.assetsignore
-.wrangler
-package.json
-package-lock.json
-bun.lock
-bun.lockb
-wrangler.jsonc
-README.md
+**/node_modules/**
+**/.git/**
+**/.wrangler/**
+**/.DS_Store
+images/story/upscaled/**
+images/story/source/**
