@@ -1455,6 +1455,1000 @@ var altmanStories = defineStories("Altman", {
   }
 });
 
+// src/stories/tesla.ts
+var teslaStories = defineStories("Tesla", {
+  "0": {
+    title: "Born at midnight while lightning splits the sky",
+    body: "Nikola Tesla arrives in 1856 in Smiljan, Croatia, during a thunderstorm so violent the midwife later swears lightning marked his birth. His father is an Orthodox priest who wants him in the church; his mother invents household gadgets in her spare time. The boy grows up seeing nature as a language of forces, not miracles. He will spend his life trying to speak it fluently.",
+    image: "images/story/tesla-born.webp",
+    tags: ["Smiljan", "1856", "lightning"]
+  },
+  "7": {
+    title: "His brother dies and guilt becomes a companion",
+    body: "When Tesla is seven his older brother Dane is killed in a riding accident. Family lore says Nikola blamed himself, perhaps for rivalry or a childhood quarrel. He becomes solitary, reading obsessively and seeing visions with his eyes open. The loss hardens a mind already prone to intensity. Success and failure both will feel personal in ways colleagues never quite understand.",
+    image: "images/story/tesla-brother.webp",
+    tags: ["Dane Tesla", "1863", "childhood"]
+  },
+  "17": {
+    title: "Cholera nearly kills him; his father sends him to engineering",
+    body: "At seventeen Tesla contracts cholera and spends nine months bedridden, certain he will die. His father, who wanted him to enter the priesthood, finally promises to send him to the best technical school if he recovers. The bargain works. He survives and enrolls at Graz to study physics and mathematics, leaving the church path behind forever.",
+    image: "images/story/tesla-cholera.webp",
+    tags: ["cholera", "1873", "Graz"]
+  },
+  "19": {
+    title: "Graz, gambling, and a mind that will not slow down",
+    body: "He enters the Polytechnic in Graz and dazzles professors while pushing himself past exhaustion. He gambles, argues, and visualizes machines fully formed before he builds them. When his father dies he loses discipline and drifts. The pattern repeats for life: bursts of superhuman focus followed by collapse. The university expels him before he finishes, but not before the AC motor is already forming in his head.",
+    image: "images/story/tesla-graz.webp",
+    tags: ["Graz", "1875", "Polytechnic"]
+  },
+  "26": {
+    title: "The rotating magnetic field in a Budapest park",
+    body: "While walking in a park with a friend in 1882, Tesla stops and declares he has solved the problem of alternating current. He sketches the idea in the dirt with a stick: a rotating magnetic field that could turn a motor without commutators. The vision is complete in an instant, as if downloaded. He spends the next years trying to convince the world it is real.",
+    image: "images/story/tesla-ac-vision.webp",
+    tags: ["AC motor", "1882", "Budapest"]
+  },
+  "28": {
+    title: "Arrives in America with four cents and a letter",
+    body: "In 1884 he lands in New York with little money and a recommendation for Thomas Edison. Edison's direct-current empire runs the city; Tesla believes alternating current is the future. The two geniuses clash almost immediately over money, credit, and physics. Tesla quits or is fired within months. The break sets up the war of the currents and one of the bitterest rivalries in industrial history.",
+    image: "images/story/tesla-america.webp",
+    tags: ["New York", "1884", "Edison"]
+  },
+  "30": {
+    title: "His own company and the first betrayals",
+    body: "He founds the Tesla Electric Company in 1886 with backers who want quick profit. They push him to develop arc lighting instead of his motor dreams. When they restructure the firm without paying him fairly, he walks away broke again. The lesson repeats: investors love his patents but not his pace. He learns to distrust businessmen while still needing them to build.",
+    image: "images/story/tesla-company.webp",
+    tags: ["1886", "startup", "arc lighting"]
+  },
+  "32": {
+    title: "Patents the polyphase AC motor that changes everything",
+    body: "George Westinghouse buys Tesla's patents for alternating current in 1888. The deal includes royalties that could have made Tesla richer than Rockefeller if honored fully. The motor finally has a manufacturer and a champion. Direct current had seemed safe and simple; AC can travel long distances and power factories. Edison will fight back with fear and spectacle.",
+    image: "images/story/tesla-patent.webp",
+    tags: ["AC patent", "1888", "Westinghouse"]
+  },
+  "37": {
+    title: "Lights the World's Columbian Exposition in Chicago",
+    body: "In 1893 Westinghouse and Tesla illuminate the Chicago World's Fair with alternating current, outshining Edison's display. Millions walk under white light powered by AC and see the future without knowing they are choosing sides in an industrial war. Tesla lectures in a hall of machines, elegant in evening dress, explaining wireless possibilities to crowds who barely have wired homes.",
+    image: "images/story/tesla-worlds-fair.webp",
+    tags: ["World's Fair", "1893", "Chicago"]
+  },
+  "39": {
+    title: "Niagara Falls becomes a cathedral of power",
+    body: "Two years later the first large-scale hydroelectric plant at Niagara Falls sends AC power to Buffalo using Tesla's system. Water that had only roared now turns turbines that light cities. The war of the currents is effectively over; alternating current wins the grid. Tesla should be triumphant. Instead he is already turning toward stranger ideas the bankers do not know how to sell.",
+    image: "images/story/tesla-niagara.webp",
+    tags: ["Niagara Falls", "1895", "hydroelectric"]
+  },
+  "43": {
+    title: "Man-made lightning at Colorado Springs",
+    body: "In 1899 Tesla builds a laboratory in Colorado Springs and produces artificial lightning bolts over a hundred feet long. Neighbors hear thunder on clear nights; sparks jump through the ground. He claims to detect signals from space and dreams of wireless power for the whole planet. The experiments are spectacular science and terrible business. He burns through money chasing a world without wires.",
+    image: "images/story/tesla-colorado.webp",
+    tags: ["Colorado Springs", "1899", "lightning"]
+  },
+  "45": {
+    title: "Wardenclyffe Tower and J.P. Morgan's money",
+    body: "With backing from J.P. Morgan he begins a massive wireless transmission tower on Long Island in 1901. The plan is global communication and free energy, far beyond what investors signed up for. Marconi sends radio across the Atlantic; Morgan asks whether Tesla is building a rival or a folly. When the answer is unclear, the checks stop.",
+    image: "images/story/tesla-wardenclyffe.webp",
+    tags: ["Wardenclyffe", "1901", "wireless"]
+  },
+  "49": {
+    title: "Wardenclyffe abandoned; the pigeons remain",
+    body: "By 1905 the tower project collapses under debt and skepticism. Tesla suffers a nervous breakdown. The structure is never finished; later it is demolished for scrap. He retreats into hotels, feeding pigeons in Bryant Park and claiming one white bird loved him truly. The man who lit the twentieth century ends the decade talking to birds and creditors.",
+    image: "images/story/tesla-collapse.webp",
+    tags: ["1905", "bankruptcy", "pigeons"]
+  },
+  "86": {
+    title: "Dies alone in the New Yorker hotel",
+    body: "On January 7, 1943, a maid finds Tesla dead in room 3327 at the Hotel New Yorker, eighty-six years old and largely forgotten by the public. The FBI seizes his papers. Decades later his name returns on electric cars and power adapters, attached to a life stranger than fiction. He wanted to give the world free energy; the world gave him obscurity and a cult following.",
+    image: "images/story/tesla-death.webp",
+    tags: ["1943", "New York", "legacy"]
+  }
+});
+
+// src/stories/watt.ts
+var wattStories = defineStories("Watt", {
+  "0": {
+    title: "Born in Greenock where ships and steam meet",
+    body: "James Watt arrives in 1736 in Greenock, a Scottish port town smelling of tar and coal smoke. His father builds ships and teaches navigation; his mother runs the household with strict Presbyterian discipline. The boy is often sickly and spends long hours at home with books and tools. Quiet illness becomes the habit of careful observation.",
+    image: "images/story/watt-born.webp",
+    tags: ["Greenock", "1736", "Scotland"]
+  },
+  "6": {
+    title: "Too ill for school; his aunt teaches him to read",
+    body: "Chronic headaches and weakness keep him out of regular school. His aunt teaches him reading and arithmetic at the kitchen table while other children play outside. He learns slowly but thoroughly, building models and taking clocks apart. The pattern of a mind sharpened by limitation rather than classroom competition will define his later breakthroughs.",
+    image: "images/story/watt-childhood.webp",
+    tags: ["childhood", "1742", "illness"]
+  },
+  "18": {
+    title: "Trains as an instrument maker in London",
+    body: "At eighteen he travels to London to apprentice with mathematical instrument maker John Morgan. The work demands precision: dividers, quadrants, barometers cut to exact tolerances. Watt learns that small improvements in efficiency multiply across machines. He returns to Glasgow in 1757 with skills rare in Scotland and a reputation for patience with difficult problems.",
+    image: "images/story/watt-london.webp",
+    tags: ["London", "1754", "apprentice"]
+  },
+  "21": {
+    title: "Workshop at Glasgow University",
+    body: "Glasgow University hires him to maintain and build scientific instruments for professors who lecture on natural philosophy. He meets chemists, economists, and engineers in the same building. The job pays modestly but puts him at the intellectual center of the Scottish Enlightenment. When a broken model steam engine arrives for repair, he will be ready.",
+    image: "images/story/watt-glasgow.webp",
+    tags: ["Glasgow University", "1757", "instruments"]
+  },
+  "27": {
+    title: "Asked to fix a Newcomen engine that wastes steam",
+    body: "Professor John Robison brings him a small Newcomen pumping engine used for demonstrations. The design injects steam into a cylinder, then cools it with water to create vacuum. It works but wastes enormous energy reheating the chamber each stroke. Watt is told to make it run; instead he starts asking why it loses so much heat.",
+    image: "images/story/watt-newcomen.webp",
+    tags: ["Newcomen", "1763", "steam"]
+  },
+  "29": {
+    title: "The separate condenser on a Sunday walk",
+    body: "Walking in Glasgow Green on a Sunday in 1765, Watt realizes the fix: condense steam in a separate chamber, keep the main cylinder hot. The idea arrives whole, like a gift. He later says the most important thought of his life came on a walk when he was not trying to think. Patent delays and partnership struggles will follow, but the physics is settled in one afternoon.",
+    image: "images/story/watt-condenser.webp",
+    tags: ["separate condenser", "1765", "breakthrough"]
+  },
+  "33": {
+    title: "Patents the engine that powers the Industrial Revolution",
+    body: "In 1769 he patents an engine far more efficient than anything before it. Factories, mines, and mills can now run on steam without bankrupting owners on coal. The patent is both protection and prison: for years he lacks capital to manufacture at scale. The invention waits for a businessman who understands markets as well as Watt understands heat.",
+    image: "images/story/watt-patent.webp",
+    tags: ["1769", "patent", "efficiency"]
+  },
+  "39": {
+    title: "Boulton and the slogan that sells steam",
+    body: "Matthew Boulton, a Birmingham manufacturer with money and ambition, partners with Watt in 1775 after lobbying Parliament to extend the patent. Boulton's famous line applies: he sells what all the world desires, power. Together they build the Soho Foundry and turn a laboratory improvement into an industry. Watt handles thermodynamics; Boulton handles kings, contracts, and creditors.",
+    image: "images/story/watt-boulton.webp",
+    tags: ["Matthew Boulton", "1775", "Soho"]
+  },
+  "48": {
+    title: "A locomotive design before rails are ready",
+    body: "In 1784 he patents a steam locomotive concept with rods and gears suited to rails that barely exist yet. The drawing is ahead of its time; Richard Trevithick and George Stephenson will later make rail travel real. Watt himself focuses on stationary engines that pump water from mines and spin factory belts. He opens the door; others drive through it.",
+    image: "images/story/watt-locomotive.webp",
+    tags: ["1784", "locomotive", "patent"]
+  },
+  "52": {
+    title: "The flyball governor keeps engines steady",
+    body: "He adapts a centrifugal governor so steam engines maintain constant speed under changing load. Spinning balls rise and fall, regulating the valve automatically. It is one of the first feedback control devices in industry, a ancestor of thermostats and cruise control. Factories become predictable; the age of manual valve-tweaking starts to end.",
+    image: "images/story/watt-governor.webp",
+    tags: ["1788", "governor", "automation"]
+  },
+  "64": {
+    title: "Retires wealthy as the patents expire",
+    body: "By 1800 the core patents expire and competitors flood the market with imitations. Watt is already rich from royalties and consulting. He spends later years improving instruments, corresponding with scientists, and worrying about priority disputes. He never stops tinkering, but the world no longer waits for his permission to use steam.",
+    image: "images/story/watt-retire.webp",
+    tags: ["1800", "patents", "wealth"]
+  },
+  "83": {
+    title: "Dies honored; the watt is named for him",
+    body: "Watt dies near Birmingham in 1819, aged eighty-three, buried beside Boulton. Decades later the unit of power, the watt, takes his name so every light bulb label remembers him. He did not invent the steam engine; he made it economical. That difference built the modern world of factories, trains, and ships.",
+    image: "images/story/watt-death.webp",
+    tags: ["1819", "legacy", "unit"]
+  }
+});
+
+// src/stories/carnegie.ts
+var carnegieStories = defineStories("Carnegie", {
+  "0": {
+    title: "Born poor in a weaver's cottage in Dunfermline",
+    body: "Andrew Carnegie arrives in 1835 in Dunfermline, Scotland, in a one-room cottage shared with extended family. His father William is a handloom weaver, skilled and proud, watching machines slowly erase his trade. The boy grows up hearing that honest work should be enough. History is about to test that belief brutally.",
+    image: "images/story/carnegie-born.webp",
+    tags: ["Dunfermline", "1835", "weaver"]
+  },
+  "12": {
+    title: "Steam looms destroy his father's livelihood",
+    body: "When Carnegie is twelve the steam-powered looms of the Industrial Revolution reach Dunfermline. William Carnegie can no longer compete; work disappears and debt grows. The family sells furniture to eat. Young Andrew watches a technology he will later embody strip his father of dignity. The memory of looms will sit beside the memory of libraries.",
+    image: "images/story/carnegie-looms.webp",
+    tags: ["1847", "weaving", "machines"]
+  },
+  "13": {
+    title: "The Carnegies emigrate to Pittsburgh",
+    body: "In 1848 the family borrows money for passage to America and settles in Allegheny, Pennsylvania, near Pittsburgh smoke and furnaces. Andrew takes a job as a bobbin boy in a cotton mill, earning $1.20 a week. His mother Margaret scrubs floors to keep them housed. He decides quickly that poverty is a condition to escape, not a virtue to celebrate.",
+    image: "images/story/carnegie-emigrate.webp",
+    tags: ["1848", "Pittsburgh", "immigration"]
+  },
+  "18": {
+    title: "Telegraph boy on the Pennsylvania Railroad",
+    body: "Thomas Scott of the Pennsylvania Railroad hires him as a telegrapher and clerk. Carnegie learns Morse code, schedules, and the language of insiders who know which contracts matter before newspapers do. Scott becomes mentor and partial father figure. The railroad is the internet of its day; Carnegie learns to ride information faster than competitors walk.",
+    image: "images/story/carnegie-telegraph.webp",
+    tags: ["1853", "railroad", "telegraph"]
+  },
+  "30": {
+    title: "Strikes out into iron, bridges, and oil",
+    body: "After the Civil War he leaves the railroad to invest in iron bridges, sleeping cars, and oil. He builds companies that feed the expanding rail network. He trusts numbers, cost sheets, and the men who can squeeze margin from molten metal. By thirty he is no longer an employee; he is a capitalist assembling an empire piece by piece.",
+    image: "images/story/carnegie-iron.webp",
+    tags: ["1865", "investment", "bridges"]
+  },
+  "37": {
+    title: "Bets everything on steel after Bessemer",
+    body: "Visiting England in 1872 he sees Bessemer converters turn pig iron into steel cheaply and quickly. He returns convinced the future is steel, not iron. He pours capital into furnaces near Pittsburgh, vertical integration, and relentless cost cutting. Skyscrapers, rails, and warships will need what he plans to make. The bet is enormous and correct.",
+    image: "images/story/carnegie-steel.webp",
+    tags: ["Bessemer", "1872", "steel"]
+  },
+  "54": {
+    title: "The Gospel of Wealth and the duty to die poor",
+    body: "In 1889 he publishes The Gospel of Wealth, arguing that a rich man should live modestly and give the surplus back for libraries, education, and peace. The essay flatters philanthropists and infuriates labor leaders who note he still pays workers as little as possible. Carnegie wants to be remembered as a steward, not a robber baron. Homestead will complicate the sermon.",
+    image: "images/story/carnegie-gospel.webp",
+    tags: ["1889", "philanthropy", "essay"]
+  },
+  "57": {
+    title: "Homestead and blood on the Carnegie name",
+    body: "In 1892 strikebreakers and armed Pinkerton agents clash with steelworkers at Homestead in one of America's deadliest labor battles. Carnegie is in Scotland, claiming distance from daily operations while Henry Frick breaks the union. The violence stains his reputation forever. He will fund libraries with one hand while workers remember rifles with the other.",
+    image: "images/story/carnegie-homestead.webp",
+    tags: ["Homestead", "1892", "strike"]
+  },
+  "66": {
+    title: "Sells to J.P. Morgan and becomes the richest man alive",
+    body: "In 1901 J.P. Morgan buys Carnegie's steel interests for $480 million, forming U.S. Steel, the first billion-dollar corporation. Carnegie becomes the richest man in the world overnight. He did not invent steel, but he industrialized its production with a ruthlessness he later asks universities to forgive. The sale lets him begin giving money away in earnest.",
+    image: "images/story/carnegie-sale.webp",
+    tags: ["1901", "U.S. Steel", "Morgan"]
+  },
+  "67": {
+    title: "Libraries, peace prizes, and organ music",
+    body: "He spends the next decades funding nearly three thousand public libraries, concert halls, and peace initiatives. He plays organ in his Scottish castle and lectures world leaders about arbitration instead of war. Critics call it reputation repair; beneficiaries call it buildings they could never afford. He dies believing he has squared the account.",
+    image: "images/story/carnegie-giving.webp",
+    tags: ["1902", "libraries", "philanthropy"]
+  },
+  "84": {
+    title: "Dies having given away almost everything",
+    body: "Carnegie dies in 1919 at Lenox, Massachusetts, having distributed the vast majority of his fortune. The bobbin boy from Dunfermline ends as history's most famous donor. His name sits on libraries in small towns across America and on a hall in New York. The furnaces cooled long ago; the guilt and pride still debate in biographies.",
+    image: "images/story/carnegie-death.webp",
+    tags: ["1919", "legacy", "libraries"]
+  }
+});
+
+// src/stories/rockefeller.ts
+var rockefellerStories = defineStories("Rockefeller", {
+  "0": {
+    title: "Born on a hardscrabble farm in upstate New York",
+    body: "John Davison Rockefeller arrives in 1839 in Richford, New York, the second of six children in a family that moves often and trusts God more than banks. His father William Avery Rockefeller is a traveling salesman and con man who sells dubious cures and disappears for months. His mother Eliza keeps the household together with grim discipline. John learns early to count pennies and doubt promises.",
+    image: "images/story/rockefeller-born.webp",
+    tags: ["Richford", "1839", "childhood"]
+  },
+  "7": {
+    title: "A father who sells elixirs and vanishes",
+    body: "His father presents himself as Doctor Bill Levingston, a herb doctor with no medical license, while the family struggles with debt and gossip. John hears neighbors whisper about bigamy and fraud. The shame teaches him to crave respectability and control. He will build an empire on ledgers so clean that critics struggle to find a loose dollar.",
+    image: "images/story/rockefeller-father.webp",
+    tags: ["1846", "family", "Doctor Bill"]
+  },
+  "16": {
+    title: "First clerk job in Cleveland",
+    body: "At sixteen he takes a bookkeeping job at Hewitt and Tuttle, a produce commission firm in Cleveland. He records every shipment, fee, and margin in neat columns. Bosses notice he enjoys the numbers more than the haggling. Bookkeeping becomes his religion: if you measure it, you can improve it. Oil is still years away.",
+    image: "images/story/rockefeller-clerk.webp",
+    tags: ["1855", "Cleveland", "bookkeeping"]
+  },
+  "20": {
+    title: "Produce trading with Maurice Clark",
+    body: "He and partner Maurice Clark start a commission merchant business buying and selling grain, hay, and meats. The Civil War drives demand and volatility; Rockefeller stays calm when others panic. He learns to negotiate rebates with railroads, a skill that will matter enormously later. Profit accumulates quietly while soldiers fight.",
+    image: "images/story/rockefeller-produce.webp",
+    tags: ["1859", "trading", "Civil War"]
+  },
+  "24": {
+    title: "First oil refinery on the Cuyahoga",
+    body: "In 1863 he invests in an Cleveland oil refinery as kerosene begins replacing whale oil for lamps. The business is messy, smelly, and explosive, but margins can be huge. Rockefeller applies the same ledger discipline to barrels and stills. He sees oil not as a boomtown gamble but as a commodity to standardize and dominate.",
+    image: "images/story/rockefeller-refinery.webp",
+    tags: ["1863", "oil", "refining"]
+  },
+  "31": {
+    title: "Standard Oil and the plan for order",
+    body: "In 1870 he incorporates Standard Oil with partners who share his hunger for efficiency. Cleveland refineries multiply; waste drops; quality rises. Rockefeller believes chaos hurts everyone: too many small refiners, too many fires, too many price wars. His solution is consolidation so thorough it will eventually force the government to invent antitrust law.",
+    image: "images/story/rockefeller-standard.webp",
+    tags: ["1870", "Standard Oil", "Cleveland"]
+  },
+  "43": {
+    title: "The trust that owns the pipeline of America",
+    body: "By 1882 Standard Oil controls roughly ninety percent of U.S. refining through a trust structure that coordinates dozens of companies secretly. Rebates from railroads, pipeline deals, and cutthroat pricing crush rivals. Rockefeller rarely raises his voice; he simply offers to buy you out or bury you. Politicians begin calling it monopoly; consumers still buy kerosene cheap.",
+    image: "images/story/rockefeller-trust.webp",
+    tags: ["1882", "trust", "monopoly"]
+  },
+  "62": {
+    title: "The richest man in modern history",
+    body: "At the turn of the century journalists estimate his wealth above any king or emperor in history. Standard Oil fuels lamps, lubricates machines, and prepares for the automobile age. Rockefeller lives simply by billionaire standards, attends church, and gives dimes to children while his lawyers defend the trust. Fame splits between genius organizer and symbol of greed.",
+    image: "images/story/rockefeller-richest.webp",
+    tags: ["1901", "wealth", "Standard Oil"]
+  },
+  "72": {
+    title: "The Supreme Court breaks Standard Oil apart",
+    body: "In 1911 the Supreme Court orders Standard Oil dissolved into thirty-four separate companies under the Sherman Antitrust Act. Rockefeller owns stock in all of them; the breakup often makes him richer as shares rise. Exxon, Mobil, Chevron, and others trace lineage to the same Cleveland refinery. The legal defeat becomes a financial windfall.",
+    image: "images/story/rockefeller-breakup.webp",
+    tags: ["1911", "antitrust", "Supreme Court"]
+  },
+  "74": {
+    title: "The Rockefeller Foundation and modern philanthropy",
+    body: "In 1913 he creates the Rockefeller Foundation to fund public health, medical research, and education globally. Hookworm campaigns, university endowments, and the University of Chicago grow from his checks. He transfers wealth systematically while muckrakers still publish photos of broken strikers. The foundation outlives the trust and reshapes how billionaires think about giving.",
+    image: "images/story/rockefeller-foundation.webp",
+    tags: ["1913", "foundation", "philanthropy"]
+  },
+  "98": {
+    title: "Dies at ninety-seven, mostly bald and mostly giving",
+    body: "Rockefeller dies in 1937 in Ormond Beach, Florida, the last years spent quietly, giving away the fortune he counted daily in youth. He lived long enough to see automobiles replace kerosene lamps and antitrust become permanent politics. Standard Oil is gone; the family name remains on hospitals, universities, and plaza addresses worldwide.",
+    image: "images/story/rockefeller-death.webp",
+    tags: ["1937", "legacy", "philanthropy"]
+  }
+});
+
+// src/stories/benz.ts
+var benzStories = defineStories("Benz", {
+  "0": {
+    title: "Born near Karlsruhe on the eve of the motor age",
+    body: "Karl Benz arrives in 1844 in Mühlburg, near Karlsruhe in the German states, the son of a locomotive driver who dies when Karl is two. His mother raises him alone on a widow's pension and pushes him toward education as the only ladder out. The boy grows up watching trains and wondering what power might look like at human scale.",
+    image: "images/story/benz-born.webp",
+    tags: ["Karlsruhe", "1844", "childhood"]
+  },
+  "2": {
+    title: "His father dies; poverty shapes the ambition",
+    body: "Johann Georg Benz dies of pneumonia when Karl is still a toddler. The family lives modestly; his mother sacrifices so he can attend grammar school and polytechnic. He learns mechanical drawing and mathematics with the seriousness of someone who cannot afford to fail. Every patent later will feel like rent paid on her faith.",
+    image: "images/story/benz-father.webp",
+    tags: ["1846", "family", "poverty"]
+  },
+  "15": {
+    title: "Graduates Karlsruhe Polytechnic",
+    body: "He completes engineering studies at the Karlsruhe Polytechnic, trained in thermodynamics and machine design when Germany is industrializing fast. Professors teach precision; workshops teach patience. He works briefly for other firms, saving money and collecting grievances about bosses who ignore inventors. He wants his own shop where ideas can become products.",
+    image: "images/story/benz-polytechnic.webp",
+    tags: ["1859", "engineering", "education"]
+  },
+  "27": {
+    title: "Iron foundry and a machine shop of his own",
+    body: "In 1871 he opens an iron foundry and mechanical workshop with business partner August Ritter. Orders are uneven; creditors knock. Benz keeps experimenting on internal combustion while paying bills with stationary engines. The tension between invention and payroll will never fully leave the automotive industry he is about to create.",
+    image: "images/story/benz-foundry.webp",
+    tags: ["1871", "workshop", "engines"]
+  },
+  "34": {
+    title: "A reliable two-stroke engine at last",
+    body: "After years of tinkering he develops a workable two-stroke gas engine suitable for small workshops. It sells enough to keep the lights on and fund further experiments. Benz believes the future is not steam but controlled explosions inside a cylinder. Others are chasing the same prize in France and Germany; the race is quiet but real.",
+    image: "images/story/benz-two-stroke.webp",
+    tags: ["1878", "two-stroke", "engine"]
+  },
+  "39": {
+    title: "Benz and Company Rheinische Gasmotoren-Fabrik",
+    body: "He reorganizes the firm as Benz and Company, focusing on gas engines and the dream of a self-propelled carriage. Investors remain skeptical that horses can be replaced. Benz works in the workshop while his wife Bertha manages household finances and believes in the project when bankers do not. Marriage and machinery intertwine.",
+    image: "images/story/benz-company.webp",
+    tags: ["1883", "company", "Mannheim"]
+  },
+  "41": {
+    title: "The Motorwagen: three wheels and one obsession",
+    body: "In 1885 he builds the Benz Patent Motorwagen, a three-wheeled carriage with a single-cylinder four-stroke engine mounted behind the seat. It looks fragile and absurd to neighbors who hear it cough and rattle. On a winter morning he drives it in the yard; the automobile is born in a courtyard, not a boardroom.",
+    image: "images/story/benz-motorwagen.webp",
+    tags: ["1885", "Motorwagen", "automobile"]
+  },
+  "42": {
+    title: "Patent DRP 37435: the birth certificate of the car",
+    body: "On January 29, 1886, he receives German patent number 37435 for a gas-powered vehicle. The document is the legal birth of the automobile as an invented category. Sales do not follow immediately; most people still trust horses. Benz has the patent and a machine that works for minutes at a time. Marketing will require someone bolder.",
+    image: "images/story/benz-patent.webp",
+    tags: ["1886", "patent", "DRP 37435"]
+  },
+  "44": {
+    title: "Bertha's road trip without asking permission",
+    body: "In August 1888 his wife Bertha drives the Motorwagen with their sons on the first long-distance automobile trip, from Mannheim to Pforzheim and back, roughly sixty miles. She buys ligroin at pharmacies as fuel and uses a hatpin to clear a clogged fuel line. The publicity stunt works; orders increase. The world's first car review is written by a wife who refused to wait.",
+    image: "images/story/benz-bertha-trip.webp",
+    tags: ["Bertha Benz", "1888", "road trip"]
+  },
+  "50": {
+    title: "The Velo and the first production cars",
+    body: "The Benz Velo of 1894 becomes one of the first automobiles sold in meaningful numbers, lighter and cheaper than the original Motorwagen. Racing and touring clubs spread across Europe. Benz is in his fifties, respected in engineering circles but still fighting imitators. The horseless carriage stops being a joke at country fairs.",
+    image: "images/story/benz-velo.webp",
+    tags: ["1894", "Velo", "mass production"]
+  },
+  "82": {
+    title: "Mercedes-Benz: rivals merge into a legend",
+    body: "In 1926 Benz and Company merges with Daimler-Motoren-Gesellschaft, maker of Mercedes cars championed by dealer Emil Jellinek and engineer Gottlieb Daimler's legacy. The name Mercedes-Benz joins his surname to theirs. Karl Benz lives to see the car universal. He is eighty-two, a living founder of an industry that reshaped cities and wars.",
+    image: "images/story/benz-merger.webp",
+    tags: ["1926", "Mercedes-Benz", "merger"]
+  },
+  "84": {
+    title: "Dies in Ladenburg; the horse is history",
+    body: "Karl Benz dies in 1929 in Ladenburg, Germany, aged eighty-four. Children born in his lifetime saw horses rule roads; adults at his funeral drive. He did not invent every part of the automobile, but he patented the idea of it and endured decades of ridicule until Bertha and engineers proved him right.",
+    image: "images/story/benz-death.webp",
+    tags: ["1929", "Ladenburg", "legacy"]
+  }
+});
+
+// src/stories/edison.ts
+var edisonStories = defineStories("Edison", {
+  "0": {
+    title: "Born in Ohio; deafness and curiosity arrive together",
+    body: "Thomas Alva Edison is born in 1847 in Milan, Ohio, the youngest of seven children. Scarlet fever or recurring ear infections leave him mostly deaf by adolescence, which he later calls an advantage because it blocks distractions. His mother Nancy pulls him from school, teaches him at home, and encourages experiments that would get other boys punished. The basement becomes a laboratory.",
+    image: "images/story/edison-born.webp",
+    tags: ["Milan Ohio", "1847", "deafness"]
+  },
+  "7": {
+    title: "Port Huron and a childhood of selling and tinkering",
+    body: "The family moves to Port Huron, Michigan, where money stays tight. Edison sells newspapers and candy on the railroad, learning commerce between train stops. He sets up a small chemistry lab in a baggage car until a fire gets him fired. He reads widely, patents late, and trusts his hands more than teachers. Formal education ends early; self-education never does.",
+    image: "images/story/edison-port-huron.webp",
+    tags: ["Port Huron", "1854", "railroad"]
+  },
+  "12": {
+    title: "Newsboy, candy seller, amateur chemist on the rails",
+    body: "At twelve he works the Grand Trunk Railway route, buying papers wholesale in Detroit and selling them at markup along the line. He starts a mini newspaper printed on the train. Experiments with telegraphy follow; he learns Morse code and begins fixing equipment for station agents. The railroad is his university and his market stall combined.",
+    image: "images/story/edison-newsboy.webp",
+    tags: ["1859", "newsboy", "telegraph"]
+  },
+  "15": {
+    title: "Saves a child and earns telegraph training",
+    body: "When a station agent's young son wanders onto the tracks in front of an oncoming train, Edison pulls him clear. Grateful father J.U. Mackenzie teaches him telegraph operation. The rescue story follows Edison forever, polished in retelling. Skill follows luck: within years he is a roaming telegrapher taking night shifts across the Midwest and South.",
+    image: "images/story/edison-rescue.webp",
+    tags: ["1862", "telegraph", "rescue"]
+  },
+  "22": {
+    title: "First patent: a vote recorder nobody wants",
+    body: "In 1869 he patents an electric vote recorder for legislatures that counts yes and no instantly. Politicians hate it because it removes the delay that allows arm-twisting and dealmaking. The lesson sticks: invention without market fit is worthless. Edison pivots toward inventions people will pay for, not inventions that are merely clever.",
+    image: "images/story/edison-vote-recorder.webp",
+    tags: ["1869", "patent", "vote recorder"]
+  },
+  "30": {
+    title: "The phonograph: sound trapped in tin foil",
+    body: "In 1877 he invents the phonograph, recording Mary had a little lamb on tinfoil wrapped around a cylinder. The public calls him the Wizard of Menlo Park. Sound becomes storable, repeatable, sellable. He lists the phonograph as his favorite invention because it surprised even him. Music, dictation, and entertainment industries begin their long mutation.",
+    image: "images/story/edison-phonograph.webp",
+    tags: ["1877", "phonograph", "Menlo Park"]
+  },
+  "32": {
+    title: "The light bulb that outlasts demonstration",
+    body: "After hundreds of filament tests he develops a practical incandescent bulb in 1879 that burns long enough for commercial use. Gas lamp companies mock him; investors watch. Edison sells not just a bulb but a system: generators, wiring, meters. He thinks in grids. The famous quote about genius and perspiration dates from this grind.",
+    image: "images/story/edison-bulb.webp",
+    tags: ["1879", "light bulb", "filament"]
+  },
+  "35": {
+    title: "Pearl Street station lights lower Manhattan",
+    body: "On September 4, 1882, his Pearl Street generating station begins powering electric lights for customers in a square mile of New York financial district. Journalists watch Wall Street glow. Direct current flows through buried cables; meters tick. Edison is forty-five and running an energy company, not just a workshop. Night becomes negotiable.",
+    image: "images/story/edison-pearl-street.webp",
+    tags: ["1882", "Pearl Street", "DC grid"]
+  },
+  "44": {
+    title: "Motion pictures and the kinetoscope",
+    body: "In 1891 he patents a motion picture camera and viewing device, the kinetoscope, building on sequential photography experiments. Customers peep into boxes in parlors to watch short loops. Hollywood is decades away, but the idea that time can be replayed is already here. Edison fights later over film patents with competitors who will outgrow him.",
+    image: "images/story/edison-kinetoscope.webp",
+    tags: ["1891", "kinetoscope", "film"]
+  },
+  "45": {
+    title: "General Electric and the empire consolidates",
+    body: "In 1892 Edison General Electric merges with Thomson-Houston to form General Electric, one of the largest companies on earth. Edison's role shrinks as financiers reorganize what he built. He moves on to cement, batteries, and rubber research while the brand bearing his name outlives his control. The inventor becomes a symbol inside his own corporation.",
+    image: "images/story/edison-ge.webp",
+    tags: ["1892", "General Electric", "merger"]
+  },
+  "54": {
+    title: "Loses the war of the currents to Westinghouse and Tesla",
+    body: "Edison campaigned against alternating current with fear tactics, including public electrocutions of animals to portray AC as deadly. Westinghouse and Tesla win the grid anyway because AC travels farther. Edison's direct current empire becomes a regional specialty. He misjudges the physics and the politics. The man who lit the world loses the argument over how power should flow.",
+    image: "images/story/edison-ac-war.webp",
+    tags: ["1890s", "war of currents", "Tesla"]
+  },
+  "84": {
+    title: "Dies with more than a thousand patents",
+    body: "Edison dies in 1931 in West Orange, New Jersey, aged eighty-four, with over a thousand patents and a factory complex that employed generations of inventors. Americans dim their lights in tribute. He did not invent everything attributed to him, but he industrialized invention itself: teams, labs, systematic trial. The myth of the lone genius partly true, partly his best product.",
+    image: "images/story/edison-death.webp",
+    tags: ["1931", "West Orange", "patents"]
+  }
+});
+
+// src/stories/bell.ts
+var bellStories = defineStories("Bell", {
+  "0": {
+    title: "Born in Edinburgh to a family of speech teachers",
+    body: "Alexander Bell arrives in 1847 in Edinburgh, Scotland, into a family obsessed with voice, speech, and deaf education. His father Melville develops Visible Speech, a notation system for teaching pronunciation; his grandfather Alexander Bell Sr. was a famous elocutionist. The boy grows up thinking about sound as something that can be coded, taught, and perhaps transmitted.",
+    image: "images/story/bell-born.webp",
+    tags: ["Edinburgh", "1847", "elocution"]
+  },
+  "12": {
+    title: "Takes the middle name Graham at thirteen",
+    body: "At his coming-of-age ceremony he adopts Graham as a middle name, honoring a family friend. He is Alexander Graham Bell from then on, though friends call him Alec. The ritual marks a boy becoming a man in a Victorian household where performance and speech carry social weight. He will spend his life making distant voices audible.",
+    image: "images/story/bell-graham.webp",
+    tags: ["1859", "Graham", "name"]
+  },
+  "16": {
+    title: "Teaching elocution beside his father",
+    body: "He begins assisting his father teaching deaf students and correcting speech in Edinburgh and London. The work is compassionate and technical: how does the mouth shape air into meaning? His mother Eliza is increasingly deaf; the problem is personal. He studies anatomy and acoustics while teaching, building knowledge that will later become engineering.",
+    image: "images/story/bell-teaching.webp",
+    tags: ["1863", "deaf education", "elocution"]
+  },
+  "23": {
+    title: "Emigrates to Canada after his brothers die",
+    body: "After tuberculosis kills his brothers Melville and Edward, the family seeks healthier air in Brantford, Ontario. Grief and survival mix on the Atlantic crossing. Alexander establishes a workshop in Canada and continues experiments with harmonic telegraphy, hoping to send multiple messages on one wire. The telephone is not yet the goal; the telegraph is the market.",
+    image: "images/story/bell-canada.webp",
+    tags: ["1870", "Brantford", "immigration"]
+  },
+  "24": {
+    title: "Boston and teaching the deaf in America",
+    body: "He moves to Boston to teach at the School for Deaf Mutes and at Boston University. Students include Helen Keller's teacher-to-be; his methods emphasize lip reading and speech over sign language, controversial then and now. He falls in love with sound as physics while courting Mabel Hubbard, a deaf student from a wealthy family. Romance and research share a desk.",
+    image: "images/story/bell-boston.webp",
+    tags: ["1871", "Boston", "deaf school"]
+  },
+  "28": {
+    title: "Harmonic telegraph whispers toward speech",
+    body: "In 1875 he transmits vowel sounds over a wire using a vibrating reed and electromagnet. Gardiner Hubbard, his future father-in-law, funds the work hoping to break Western Union's telegraph monopoly. Bell thinks in terms of musical tones on one line. The leap from tones to intelligible speech is months away and contested by rival inventor Elisha Gray.",
+    image: "images/story/bell-harmonic.webp",
+    tags: ["1875", "harmonic telegraph", "Hubbard"]
+  },
+  "29-patent": {
+    title: "Patents the telephone by hours, not ideas",
+    body: "On February 14, 1876, Bell's lawyer files a patent application for the telephone. Hours later Gray files a caveat describing a similar liquid transmitter. Bell's patent is granted and survives decades of litigation. Historians still argue over fairness; business history remembers that paperwork timing can matter as much as workshop genius.",
+    image: "images/story/bell-patent.webp",
+    tags: ["1876", "patent", "Elisha Gray"]
+  },
+  "29-watson": {
+    title: "Mr. Watson, come here: the first phone call",
+    body: "On March 10, 1876, in Boston, Bell spills acid on his clothes and calls to his assistant Thomas Watson through the device: Mr. Watson, come here, I want to see you. Watson hears it in the next room. The sentence is mundane; the moment is not. Human voice crosses wire for the first time in a way that will eventually connect the planet.",
+    image: "images/story/bell-watson.webp",
+    tags: ["1876", "Watson", "first call"]
+  },
+  "30": {
+    title: "Bell Telephone Company and the gold rush of voice",
+    body: "In 1877 he forms the Bell Telephone Company with Hubbard and others. Lines spread across cities; switchboards employ thousands of young women operators. Western Union declines to buy the patent for $100,000, a decision they regret forever. Bell becomes wealthy while lawyers fight infringement. The product sells itself once people hear a friend on the other end.",
+    image: "images/story/bell-company.webp",
+    tags: ["1877", "Bell Telephone", "Western Union"]
+  },
+  "33": {
+    title: "Volta Prize money funds new experiments",
+    body: "He wins the French Volta Prize in 1880 for the telephone and uses the money to establish the Volta Laboratory in Washington, D.C. Research shifts toward photophones, metal detectors, and aviation. Bell dislikes being remembered for only one invention. He is restless, wealthy, and pulled toward whatever problem seems impossible each season.",
+    image: "images/story/bell-volta.webp",
+    tags: ["1880", "Volta Prize", "laboratory"]
+  },
+  "41": {
+    title: "National Geographic and the love of exploration",
+    body: "In 1888 he helps found the National Geographic Society and later serves as its president, pushing it toward popular photography and exploration rather than dry academic bulletins. His son-in-law Gilbert Grosvenor transforms the magazine into a household name. Bell funds kites, boats, and expeditions. The telephone pays for everything else he wants to try.",
+    image: "images/story/bell-natgeo.webp",
+    tags: ["1888", "National Geographic", "exploration"]
+  },
+  "60": {
+    title: "Giant kites and the race toward flight",
+    body: "At Baddeck on Cape Breton Island he builds enormous tetrahedral kites and manned kite experiments, collaborating with engineers on early aircraft designs. The AEA, including Glenn Curtiss, builds the Silver Dart. Bell chases flight with the same enthusiasm he once gave speech. Some projects succeed; others collapse into splinters on Nova Scotia beaches.",
+    image: "images/story/bell-kites.webp",
+    tags: ["1907", "Baddeck", "aviation"]
+  },
+  "75": {
+    title: "Dies in Nova Scotia; phones fall silent",
+    body: "Bell dies at Baddeck in 1922, aged seventy-five. At his funeral across North America telephones pause in tribute, lines going quiet in honor of the man who connected them. He wanted to teach the deaf to speak; he ended up letting everyone speak across distance. The patent wars faded; the network became civilization's nervous system.",
+    image: "images/story/bell-death.webp",
+    tags: ["1922", "Baddeck", "legacy"]
+  }
+});
+
+// src/stories/ford.ts
+var fordStories = defineStories("Ford", {
+  "0": {
+    title: "Born on a Michigan farm he will escape",
+    body: "Henry Ford arrives in 1863 on a Greenfield Township farm near Dearborn, Michigan, while the Civil War still rages. His father William expects him to inherit the land; Henry prefers broken watches and steam engines. The countryside is horses, mud, and church on Sunday. The boy stares at machines the way other children stare at horses.",
+    image: "images/story/ford-born.webp",
+    tags: ["Dearborn", "1863", "farm"]
+  },
+  "12": {
+    title: "A pocket watch teaches him how things fit",
+    body: "Neighbors give him a pocket watch; he takes it apart and reassembles it without leftover pieces. Farmers ask him to fix timepieces and farm tools. He discovers joy in precision and contempt for waste motion. The habit of seeing inefficiency everywhere will later become the assembly line staring back at a whole industry.",
+    image: "images/story/ford-watch.webp",
+    tags: ["1875", "watch", "mechanics"]
+  },
+  "15": {
+    title: "Refuses the farm; machines win the argument",
+    body: "At fifteen he refuses his father's offer of the farm outright. William thinks laziness; Henry thinks destiny. He leaves for Detroit machine shops, sleeping in boardinghouses and learning every job on the floor. Coal, smoke, and lathes feel more honest than plowing. The break is permanent; agriculture loses a son industry gains.",
+    image: "images/story/ford-detroit.webp",
+    tags: ["1878", "Detroit", "machine shop"]
+  },
+  "16": {
+    title: "Apprentice machinist in Detroit factories",
+    body: "He apprentices at Michigan Car Company and later James F. Flower and Brothers, learning drill presses, planers, and the rhythm of factory bells. Nights he experiments with gasoline engines in the kitchen, alarming landladies. Detroit is becoming the motor city before the name exists. Ford is a competent machinist with opinions about speed.",
+    image: "images/story/ford-apprentice.webp",
+    tags: ["1879", "machinist", "Detroit"]
+  },
+  "28": {
+    title: "Chief engineer at Edison Illuminating",
+    body: "Edison Illuminating Company hires him as chief engineer in Detroit; the job pays steady money and one day off a week for personal projects. Thomas Edison encourages his automobile experiments when Ford shows him a quadricycle. The blessing of the Wizard of Menlo Park matters in press clips. Ford keeps his day job while dreaming of cars for everyone.",
+    image: "images/story/ford-edison-job.webp",
+    tags: ["1891", "Edison Illuminating", "engineer"]
+  },
+  "33": {
+    title: "The Quadricycle on bicycle wheels",
+    body: "In 1896 he completes his first horseless carriage, the Quadricycle: a frame on four bicycle wheels, a two-cylinder engine, no reverse gear. He drives it at 2 AM through Detroit streets before storing it in a shed. It is crude, loud, and thrilling. Investors notice; failures follow. The vehicle is proof he can build; scaling is another problem.",
+    image: "images/story/ford-quadricycle.webp",
+    tags: ["1896", "Quadricycle", "first car"]
+  },
+  "40": {
+    title: "Ford Motor Company incorporated",
+    body: "After two failed automotive ventures Ford incorporates the Ford Motor Company in 1903 with eleven investors and $28,000 cash. The Dodge brothers supply engines; Ford supplies obsession with reliability and price. Within years the Model A and Model C prove the firm can sell cars profitably. He is forty and has finally found a company that lasts.",
+    image: "images/story/ford-company.webp",
+    tags: ["1903", "incorporation", "investors"]
+  },
+  "45": {
+    title: "Model T: any color as long as it is black",
+    body: "In 1908 the Model T debuts at $825, simple enough for farmers to repair and tough enough for American roads. Ford later jokes customers can have any color so long as it is black once production standardizes. The car democratizes mobility: church, market, and courting distance shrink. Rural America joins urban America on rubber tires.",
+    image: "images/story/ford-model-t.webp",
+    tags: ["1908", "Model T", "mass market"]
+  },
+  "50": {
+    title: "The moving assembly line at Highland Park",
+    body: "In 1913 Highland Park plant introduces the moving assembly line for Model T production. Chassis assembly drops from over twelve hours to about ninety minutes. Workers repeat narrow tasks; efficiency soars; bodies strain. Ford did not invent every piece of the line but integrated it ruthlessly. Manufacturing will never again be craft-first.",
+    image: "images/story/ford-assembly-line.webp",
+    tags: ["1913", "assembly line", "Highland Park"]
+  },
+  "51": {
+    title: "Five dollars a day and the profit-sharing bargain",
+    body: "In 1914 Ford announces the five-dollar day, roughly doubling wages for eligible workers who meet behavior standards judged by sociological department inspectors. Turnover collapses; workers can afford the cars they build. Critics call it paternalism; Ford calls it smart economics. Higher pay buys loyalty and creates customers. Labor history argues forever about the trade.",
+    image: "images/story/ford-five-dollar.webp",
+    tags: ["1914", "five dollar day", "wages"]
+  },
+  "64-model-t": {
+    title: "Fifteen million Model Ts and then goodbye",
+    body: "In 1927 Ford ends Model T production after more than fifteen million sold, shutting plants to retool for the Model A while competitors offer style and comfort he ignored. The T changed the world; keeping it unchanged too long nearly sinks the company. Even revolutionaries must update the revolution or become museum pieces.",
+    image: "images/story/ford-model-t-end.webp",
+    tags: ["1927", "Model T", "production end"]
+  },
+  "64-rouge": {
+    title: "River Rouge: raw ore to finished car in one plant",
+    body: "The River Rouge complex near Dearborn becomes Ford's industrial cathedral: iron ore enters one end, automobiles leave the other. Vertical integration reaches its American peak. Eighty thousand workers toil under one brand on one site. Ford imagines total control; the Great Depression and unions will test whether any man can hold that much steel in one fist.",
+    image: "images/story/ford-rouge.webp",
+    tags: ["1927", "River Rouge", "vertical integration"]
+  },
+  "84": {
+    title: "Dies in Dearborn; America runs on rubber",
+    body: "Ford dies in 1947 at Fair Lane, his Dearborn estate, aged eighty-three. Half a century earlier he left a farm; America now runs on highways he helped create. He published antisemitic writings, fought unions bitterly, and still put the world on wheels. Biographers split the man from the machine; drivers rarely bother with the distinction.",
+    image: "images/story/ford-death.webp",
+    tags: ["1947", "Dearborn", "legacy"]
+  }
+});
+
+// src/stories/porsche.ts
+var porscheStories = defineStories("Porsche", {
+  "0": {
+    title: "Born in Bohemia with grease under the fingernails",
+    body: "Ferdinand Porsche arrives in 1875 in Maffersdorf, Bohemia, then part of Austria-Hungary, the third of five children in a family of tinsmiths and tinkerers. His father Anton runs a plumbing shop; young Ferdinand plays with electricity when most villages still use oil lamps. He learns that metal and current can be bent to will with enough patience.",
+    image: "images/story/porsche-born.webp",
+    tags: ["Bohemia", "1875", "childhood"]
+  },
+  "15": {
+    title: "Wires his family's house for electric light",
+    body: "At fifteen he installs electric lighting in his family's home using a waterwheel-driven generator, years before the village grid arrives. Neighbors watch bulbs glow and assume sorcery. The project convinces him engineering is a career, not a hobby. He enrolls in night classes while working days, hungry for formal training his village cannot provide.",
+    image: "images/story/porsche-electric-home.webp",
+    tags: ["1890", "electricity", "waterwheel"]
+  },
+  "18": {
+    title: "First job at Béla Egger in Vienna",
+    body: "He joins the electrical firm Béla Egger in Vienna as a draftsman and tester, working on motors and generators in a city buzzing with fin-de-siècle industry. Managers notice his sketches and his habit of staying late. Vienna teaches him bureaucracy and precision; he will carry both into automotive design decades later.",
+    image: "images/story/porsche-vienna.webp",
+    tags: ["1893", "Vienna", "Egger"]
+  },
+  "23": {
+    title: "An electric car with motors in the hubs",
+    body: "In 1898 he builds an electric carriage for Jacob Lohner and Company with electric motors mounted in the front wheel hubs, eliminating chains and driveshafts. It wins attention at the Paris Exposition. The car is heavy and battery-bound but elegant. Porsche is twenty-three and already treating the automobile as a systems problem, not a carriage minus horse.",
+    image: "images/story/porsche-hub-motor.webp",
+    tags: ["1898", "electric car", "Lohner"]
+  },
+  "25": {
+    title: "The Lohner-Porsche hybrid before hybrids were cool",
+    body: "The 1900 Lohner-Porsche Semper Vivus combines a petrol engine driving a generator that feeds hub motors, one of the earliest hybrid automobiles. Ferdinand Porsche builds it while gasoline and electric camps still debate the future. The concept is brilliant and expensive; production versions sell to wealthy enthusiasts. He is decades ahead and commercially early.",
+    image: "images/story/porsche-hybrid.webp",
+    tags: ["1900", "hybrid", "Semper Vivus"]
+  },
+  "48": {
+    title: "Chief engineer at Daimler; the Mercedes SS",
+    body: "After stints at Austro-Daimler he becomes technical director at Daimler in Stuttgart and designs racing cars that dominate European circuits. The Mercedes SS and SSK models define prewar sport luxury. Porsche understands that speed sells prestige and prestige funds development. His name is attached to machines wealthy men crash on weekends.",
+    image: "images/story/porsche-daimler.webp",
+    tags: ["1923", "Mercedes", "racing"]
+  },
+  "56": {
+    title: "Opens his own design bureau in Stuttgart",
+    body: "In 1931 he founds Dr. Ing. h.c. F. Porsche GmbH, Konstruktionen und Beratungen für Motoren und Fahrzeugbau, a consulting firm that will design for Auto Union Grand Prix cars and later Volkswagen. He employs his son Ferry and a team of engineers who share his obsession with air cooling and torsion-bar suspension. Independence returns at fifty-six.",
+    image: "images/story/porsche-bureau.webp",
+    tags: ["1931", "Stuttgart", "consulting"]
+  },
+  "59": {
+    title: "Hitler asks for a people's car",
+    body: "The Nazi regime commissions Porsche to design an affordable car for the German Volk, with specifications from Adolf Hitler himself: room for five, air-cooled, cheap to maintain. Porsche adapts earlier small-car sketches into what becomes the KdF-Wagen project. Politics and engineering intertwine uncomfortably; the Beetle's shape begins here under a dictatorship's logo.",
+    image: "images/story/porsche-volkswagen.webp",
+    tags: ["1934", "Volkswagen", "KdF-Wagen"]
+  },
+  "63": {
+    title: "The Beetle shape that outlasts the regime",
+    body: "By 1938 prototypes of the Volkswagen Beetle run at test tracks while the factory at Wolfsburg rises. War interrupts civilian production; the plant later builds military vehicles. The rounded body, rear engine, and simple mechanics survive the Third Reich and postwar occupation. Porsche's most produced design is born in the most poisoned context of his life.",
+    image: "images/story/porsche-beetle.webp",
+    tags: ["1938", "Beetle", "Wolfsburg"]
+  },
+  "70": {
+    title: "Imprisoned in France after the war",
+    body: "In 1945 French authorities arrest Porsche and his son Ferry as war collaborators and hold them for months. Ferdinand is seventy, frail, and accused of using forced labor through Volkswagen connections. Ferry keeps the company alive by designing the Cisitalia Grand Prix car while negotiating release. The family name survives legal shame and personal aging.",
+    image: "images/story/porsche-prison.webp",
+    tags: ["1945", "France", "war"]
+  },
+  "73": {
+    title: "The Porsche 356: Ferry builds the family brand",
+    body: "In 1948 Ferry Porsche introduces the 356 sports car, using Beetle-derived components refined into something fast and beautiful. The car sells in America to enthusiasts who want European handling without Italian fragility. Ferdinand sees the 356 before he dies; the brand that bears his surname finally builds under its own badge. Sport luxury becomes the family business.",
+    image: "images/story/porsche-356.webp",
+    tags: ["1948", "356", "Ferry Porsche"]
+  },
+  "76": {
+    title: "Dies in Stuttgart; Beetles and 356s outlive him",
+    body: "Ferdinand Porsche dies in 1951 in Stuttgart, aged seventy-five. Volkswagen Beetles roll off lines by the millions; Porsche 356s win races and admirers. He never owned the Beetle company; he shaped two automotive religions from one workshop. Engineers still study his habit of simplifying until nothing left can be removed without failure.",
+    image: "images/story/porsche-death.webp",
+    tags: ["1951", "Stuttgart", "legacy"]
+  }
+});
+
+// src/stories/marconi.ts
+var marconiStories = defineStories("Marconi", {
+  "0": {
+    title: "Born in Bologna to wealth and amateur science",
+    body: "Guglielmo Marconi arrives in 1874 in Bologna, Italy, the second son of an Italian landowner and an Irish mother from the Jameson whiskey family. Tutors teach him at home; he prefers attic experiments to formal exams. Wealth removes the need for a day job and leaves time for wires, coils, and the question of whether Hertzian waves can carry messages.",
+    image: "images/story/marconi-born.webp",
+    tags: ["Bologna", "1874", "childhood"]
+  },
+  "18": {
+    title: "Fails the naval academy and keeps experimenting",
+    body: "He flunks entrance exams for the Italian Naval Academy, disappointing parents who hoped for respectable service. Failure frees him to pursue radio experiments in the Villa Griffone attic with his butler Mignani as assistant. He reads Heinrich Hertz and Oliver Lodge and decides wireless telegraphy can work beyond laboratory benches. Italy's navy loses a mediocre cadet; telecommunications gains an entrepreneur.",
+    image: "images/story/marconi-naval.webp",
+    tags: ["1892", "naval academy", "failure"]
+  },
+  "20": {
+    title: "Hertzian waves in the attic at Villa Griffone",
+    body: "In 1894 he builds equipment to ring a bell across a room without connecting wires, using electromagnetic waves. The demonstration excites his mother Annie and worries his father Giuseppe, who wants a real career. Marconi lengthens distance meter by meter across the estate. Each success suggests oceans might be next if power and antennas grow enough.",
+    image: "images/story/marconi-attic.webp",
+    tags: ["1894", "Villa Griffone", "wireless"]
+  },
+  "21": {
+    title: "Over a mile across the Italian hills",
+    body: "By 1895 he transmits signals beyond a mile, hiding the receiver behind a hill to prove no wire connects the points. Italian postal officials decline to fund him, unable to see commercial value. Marconi learns quickly that inventors need markets, not just demonstrations. Britain, with its empire of ships, will listen harder.",
+    image: "images/story/marconi-mile.webp",
+    tags: ["1895", "transmission", "Italy"]
+  },
+  "22": {
+    title: "London, patents, and the British embrace",
+    body: "In 1896 he moves to England, demonstrates for British Post Office engineers, and files his first wireless telegraphy patent. William Preece of the Post Office becomes ally; investors follow. Britain's navy and shipping lines need communication without cables. Marconi's Italian accent and family money meet British imperial appetite for global reach.",
+    image: "images/story/marconi-london.webp",
+    tags: ["1896", "London", "patent"]
+  },
+  "25": {
+    title: "Wireless across the English Channel",
+    body: "In 1899 signals cross the English Channel from South Foreland to Wimereux, proving wireless works over water. Shipping companies watch; cable monopolies worry. Marconi stations multiply on coastlines. The demonstration is practical theater: if the Channel yields, the Atlantic is only a scaling problem of power, patience, and taller masts.",
+    image: "images/story/marconi-channel.webp",
+    tags: ["1899", "English Channel", "wireless"]
+  },
+  "27": {
+    title: "The letter S heard across the Atlantic",
+    body: "On December 12, 1901, at Signal Hill, Newfoundland, Marconi claims reception of three dots, the Morse letter S, sent from Cornwall across the Atlantic. Skeptics argue about atmospheric bounce and equipment sensitivity; believers declare a new era. Transatlantic cables suddenly have wireless competition. Distance collapses for news, distress calls, and eventually voice.",
+    image: "images/story/marconi-atlantic.webp",
+    tags: ["1901", "Atlantic", "Signal Hill"]
+  },
+  "35": {
+    title: "Nobel Prize and the father of radio",
+    body: "In 1909 he shares the Nobel Prize in Physics with Karl Ferdinand Braun for contributions to wireless telegraphy. Newspapers call him the inventor of radio, though priority disputes with Tesla, Lodge, and others linger in courts and history books. Marconi companies install shipboard wireless as standard equipment. Fame settles into infrastructure.",
+    image: "images/story/marconi-nobel.webp",
+    tags: ["1909", "Nobel Prize", "radio"]
+  },
+  "38": {
+    title: "Wireless operators and the Titanic disaster",
+    body: "In 1912 RMS Titanic sinks after striking an iceberg; wireless operators send distress signals that bring Carpathia to rescue survivors while other ships miss calls. Public opinion mandates radio on passenger liners. Marconi's technology becomes safety equipment, not luxury. The tragedy sells wireless the way no trade show ever could.",
+    image: "images/story/marconi-titanic.webp",
+    tags: ["1912", "Titanic", "distress signal"]
+  },
+  "49": {
+    title: "Shortwave and beam radio for empire",
+    body: "In the 1920s Marconi develops shortwave beam systems that carry messages farther with less power, linking Britain to colonies cheaply. Cable companies lose monopoly; governments gain strategic channels. He joins Italian fascism's upper circles, a choice that stains his reputation after World War II. Technology outlives politics; biography does not.",
+    image: "images/story/marconi-shortwave.webp",
+    tags: ["1923", "shortwave", "beam radio"]
+  },
+  "63": {
+    title: "Dies in Rome; stations fall silent in tribute",
+    body: "Marconi dies in Rome in 1937 after a series of heart attacks, aged sixty-three. Radio stations worldwide observe minutes of silence. The boy who rang a bell in an attic helped build global instantaneous communication. Every cellphone tower is a distant descendant of coils he wound by hand in Bologna.",
+    image: "images/story/marconi-death.webp",
+    tags: ["1937", "Rome", "legacy"]
+  }
+});
+
+// src/stories/wright.ts
+var wrightStories = defineStories("Wright", {
+  "0": {
+    title: "Wilbur born in Indiana; Orville follows four years later",
+    body: "Wilbur Wright arrives in 1867 near Millville, Indiana, the third of five Wright children in a household led by Bishop Milton Wright, a traveling minister, and Susan Koerner Wright, mechanically gifted with tools. The family moves often; books and church dominate. Wilbur is serious, Orville will be practical. Aviation waits until bicycles teach them balance.",
+    image: "images/story/wright-wilbur-born.webp",
+    tags: ["Wilbur", "1867", "Indiana"]
+  },
+  "4": {
+    title: "Orville arrives; the workshop partnership begins",
+    body: "Orville Wright is born in Dayton, Ohio, in 1871 while Wilbur is four. The brothers share a bedroom, a curiosity about how things work, and a mother who fixes toys rather than replaces them. Neither attends college; both read obsessively. Dayton becomes home base for printing presses, bicycles, and eventually wings.",
+    image: "images/story/wright-orville-born.webp",
+    tags: ["Orville", "1871", "Dayton"]
+  },
+  "18": {
+    title: "Wilbur's Yale dream ends with a hockey injury",
+    body: "Wilbur excels in school and plans Yale until a hockey stick accident during winter play leaves him withdrawn and depressed for years. He cares for his invalid mother and reads deeply at home. The setback delays his public life but deepens his concentration. When flight captures his mind, he will apply monastic focus.",
+    image: "images/story/wright-wilbur-illness.webp",
+    tags: ["1885", "injury", "Yale"]
+  },
+  "22": {
+    title: "Printing business and the Wright brand",
+    body: "The brothers start a printing business with a hand press Wilbur receives as a gift. Orville builds a larger press from scratch; they publish local papers and pamphlets. The venture teaches marketing, deadlines, and mechanical improvisation on a budget. They sign work Wright Brothers before the world knows what the brothers will mean.",
+    image: "images/story/wright-printing.webp",
+    tags: ["1889", "printing", "Dayton"]
+  },
+  "25": {
+    title: "The bicycle shop funds the obsession",
+    body: "In 1892 they open the Wright Cycle Exchange in Dayton, selling and repairing bicycles during the cycling craze. Custom models like the Van Cleve follow. Steady shop income funds wind tunnel materials and trip to Kitty Hawk. Bicycles teach control, balance, and the idea that a unstable machine can be ridden if the rider learns feedback.",
+    image: "images/story/wright-bicycle.webp",
+    tags: ["1892", "bicycle shop", "Dayton"]
+  },
+  "32": {
+    title: "Lilienthal dies; flight becomes their problem",
+    body: "German glider pioneer Otto Lilienthal dies in a crash in 1896. Wilbur reads the news and writes to the Smithsonian for aeronautical literature. The brothers choose flight as the hardest problem worth solving. They study birds, Chanute, and Langley. Dayton bicycle mechanics decide they can succeed where trained scientists failed.",
+    image: "images/story/wright-lilienthal.webp",
+    tags: ["1899", "Lilienthal", "flight"]
+  },
+  "33": {
+    title: "First trip to Kitty Hawk's winds",
+    body: "In 1900 Wilbur and Orville arrive at Kitty Hawk, North Carolina, a remote strip of sand with steady winds and soft landings for crashes. They test a manned glider based on flawed lift tables. Results disappoint but data improves. Kitty Hawk becomes annual pilgrimage: mosquitoes, storms, and progress measured in feet of glide.",
+    image: "images/story/wright-kitty-hawk.webp",
+    tags: ["1900", "Kitty Hawk", "glider"]
+  },
+  "34": {
+    title: "Wind tunnel in the bicycle shop",
+    body: "Back in Dayton they build a small wind tunnel and test over two hundred wing shapes, discovering published lift coefficients were wrong. The tunnel fits on a workbench next to bicycle tools. Correct data replaces guesswork. Engineering discipline separates them from daredevils who jump off hills hoping shape alone works.",
+    image: "images/story/wright-wind-tunnel.webp",
+    tags: ["1901", "wind tunnel", "Dayton"]
+  },
+  "36": {
+    title: "Twelve seconds that change the century",
+    body: "On December 17, 1903, at Kill Devil Hills near Kitty Hawk, Orville pilots the Flyer for twelve seconds over one hundred twenty feet while Wilbur runs alongside. Four flights that day; the longest nearly a minute. A camera captures liftoff; a coin toss chose the pilot. Powered flight exists in fact, not fantasy.",
+    image: "images/story/wright-first-flight.webp",
+    tags: ["1903", "first flight", "Flyer"]
+  },
+  "38": {
+    title: "Thirty-nine minutes aloft in the Flyer III",
+    body: "By 1905 the Flyer III circles Huffman Prairie near Dayton for thirty-nine minutes, proving sustained controlled flight rather than brief hops. The machine banks, turns, and lands at will. They finally have something to sell to skeptics. Europe still mostly ignores them; America slowly notices.",
+    image: "images/story/wright-flyer-iii.webp",
+    tags: ["1905", "Flyer III", "Huffman Prairie"]
+  },
+  "41": {
+    title: "Europe stuns; contracts and fame arrive late",
+    body: "In 1908 Wilbur demonstrates flights in France before astonished crowds and aviation clubs. Orville simultaneously tests for the U.S. Army at Fort Myer until a crash kills passenger Thomas Selfridge and badly injures Orville. The world wakes up; patents wars and licensing deals follow. Fame arrives five years after the beach.",
+    image: "images/story/wright-europe.webp",
+    tags: ["1908", "France", "demonstrations"]
+  },
+  "45": {
+    title: "Wilbur dies; Orville carries the legacy alone",
+    body: "Wilbur Wright dies of typhoid fever in 1912, aged forty-five. Orville sells the company and lives until 1948, feuding with Smithsonian over credit for Langley versus Wright priority. The brothers who shared everything split only in death. Every airport code and wing logo traces back to Dayton bicycle grease and Carolina sand.",
+    image: "images/story/wright-wilbur-death.webp",
+    tags: ["1912", "Wilbur", "typhoid"]
+  }
+});
+
+// src/stories/ferrari.ts
+var ferrariStories = defineStories("Ferrari", {
+  "0": {
+    title: "Born in Modena while Italy learns speed",
+    body: "Enzo Anselmo Ferrari arrives in 1898 in Modena, Italy, born on the cusp of the automobile age in a region that will become synonymous with engines. His father Alfredo runs a metal workshop; money is tight and education practical. The boy watches cars as rare miracles on dusty roads and decides early that speed is a language he wants to speak.",
+    image: "images/story/ferrari-born.webp",
+    tags: ["Modena", "1898", "childhood"]
+  },
+  "10": {
+    title: "A motor race at Bologna and a lifelong spell",
+    body: "At ten he attends the 1908 Circuito di Bologna with his father and brother and sees Vincenzo Lancia compete. The noise, smell, and crowd intoxicate him. He later says he became a racing driver that day in spirit if not yet in fact. Modena boys dream of football; Enzo dreams of red cars and checkered flags.",
+    image: "images/story/ferrari-bologna-race.webp",
+    tags: ["1908", "Bologna", "motorsport"]
+  },
+  "18": {
+    title: "Father and brother die in the flu epidemic",
+    body: "In 1916 influenza kills his father Alfredo and brother Alfredo Jr. within months, leaving Enzo responsible for family survival during World War I. The army rejects him for poor health; grief and frustration harden into stubborn ambition. Loss becomes fuel; he will later name a car line Dino for the son he also loses.",
+    image: "images/story/ferrari-family-death.webp",
+    tags: ["1916", "flu", "family"]
+  },
+  "21": {
+    title: "Racing after the Great War",
+    body: "After the war he finds work as a test driver and racer for CMN and later Alfa Romeo, surviving crashes that kill friends. Driving teaches him more about limits than factories do. He is fast but not the fastest; his gift is organizing men and machines around victory. The cockpit is apprenticeship for the office he will run.",
+    image: "images/story/ferrari-racing.webp",
+    tags: ["1919", "racing", "Alfa Romeo"]
+  },
+  "22": {
+    title: "Works driver for Alfa Romeo",
+    body: "Alfa Romeo hires him as a works driver; he competes across Italy and builds relationships with mechanics, sponsors, and journalists. Wins are scarce; presence is constant. Enzo learns branding before the word is fashionable: scarlet cars, prancing horse logos borrowed from a war hero's mother, drama in every paddock.",
+    image: "images/story/ferrari-alfa-driver.webp",
+    tags: ["1920", "Alfa Romeo", "works driver"]
+  },
+  "31": {
+    title: "Scuderia Ferrari: Alfa's racing arm",
+    body: "In 1929 he founds Scuderia Ferrari in Modena as Alfa Romeo's official racing team, managing drivers and development while wearing the cavallino rampante badge. The prancing horse comes from World War I ace Francesco Baracca's emblem. Ferrari becomes impresario of speed, selecting talent, punishing failure, and treating races as theater with mortality in the third act.",
+    image: "images/story/ferrari-scuderia.webp",
+    tags: ["1929", "Scuderia Ferrari", "cavallino rampante"]
+  },
+  "49": {
+    title: "The first car bearing his own name",
+    body: "After breaking with Alfa Romeo in 1939 and enduring wartime factory bombing, Ferrari builds the first car under his name, the 125 S, in 1947. It wins its first race at Rome's Terme di Caracalla circuit. At forty-nine he finally manufactures under Ferrari alone. The shift from team manager to automaker defines the rest of his life.",
+    image: "images/story/ferrari-125s.webp",
+    tags: ["1947", "125 S", "first Ferrari"]
+  },
+  "52": {
+    title: "Formula One and the world championship",
+    body: "When Formula One begins in 1950 Ferrari enters immediately; the team becomes the longest-running fixture in the sport. Victories at Monaco, Monza, and Le Mans build myth. Enzo rarely travels to races, managing from Maranello by telephone and fear. Drivers call him Commendatore; some die proving his cars.",
+    image: "images/story/ferrari-f1.webp",
+    tags: ["1950", "Formula One", "Maranello"]
+  },
+  "58": {
+    title: "Dino dies and grief becomes a badge",
+    body: "His son Alfredo, called Dino, dies of muscular dystrophy in 1956 at twenty-four after working on V6 engine designs. Enzo names a car line Dino in his memory and wears dark glasses at races thereafter. The personal loss humanizes a man often portrayed as cold. Maranello becomes shrine as much as factory.",
+    image: "images/story/ferrari-dino.webp",
+    tags: ["1956", "Dino", "grief"]
+  },
+  "63": {
+    title: "Walkout, triumph, and the tyrant's paradox",
+    body: "In 1961 key engineers including Carlo Chiti leave in the famous walkout after disputes with Enzo's wife Laura and company politics. Ferrari still wins the 1961 championship with Phil Hill while laboring under internal chaos. Enzo rules by loyalty tests and rage. Success and toxicity share the same garage.",
+    image: "images/story/ferrari-walkout.webp",
+    tags: ["1961", "walkout", "F1 title"]
+  },
+  "71": {
+    title: "Sells half to Fiat to survive the modern era",
+    body: "In 1969 Fiat buys fifty percent of Ferrari to fund modernization as costs explode and safety rules tighten. Enzo keeps control of racing operations until death. The deal saves the company from boutique bankruptcy and begins the path to global luxury brand. Independence narrows; survival widens.",
+    image: "images/story/ferrari-fiat.webp",
+    tags: ["1969", "Fiat", "partnership"]
+  },
+  "90": {
+    title: "Dies in Modena; red cars mourn the Commendatore",
+    body: "Enzo Ferrari dies in Modena in 1988, aged ninety, the day before the McLaren-Honda wins at Monza in a symbolic passing of eras. Hundreds of thousands line routes for his funeral. He built fewer road cars than Ford but more desire per chassis. Racing was religion; road cars were indulgences funding the faith.",
+    image: "images/story/ferrari-death.webp",
+    tags: ["1988", "Modena", "legacy"]
+  }
+});
+
+// src/stories/disney.ts
+var disneyStories = defineStories("Disney", {
+  "0": {
+    title: "Born in Chicago; a midwestern childhood ahead",
+    body: "Walter Elias Disney arrives in 1901 in Chicago, the fourth of five children in a family that will soon move to farm country. His father Elias is stern, religious, and often broke; his mother Flora is patient. Walt draws on anything flat, copies cartoons from newspapers, and learns to entertain to escape chores and beatings. Performance starts as survival.",
+    image: "images/story/disney-born.webp",
+    tags: ["Chicago", "1901", "childhood"]
+  },
+  "9": {
+    title: "Marceline and the small-town America he will sell",
+    body: "The family moves to a Marceline, Missouri farm where Walt watches trains roll through and sells sketches to neighbors. Marceline becomes his nostalgic template for Main Street USA decades later. Rural boredom breeds imagination; he remembers golden afternoons even when poverty was real. The town will be mythologized long after he leaves.",
+    image: "images/story/disney-marceline.webp",
+    tags: ["Marceline", "1910", "farm"]
+  },
+  "16": {
+    title: "Drops out and drives ambulances in France",
+    body: "He drops out of high school and tries to enlist in World War I but is too young; he joins the Red Cross and drives ambulances in France decorated with his own cartoons. The war ends before he sees combat. He returns at eighteen with drawing skill and no diploma, convinced he can make a living from ink and nerve.",
+    image: "images/story/disney-red-cross.webp",
+    tags: ["1917", "Red Cross", "France"]
+  },
+  "18": {
+    title: "Commercial artist in Kansas City",
+    body: "Back in Kansas City he works as a commercial artist for newspapers and ad agencies, learning deadlines and client whims. He starts Laugh-O-Gram Studio making short fairy tale films that go bankrupt when distributors cheat him. On a train west with forty dollars and a suitcase he heads to Hollywood where movies are becoming an industry.",
+    image: "images/story/disney-kansas-city.webp",
+    tags: ["1919", "Kansas City", "Laugh-O-Gram"]
+  },
+  "22": {
+    title: "Hollywood with forty dollars and a cartoon mouse in mind",
+    body: "In 1923 he arrives in Los Angeles with brother Roy and little cash, setting up Disney Brothers Studio in his uncle's garage. Oswald the Lucky Rabbit succeeds until he loses the character rights in a brutal contract dispute with distributor Charles Mintz. The betrayal teaches him to own his creations absolutely. Mickey Mouse is born from anger.",
+    image: "images/story/disney-hollywood.webp",
+    tags: ["1923", "Hollywood", "garage"]
+  },
+  "26": {
+    title: "Steamboat Willie and Mickey Mouse speak",
+    body: "In 1928 Steamboat Willie premieres, one of the first synchronized sound cartoons, starring Mickey Mouse with Walt voicing the character early on. Audiences hear the whistle, the stomp, the squeak. Disney does not invent animation but industrializes personality. Mickey becomes a global logo wearing gloves no real mouse needs.",
+    image: "images/story/disney-steamboat-willie.webp",
+    tags: ["1928", "Mickey Mouse", "sound"]
+  },
+  "31": {
+    title: "First Oscar and the push toward color",
+    body: "Flowers and Trees in Technicolor wins the Academy Award for Animated Short in 1932, the first color cartoon Oscar. Disney bets on spectacle when rivals cut corners. Silly Symphonies become laboratory for depth, color, and music synchronized to frame. Artists flock to his studio seeking the best pencils in California.",
+    image: "images/story/disney-oscar.webp",
+    tags: ["1932", "Oscar", "Technicolor"]
+  },
+  "36": {
+    title: "Snow White: nobody thought a feature cartoon could work",
+    body: "In 1937 Snow White and the Seven Dwarfs opens as the first American animated feature, called Disney's Folly until it grosses fortunes. He mortgages everything to finish; artists strike later over credit and pay. The film proves animation can carry emotion for ninety minutes. Princess mythology and box office records begin together.",
+    image: "images/story/disney-snow-white.webp",
+    tags: ["1937", "Snow White", "feature film"]
+  },
+  "53": {
+    title: "Disneyland opens on a former orange grove",
+    body: "On July 17, 1955, Disneyland opens in Anaheim on converted orange groves, with themed lands, a castle, and lines around the block. Opening day is chaotic: broken fountains, softened asphalt, counterfeit tickets. Walt walks the park fixing details in a tie. Theme parks become narrative machines; family vacations reorganize around his map.",
+    image: "images/story/disney-disneyland.webp",
+    tags: ["1955", "Disneyland", "Anaheim"]
+  },
+  "63": {
+    title: "Mary Poppins and the New York World's Fair",
+    body: "In 1964 Mary Poppins blends live action and animation to acclaim while Disney builds attractions for the New York World's Fair: It's a Small World, Great Moments with Mr. Lincoln, Carousel of Progress. Audio-animatronics advance; East Coast investors see scale. Florida land deals accelerate secretly through shell companies.",
+    image: "images/story/disney-mary-poppins.webp",
+    tags: ["1964", "Mary Poppins", "World's Fair"]
+  },
+  "64": {
+    title: "Planning Walt Disney World in Florida swampland",
+    body: "He buys thousands of acres near Orlando through proxies to avoid price spikes, imagining a city of tomorrow and a park larger than Anaheim. EPCOT begins as utopian blueprint, not merely rides. Lung cancer slows him while bulldozers start. He will not live to open the Magic Kingdom he planned from a hospital bed.",
+    image: "images/story/disney-florida.webp",
+    tags: ["1965", "Florida", "EPCOT"]
+  },
+  "65": {
+    title: "Dies before the kingdom is finished",
+    body: "Walt Disney dies of lung cancer in Burbank on December 15, 1966, aged sixty-five. Roy postpones retirement to finish Walt Disney World, renaming EPCOT to honor the dream. Cryogenics myths swirl; the real freeze is corporate continuity. Every childhood memory touched by Mickey pays rent to a studio built from a mouse and a grudge.",
+    image: "images/story/disney-death.webp",
+    tags: ["1966", "Burbank", "legacy"]
+  }
+});
+
 // src/stories/gallery-items.ts
 var MODULES = [
   ["Alexander", alexanderStories],
@@ -1474,7 +2468,20 @@ var MODULES = [
   ["Musk", muskStories],
   ["Page", pageStories],
   ["Zuckerberg", zuckerbergStories],
-  ["Altman", altmanStories]
+  ["Altman", altmanStories],
+  ["Tesla", teslaStories],
+  ["Watt", wattStories],
+  ["Carnegie", carnegieStories],
+  ["Rockefeller", rockefellerStories],
+  ["Benz", benzStories],
+  ["Edison", edisonStories],
+  ["Bell", bellStories],
+  ["Ford", fordStories],
+  ["Porsche", porscheStories],
+  ["Marconi", marconiStories],
+  ["Wright", wrightStories],
+  ["Ferrari", ferrariStories],
+  ["Disney", disneyStories]
 ];
 function storyGalleryItems() {
   const items = [];

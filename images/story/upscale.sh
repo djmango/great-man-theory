@@ -1,16 +1,36 @@
 #!/usr/bin/env bash
-# Upscale story source PNGs with Upscayl (macOS app bundle). Never deletes sources.
+# Upscale story source PNGs with Upscayl NCNN (macOS app bundle or Linux binary). Never deletes sources.
 # Usage: ./upscale.sh [model] [deliver_width] [slug-prefix]
+# Env: UPSCAYL_BIN, UPSCAYL_MODELS — override paths (required on Linux remote hosts).
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-UPSCAYL_BIN="/Applications/Upscayl.app/Contents/Resources/bin/upscayl-bin"
-MODELS="/Applications/Upscayl.app/Contents/Resources/models"
 MODEL="${1:-high-fidelity-4x}"
 DELIVER_WIDTH="${2:-3200}"
 SLUG_PREFIX="${3:-}"
 
-if [[ ! -x "$UPSCAYL_BIN" ]]; then
-  echo "Upscayl not found at $UPSCAYL_BIN" >&2
+if [[ -n "${UPSCAYL_BIN:-}" && -x "$UPSCAYL_BIN" ]]; then
+  :
+elif [[ -x "/Applications/Upscayl.app/Contents/Resources/bin/upscayl-bin" ]]; then
+  UPSCAYL_BIN="/Applications/Upscayl.app/Contents/Resources/bin/upscayl-bin"
+  UPSCAYL_MODELS="${UPSCAYL_MODELS:-/Applications/Upscayl.app/Contents/Resources/models}"
+elif [[ -x "$ROOT/tools/upscayl-bin" ]]; then
+  UPSCAYL_BIN="$ROOT/tools/upscayl-bin"
+  UPSCAYL_MODELS="${UPSCAYL_MODELS:-$ROOT/tools/models}"
+elif command -v upscayl-bin >/dev/null 2>&1; then
+  UPSCAYL_BIN="$(command -v upscayl-bin)"
+  UPSCAYL_MODELS="${UPSCAYL_MODELS:-$(dirname "$UPSCAYL_BIN")/models}"
+else
+  echo "Upscayl binary not found. Set UPSCAYL_BIN or install under $ROOT/tools/" >&2
+  exit 1
+fi
+
+MODELS="${UPSCAYL_MODELS:?UPSCAYL_MODELS required}"
+MAGICK="${MAGICK:-magick}"
+if ! command -v "$MAGICK" >/dev/null 2>&1; then
+  MAGICK=convert
+fi
+if ! command -v "$MAGICK" >/dev/null 2>&1; then
+  echo "ImageMagick (magick or convert) required." >&2
   exit 1
 fi
 
@@ -36,7 +56,7 @@ for src in "${SOURCES[@]}"; do
   fi
 
   echo "webp: $out_webp"
-  magick "$out_png" -resize "${DELIVER_WIDTH}x" -quality 88 -define webp:method=6 "$out_webp"
+  "$MAGICK" "$out_png" -resize "${DELIVER_WIDTH}x" -quality 88 -define webp:method=6 "$out_webp"
   cp "$out_webp" "$live_webp"
   echo "installed: $live_webp"
 done

@@ -28,6 +28,19 @@ export const FIGURE_NAMES: Record<string, string> = {
   page: "Larry Page",
   zuckerberg: "Mark Zuckerberg",
   altman: "Sam Altman",
+  tesla: "Nikola Tesla",
+  watt: "James Watt",
+  carnegie: "Andrew Carnegie",
+  rockefeller: "John D. Rockefeller",
+  benz: "Karl Benz",
+  edison: "Thomas Edison",
+  bell: "Alexander Graham Bell",
+  ford: "Henry Ford",
+  porsche: "Ferdinand Porsche",
+  marconi: "Guglielmo Marconi",
+  wright: "Wilbur and Orville Wright",
+  ferrari: "Enzo Ferrari",
+  disney: "Walt Disney",
 };
 
 export function figureKeyFromSlug(slug: string): string {
@@ -67,12 +80,27 @@ export function ensureFigureNamedInBeat(slug: string, beat: string, name: string
     return beat.replace(/\bteenage boys\b/i, `teenage ${name} with classmates`);
   }
 
-  const youngMatch = beat.match(/\b(a|the)\s+(teenage|young|twelve-year-old|nine-year-old|eight-year-old|elderly|thin|kindly)\s+(boy|girl|man|woman|CEO|traveler|engineer|dropout|programmer|valedictorian)?/i);
+  if (/\ba young adopted (son|daughter)\b/i.test(beat)) {
+    return beat.replace(/\ba young adopted (son|daughter)\b/i, `young ${name} as adopted $1`);
+  }
+
+  const youngMatch = beat.match(
+    /\b(a|the)\s+(teenage|young|twelve-year-old|nine-year-old|eight-year-old|elderly|thin|kindly)\s+(boy|girl|man|woman|CEO|traveler|engineer|dropout|programmer|valedictorian)\b/i,
+  );
   if (youngMatch) {
     return beat.replace(youngMatch[0], `${youngMatch[2] ?? "young"} ${name}`);
   }
 
   if (/\btwo (young men|college-age programmers|brothers|long-haired young men)\b/i.test(beat)) {
+    const partners: Record<string, string> = {
+      "gates-traf-o-data": "Bill Gates and Paul Allen",
+      "gates-microsoft": "Bill Gates and Paul Allen",
+      "jobs-blue-box": "Steve Jobs and Steve Wozniak",
+      "jobs-garage": "Steve Jobs and Steve Wozniak",
+      "musk-zip2": "Elon Musk and Kimbal Musk",
+      "huang-nvidia-diner": "Jensen Huang with Nvidia co-founders",
+    };
+    if (partners[slug]) return `${partners[slug]}, ${beat.charAt(0).toLowerCase()}${beat.slice(1)}`;
     return `${name} among them, ${beat.charAt(0).toLowerCase()}${beat.slice(1)}`;
   }
 
@@ -410,7 +438,7 @@ export const SCENE_BEATS: Record<string, string> = {
   "bezos-princeton":
     "a young engineer graduating Princeton in cap and gown, computer science department banner",
   "bezos-amazon":
-    "a couple driving west in a car with business plans and maps spread on the dashboard, 1994",
+    "Jeff Bezos in the passenger seat writing a business plan on a legal pad while MacKenzie Bezos drives west on a long interstate highway toward Seattle, arid western landscape and distant mountains through the windshield, 1994 sedan",
   "bezos-first-book":
     "employees ringing a bell in a garage as the first Amazon book order prints, 1995",
   "bezos-ipo":
@@ -552,7 +580,7 @@ export const SCENE_BEATS: Record<string, string> = {
   "altman-yc-president":
     "Altman addressing a Y Combinator batch on demo day stage, founders listening, 2014",
   "altman-openai-founded":
-    "OpenAI founders meeting in a sparse research office, whiteboards with AGI sketches, 2015",
+    "Sam Altman in casual clothes at a plain folding table in a shabby rented startup office with laptops, coffee mugs, mismatched chairs, and a simple whiteboard with ordinary meeting notes, San Francisco 2015, mundane not futuristic",
   "altman-openai-ceo":
     "Altman touring a data center aisle of GPU racks as OpenAI CEO, 2019",
   "altman-chatgpt":

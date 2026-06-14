@@ -188,7 +188,6 @@
   .storyvisual img.story-layer.is-active.is-kenburns{ animation:story-kenburns 40s linear forwards; }
   .storyvisual img.story-layer.is-leaving{ opacity:0; }
   @keyframes story-kenburns{ from{ transform:scale(1.04); } to{ transform:scale(1); } }
-  .storyvisual::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent 58%,color-mix(in srgb,var(--paper) 70%,transparent)); pointer-events:none; z-index:2; }
   .storycopy{ position:relative; z-index:1; display:flex; min-width:0; min-height:100%; flex-direction:column; justify-content:center; padding:clamp(30px,5vw,72px); border-left:1px solid var(--line); overflow-wrap:break-word; }
   body.screensaver.story-mode .storycopy{ min-height:100vh; }
   body.story-modal .storycopy{ min-height:0; height:100%; overflow-x:hidden; overflow-y:auto; padding:clamp(26px,4vw,42px); }
@@ -251,7 +250,6 @@
     .tourcard{ left:14px; bottom:14px; width:calc(100vw - 28px); }
     .storydeck{ grid-template-columns:1fr; }
     .storyvisual{ min-height:42vh; }
-    .storyvisual::after{ background:linear-gradient(180deg,transparent 52%,var(--paper)); }
     .storycopy{ min-height:58vh; border-left:0; border-top:1px solid var(--line); padding:24px var(--pad); }
     body.story-modal .storydeck{ width:calc(100vw - 24px); height:min(820px,calc(100dvh - 24px)); grid-template-columns:1fr; grid-template-rows:minmax(200px,38%) minmax(0,1fr); }
     body.story-modal .storyvisual{ min-height:0; }

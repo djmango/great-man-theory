@@ -79,7 +79,7 @@ for (const [figure, stories] of modules) {
       slug,
       figure,
       title: story.title,
-      prompt: buildScenePrompt(slug, story.title),
+      prompt: buildScenePrompt(slug, story.title, figure),
       webp,
       source,
       missing: !existsSync(join(storyDir, webp)),

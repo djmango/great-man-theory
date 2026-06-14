@@ -16,6 +16,19 @@ import { muskStories } from "./musk";
 import { pageStories } from "./page";
 import { zuckerbergStories } from "./zuckerberg";
 import { altmanStories } from "./altman";
+import { teslaStories } from "./tesla";
+import { wattStories } from "./watt";
+import { carnegieStories } from "./carnegie";
+import { rockefellerStories } from "./rockefeller";
+import { benzStories } from "./benz";
+import { edisonStories } from "./edison";
+import { bellStories } from "./bell";
+import { fordStories } from "./ford";
+import { porscheStories } from "./porsche";
+import { marconiStories } from "./marconi";
+import { wrightStories } from "./wright";
+import { ferrariStories } from "./ferrari";
+import { disneyStories } from "./disney";
 
 export type GalleryItem = {
   figure: string;
@@ -44,6 +57,19 @@ const MODULES: Array<[string, Record<string, { title: string; body: string; imag
   ["Page", pageStories],
   ["Zuckerberg", zuckerbergStories],
   ["Altman", altmanStories],
+  ["Tesla", teslaStories],
+  ["Watt", wattStories],
+  ["Carnegie", carnegieStories],
+  ["Rockefeller", rockefellerStories],
+  ["Benz", benzStories],
+  ["Edison", edisonStories],
+  ["Bell", bellStories],
+  ["Ford", fordStories],
+  ["Porsche", porscheStories],
+  ["Marconi", marconiStories],
+  ["Wright", wrightStories],
+  ["Ferrari", ferrariStories],
+  ["Disney", disneyStories],
 ];
 
 export function storyGalleryItems(): GalleryItem[] {
