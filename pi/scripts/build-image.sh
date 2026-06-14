@@ -56,54 +56,29 @@ require_command() {
   fi
 }
 
-sops_age_key_file=""
+expand_path() {
+  python3 -c 'import os, sys; print(os.path.expanduser(sys.argv[1]))' "$1"
+}
 
-ensure_sops_age_key() {
-  if [ -n "${SOPS_AGE_KEY_FILE:-}" ] && [ -f "$SOPS_AGE_KEY_FILE" ]; then
-    return
-  fi
-
-  local ssh_key="${SOPS_SSH_KEY_PATH:-$HOME/.ssh/id_ed25519}"
-  if [ ! -f "$ssh_key" ]; then
-    echo "SSH private key not found: $ssh_key" >&2
+write_sops_config() {
+  local pubkey_path
+  pubkey_path="$(expand_path "${1:-$HOME/.ssh/id_ed25519.pub}")"
+  if [ ! -f "$pubkey_path" ]; then
+    echo "SSH public key not found: $pubkey_path" >&2
     exit 1
   fi
 
-  if ! command -v ssh-to-age >/dev/null 2>&1; then
-    if command -v nix >/dev/null 2>&1; then
-      echo "ssh-to-age is not on PATH. Use: nix develop, or bun run pi:secrets" >&2
-    else
-      echo "ssh-to-age is required to decrypt pi/secrets.yaml." >&2
-      echo "Edit secrets with: bun run pi:secrets" >&2
-    fi
-    exit 1
-  fi
-
-  sops_age_key_file="$(mktemp)"
-  ssh-to-age -private-key -i "$ssh_key" -o "$sops_age_key_file"
-  export SOPS_AGE_KEY_FILE="$sops_age_key_file"
-  export SOPS_CONFIG_PATH="$sops_config"
+  local pubkey
+  pubkey="$(< "$pubkey_path")"
+  cat > "$sops_config" <<EOF
+creation_rules:
+  - path_regex: secrets\\.yaml$
+    age: $pubkey
+EOF
 }
-
-cleanup_sops_age_key() {
-  if [ -n "$sops_age_key_file" ]; then
-    rm -f "$sops_age_key_file"
-    sops_age_key_file=""
-  fi
-}
-
-trap cleanup_sops_age_key EXIT
 
 if [ "$init_sops" -eq 1 ]; then
   require_command sops
-  require_command ssh-to-age
-
-  [ -f "$sops_config" ] || cp "$pi_dir/.sops.yaml.example" "$sops_config"
-
-  if grep -q 'age1replace_with_your_recipient' "$sops_config"; then
-    echo "Set your age recipient in $sops_config before continuing." >&2
-    exit 1
-  fi
 
   if [ -f "$secrets_file" ]; then
     echo "pi/secrets.yaml already exists."
@@ -111,13 +86,13 @@ if [ "$init_sops" -eq 1 ]; then
     exit 0
   fi
 
+  write_sops_config "${SSH_PUBKEY_PATH:-$HOME/.ssh/id_ed25519.pub}"
   cp "$pi_dir/secrets.example.yaml" "$secrets_file"
-  ensure_sops_age_key
   sops -e -i "$secrets_file"
   rm -f "$secrets_file.bak"
 
   cat <<EOF
-Created encrypted pi/secrets.yaml.
+Created pi/.sops.yaml and encrypted pi/secrets.yaml using your SSH public key.
 
 Edit secrets with:
   sops pi/secrets.yaml
@@ -131,10 +106,20 @@ fi
 load_secrets() {
   if [ -f "$secrets_file" ]; then
     require_command sops
-    ensure_sops_age_key
+    require_command python3
     set -a
     # shellcheck disable=SC1090
-    . <(sops -d --output-type dotenv "$secrets_file")
+    . <(sops -d --output-type json "$secrets_file" | python3 -c '
+import json
+import shlex
+import sys
+
+data = json.load(sys.stdin)
+for key, value in data.items():
+    if value is None:
+        continue
+    print(f"export {key}={shlex.quote(str(value))}")
+')
     set +a
   fi
 }
@@ -227,9 +212,11 @@ fi
 
 if [[ "${WIFI_SSID}" == REPLACE_ME* || "${WIFI_PASSWORD:-}" == REPLACE_ME* ]]; then
   echo "Replace the Wi-Fi placeholders in pi/secrets.yaml before building." >&2
-  echo "Edit with: bun run pi:secrets" >&2
+  echo "Edit with: sops pi/secrets.yaml" >&2
   exit 1
 fi
+
+SSH_PUBKEY_PATH="$(expand_path "${SSH_PUBKEY_PATH:-$HOME/.ssh/id_ed25519.pub}")"
 
 if [ ! -f "$SSH_PUBKEY_PATH" ]; then
   echo "SSH public key not found: $SSH_PUBKEY_PATH" >&2
@@ -270,7 +257,10 @@ args=(
   IGconf_ssh_pubkey_only=y
 )
 /opt/rpi-image-gen/rpi-image-gen build -S /src -c gmt-kiosk.yaml -- "${args[@]}"
-find /work -type f \( -name "*.img" -o -name "*.img.xz" -o -name "*.img.zst" -o -name "image.json" -o -name "manifest" -o -name "config.yaml" \) -exec cp -av {} /deploy/ \;
+for dir in /work/deploy-* /work/image-*; do
+  [ -d "$dir" ] || continue
+  find "$dir" -maxdepth 1 -type f \( -name "${RPI_IMAGE_NAME}*" -o -name "image.json" -o -name "manifest" -o -name "config.yaml" -o -name "kernel_*.img" \) -exec cp -av {} /deploy/ \;
+done
 '
 
 if [ "$native" -eq 1 ]; then
@@ -291,7 +281,10 @@ if [ "$native" -eq 1 ]; then
     IGconf_ssh_pubkey_only=y
   )
   "$rpi_image_gen/rpi-image-gen" build -S "$source_dir" -c gmt-kiosk.yaml -- "${native_args[@]}"
-  find "$work_dir" -type f \( -name "*.img" -o -name "*.img.xz" -o -name "*.img.zst" -o -name "image.json" -o -name "manifest" -o -name "config.yaml" \) -exec cp -av {} "$deploy_dir"/ \;
+  for dir in "$work_dir"/deploy-* "$work_dir"/image-*; do
+    [ -d "$dir" ] || continue
+    find "$dir" -maxdepth 1 -type f \( -name "${RPI_IMAGE_NAME}*" -o -name "image.json" -o -name "manifest" -o -name "config.yaml" -o -name "kernel_*.img" \) -exec cp -av {} "$deploy_dir"/ \;
+  done
 else
   require_command docker
 
@@ -306,7 +299,6 @@ else
     -e GMT_SITE_URL \
     -e SSH_PUBKEY \
     -v "$source_dir:/src:ro" \
-    -v "$work_dir:/work" \
     -v "$deploy_dir:/deploy" \
     "$docker_image" \
     bash -lc "$run_build_cmd"

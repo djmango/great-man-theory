@@ -7,7 +7,6 @@ image:
 
 device:
   user1: skg
-  user1pass:
   hostname: skg-rpi-pending
   ssh_user1: y
 

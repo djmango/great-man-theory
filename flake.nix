@@ -26,17 +26,15 @@
             docker
             git
             sops
-            ssh-to-age
             xz
             zstd
           ];
 
           shellHook = ''
-            export SOPS_SSH_KEY_PATH="$HOME/.ssh/id_ed25519"
             echo "Great Man Theory dev shell"
-            echo "  bun run pi:secrets # edit encrypted pi/secrets.yaml"
-            echo "  bun run pi:build   # build Raspberry Pi kiosk image"
-            echo "  bun run pi:flash   # flash latest image to SD/USB"
+            echo "  sops pi/secrets.yaml # edit encrypted secrets"
+            echo "  bun run pi:build     # build Raspberry Pi kiosk image"
+            echo "  bun run pi:flash     # flash latest image to SD/USB"
           '';
         };
       });

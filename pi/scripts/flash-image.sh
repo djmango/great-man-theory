@@ -46,7 +46,26 @@ pi_dir="$(dirname "$script_dir")"
 deploy_dir="$pi_dir/deploy"
 
 if [ -z "$image" ]; then
-  image="$(ls -t "$deploy_dir"/*.img "$deploy_dir"/*.img.xz "$deploy_dir"/*.img.zst 2>/dev/null | sed -n '1p')"
+  shopt -s nullglob
+  candidates=()
+  for candidate in \
+    "$deploy_dir"/great-man-theory-kiosk.img \
+    "$deploy_dir"/great-man-theory-kiosk.img.zst \
+    "$deploy_dir"/great-man-theory-kiosk.img.xz \
+    "$deploy_dir"/*.img \
+    "$deploy_dir"/*.img.zst \
+    "$deploy_dir"/*.img.xz; do
+    [ -f "$candidate" ] || continue
+    case "$(basename "$candidate")" in
+      kernel_*.img|*.sparse|*.sparse.*|*.tar.zst) continue ;;
+    esac
+    candidates+=("$candidate")
+  done
+  shopt -u nullglob
+
+  if [ "${#candidates[@]}" -gt 0 ]; then
+    image="$(ls -t "${candidates[@]}" | sed -n '1p')"
+  fi
 fi
 
 if [ -z "$image" ] || [ ! -f "$image" ]; then
@@ -107,5 +126,24 @@ case "$image" in
 esac
 
 sync
-diskutil eject "$device"
-echo "Flashed and ejected $device."
+
+eject_disk() {
+  if diskutil eject "$device" 2>/dev/null; then
+    return 0
+  fi
+
+  diskutil unmountDisk force "$device" >/dev/null 2>&1 || true
+  if diskutil eject "$device" 2>/dev/null; then
+    return 0
+  fi
+
+  return 1
+}
+
+if eject_disk; then
+  echo "Flashed and ejected $device."
+else
+  echo "Flash completed successfully, but macOS would not eject $device (Spotlight sometimes remounts the card)." >&2
+  echo "Safely remove it with: diskutil unmountDisk force $device && diskutil eject $device" >&2
+  echo "Or unplug the card now — the image is already written." >&2
+fi

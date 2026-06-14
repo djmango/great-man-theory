@@ -18,17 +18,15 @@ Build-time secrets live in SOPS-encrypted `pi/secrets.yaml`. There is no plainte
 bun run pi:build -- --init-sops
 ```
 
-That copies `pi/.sops.yaml.example` to `pi/.sops.yaml` if needed, then creates encrypted `pi/secrets.yaml` from `pi/secrets.example.yaml`.
-
-Before running `--init-sops`, set your age recipient in `pi/.sops.yaml`.
+That creates `pi/.sops.yaml` with your `~/.ssh/id_ed25519.pub` as the SOPS recipient, then encrypts `pi/secrets.yaml` from `pi/secrets.example.yaml`.
 
 Edit secrets with:
 
 ```bash
-bun run pi:secrets
+sops pi/secrets.yaml
 ```
 
-That wraps `sops pi/secrets.yaml` with the age key derived from `~/.ssh/id_ed25519` via `ssh-to-age`. Plain `sops pi/secrets.yaml` will not work on its own.
+SOPS decrypts with `~/.ssh/id_ed25519` automatically. Override with `SOPS_AGE_SSH_PRIVATE_KEY_FILE` if needed.
 
 `pi/secrets.yaml` and `pi/.sops.yaml` are gitignored.
 
@@ -73,7 +71,7 @@ RPI_IMAGE_GEN_DIR=/path/to/rpi-image-gen bun run pi:build -- --native
 
 ## Notes
 
-- Docker runs with `--privileged`, which `rpi-image-gen` needs for `mmdebstrap` mount namespaces.
+- Docker keeps build work inside the container filesystem. Only `pi/deploy` is mounted out, because macOS bind mounts are often case-insensitive and break Debian package installs such as `libpam-runtime`.
 - `DOCKER_PLATFORM` defaults to `linux/arm64`.
 - `DOCKER_IMAGE` defaults to `great-man-theory-rpi-image-gen`.
 - Tailscale auth keys should be ephemeral and reusable=false when possible.

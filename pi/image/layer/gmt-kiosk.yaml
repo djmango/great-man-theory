@@ -1,5 +1,6 @@
 # METABEGIN
 # X-Env-Layer-Name: gmt-kiosk
+# X-Env-Layer-Version: 1.0.0
 # X-Env-Layer-Category: app
 # X-Env-Layer-Desc: Great Man Theory Chromium kiosk with first-boot provisioning.
 # X-Env-Layer-Requires: rpi-user-credentials,systemd-net-min
@@ -32,6 +33,10 @@ mmdebstrap:
   customize-hooks:
     - |
       set -eu
+
+      if [ -d "${SRCROOT:-}/rootfs-overlay" ]; then
+        cp -a "${SRCROOT}/rootfs-overlay/." "$1/"
+      fi
 
       user="$IGconf_device_user1"
 
